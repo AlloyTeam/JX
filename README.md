@@ -1,57 +1,57 @@
-JX(Javascript eXtension tools - Javascript ��չ���߿�)
+JX(Javascript eXtension tools - Javascript 扩展工具库)
 =======================================================
-վ�ھ��˵ļ��� Standing on shoulders of giants
+站在巨人的肩上 Standing on shoulders of giants
 
-1. ���
+简介
 -------
-JX ������ Web Page �� Web App �Ŀ���, Ŀǰ�Ѿ�Ӧ����WebQQ2.0��WebQQ3.0[http://web.qq.com/]��WebApp��
+JX 适用于 Web Page 和 Web App 的开发, 目前已经应用与WebQQ2.0和WebQQ3.0[http://web.qq.com/]等WebApp。
 
 
 
-2. ����
+特性
 -------
 
-* ΢�ں����
+- 微内核设计
 
-  �ں˿���ȫ������������ڹ����Լ��Ŀ��
+  内核可完全分离出来，用于构建自己的框架
   
-* ����ƴװ����ģ��
+- 自由拼装各个模块
 
-* �����ռ䡢ԭ����������Ⱦ
+- 命名空间、原生对象零污染
 
-* �޷켯�ɸ���js���
+- 无缝集成各种js框架
 
-  ��jQuery, YUI, Mootools, Prototype.js �ȿ���޷켯��
-  ����־ֲ�����޷켯�ɣ��磺Mini, Sizzle, cssQuery, xpath, JSON �ȵ�
+  与jQuery, YUI, Mootools, Prototype.js 等框架无缝集成
+  与多种局部框架无缝集成，如：Mini, Sizzle, cssQuery, xpath, JSON 等等
   
-* ��汾����
+- 多版本共存
 
-  ����õ�JET�汾���ɣ����е�Javascript���벻�����°汾JET���ݣ�����Բ��ö�汾����ķ�ʽ���ֳ���Ŀ�������
+  如采用的JET版本过旧，旧有的Javascript代码不能与新版本JET兼容，则可以采用多版本共存的方式保持程序的可延续性
 
-* �ֲ����
+- 分层设计
 
-  Javascript���Ĳ㣬��Javascript���������޹صķ�װ����չ
-  �������Javascript�㣬��������е�Javascript���沿�ֵķ�װ����չ
+  Javascript核心层，与Javascript解释引擎无关的封装和扩展
+  浏览器端Javascript层，对浏览器中的Javascript引擎部分的封装和扩展
 
-3. ����ʾ��
+代码示范
 -----------
-* JET ������֯��ʽһ(��ͳ)��
+- JET 代码组织方式一(传统)：
 
     var J = new Jet();
     J.out(J.version);
 	
-* JET ������֯��ʽ��(�Ƽ�)��
+- JET 代码组织方式二(推荐)：
 
     Jet().$package(function(J){
         J.out(J.version);
     });
 
-### JET�������
-��Ҫ�ظ��Լ���Don��t Repeat Yourself��
+### JET设计理念
+不要重复自己（Don’t Repeat Yourself）
 
 
 //=========================================================
 
-��л David Flanagan, John Resig, �Լ�QZFL, MooTools, YUI, Prototype, Dojo, ExtJs�������ǣ�
+感谢 David Flanagan, John Resig, 以及QZFL, MooTools, YUI, Prototype, Dojo, ExtJs的作者们！
 
 
