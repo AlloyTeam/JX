@@ -4,7 +4,7 @@ JX(Javascript eXtension tools - Javascript 扩展工具库)
 
 简介
 -------
-JX 适用于 Web Page 和 Web App 的开发, 目前已经应用与WebQQ2.0和WebQQ3.0[http://web.qq.com/]等WebApp。
+JX 适用于 Web Page 和 Web App 的开发, 目前已经应用与WebQQ2.0和WebQQ3.0[http://web.qq.com] 等WebApp。
 
 
 
