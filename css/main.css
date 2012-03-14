@@ -1,5 +1,6 @@
 body, p, ul,ol,dl,h1,h2,h3,h4,h5,h6 {margin: 0; padding:0}
 body {
+	font-family:'Segoe UI Light','Segoe UI',Arial,'微软雅黑',sans-serif;
 	background: #211F1C url(../images/bg_03.png);
 }
 .header {
@@ -25,7 +26,7 @@ a {
 h1 { 
 	font-size: 3.8em; 
 	color: #121621;
-	font-family: Georgia;
+
 	margin: 60px 0 0 80px;
 }
 h1 a {
