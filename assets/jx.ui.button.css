@@ -1,0 +1,12 @@
+.ui_button{
+	background:url(./images/button.png) no-repeat scroll transparent;
+	color:#333333;
+	cursor:pointer;
+	float:right;
+	height:23px;
+	line-height:23px;
+	margin-left:10px;
+	text-align:center;
+	width:66px;
+	-webkit-tap-highlight-color: rgba(6,6,6,0.3);
+}

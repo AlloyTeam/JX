@@ -1,83 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset='utf-8'>
-  <title>kinvix/jx @ GitHub.com</title>
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #265aa1;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #d9a55e; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #d9a55e; }
-    h3 { text-align: center; color: #d9a55e; }
-    a { color: #d9a55e; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+	<meta charset="UTF-8" />
+	<title>Jx配置工具</title>
+	<style type="text/css">
+		html{ margin:0; padding:0; }
+		body{ width:1000px; margin:0 auto; }
+		table,tr,td{ margin:0; padding:0; border:0; }
+		.content{ padding-bottom:800px; }
+		.step{ display:block; height:44px; }
+		.item{ display:block; }
+		.item:hover{ background:#ccf; }
+		
+		#cssList{ width:50%;border:1px solid #fcc; }
+		#moduleList{ width:50%;border:1px solid #ccf; }
+		.proc{ border:5px solid #fff; height:24px; background:#fff; position:fixed; left:0; top:10px; }
+		.button{ display:block; text-decoration:none; padding:0 5px; float:left; background:#c99; border-right:5px solid #fff; font:normal 14px/24px "Microsoft Yahei"; color:#fff; width:200px; }
+		.button h5{ float:left; margin:0 5px 0 0; padding:0; font:normal 18px/24px "Microsoft Yahei"; }
+		.proc .current{ background:#99c !important; }
+		.lists{ width:100%; }
+		#listText{ width:100%; -webkit-box-sizing:border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+		.cat-item{ display:block; line-height:24px; height:24px; }
+		.title{ margin:0; padding:0; font:normal 14px/24px "Microsoft Yahei"; }
+		.code{ border:1px solid #ccf; font:12px/18px "Lucida Console","Courier New"; margin:0 0 5px; padding:10px; }
+	</style>
 </head>
-
 <body>
-  <a href="https://github.com/kinvix/jx"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="https://github.com/kinvix/jx/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/kinvix/jx/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="https://github.com/kinvix/jx">jx</a>
-      <span class="small">by <a href="https://github.com/kinvix">kinvix</a></span></h1>
-
-    <div class="description">
-      Javascript eXtension
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-      <h2>Contact</h2>
-      <p>Kinvix (kinvix@gmail.com)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/kinvix/jx/zipball/master">zip</a> or
-      <a href="https://github.com/kinvix/jx/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/kinvix/jx</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/kinvix/jx">kinvix/jx</a>
-    </div>
-
-  </div>
-
+	<div id="proc" class="proc">
+		<a href="#step1" class="button current"><h5>Step 1</h5>选择模块</a>
+		<a href="#step2" class="button"><h5>Step 2</h5>选择引用方法</a>
+		<a href="#step3" class="button"><h5>Step 3</h5>完成</a>
+	</div>
+	<div class="content">
+		<a class="step" id="step1"></a>
+		<h5 class="title">Step 1 选择模块</h5>
+		<table id="lists" class="lists" cellspacing="0"><tr>
+			<td id="moduleList" valign="top"></td>
+			<td id="cssList" valign="top"></td>
+		</tr></table>
+		<input type="text" id="listText" value="[],[]" /><br />
+		<input type="button" value="重置" id="resetList" />
+		<a class="step" id="step2"></a>
+		<h5 class="title">Step 2 选择引用方法</h5>
+		<div id="catPane">
+			<label class="cat-item"><input type="radio" name="category" value="cat1" checked />通过script标签，样式通过css文件引入</label>
+			<label class="cat-item"><input type="radio" name="category" value="cat2" />通过script标签，样式嵌入js中</label>
+			<label class="cat-item"><input type="radio" name="category" value="cat3" />动态加载(仅支持与模块关联的样式)</label>
+		</div>
+		<a class="step" id="step3"></a>
+		<h5 class="title">Step 3 完成</h5>
+		<div id="res1">
+代码:
+<pre class="code">
+&lt;link&nbsp;type=&quot;text/css&quot;&nbsp;rel=&quot;stylesheet&quot;&nbsp;href=&quot;<a href="#">jx.custom.css</a>&quot;&nbsp;/&gt;
+&lt;script&nbsp;type=&quot;text/javascript&quot;&nbsp;src=&quot;<a href="#">jx.custom.js</a>&quot;&nbsp;charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+</pre>
+		</div>
+		<div id="res2" style="display:none;">
+代码:
+<pre class="code">
+&lt;script&nbsp;type=&quot;text/javascript&quot;&nbsp;src=&quot;<a href="#">jx.custom.js</a>&quot;&nbsp;charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+</pre>
+		</div>
+		<div id="res3" style="display:none;">
+代码:
+<pre class="code">
+&lt;script&nbsp;type=&quot;text/javascript&quot;&nbsp;src=&quot;<a href="#">jx.core_with_loader.js</a>&quot;&nbsp;charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script&nbsp;type=&quot;text/javascript&quot;&gt;
+Jx().$require([<span id="res3List"></span>],function(J){
+	//code here
+});
+&lt;/script&gt;
+</pre>
+		</div>
+<input id="buildBtn" type="button" value="生成Qzmin文件" /><span id="link"></span>
 </body>
+<!-- <script type="text/javascript" src="http://qplus1.idqqimg.com/jx/jet.uiless.js"></script> -->
+<script type="text/javascript" src="http://0.web.qstatic.com/webqqpic/js/jet.all.js"></script>
+<script type="text/javascript" src="js/jx.loader2.js"></script>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="base64.js"></script>
+<script type="text/javascript" src="sdk.js"></script>
 </html>

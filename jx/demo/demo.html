@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Jx Loader Demo</title>
+</head>
+<body>
+	<h1>Jx Loader Demo</h1>
+	<div id="box" style="padding:5px;opacity:0.7;width:200px;height:150px;border:1px dashed #f00;background:#fee;border-radius:5px;position:fixed;left:100px;top:50px;">
+		Drag me,<br />
+		then roll your mousewheel~
+	</div>
+	<pre style="border:1px dashed #ccf;background:#eef;padding:5px;">
+Jx().$require(['dom','ui.Drag'],function(J){
+	new J.ui.Drag(J.dom.id('box'));
+	J.$require(['dom','event'],function(J){
+		J.event.on(J.dom.id('box'),'mousewheel',function(e){
+			var el=e.target;
+			el.style.opacity=Math.max(0.1,
+				Math.min(el.style.opacity-(e.wheelDelta&gt;0?0.1:-0.1),
+				1));
+		});
+	});
+});
+	</pre>
+</body>
+<script type="text/javascript" src="../js/jx.core.js"></script>
+<script type="text/javascript" src="../js/jx.loader.js"></script>
+<script type="text/javascript" src="../config.js"></script>
+<script type="text/javascript">
+Jx().$require(['dom','ui.Drag'],function(J){
+	new J.ui.Drag(J.dom.id('box'));
+	J.$require(['dom','event'],function(J){
+		J.event.on(J.dom.id('box'),'mousewheel',function(e){
+			var el=e.target;
+			el.style.opacity=Math.max(0.1,Math.min(el.style.opacity-(e.wheelDelta>0?0.1:-0.1),1));
+		});
+	});
+});
+</script>
+</html>
