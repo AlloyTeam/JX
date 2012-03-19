@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Jx</title>
+<link href="css/main_new.css" rel="stylesheet" />
+<script src="http://code.jquery.com/jquery.min.js"></script>
+
+</head>
+
+<body>
+<div id="doc" class="doc full">
+	<div class="nav">
+		<h1 class="nav-title">Jx</h1>
+		<ul id="nav-ul" class="nav-ul">
+			<li data-url="frames/home.html" class="selected">Home</li>
+			<li data-url="frames/docs.html">Docs</li>
+			<li data-url="frames/demos.html">Demos</li>
+			<li>Jx UI</li>
+			<li>Downloads</li>
+			<li>About</li>
+		</ul>
+	</div>
+	
+	<div id="content" class="content">
+		<iframe id="ifm" class="opa0" frameborder="0" width="100%" height="100%" src="about:blank"></iframe>
+	</div>
+</div>
+
+<script>
+$(function () {
+	function resize () {
+		$('.full').css({'minHeight': $(window).height()});
+	}
+	function navItemClick (e) {
+		if (typeof e == 'string') {
+			$('#ifm').attr({src : e}).css({opacity: 0});
+			return;
+		}
+		
+		var url = $(this).attr('data-url');
+		if (!!url) {
+			$('#ifm').attr({src : url}).css({opacity: 0})
+		}
+	}
+	
+	resize();
+	
+	
+	
+	
+	function $init () {
+		$bind();
+		navItemClick('frames/home.html');
+	}
+	function $bind() {
+		$(window).resize(resize);
+		$('#ifm').load(function () {
+			$(this).animate({'opacity':1})
+		});
+		$('#nav-ul li').click(navItemClick)
+	}
+	
+	$init();
+})
+</script>
+</body>
+</html>

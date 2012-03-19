@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<style>
+html {overflow:hidden}
+body {position: absolute; margin:0; padding:0;width:100%; height:100%}
+canvas {display:block}
+p {text-align: center; font-size:12px;color:#454545;}
+</style>
+<script src="../js/JCanvas.0.1.js"></script>
+<canvas id="canvas" width="600" height="400"></canvas>
+
+<script>
+var JxHome = function () {
+	// private methods
+	function range(a, b) {
+        return Math.floor(Math.random()*(b-a) + a);
+    }
+
+
+	var JxHomeClass = function () {
+        var canvas = document.getElementById('canvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var stage = new CVS.$stage(canvas);
+		
+		this.canvas = canvas;
+		this.stage = stage;
+		this.ctx = stage.ctx;
+		this.place = 0;
+		this.particles = [];
+		
+		var focalLength = 250,
+			ballN = range(200, 300),
+			balls = [],
+			lines = [],
+			vpx = 0,
+			vpy = 0,
+			angleY = 0.001,
+			angleX = 0.001,
+			_this = this;
+            Z = 100;
+			
+
+			vpx = canvas.width / 2;
+			vpy = canvas.height / 2;
+			
+		//fillText
+		
+		this.fillText();
+		this.pushParticlesByImageData();
+		
+		
+		for (var i=0; i<ballN; i++) {
+            
+			var ball = CVS.createPoint3D(stage.ctx, function () {
+                var color = 'rgb('+range(0, 256)+', '+range(0, 256)+', '+range(0, 256)+')';
+				this.xpos = range(-vpx, vpx);
+				this.ypos =  range(-vpy, vpy);
+				this.zpos = range(-vpy, vpy);
+				this.width = range(5, 20);
+				this.draw = function () {
+					this.ctx.beginPath();
+					this.ctx.arc(0, 0, this.width/2, 0, Math.PI*2, true);
+					this.ctx.closePath();
+                    this.ctx.fillStyle = color;
+					this.ctx.fill();
+				}
+			});
+			ball.setVanishPoint(vpx, vpy);
+			ball.setCenterPoint(0, 0, Z);
+			stage.addChild(ball);
+			balls.push(ball);
+		}
+        
+        var step = -0.05;
+		stage.onRefresh = function () { 
+			for (var i=0,ball; ball=_this.particles[i]; i++) {
+               /* if(Z <= 0) { step = 0.001 } else if (Z >= 1000) { step = -0.01 };
+                Z += step;
+             
+               ball.setCenterPoint(0, 0, Z);*/
+			   ball.xpos += ball.moveX;
+			   ball.rotateX(angleX);
+			   ball.rotateY(angleY);
+			   var scale = ball.getScale(),
+			   pos = ball.getScreenXY();
+			   ball.x = pos.x;
+			   ball.y = pos.y;
+            }
+            _this.particles.sort(function (a, b) { return b.depth - a.depth })
+		}
+
+		stage.start();
+	};
+	JxHomeClass.prototype = {
+		fillText: function (s) {
+			this.ctx.textAlign = 'center';
+            this.ctx.textBaseline = 'middle';
+            this.ctx.font = '200px sans-serif';
+            this.ctx.fillText('岑安', this.canvas.width/2, this.canvas.height/2);
+		},
+		pushParticlesByImageData: function () {
+			var imageData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);
+            for (var x = 0; x < imageData.width; x ++) {
+                for (var y = 0; y < imageData.height; y ++) {
+                    //var i = 4*(x * imageData.height + y);
+                    var i = 4*(y * imageData.width + x);
+                    if (imageData.data[i + 3] > 128) {
+						this.place ++;
+                        (this.place%8 == 0) && this.particles.push(new Particle(this.stage, x, y, this.canvas));
+                    }
+                }
+            }
+		}
+	};
+	
+	// 3D Particle
+	var Particle = function (stage, x, y, canvas) {
+		this.canvas = canvas;
+		
+		var ball =  CVS.createPoint3D(stage.ctx, function () {
+			var color = 'rgb('+range(0, 256)+', '+range(0, 256)+', '+range(0, 256)+')';
+				this.xpos = x-canvas.width/2;
+				this.ypos =  y-canvas.height/2;
+				this.zpos = 0;
+				this.width = range(5, 10);
+				this.draw = function () {
+					this.ctx.beginPath();
+					this.ctx.arc(0, 0, this.width/2, 0, Math.PI*2, true);
+					this.ctx.closePath();
+                    this.ctx.fillStyle = color;
+					this.ctx.fill();
+				}
+		});
+		
+		ball.setVanishPoint(canvas.width/2, canvas.height/2);
+		ball.setCenterPoint(0, 0, 0);
+		
+		ball.moveX = 1 - Math.random()*2;
+		stage.addChild(ball);
+		
+		return ball;
+	}
+	
+	return JxHomeClass;
+}();
+    
+onload = function () {
+	new JxHome();
+};
+
+
+</script>
+</html>
+

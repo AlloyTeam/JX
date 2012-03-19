@@ -1,0 +1,161 @@
+/* ----- reset ------ */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,th,var{font-style:normal; font-weight:normal}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+abbr,acronym{border:0}
+table {border-collapse:collapse; border-spacing:0;}/* tables still need 'cellspacing="0"' in the markup */
+img{ -ms-interpolation-mode:bicubic; }
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+button, input, select, textarea {font-size: 100%;}
+a,a:link,a:visited,a:focus,a:hover,a:active {color: #245C99;text-decoration:none;}
+a:hover {color: #32A2FF;text-decoration: none;}
+body,button,input,select,textarea{font: 12px/1.5 Tahoma, Arial, "\5b8b\4f53", sans-serif;}
+:focus {outline-color: -moz-use-text-color;outline-style: none;outline-width: 0;}
+
+.clr:after {content: ".";display: block; height: 0; clear: both; visibility: hidden;}
+.clr{zoom:1;}
+
+body {
+	font-family: Arial, 'Microsoft Yahei', Simsun, sans-serif;
+	font-size: 13px;
+}
+.hide { display:none }
+.opa0 { opacity: 0 }
+.full {
+	/* fallback */
+  background-color: #1a82f7;
+  
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a82f7), to(#2F2727));
+  
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #015695, #AED2E4);
+  
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #2F2727, #1a82f7);
+  
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #2F2727, #1a82f7);
+  
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #2F2727, #1a82f7);
+
+}
+.nav {
+	border-right: 1px solid #c6c9ce;
+	/*background: #EAEEF3;
+	background: -webkit-linear-gradient(rgba(234, 238, 243, 0.2), #EAEEF3), -webkit-linear-gradient(left, #EAEEF3, #EAEEF3 97%, #D3D7DB);*/
+	position: fixed;
+	_position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 216px;
+	z-index: 2;
+}
+.content {
+	-webkit-box-align: stretch;
+	padding-left: 216px;
+	margin: 0;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+}
+.nav-title {
+	padding-right: 24px;
+	-webkit-user-select: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 48px;
+	font-weight: 500;
+	font-family: Georgia;
+	margin: 0;
+	padding-bottom: 14px;
+	padding-top: 13px;
+	text-align: right;
+}
+.nav-ul li {
+	border-bottom: 1px solid transparent;
+	border-top: 1px solid transparent;
+	color: #e0e0e0;
+	cursor: pointer;
+	display: block;
+	font-size: 105%;
+	outline: none;
+	padding: 7px 0;
+	text-align: right;
+	padding-right: 24px;
+}
+.nav-ul li.selected {
+	-webkit-box-shadow: 0px 1px 0px #f7f7f7;
+	background: #AABEDC;
+	background: -webkit-linear-gradient(left, #BBCEE9, #BBCEE9 97%, #AABEDC);
+	border-bottom: 1px solid #8FAAD9;
+	border-top: 1px solid #8FAAD9;
+	color: black;
+	text-shadow: #BBCEE9 0 1px 1px;
+}
+.page-container {
+	padding: 0 24px;
+}
+.con-title {
+	padding-right: 24px;
+	-webkit-user-select: none;
+	border-bottom: 1px solid #ddd;
+	color: #53637D;
+	font-size: 200%;
+	font-weight: normal;
+	margin: 0;
+	padding-bottom: 4px;
+	padding-top: 13px;
+	text-shadow: white 0 1px 2px;
+}
+.module {
+	padding-top: 16px;
+	line-height: 1.8;
+}
+.module dt {
+	font-weight: 600;
+}
+.module .span {
+	display: inline-block;
+	width: 80px;
+}
+.input-text {
+	-webkit-border-radius: 4px;
+	padding: 4px;
+	width: 400px;
+	border: 1px solid #aaa;
+	background: #efefef;
+}
+.btn {
+	-webkit-border-radius: 3px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	-webkit-user-select: none;
+	background: #E5E5E5;
+	background: -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+	border: 1px solid #AAA;
+	color: #444;
+	font-size: inherit;
+	margin-bottom: 0;
+	min-width: 4em;
+	padding: 3px 12px;
+	display: inline-block;
+}
+.btn:hover {
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	background: #E9E9E9;
+	background: #EBEBEB -webkit-linear-gradient(#FEFEFE, #F8F8F8 40%, #E9E9E9);
+	border-color: #999;
+	color: #222;
+}
+.btn-wrap {
+	padding-top: 14px;
+}
+.item-wrap {display: none}
