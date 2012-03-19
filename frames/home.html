@@ -9,7 +9,7 @@ p {text-align: center; font-size:12px;color:#454545;}
 </style>
 <script src="../js/JCanvas.0.1.js"></script>
 <canvas id="canvas" width="600" height="400"></canvas>
-
+<img id="qq40" style="display:none" src="../images/qq40.png" />
 <script>
 var JxHome = function () {
 	// private methods
@@ -31,7 +31,7 @@ var JxHome = function () {
 		this.particles = [];
 		
 		var focalLength = 250,
-			ballN = range(200, 300),
+			ballN = 100,
 			balls = [],
 			lines = [],
 			vpx = 0,
@@ -56,9 +56,9 @@ var JxHome = function () {
 			var ball = CVS.createPoint3D(stage.ctx, function () {
                 var color = 'rgb('+range(0, 256)+', '+range(0, 256)+', '+range(0, 256)+')';
 				this.xpos = range(-vpx, vpx);
-				this.ypos =  range(-vpy, vpy);
+				this.ypos = range(-vpy, vpy);
 				this.zpos = range(-vpy, vpy);
-				this.width = range(5, 20);
+				this.width = range(8, 15);
 				this.draw = function () {
 					this.ctx.beginPath();
 					this.ctx.arc(0, 0, this.width/2, 0, Math.PI*2, true);
@@ -72,15 +72,20 @@ var JxHome = function () {
 			stage.addChild(ball);
 			balls.push(ball);
 		}
+		
         
         var step = -0.05;
+		var startT = (+new Date);
 		stage.onRefresh = function () { 
-			for (var i=0,ball; ball=_this.particles[i]; i++) {
+			var nt = (+new Date);
+			for (var i=0,ball; ball = _this.particles[i]; i++) {
                /* if(Z <= 0) { step = 0.001 } else if (Z >= 1000) { step = -0.01 };
                 Z += step;
              
                ball.setCenterPoint(0, 0, Z);*/
-			   ball.xpos += ball.moveX;
+			  // ball.xpos += ball.moveX;
+
+			  _this.checkPos(nt-startT, ball, (i == _this.particles.length-1));
 			   ball.rotateX(angleX);
 			   ball.rotateY(angleY);
 			   var scale = ball.getScale(),
@@ -88,27 +93,64 @@ var JxHome = function () {
 			   ball.x = pos.x;
 			   ball.y = pos.y;
             }
-            _this.particles.sort(function (a, b) { return b.depth - a.depth })
+			
+			for (var j = 0; j < balls.length; j ++) {
+				var ball = balls[j];
+				ball.rotateX(angleX);
+			   ball.rotateY(angleY);
+			   var scale = ball.getScale(),
+			   pos = ball.getScreenXY();
+			   ball.x = pos.x;
+			   ball.y = pos.y;
+			}
+            _this.particles.sort(function (a, b) { return b.depth - a.depth });
 		}
 
 		stage.start();
 	};
 	JxHomeClass.prototype = {
 		fillText: function (s) {
-			this.ctx.textAlign = 'center';
+			/*this.ctx.textAlign = 'center';
             this.ctx.textBaseline = 'middle';
-            this.ctx.font = '200px sans-serif';
-            this.ctx.fillText('岑安', this.canvas.width/2, this.canvas.height/2);
+            this.ctx.font = '160px sans-serif';
+            this.ctx.fillText('岑安', this.canvas.width/2, this.canvas.height/2);*/
+			this.ctx.drawImage(document.getElementById('qq40'), 0, 0, 40, 40, this.canvas.width/2-10, this.canvas.height/2-10, 20, 20)
 		},
+		checkPos: function () {
+			var i = 1,
+				posQue = ['$random', 'logoPos'];
+			return function (t, ball, once) {
+				if (Math.floor(t/3000) == i) { 
+					var n = i%posQue.length;
+					if (posQue[n] == '$random') {
+						ball.xpos = range(-this.canvas.width/2, this.canvas.width/2);
+						ball.ypos = range(-this.canvas.height/2, this.canvas.height/2);
+						ball.zpos = range(-this.canvas.width/2, this.canvas.width/2);
+						ball.width = range(3, 15);
+					} else {
+						ball.xpos = ball[posQue[n]].x;
+						ball.ypos = ball[posQue[n]].y;
+						ball.zpos = ball[posQue[n]].z;
+						ball.width = ball[posQue[n]].width;
+					}
+
+					if (once) {i = Math.floor(t/3000) + 1;}
+					
+				}
+			}
+		}(),
 		pushParticlesByImageData: function () {
-			var imageData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);
+			var imageData = this.ctx.getImageData(this.canvas.width/2-10, this.canvas.height/2-10, 20, 20);
             for (var x = 0; x < imageData.width; x ++) {
                 for (var y = 0; y < imageData.height; y ++) {
                     //var i = 4*(x * imageData.height + y);
                     var i = 4*(y * imageData.width + x);
-                    if (imageData.data[i + 3] > 128) {
+                    if (imageData.data[i + 3] > 128) { // 半透以上就算
+						var r = imageData.data[i],
+							g = imageData.data[i + 1],
+							b = imageData.data[i + 2];
 						this.place ++;
-                        (this.place%8 == 0) && this.particles.push(new Particle(this.stage, x, y, this.canvas));
+                        this.particles.push(new Particle(this.stage, this.canvas, x, y, r, g, b));
                     }
                 }
             }
@@ -116,15 +158,18 @@ var JxHome = function () {
 	};
 	
 	// 3D Particle
-	var Particle = function (stage, x, y, canvas) {
+	var Particle = function (stage, canvas, x, y, r, g, b) {
 		this.canvas = canvas;
 		
+		var vpx = canvas.width/2,
+			vpy = canvas.height/2;
+		
 		var ball =  CVS.createPoint3D(stage.ctx, function () {
-			var color = 'rgb('+range(0, 256)+', '+range(0, 256)+', '+range(0, 256)+')';
-				this.xpos = x-canvas.width/2;
-				this.ypos =  y-canvas.height/2;
-				this.zpos = 0;
-				this.width = range(5, 10);
+			var color = 'rgb('+range(200,255)+', '+range(200,255)+', '+range(200,255)+')';
+				this.xpos = range(-vpx, vpx);
+				this.ypos = range(-vpy, vpy);
+				this.zpos = range(-vpx, vpx);
+				this.width = range(3, 15);
 				this.draw = function () {
 					this.ctx.beginPath();
 					this.ctx.arc(0, 0, this.width/2, 0, Math.PI*2, true);
@@ -133,7 +178,16 @@ var JxHome = function () {
 					this.ctx.fill();
 				}
 		});
-		
+
+		ball.logoPos = {
+			x: (x-10)*10,
+			y: (y-10)*10,
+			z: 0,
+			width: 10,
+			r: r,
+			g: g,
+			b: b
+		};
 		ball.setVanishPoint(canvas.width/2, canvas.height/2);
 		ball.setCenterPoint(0, 0, 0);
 		

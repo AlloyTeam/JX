@@ -30,7 +30,7 @@
 <script>
 $(function () {
 	function resize () {
-		$('.full').css({'minHeight': $(window).height()});
+		$('.full').css({'minHeight': Math.max($(window).height(), $(document).height())});
 	}
 	function navItemClick (e) {
 		if (typeof e == 'string') {
