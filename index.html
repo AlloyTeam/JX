@@ -1,83 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset='utf-8'>
+<meta charset="utf-8" />
+<title>Jx</title>
+<link href="css/main_new.css" rel="stylesheet" />
+<script src="http://code.jquery.com/jquery.min.js"></script>
 
-  <title>AlloyTeam/JX @ GitHub</title>
-
-  <link rel="stylesheet" href="css/main.css" /> 
 </head>
 
 <body>
-
-	<header>
-		<div class="header">
-			<a href="https://github.com/AlloyTeam/JX"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-			<h1><a href="https://github.com/AlloyTeam/JX">JX</a>
-      <span class="small">by <a href="https://github.com/AlloyTeam">AlloyTeam</a></span></h1>
-		</div>
-	</header>
-  
-
-  <div id="container">
-
-    <div class="download">
-      <a href="https://github.com/AlloyTeam/JX/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/AlloyTeam/JX/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
+<div id="doc" class="doc full">
+	<div class="nav">
+		<h1 class="nav-title">Jx</h1>
+		<ul id="nav-ul" class="nav-ul">
+			<li data-url="frames/home.html" class="selected">Home</li>
+			<li data-url="frames/docs.html">Docs</li>
+			<li data-url="frames/demos.html">Demos</li>
+			<li>Jx UI</li>
+			<li>Downloads</li>
+			<li>About</li>
+		</ul>
+	</div>
 	
-	<ul class="nav-ul">
-		<li><a href="#">Docs</a></li>
-		<li><a href="#">Demos</a></li>
-		<li><a href="#">Jx UI</a></li>
-		<li><a href="#">Download</a></li>
-	</ul>
+	<div id="content" class="content">
+		<iframe id="ifm" class="opa0" frameborder="0" width="100%" height="100%" src="about:blank"></iframe>
+	</div>
+</div>
 
-    
-
-    <div class="description">
-      Javascript eXtension
-    </div>
-
-    
-
-    
-
-    
-
-    
-      <h2>License</h2>
-      <p>MIT</p>
-    
-
-    
-      <h2>Authors</h2>
-      <p>Kinvix (kinvix@gmail.com)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>Tencent Alloy Team ()<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/AlloyTeam/JX/zipball/master">zip</a> or
-      <a href="https://github.com/AlloyTeam/JX/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/AlloyTeam/JX</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/AlloyTeam/JX">AlloyTeam/JX</a>
-    </div>
-
-  </div>
-
+<script>
+$(function () {
+	function resize () {
+		$('.full').css({'minHeight': Math.max($(window).height(), $(document).height())});
+	}
+	function navItemClick (e) {
+		if (typeof e == 'string') {
+			$('#ifm').attr({src : e}).css({opacity: 0});
+			return;
+		}
+		
+		var url = $(this).attr('data-url');
+		if (!!url) {
+			$('#ifm').attr({src : url}).css({opacity: 0})
+		}
+	}
+	
+	resize();
+	
+	
+	
+	
+	function $init () {
+		$bind();
+		navItemClick('frames/home.html');
+	}
+	function $bind() {
+		$(window).resize(resize);
+		$('#ifm').load(function () {
+			$(this).animate({'opacity':1})
+		});
+		$('#nav-ul li').click(navItemClick)
+	}
+	
+	$init();
+})
+</script>
 </body>
 </html>
