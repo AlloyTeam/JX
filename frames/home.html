@@ -9,7 +9,8 @@ p {text-align: center; font-size:12px;color:#454545;}
 </style>
 <script src="../js/JCanvas.0.1.js"></script>
 <canvas id="canvas" width="600" height="400"></canvas>
-<img id="qq40" style="display:none" src="../images/qq40.png" />
+<img id="qq" style="display:none" src="../images/qq40.png" />
+<img id="jx" style="display:none" src="../images/jx.png" />
 <script>
 var JxHome = function () {
 	// private methods
@@ -28,7 +29,9 @@ var JxHome = function () {
 		this.stage = stage;
 		this.ctx = stage.ctx;
 		this.place = 0;
-		this.particles = [];
+		
+		this.qqParticles = [];
+		this.jxParticles = [];
 		
 		var focalLength = 250,
 			ballN = 100,
@@ -47,17 +50,17 @@ var JxHome = function () {
 			
 		//fillText
 		
-		this.fillText();
-		this.pushParticlesByImageData();
+		this.qqParticles = this.getParticles('qq');
+		//this.jxParticles = this.getParticles('jx');
 		
 		
 		for (var i=0; i<ballN; i++) {
             
 			var ball = CVS.createPoint3D(stage.ctx, function () {
                 var color = 'rgb('+range(0, 256)+', '+range(0, 256)+', '+range(0, 256)+')';
-				this.xpos = range(-vpx, vpx);
-				this.ypos = range(-vpy, vpy);
-				this.zpos = range(-vpy, vpy);
+				this.xpos = range(-10*vpx, 10*vpx);
+				this.ypos = range(-10*vpy, 10*vpy);
+				this.zpos = range(-10*vpy, 10*vpy);
 				this.width = range(8, 15);
 				this.draw = function () {
 					this.ctx.beginPath();
@@ -68,7 +71,7 @@ var JxHome = function () {
 				}
 			});
 			ball.setVanishPoint(vpx, vpy);
-			ball.setCenterPoint(0, 0, Z);
+			ball.setCenterPoint(0, 0, 250);
 			stage.addChild(ball);
 			balls.push(ball);
 		}
@@ -76,16 +79,46 @@ var JxHome = function () {
         
         var step = -0.05;
 		var startT = (+new Date);
+		var zstep = -2;
+		var zflag = 1;
 		stage.onRefresh = function () { 
 			var nt = (+new Date);
-			for (var i=0,ball; ball = _this.particles[i]; i++) {
-               /* if(Z <= 0) { step = 0.001 } else if (Z >= 1000) { step = -0.01 };
-                Z += step;
-             
-               ball.setCenterPoint(0, 0, Z);*/
-			  // ball.xpos += ball.moveX;
+			if (zstep > 2 || zstep < -2) {
+				zflag *= -1;
+			}
+			zstep += zflag*0.01;
+			
+			for (var j = 0; j < balls.length; j ++) {
+				var ball = balls[j];
+				ball.zpos += zstep;
+				ball.rotateX(angleX);
+			   ball.rotateY(angleY);
+			   var scale = ball.getScale(),
+			   pos = ball.getScreenXY();
+			   ball.x = pos.x;
+			   ball.y = pos.y;
+			}
+			
+			for (var i=0,ball; ball = _this.qqParticles[i]; i++) {
+			  _this.checkPos(nt-startT, ball, (i == _this.qqParticles.length-1));
+			  
+			  // tween
+			  // 只要第一次到达终点就不要再计算，否则会一直达不到终点，因为本身ball也在旋转
+			  if (!ball.end) {
+				var _x = ball.xpos, _y = ball.ypos, _z = ball.zpos;
+				var _t = (+new Date) - ball.startAnimTime;
+					ball.xpos = ball.f_xpos + (ball.t_xpos - ball.f_xpos)*Math.sin(Math.PI*_t/(2*1000));
+					ball.ypos = ball.f_ypos + (ball.t_ypos - ball.f_ypos)*Math.sin(Math.PI*_t/(2*1000));
+					ball.zpos = ball.f_zpos + (ball.t_zpos - ball.f_zpos)*Math.sin(Math.PI*_t/(2*1000));
 
-			  _this.checkPos(nt-startT, ball, (i == _this.particles.length-1));
+				 if (_t >= 1000) {
+						ball.end = true;
+						//stage.removeChild(ball);
+					}
+			  }
+			  
+			  
+			  ball.zpos += zstep;
 			   ball.rotateX(angleX);
 			   ball.rotateY(angleY);
 			   var scale = ball.getScale(),
@@ -94,17 +127,15 @@ var JxHome = function () {
 			   ball.y = pos.y;
             }
 			
-			for (var j = 0; j < balls.length; j ++) {
-				var ball = balls[j];
-				ball.rotateX(angleX);
-			   ball.rotateY(angleY);
-			   var scale = ball.getScale(),
-			   pos = ball.getScreenXY();
-			   ball.x = pos.x;
-			   ball.y = pos.y;
-			}
-            _this.particles.sort(function (a, b) { return b.depth - a.depth });
+			var newArr = _this.qqParticles.concat(balls);
+			newArr.sort(function (a, b) { return b.depth - a.depth });
+            
 		}
+		// mousemove
+		stage.addEventListener('mousemove', function (x, y) {
+			angleY = (x - vpx) * .00001;
+            angleX = (y - vpy) * .00001;
+		})
 
 		stage.start();
 	};
@@ -114,33 +145,45 @@ var JxHome = function () {
             this.ctx.textBaseline = 'middle';
             this.ctx.font = '160px sans-serif';
             this.ctx.fillText('岑安', this.canvas.width/2, this.canvas.height/2);*/
-			this.ctx.drawImage(document.getElementById('qq40'), 0, 0, 40, 40, this.canvas.width/2-10, this.canvas.height/2-10, 20, 20)
+			this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+			this.ctx.drawImage(document.getElementById(s), 0, 0, 40, 40, this.canvas.width/2-10, this.canvas.height/2-10, 20, 20);
 		},
 		checkPos: function () {
 			var i = 1,
 				posQue = ['$random', 'logoPos'];
 			return function (t, ball, once) {
-				if (Math.floor(t/3000) == i) { 
+				if (Math.floor(t/4000) == i) { 
 					var n = i%posQue.length;
 					if (posQue[n] == '$random') {
-						ball.xpos = range(-this.canvas.width/2, this.canvas.width/2);
-						ball.ypos = range(-this.canvas.height/2, this.canvas.height/2);
-						ball.zpos = range(-this.canvas.width/2, this.canvas.width/2);
+						ball.f_xpos = ball.xpos;
+						ball.f_ypos = ball.ypos;
+						ball.f_zpos = ball.zpos;
+						ball.t_xpos = range(-this.canvas.width*15, this.canvas.width*15);
+						ball.t_ypos = range(-this.canvas.height*15, this.canvas.height*15);
+						ball.t_zpos = range(-this.canvas.width*5, this.canvas.width*5);
 						ball.width = range(3, 15);
+						ball.end = false;
+						ball.startAnimTime = (+new Date);
 					} else {
-						ball.xpos = ball[posQue[n]].x;
-						ball.ypos = ball[posQue[n]].y;
-						ball.zpos = ball[posQue[n]].z;
+						ball.f_xpos = ball.xpos;
+						ball.f_ypos = ball.ypos;
+						ball.f_zpos = ball.zpos;
+						ball.t_xpos = ball[posQue[n]].x;
+						ball.t_ypos = ball[posQue[n]].y;
+						ball.t_zpos = ball[posQue[n]].z;
 						ball.width = ball[posQue[n]].width;
+						ball.end = false;
+						ball.startAnimTime = (+new Date);
 					}
 
-					if (once) {i = Math.floor(t/3000) + 1;}
+					if (once) {i = Math.floor(t/4000) + 1;}
 					
 				}
 			}
 		}(),
 		pushParticlesByImageData: function () {
 			var imageData = this.ctx.getImageData(this.canvas.width/2-10, this.canvas.height/2-10, 20, 20);
+			var ret = [];
             for (var x = 0; x < imageData.width; x ++) {
                 for (var y = 0; y < imageData.height; y ++) {
                     //var i = 4*(x * imageData.height + y);
@@ -149,11 +192,15 @@ var JxHome = function () {
 						var r = imageData.data[i],
 							g = imageData.data[i + 1],
 							b = imageData.data[i + 2];
-						this.place ++;
-                        this.particles.push(new Particle(this.stage, this.canvas, x, y, r, g, b));
+                        ret.push(new Particle(this.stage, this.canvas, x, y, r, g, b));
                     }
                 }
             }
+			return ret;
+		},
+		getParticles: function (s) {
+			this.fillText(s);
+			return this.pushParticlesByImageData();
 		}
 	};
 	
@@ -166,9 +213,9 @@ var JxHome = function () {
 		
 		var ball =  CVS.createPoint3D(stage.ctx, function () {
 			var color = 'rgb('+range(200,255)+', '+range(200,255)+', '+range(200,255)+')';
-				this.xpos = range(-vpx, vpx);
-				this.ypos = range(-vpy, vpy);
-				this.zpos = range(-vpx, vpx);
+				this.xpos = range(-10*vpx, 10*vpx);
+				this.ypos = range(-10*vpy, 10*vpy);
+				this.zpos = range(-10*vpx, 10*vpx);
 				this.width = range(3, 15);
 				this.draw = function () {
 					this.ctx.beginPath();
@@ -180,16 +227,25 @@ var JxHome = function () {
 		});
 
 		ball.logoPos = {
-			x: (x-10)*10,
-			y: (y-10)*10,
+			x: (x-10)*20,
+			y: (y-10)*20,
 			z: 0,
 			width: 10,
 			r: r,
 			g: g,
 			b: b
 		};
+		ball.f_xpos = ball.xpos;
+		ball.f_ypos = ball.ypos;
+		ball.f_zpos = ball.zpos;
+		ball.t_xpos = ball.xpos;
+		ball.t_ypos = ball.ypos;
+		ball.t_zpos = ball.zpos;
+		ball.startAnimTime = (+new Date);
+		ball.end = true;
+		
 		ball.setVanishPoint(canvas.width/2, canvas.height/2);
-		ball.setCenterPoint(0, 0, 0);
+		ball.setCenterPoint(0, 0, 250);
 		
 		ball.moveX = 1 - Math.random()*2;
 		stage.addChild(ball);
