@@ -11,14 +11,14 @@
 <body>
 <div id="doc" class="doc full">
 	<div class="nav">
-		<h1 class="nav-title">Jx</h1>
+		<h1 class="nav-title"></h1>
 		<ul id="nav-ul" class="nav-ul">
-			<li data-key="home" class="selected">Home</li>
+			<li data-key="home" class="selected"><span>Home</span></li>
 			<li data-key="docs"><a href="https://github.com/AlloyTeam/JX/wiki" target="_blank">Docs</a></li>
-			<li data-key="demos">Demos</li>
-			<li data-key="jxui">Jx UI</li>
-			<li data-key="downloads">Downloads</li>
-			<li data-key="about">About</li>
+			<li data-key="demos"><span>Demos</span></li>
+			<li data-key="jxui"><span>Jx UI</span></li>
+			<li data-key="downloads"><span>Downloads</span></li>
+			<li data-key="about"><span>About</span></li>
 		</ul>
 	</div>
 	
@@ -29,23 +29,7 @@
 
 <script>
 $(function () {
-	function resize () {
-		$('.full').css({'minHeight': Math.max($(window).height(), $(document).height())});
-	}
-	function navItemClick (e) {
-		var url = typeof e == 'string' ? urlHash[e] : $(this).attr('data-url');
-		if (!!url) {
-			$('#ifm').attr({src : url}).css({opacity: 0})
-		}
-	}
-	function supportCanvas () {
-		var canvas = document.createElement('canvas');
-		return !!canvas.getContext;
-	}
-	
-	resize();
-	
-	
+
 	var urlHash = {
 		'home': supportCanvas() ? 'frames/home.html' : 'frames/home_nocanvas.html',
 		'docs': null,
@@ -55,8 +39,44 @@ $(function () {
 		'about': 'frames/about.html'
 	},
 		$ifm = $('#ifm'),
+		$navUl = $('#nav-ul'),
 		$navLis = $('#nav-ul li');
+		
+	function resize () {
+		$('.full').css({'minHeight': Math.max($(window).height(), 400)});
+		fixIframeHeight();
+	}
+	function navItemClick (e) {
+		var url = typeof e == 'string' ? urlHash[e] : $(this).attr('data-url');
+		if ($(this).hasClass('selected')) {  
+			return;
+		}
+		if (!!url) {
+			$('#ifm').attr({src : url}).css({opacity: 0})
+		}
+		if (typeof e !== 'string') {
+			$navUl.find('.selected').removeClass('selected');
+			$(this).addClass('selected');
+		}
+		
+	}
+	function supportCanvas () {
+		var canvas = document.createElement('canvas');
+		return !!canvas.getContext;
+	}
+	function fixIframeHeight () {
+		var ifm = $ifm.get(0);
+		ifm.height = $(window).height();
+		/*if (ifm.contentDocument && ifm.contentDocument.body.offsetHeight){
+			ifm.height = ifm.contentDocument.body.offsetHeight;
+		}else if(ifm.Document && ifm.Document.body.scrollHeight){
+			ifm.height = ifm.Document.body.scrollHeight;
+		}*/
+	}
 	
+	resize();
+	
+	// main 
 	function $init () {
 		$setDataUrl();
 		$bind();
@@ -65,7 +85,8 @@ $(function () {
 	function $bind() {
 		$(window).resize(resize);
 		$ifm.load(function () {
-			$(this).animate({'opacity':1})
+			$(this).animate({'opacity':1});
+			resize();
 		});
 		$navLis.click(navItemClick)
 	}

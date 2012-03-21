@@ -21,6 +21,12 @@ body {
 	font-family: Arial, 'Microsoft Yahei', Simsun, sans-serif;
 	font-size: 13px;
 }
+html, body {
+	overflow:hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
 .hide { display:none }
 .opa0 { opacity: 0 }
 .full {
@@ -68,7 +74,6 @@ body {
 	z-index: 1;
 }
 .nav-title {
-	padding-right: 24px;
 	-webkit-user-select: none;
 	color: #fff;
 	cursor: pointer;
@@ -76,15 +81,22 @@ body {
 	font-weight: 500;
 	font-family: Georgia;
 	margin: 0;
-	padding-bottom: 14px;
-	padding-top: 13px;
+	padding: 40px 30px 46px 0;
 	text-align: right;
+	overflow:hidden;
+	min-height: 50px;
+	background: url(../images/logo.png) no-repeat right 50%;
 }
 .nav-ul li {
 	border-bottom: 1px solid transparent;
 	border-top: 1px solid transparent;
-	color: #e0e0e0;
+	
+}
+.nav-ul li a,
+.nav-ul li span {
+	display: block;
 	cursor: pointer;
+	color: #e0e0e0;
 	display: block;
 	font-size: 105%;
 	outline: none;
