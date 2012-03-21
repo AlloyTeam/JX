@@ -13,17 +13,17 @@
 	<div class="nav">
 		<h1 class="nav-title">Jx</h1>
 		<ul id="nav-ul" class="nav-ul">
-			<li data-url="frames/home.html" class="selected">Home</li>
-			<li data-url="frames/docs.html">Docs</li>
-			<li data-url="frames/demos.html">Demos</li>
-			<li>Jx UI</li>
-			<li>Downloads</li>
-			<li>About</li>
+			<li data-key="home" class="selected">Home</li>
+			<li data-key="docs"><a href="https://github.com/AlloyTeam/JX/wiki" target="_blank">Docs</a></li>
+			<li data-key="demos">Demos</li>
+			<li data-key="jxui">Jx UI</li>
+			<li data-key="downloads">Downloads</li>
+			<li data-key="about">About</li>
 		</ul>
 	</div>
 	
 	<div id="content" class="content">
-		<iframe id="ifm" class="opa0" frameborder="0" width="100%" height="100%" src="about:blank"></iframe>
+		<iframe id="ifm" class="opa0" style="background-color: transparent; border: 0px;" frameborder="0" width="100%" height="100%" allowTransparency="true" src="about:blank"></iframe>
 	</div>
 </div>
 
@@ -33,32 +33,49 @@ $(function () {
 		$('.full').css({'minHeight': Math.max($(window).height(), $(document).height())});
 	}
 	function navItemClick (e) {
-		if (typeof e == 'string') {
-			$('#ifm').attr({src : e}).css({opacity: 0});
-			return;
-		}
-		
-		var url = $(this).attr('data-url');
+		var url = typeof e == 'string' ? urlHash[e] : $(this).attr('data-url');
 		if (!!url) {
 			$('#ifm').attr({src : url}).css({opacity: 0})
 		}
+	}
+	function supportCanvas () {
+		var canvas = document.createElement('canvas');
+		return !!canvas.getContext;
 	}
 	
 	resize();
 	
 	
-	
+	var urlHash = {
+		'home': supportCanvas() ? 'frames/home.html' : 'frames/home_nocanvas.html',
+		'docs': null,
+		'demos': 'frames/demos.html',
+		'jxui': 'frames/jxui.html',
+		'downloads': 'frames/downloads.html',
+		'about': 'frames/about.html'
+	},
+		$ifm = $('#ifm'),
+		$navLis = $('#nav-ul li');
 	
 	function $init () {
+		$setDataUrl();
 		$bind();
-		navItemClick('frames/home.html');
+		navItemClick('home');
 	}
 	function $bind() {
 		$(window).resize(resize);
-		$('#ifm').load(function () {
+		$ifm.load(function () {
 			$(this).animate({'opacity':1})
 		});
-		$('#nav-ul li').click(navItemClick)
+		$navLis.click(navItemClick)
+	}
+	function $setDataUrl () {
+		$navLis.each(function () {
+			var key = $(this).attr('data-key');
+			if (!!urlHash[key]) {
+				$(this).attr('data-url', urlHash[key]);
+			}
+		})
 	}
 	
 	$init();
