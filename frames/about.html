@@ -13,6 +13,8 @@
 		width: 100%; 
 		height: 100%; 
 		color: #fff; 
+		margin: 0;
+		padding: 0;
 	} 
 	#frm { 
 		position: absolute; 
@@ -289,7 +291,7 @@ var mtx = function () {
  
 /* ==== init text ==== */ 
 onload = function () { 
- 
+	document.getElementById('frm').style['height'] = document.documentElement.clientHeight - 60 + 'px';
 //	mtx.init( el, linesDelay, charsDelay, cText, cMatch, cGhost); 
 	mtx.init("frm", 800, 150, [255,255,255], [255,64,0], [44,44,44]); 
 } 
