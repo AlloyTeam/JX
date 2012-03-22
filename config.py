@@ -84,6 +84,12 @@ rules = {
 		'source' : './tools/jx.uiless.css.qzmin',
 		'target' : './assets/jx.uiless.css',
 	},
+	
+	# [dom, event]
+	'dom_event_js' : {
+		'source' : './tools/jx.dom.event.js.qzmin',
+		'target' : './solo_parts/jx.dom.event.js',
+	},
 }
 
 
@@ -91,6 +97,7 @@ rules = {
 # -default 必须，为默认编译模式，对按照后面数组规则顺序进行编译
 modes = {
 	'-default': ['config','js','assets','all_js','uiless_js','all_css','uiless_css'],
+	'-solo': ['all_js', 'dom_event_js']
 	#'-dev': [],
 	#'-debug': [],
 	#'-test': [],
