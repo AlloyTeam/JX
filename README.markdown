@@ -24,14 +24,14 @@ JX 是模块化的Web前端框架，创建于2008年，不仅适用于 Web Page 
 ### 代码示范
 - JX 代码组织方式一(传统)：
 
-	var J = new Jx();
-	J.out(J.version);
+		var J = new Jx();
+		J.out(J.version);
 	
 - JX 代码组织方式二(推荐)：
 
-	Jx().$package(function(J){
-		J.out(J.version);
-	});
+		Jx().$package(function(J){
+			J.out(J.version);
+		});
 
 ### 设计理念
 - 不要重复自己（Don’t Repeat Yourself）
