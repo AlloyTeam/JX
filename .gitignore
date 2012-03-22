@@ -1,0 +1,18 @@
+# Windows image file caches
+Thumbs.db 
+
+# Folder config file
+Desktop.ini
+
+# JetBrains IDE project config file
+.idea/
+
+# SVN
+.svn/
+
+# Tmp File
+tmp/
+*.swp
+
+# python compile bode
+*.pyc
