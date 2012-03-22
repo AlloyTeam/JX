@@ -4,8 +4,7 @@ JX(Javascript eXtension tools - Javascript 扩展工具库)
 
 简介
 -------
-JX 适用于 Web Page 和 Web App 的开发, 目前已经应用与WebQQ2.0和WebQQ3.0[http://web.qq.com] 等WebApp。
-
+JX 是模块化的前端库，不仅适用于 Web Page 类型项目，也适用当前流行的Web App, JX兼容全部主流浏览器，包括非常不情愿的IE6。
 
 
 特性
@@ -35,19 +34,23 @@ JX 适用于 Web Page 和 Web App 的开发, 目前已经应用与WebQQ2.0和Web
 
 代码示范
 -----------
-- JET 代码组织方式一(传统)：
+- JX 代码组织方式一(传统)：
 
-    var J = new Jet();
+    var J = new Jx();
     J.out(J.version);
 	
-- JET 代码组织方式二(推荐)：
+- JX 代码组织方式二(推荐)：
 
-    Jet().$package(function(J){
+    Jx().$package(function(J){
         J.out(J.version);
     });
 
-### JET设计理念
+### 设计理念
 不要重复自己（Don’t Repeat Yourself）
+
+### 谁在用JX
+- [Web QQ](web.qq.com)
+
 
 
 //=========================================================
