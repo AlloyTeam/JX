@@ -37,8 +37,8 @@ JX 是模块化的前端库，不仅适用于 Web Page 类型项目，也适用�
 - 不要重复自己（Don’t Repeat Yourself）
 
 ### 谁在用JX
-- [Web QQ](web.qq.com)
-- [Qplus](www.qplus.com)
+- [腾讯 WebQQ](http://web.qq.com)
+- [腾讯 Q+](http://www.qplus.com)
 
 
 
