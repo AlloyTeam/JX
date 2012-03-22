@@ -25,12 +25,15 @@ JX 是模块化的前端库，不仅适用于 Web Page 类型项目，也适用�
 - JX 代码组织方式一(传统)：
 
     var J = new Jx();
+    
     J.out(J.version);
 	
 - JX 代码组织方式二(推荐)：
 
     Jx().$package(function(J){
+    
         J.out(J.version);
+        
     });
 
 ### 设计理念
@@ -44,6 +47,6 @@ JX 是模块化的前端库，不仅适用于 Web Page 类型项目，也适用�
 
 ### 感谢
 
-感谢 David Flanagan, John Resig, 以及QZFL, MooTools, YUI, Prototype, Dojo, ExtJs的作者们！
+感谢团队每一位成员做出的努力，有你我们会更精彩！
 
 
