@@ -87,7 +87,12 @@ Jx().$package(function(J){
 	};
 
 });
+
 Jx().$package(function(J){
+	/**
+     * @namespace localStorage 名字空间
+     * @name localStorage
+     */
     J.localStorage = 
     /**
      * @lends localStorage
@@ -96,45 +101,48 @@ Jx().$package(function(J){
         
         /**
          * 设置一个localStorage
-         * 
+         * @param {String} name
+         * @param {String} value
          */
         setItem : function(name, value) {
             if(this.isSupports()){
                 window.localStorage.setItem(name,value);
             }
         },
+        /**
+         * 根据名字读取值
+         * @param {String} name
+         * @return {String}
+         */
         getItem : function(name) {
             if(this.isSupports()){
                 return window.localStorage.getItem(name);
             }
             return null;
         },
-    
+        /**
+         * 根据名字移除值
+         * @param {String} name
+         */
         removeItem : function(name) {
             if(this.isSupports()){
                 window.localStorage.removeItem(name);
             }
         },
+        /**
+         * 清空 localStorage
+         */
         clear : function(){
             if(this.isSupports()){
                 window.localStorage.clear();
             }
         },
+        /**
+         * 判断是否支持 localStorage
+         */
         isSupports : function(){
             return ('localStorage' in window)&&window['localStorage']!== null;
         }
     };
 
 });
-
-
-
-
-
-
-
-
-
-
-
-

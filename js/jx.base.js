@@ -1,3 +1,4 @@
+
 /**
  * 2.[Javascript core]: 常用工具函数扩展
  */
@@ -566,7 +567,7 @@ Jx().$package(function(J){
     };
     */
     
-    /**
+    /*
      * 给函数绑定一个上下文对象再执行
      * 
      * @memberOf Jx.prototype

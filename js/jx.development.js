@@ -12,18 +12,18 @@
 /**	
  * @description
  * 这个文件用来配置一些开发的时候需要用到的功能
- * 
+ * 把
+ *    J.profile
+ *    J.warn
+ *    J.error
+ *    J.info
+ *    J.debug
+ *   都转向window.console(如果有的话)
  */
 
 
 ;Jx().$package(function(J){
-    //把
-    // J.profile
-	// J.warn
-	// J.error
-	// J.info
-	// J.debug
-    //都转向window.console(如果有的话)
+    
     if(window.console){
         var logFunc = [
             'profile',

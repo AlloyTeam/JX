@@ -98,9 +98,9 @@ Jx().$package(function(J){
 //		},
 		/**
 		 * 格式化输出
-		 * @param {String} template 输出模版
 		 * @param {Object} data 模版数据
 		 * @param {Boolen} isEncode 是否转义
+		 * @param {String} template 输出模版
 		 * @return {String} 输出字符串
 		 */
 		format : function(data,isEncode,template){
@@ -128,6 +128,7 @@ Jx().$package(function(J){
 		/**
 		 * 普通输出函数
 		 * @param {Boolen} isEncode 是否转义
+		 * @param {String} template 输出模版
 		 * @return {String} 输出字符串
 		 */
 		toString : function(isEncode,template){
@@ -611,6 +612,7 @@ Jx().$package(function(J){
 		/**
 		 * 过滤输出,支持正则,不区分大小写
 		 * @param {RegExp} s 过滤的字符活正则
+		 * @return {String} 过滤后的结果
 		 */
 		filter : function(s){
 			var reg = new RegExp(s,"i");
@@ -938,6 +940,7 @@ Jx().$package(function(J){
 		 * 
 		 * @ignore
 		 * @param {String} msg 信息记录器
+		 * @param {String} type log的类型
 		 */
 		function log(msg, type) {
 			var info;

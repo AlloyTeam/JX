@@ -89,6 +89,9 @@ Jx().$package(function(J){
      * 获取DocumentElement
      * 
      * @memberOf dom
+     * 
+     * @return {HTMLElement} documentElement
+     * 
      */
     getDocumentElement = function(){
         if(DocumentElement) {
@@ -107,6 +110,8 @@ Jx().$package(function(J){
      * 获取元素所属的根文档
      * 
      * @memberOf dom
+     * @return {HTMLElement} document
+     * 
      */
     getDoc = function(element) {
         if(element) {
@@ -953,7 +958,6 @@ Jx().$package(function(J){
      *
      * @param {HTMLElement} el
      * @return Array [top,left]
-     * @type Array
      */
     getXY = function(el) {
         var xy = getClientXY(el);
@@ -981,14 +985,15 @@ Jx().$package(function(J){
     };
     
     /**
-     * 获取对象坐标
+     * 获取对象相对一个节点的坐标
      *
      * @method getRelativeXY
      * @memberOf dom
      * 
      * @param {HTMLElement} el
+     * @param {HTMLElement} relativeEl 
      * @return Array [top,left]
-     * @type Array
+     * 
      */
     getRelativeXY = function(el, relativeEl) {
         var xyEl = getXY(el);
@@ -1004,15 +1009,55 @@ Jx().$package(function(J){
         if(!value || value == 'auto') return 0;
         else return parseInt(value.substr(0, value.length-2));
     }
+    /**
+     * 获取x坐标的简便方法
+     *
+     * @method getPosX
+     * @memberOf dom
+     * 
+     * @param {HTMLElement} el
+     * @return {String}
+     * 
+     */
     getPosX = function(el){
         return parseCssPx($D.getStyle(el, 'left'));
     }
+    /**
+     * 获取y坐标的简便方法
+     *
+     * @method getPosY
+     * @memberOf dom
+     * 
+     * @param {HTMLElement} el
+     * @return {String}
+     * 
+     */
     getPosY = function(el){
         return parseCssPx($D.getStyle(el, 'top'));
     }
+    /**
+     * 获取宽度的简便方法
+     *
+     * @method getWidth
+     * @memberOf dom
+     * 
+     * @param {HTMLElement} el
+     * @return {String}
+     * 
+     */
     getWidth = function(el){
         return parseCssPx($D.getStyle(el, 'width'));
     }
+    /**
+     * 获取高度的简便方法
+     *
+     * @method getHeight
+     * @memberOf dom
+     * 
+     * @param {HTMLElement} el
+     * @return {String}
+     * 
+     */
     getHeight = function(el){
         return parseCssPx($D.getStyle(el, 'height'));
     }

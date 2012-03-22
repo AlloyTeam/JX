@@ -13,10 +13,10 @@
 
 /**	
  * @description
- * Package: jet.array
+ * Package: jx.array
  *
  * Need package:
- * jet.core.js
+ * jx.core.js
  * 
  */
 
@@ -444,6 +444,7 @@ Jx().$package(function(J){
 	 * 
 	 * @memberOf array
 	 * @param {Array} arr 要移除的数组成员，可以是单个成员也可以是成员的数组
+	 * @return {Boolean} 找到并移除, 返回 true
 	 */
 	remove = function(arr, members){
 		var members = toArray(members),
@@ -480,7 +481,20 @@ Jx().$package(function(J){
 		return false;
 	};
 	
-	// 冒泡排序,默认从小到大排序
+	/**
+	 * 冒泡排序,默认从小到大排序
+	 * @memberOf array
+     * @param {Array} arr 需要排序的数组
+     * @param {Function} compareFunc 比较方法, 传入两个参数 a,b, 若返回 大于0 则表示 a > b, 小于 0 则 a < b
+     *  可选, 默认返回 a - b的结果
+     * @return {Array} 排序后的数组
+     * @example
+     * 
+     * bubbleSort([3,5,6,2], function(a, b){
+     *  return a - b;
+     * });
+     * 
+	 */
 	bubbleSort = function(arr, compareFunc) {
 		compareFunc = compareFunc || function(num1, num2){
 			return num1 - num2;
@@ -511,7 +525,15 @@ Jx().$package(function(J){
 		return arr;
 	};
 	
-	// 二叉搜索
+	/**
+	 * 二叉搜索
+	 * @memberOf array
+     * @param {Array} arr 源数组
+     * @param {Object} item 查找的目标
+     * @param {Function} compareFunc 比较方法, 传入两个参数 a,b, 若返回 大于0 则表示 a > b, 小于 0 则 a < b
+     * @return {Number} item 所处的 index
+     * 
+	 */
 	binarySearch = function(arr, item, compareFunc){
 	    var start = 0;
 	    var end = arr.length;
@@ -531,6 +553,7 @@ Jx().$package(function(J){
 	
     /**
      * 判断arr是否包含元素o
+     * @memberOf array
      * @param {Array} arr
      * @param {Obejct} o
      * @return {Boolean}
@@ -541,6 +564,7 @@ Jx().$package(function(J){
     
     /**
      * 唯一化一个数组
+     * @memberOf array
      * @param {Array} arr
      * @return {Array} 由不重复元素构成的数组
      */
@@ -557,6 +581,7 @@ Jx().$package(function(J){
     /**
      * 求两个集合的交集
      * a ∩ b
+     * @memberOf array
      * @param {Array} a
      * @param {Array} b
      * @return {Array} a ∩ b
@@ -574,6 +599,7 @@ Jx().$package(function(J){
     /**
      * 求两个集合的差集
      * a - b
+     * @memberOf array
      * @param {Array} a
      * @param {Array} b
      * @return {Array} a - b
@@ -591,6 +617,7 @@ Jx().$package(function(J){
     /**
      * 求两个集合的并集
      * a U b
+     * @memberOf array
      * @param {Array} a
      * @param {Array} b
      * @return {Array} a U b
