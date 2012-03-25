@@ -4,7 +4,7 @@ JX(Javascript eXtension tools - Javascript 扩展工具库)
 
 ### 简介
 
-JX 是模块化的非侵入式Web前端框架，创建于2008年，既适用于 Web Page 项目，也适用当前流行的Web App项目，特别适合构建和组织工业级大规模的Web App，JX兼容目前所有主流浏览器。
+JX 是模块化的非侵入式Web前端框架，开发于2008年。JX框架同时适用于 Web Page 和 Web App 项目的开发，特别适合构建和组织大规模、工业级的Web App，腾讯 WebQQ [http://web.qq.com] 等产品都是采用JX框架开发，兼容目前所有主流浏览器。
 
 
 ### 特性
