@@ -13,7 +13,7 @@
 		<h1 class="nav-title"></h1>
 		<ul id="nav-ul" class="nav-ul">
 			<li data-key="home" class="selected"><span>Home</span></li>
-			<li data-key="docs"><a href="https://github.com/AlloyTeam/JX/wiki" target="_blank">Docs</a></li>
+			<li data-key="docs"><span>Docs</span></li>
 			<li data-key="demos"><span>Demos</span></li>
 			<li data-key="jxui"><span>Jx UI</span></li>
 			<li data-key="downloads"><span>Downloads</span></li>
@@ -36,7 +36,7 @@ Jx().$package('JxHome', function (J) {
 	
 	var urlHash = {
 		'home': supportCanvas() ? 'frames/home.html' : 'frames/home_nocanvas.html',
-		'docs': null,
+		'docs': 'frames/JxCheatSheet.html',
 		'demos': 'frames/demos.html',
 		'jxui': 'frames/jxui.html',
 		'downloads': 'frames/downloads.html',

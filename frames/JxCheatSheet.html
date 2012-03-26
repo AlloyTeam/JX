@@ -1,0 +1,516 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta author="yuanyan">
+<meta copyright="Tencent">
+<title>Jx Cheat Sheet</title>
+
+<style type="text/css" media="all">
+    body{width:950px;margin:0 auto;padding: 20px;font-family: "微软雅黑"}
+    h1{text-align: center;font-size: 36px;font-family: "Arial Black";}
+    h2{background-color: #0160A0;color: #fff;}
+    h3{background-color: #ccc;}
+    dl{border: 1px solid #ccc;padding: 15px;line-height: 1.2;}
+    code{color:#123456; font-size: 12px;line-height: 1.4;white-space:pre-wrap;}
+    dt{font-weight: bold;font-family: "Arial";margin-top: 5px;}
+    th{text-align: left;}
+    th.description{width: 310px;}
+    .section1{float: left;width: 460px;margin-right: 20px;}
+    .section2{float: left;width: 460px;}
+	
+	.clearfix {
+	  zoom: 1;
+	}
+	.clearfix:after {
+	  display: block;
+	  visibility: hidden;
+	  height: 0;
+	  clear: both;
+	  content: ".";
+	}
+
+</style>
+    
+<style type="text/css" media="print">
+    code{color:#000;}
+    h3{background-color: #999;}
+</style>
+    
+</head>
+
+<body>
+
+<h1>Jx Cheat Sheet</h1>
+
+<div class="section1">
+<h2>Common Used Methods 常用方法</h2>
+
+<h3>J = Jx()</h3>
+<dl>
+    <dt>J.isUndefined(o)</dt> <dd>判断变量的值是否是 undefined</dd>
+    <dt>J.isNull(o)</dt> <dd>判断变量的值是否是 null</dd>
+    <dt>J.isNumber(o)</dt> <dd>判断变量的类型是否是 Number</dd>
+    <dt>J.isString(o)</dt> <dd>判断变量的类型是否是 String</dd>
+    <dt>J.isBoolean(o)</dt> <dd>判断变量的类型是否是 Boolean</dd>
+    <dt>J.isObject(o)</dt> <dd>判断变量的类型是否是 Object</dd>
+    <dt>J.isArray(o)</dt> <dd>判断变量的类型是否是 Array</dd>
+    <dt>J.isArguments(o)</dt> <dd>判断变量的类型是否是 Arguments</dd>
+    <dt>J.isFunction(o)</dt> <dd>判断变量的类型是否是 Function</dd>
+    <dt>J.$typeof(o)</dt> <dd>判断变量类型</dd>
+
+    <dt>J.$return(val)</dt> <dd>生成一个返回值是传入的 val 值的函数</dd>
+    <dt>J.$try(funcA, funcB, funcC...)</dt> <dd>从第一个函数开始try，直到尝试出第一个可以成功执行的函数就停止继续后边的函数，并返回这个成功执行的函数结果</dd>
+
+    <dt>J.extend(beExtendObj, extendObj1, extendObj2)</dt> <dd>对一个对象或数组进行扩展</dd>
+    <dt>J.clone(o)</dt> <dd>克隆一个对象</dd>
+    <dt>J.getLength(obj)</dt> <dd>获取对象自身具有的属性和方法的数量</dd>
+
+    <dt>J.random(min, max)</dt> <dd>生成随机数</dd>
+    <dt>J.now()</dt> <dd>获取当前时间时间戳</dd>
+    <dt>J.timedChunk(items, process, context, isShift, callback)</dt> <dd>通用分时处理函数</dd>
+
+    <dt>J.emptyFunc()</dt> <dd>生成一个空函数</dd>
+    <dt>J.rebuild(func, option)</dt> <dd>函数的重构方法</dd>
+    <dt>J.pass(func, var_args)</dt> <dd>给函数传入参数并执行</dd>
+    <dt>J.bind(func, context, var_args)</dt> <dd>给函数绑定一个上下文对象再执行</dd>
+
+    <dt>J.bindNoEvent</dt> <dd>TODO</dd>
+    <dt>J.checkJSON</dt> <dd>TODO</dd>
+
+    <dt>new J.Class({extend: SuperClass}, {init: function(){},...})</dt> <dd>创建类</dd>
+    <dt>new J.Chunk(items, process, context, isShift, callback)</dt> <dd>创建分时处理类</dd>
+</dl>
+    
+<h3>D = Jx().dom</h3>
+<dl>
+<dt>D.getDoc(element)</dt><dd>获取元素所属的根文档</dd>
+<dt>D.id(id, doc)</dt><dd>根据 id 获取元素</dd>
+<dt>D.name(name, doc)</dt><dd>根据 name 属性获取元素</dd>
+<dt>D.tagName(tagName, el)</dt><dd>根据 tagName 获取元素</dd>
+<dt>D.getText(element)</dt><dd>获取元素中的文本内容</dd>
+<dt>D.getAttributeByParent(attribute, startNode,  topNode)</dt><dd>从起始元素查找某个属性，直到找到，或者到达顶层元素位置</dd>
+<dt>D.node(type, attrObj, win)</dt><dd>生成一个 DOM 节点</dd>
+
+<dt>D.getScrollHeight(el)</dt><dd>获取文档的 scroll 高度，即文档的实际高度</dd>
+<dt>D.getScrollWidth(el)</dt><dd>获取文档的 scroll 宽度，即文档的实际宽度</dd>
+<dt>D.getClientHeight(el)</dt><dd>获取元素内高度</dd>
+<dt>D.getClientWidth(el)</dt><dd>获取元素内宽度</dd>
+<dt>D.getOffsetHeight(el)</dt><dd>获取元素的外高度</dd>
+<dt>D.getOffsetWidth(el)</dt><dd>获取元素的外宽度</dd>
+<dt>D.getScrollLeft(el)</dt><dd>获取元素的左边已卷动的宽度</dd>
+<dt>D.getScrollTop(el)</dt><dd>获取元素的上边已卷动的宽度</dd>
+    
+<dt>D.setClass(el, className)</dt><dd>设置元素的class属性</dd>
+<dt>D.getClass(el)</dt><dd>获取元素的class属性</dd>
+<dt>D.hasClass(el, className)</dt><dd>判断元素是否含有 class</dd>
+<dt>D.addClass(el, className)</dt><dd>给元素添加 class</dd>
+<dt>D.removeClass(el, className)</dt><dd>给元素移除 class</dd>
+<dt>D.toggleClass(el, className)</dt><dd>对元素 class 的切换方法，即：如果元素用此class则移除此class，如果没有此class则添加此class</dd>
+<dt>D.replaceClass(el, oldClassName, newClassName)</dt><dd>替换元素 oldClassName 为 newClassName</dd>
+
+<dt>D.setStyle(el, styleName, value)</dt><dd>设置元素的样式，css 属性需要用驼峰式写法，如：fontFamily</dd>
+<dt>D.getStyle(el, styleName)</dt><dd>获取元素的当前实际样式，css 属性需要用驼峰式写法，如：fontFamily</dd>
+<dt>D.addCssText(el, cssText)</dt><dd>添加元素cssText</dd>
+<dt>D.setCssText(el, cssText)</dt><dd>重置元素cssText</dd>
+<dt>D.getCssText(el)</dt><dd>获取元素cssText</dd>
+
+<dt>D.show(el, displayStyle)</dt><dd>以指定方式如：block，inline，inline-block 显示元素</dd>
+<dt>D.hide(el)</dt><dd>获取元素cssText</dd>
+<dt>D.recover(el)</dt><dd>还原元素原来的display属性</dd>
+<dt>D.isShow(el)</dt><dd>判断元素是否是显示状态</dd>
+    
+<dt>D.getXY(el)</dt><dd>获取元素坐标</dd>
+<dt>D.setXY(el, x, y)</dt><dd>设置元素坐标</dd>
+<dt>D.getRelativeXY(el, relativeEl)</dt><dd>获取元素相对于其他元素坐标</dd>
+<dt>D.getPosX(el)</dt><dd>获取元素left值</dd>
+<dt>D.getPosY(el)</dt><dd>获取元素top值</dd>
+<dt>D.getWidth(el)</dt><dd>获取元素宽度</dd>
+<dt>D.getHeight(el)</dt><dd>获取元素高度</dd>
+
+<dt>D.getSelectionText(win)</dt><dd>获取选择的文本</dd>
+<dt>D.getTextFieldSelection(el)</dt><dd>获取元素高度</dd>
+<dt>D.contains(parent, child, containSelf)</dt><dd>判断一个节点是否是某个父节点的子节点</dd>
+</dl>
+
+
+<h3>E = Jx().event</h3>
+<dl>
+<dt>E.onDomReady(handler)</dt><dd>文档加载完成时事件监听器</dd>
+<dt>E.addEventListener/on(element, eventType, handler,options)</dt><dd>元素添加事件监听器</dd>
+<dt>E.removeEventListener/off(element, eventType, handler)</dt><dd>元素移除事件监听器</dd>
+<dt>E.addObserver(targetModel, eventType, handler)</dt><dd>为自定义Model添加事件监听器</dd>
+<dt>E.addObservers({targetModel : {eventType:handler,eventType2:handler2...} ,... })</dt><dd>批量为自定义Model添加事件监听器</dd>
+<dt>E.notifyObservers(targetModel, eventType, argument)</dt><dd>触发自定义Model事件的监听器</dd>
+<dt>E.removeObserver(targetModel, eventType, handler)</dt><dd>移除自定义 Model 事件监听器</dd>
+<dt>new E.Publish()</dt><dd>消息源发布者的类</dd>
+</dl>
+
+<h3>JSON = Jx().json</h3>
+<dl>
+<dt>JSON.parse(text, reviver)</dt><dd>解析JSON格式字符串</dd>
+<dt>JSON.stringify(value, replacer, space)</dt><dd>序列化为JSON格式字符串</dd>
+</dl>
+    
+<h3>Jx().date.format(date, formatString)</h3>
+<p>让日期和时间按照指定的格式显示的方法</p>
+<code>var d = new Date();
+// 以 YYYY-MM-dd hh:mm:ss 格式输出 d 的时间字符串
+J.date.format(d, "YYYY-MM-DD hh:mm:ss");
+</code>
+
+<h3>Jx().number.format(num, pattern)</h3>
+<p>让日期和时间按照指定的格式显示的方法</p>
+<code>J.number.format(12345.999,'#,##0.00');
+//out: 12,34,5.99
+J.number.format(12345.999,'0');
+//out: 12345
+J.number.format(1234.888,'#.0');
+//out: 1234.8
+J.number.format(1234.888,'000000.000000');
+//out: 001234.888000
+</code>
+
+
+<h3>C = Jx().cookie</h3>
+<dl>
+<dt>C.set(name, value, domain, path, hour)</dt><dd>设置一个cookie</dd>
+<dt>C.get(name)</dt><dd>获取指定名称的cookie值</dd>
+<dt>C.remove(name, domain, path)</dt><dd>删除指定cookie,复写为过期</dd>
+</dl>
+    
+</div>
+
+<div class="section2 clearfix">
+<h2>Important Methods 重要方法</h2>
+
+<h3>H = Jx().http</h3>
+<p>示例代码：</p>
+<code>H.ajax("cgi.web2.qq.com",{
+    method: "GET",
+    data: null,
+    arguments: null,
+    onSuccess: function(){},
+    onError: function(){},
+    onComplete: function(){},
+    onTimeout: function(){},
+    isAsync: true,
+    timeout: 30000,
+    contentType: "utf-8",
+    type:  "xml"
+});
+</code>
+<dl>
+<dt>H.ajax(uri, options)</dt><dd>Ajax方式请求</dd>
+<dt>H.comet(url, option)</dt><dd>comet方式请求</dd>
+<dt>H.load(type, uri, options)</dt><dd>加载样式或脚步文件</dd>
+<dt>H.loadCss(url, option)</dt><dd>加载样式文件</dd>
+<dt>H.loadScript(url, option)</dt><dd>加载脚步文件</dd>
+<dt>H.formSend(url, option)</dt><dd>Form方式请求</dd>
+</dl>
+
+<h3>S = Jx().string </h3>
+<dl>
+<dt>S.toString(o)</dt><dd>将任意变量转换为字符串的方法</dd>
+<dt>S.template(string, data)</dt><dd>多行或单行字符串模板处理</dd>
+<dt>S.isURL(string)</dt><dd> 判断是否是一个可接受的 url 串</dd>
+<dt>S.parseURL(string)</dt><dd>分解 URL 为一个对象，成员为：scheme, user, pass, host, port, path, query, fragment</dd>
+<dt>S.buildURL(obj)</dt><dd>将一个对象（成员为：scheme, user, pass, host, port, path, query, fragment）重新组成为一个字符串</dd>
+<dt>S.mapQuery(uri)</dt><dd>将 uri 的查询字符串参数映射成对象</dd>
+<dt>S.test(string, regex, params)</dt><dd>test的方法</dd>
+<dt>S.contains(string1, string2, separator)</dt><dd>判断是否含有指定的字符串</dd>
+<dt>S.trim(string)</dt><dd>清除字符串开头和结尾的空格 </dd>
+<dt>S.clean(string)</dt><dd>清除字符串开头和结尾的空格，并把字符串之间的多个空格转换为一个空格</dd>
+<dt>S.camelCase(string)</dt><dd>将“-”连接的字符串转换成驼峰式写法</dd>
+<dt>S.hyphenate(string)</dt><dd>将驼峰式写法字符串转换成“-”连接的</dd>
+<dt>S.capitalize(string)</dt><dd>将字符串转换成全大写字母</dd>
+<dt>S.escapeRegExp(string)</dt><dd>转换 RegExp 正则表达式 </dd>
+<dt>S.toInt(string, base)</dt><dd>将字符串转换成整数</dd>
+<dt>S.toFloat(string)</dt><dd>将字符串转换成浮点数</dd>
+<dt>S.toSingleLine(string)</dt><dd>将带换行符的字符串转换成无换行符的字符串</dd>
+<dt>S.toHtml(string)</dt><dd>将字符串转换成html源码</dd>
+<dt>S.toTitle(string)</dt><dd>将字符串转换成用于title的字符串</dd>
+<dt>S.toQueryPair(key, value)</dt><dd> 生成已编码的请求字符串对格式 foo1=1 </dd>
+<dt>S.toQueryString(obj)</dt><dd> 生成已编码的请求字符串格式 foo1=1&foo2=2&foo3=3 </dd>
+<dt>S.hexToRgb(string, array)</dt><dd>将颜色 Hex 写法转换成 RGB 写法</dd>
+<dt>S.rgbToHex(string, array)</dt><dd>将颜色 RGB 写法转换成 Hex 写法</dd>
+<dt>S.stripScripts(string, option)</dt><dd>脱去script标签</dd>
+<dt>S.substitute(string, object, regexp)</dt><dd> 按规则替换字符串 </dd>
+<dt>S.replaceAll(string, reallyDo, replaceWith, ignoreCase)</dt><dd>全局替换指定的字符串</dd>
+<dt>S.byteLength(string)</dt><dd>计算字符串的字节长度</dd>
+<dt>S.cutRight(string, n)</dt><dd> 截取指定长度字符串</dd>
+<dt>S.isNumber(string)</dt><dd>是否为数字</dd>
+<dt>S.isEmail(string)</dt><dd>是否为邮箱格式字符</dd>
+<dt>S.cutByBytes(string,n)</dt><dd>截取指定字节长度的字符串</dd>
+<dt>S.encodeHtmlSimple(string)</dt><dd>html正文编码：对需要出现在HTML正文里(除了HTML属性外)的不信任输入进行编码 </dd>
+<dt>S.decodeHtmlSimple(string)</dt><dd>html正文解码：对HtmlEncode函数的结果进行解码 </dd>
+<dt>S.decodeHtmlSimple2(string)</dt><dd> </dd>
+<dt>S.encodeHtmlAttributeSimple(string)</dt><dd>
+html属性编码：对需要出现在HTML属性里的不信任输入进行编码,注意:
+<ol>
+<li>该函数不适用于属性为一个URL地址的编码.这些标记包括:a/img/frame/iframe/script/xml/embed/object...
+属性包括:href/src/lowsrc/dynsrc/background/...</li>
+<li>该函数不适用于属性名为 style="[Un-trusted input]" 的编码</li>
+</ol>
+</dd>
+<dt>S.encodeHtmlAttribute(string)</dt><dd>用做过滤HTML标签里面的东东 比如这个例子里的&lt;input value="XXXX"&gt;  XXXX就是要过滤的</dd>
+<dt>S.encodeHtml(string)</dt><dd>用做过滤直接放到HTML里的</dd>
+<dt>S.encodeScript(string)</dt><dd>用做过滤直接放到HTML里js中的</dd>
+<dt>S.encodeHtml(string)</dt><dd>用做过滤直接放到HTML里的</dd>
+<dt>S.encodeHrefScript(string)</dt><dd>用做过滤直接放到&lt;a href="javascript:XXXX"&gt;中的</dd>
+<dt>S.encodeRegExp(string)</dt><dd>用做过滤直接放到正则表达式中的</dd>
+<dt>S.encodeUrl(string)</dt><dd>用做过滤直接URL参数里的  比如 http://show8.qq.com/abc_cgi?a=XXX  XXX就是要过滤的</dd>
+<dt>S.encodeUriComponent(string)</dt><dd>
+对需要出现在一个URI的一部分的不信任输入进行编码,例如: <br />
+对 &lt;a href="http://search.msn.com/results.aspx?q1=[Un-trusted-input]& q2=[Un-trusted-input]"&gt;Click Here!&lt;/a&gt; <br />
+除[a-zA-Z0-9.-_]以外的字符都会被替换成URL编码
+</dd>
+<dt>S.vaildTencentUrl(url)</dt><dd>
+url转向验证,对通过javascript语句载入（或转向）的页面进行验证，防止转到第三方网页和跨站脚本攻击
+<br />
+<br />
+合法的值
+    <ul>
+    <li>http://xxx.qq.com/hi/redirect.html?url=http://www.qq.com</li>
+    <li>http://xxx.qq.com/hi/redirect.html?url=a.html</li>
+    <li>http://xxx.qq.com/hi/redirect.html?url=/a/1.html</li>
+    </ul>
+非法的值
+    <ul>
+    <li>http://xxx.qq.com/hi/redirect.html?url=http://www.baidu.com</li>
+    <li>http://xxx.qq.com/hi/redirect.html?url=javascript:codehere</li>
+    <li>http://xxx.qq.com/hi/redirect.html?url=//www.qq.com</li>
+    </ul>
+</dd>
+<dt>S.vaildUrl(url)</dt><dd>验证并规格化URL: http://web.qq.com/</dd>
+<dt>S.getCharWidth(str,fontsize)</dt><dd>获取字符实际显示宽度</dd>
+<dt>S.cutByWidth(str,fontsize,width)</dt><dd>截取字符串显示宽度</dd>
+
+</dl>
+
+<h3>A = Jx().array</h3>
+<dl>
+<dt>A.indexOf(arr, obj, fromIndex)</dt><dd>正向查找数组元素在数组中的索引下标</dd>
+<dt>A.lastIndexOf(arr, obj, fromIndex)</dt><dd>反向查找数组元素在数组中的索引下标</dd>
+<dt>A.forEach(arr, fun /*, contextObj*/)</dt><dd>遍历数组，把每个数组元素作为第一个参数来执行函数</dd>
+<dt>A.filter(arr, fun /*, contextObj*/)</dt><dd>用一个自定义函数来过滤数组</dd>
+<dt>A.some(arr, fun /*, contextObj*/)</dt><dd>遍历数组，把每个数组元素作为第一个参数来执行函数，如果有任意一个或多个数组成员使得函数执行结果返回 true，则最终返回 true，否则返回 false</dd>
+<dt>A.map(arr, fun /*, contextObj*/)</dt><dd>遍历数组，把每个数组元素作为第一个参数来执行函数，并把函数的返回结果以映射的方式存入到返回的数组中</dd>
+<dt>A.every(arr, fun /*, contextObj*/)</dt><dd>遍历数组，把每个数组元素作为第一个参数来执行函数，如果所有的数组成员都使得函数执行结果返回 true，则最终返回 true，否则返回 false</dd>
+<dt>A.reduce(arr, fun /*, contextObj*/)</dt><dd>该数组的每项和前一次调用的结果运行一个函数，收集最后的结果。</dd>
+<dt>A.reduceRight(arr, fun /*, contextObj*/)</dt><dd>与A.reduce功能一致，但从右向左执行</dd>
+<dt>A.toArray(o)</dt><dd>将任意变量转换为数组的方法</dd>
+<dt>A.remove(arr, members)</dt><dd>从数组中移除一个或多个数组成员</dd>
+<dt>A.replace(arr, oldValue, newValue)</dt><dd>替换一个数组成员</dd>
+<dt>A.bubbleSort(arr, compareFunc)</dt><dd>冒泡排序,默认从小到大排序</dd>
+<dt>A.binarySearch(arr, item, compareFunc)</dt><dd>二叉搜索</dd>
+<dt>A.contains(arr, o)</dt><dd>判断arr是否包含元素o</dd>
+<dt>A.uniquelize(arr)</dt><dd>唯一化一个数组，由不重复元素构成</dd>
+<dt>A.intersect(arr1, arr2)</dt><dd>求两个集合的交集</dd>
+<dt>A.minus(arr1, arr2)</dt><dd>求两个集合的差集</dd>
+<dt>A.union(arr1, arr2)</dt><dd>求两个集合的并集</dd>
+</dl>
+
+</div>
+
+<div class="section1 clearfix">
+<h2>Object-Oriented 面向对象</h2>
+    
+<h3>Jx().$package 创建包</h3>
+<p>以alloy.app.demo.js为例：</p>
+<code>//创建一个匿名package包：
+Jx().$package(function(J){
+     //这时上下文对象this指向全局window对象
+     alert("Hello world! This is " + this);
+};
+
+//创建一个名字为alloy.app.demo的package包：
+Jx().$package("alloy.app.demo", function(J){
+     //这时上下文对象this指向window对象下的alloy.app.demo对象
+     alert("Hello world! This is " + this);
+};
+</code>
+
+<h3>new J.Class() 创建类</h3>
+<p>以创建Programer类为例：</p>
+<code>Jx().$package(function(J){
+    // 创建Person类
+    var Person = new J.Class({
+        init : function(name){
+           this.name = name;
+           alert("init");
+        },
+        showName : function(){
+           alert(this.name);
+        }
+    });
+
+    // 继承Person类
+    var Programer = new J.Class({extend : Person}, {
+        init : function(name){
+           this.name = name;
+           alert("init");
+        },
+        showName : function(){
+           alert(this.name);
+        }
+    });
+};
+</code>
+
+<h3>new ClassName() 创建实例</h3>
+<code>var p1= new Programer("yuanyan1");
+var p2= new Programer("yuanyan2");
+</code>
+    
+</div>
+
+
+
+<div class="section2 clearfix">
+<h2>附：Browser Events 常用浏览器事件</h2>
+<table>
+        <thead>
+            <tr><th>事件</th>
+            <th class="description">说明</th>
+        </tr></thead>
+        <tbody>
+
+        <tr>
+            <td>click</td>
+            <td>鼠标点击时触发此事件</td>
+        </tr>
+        <tr>
+            <td>dblclick</td>
+            <td>鼠标双击时触发此事件</td>
+        </tr>
+        <tr>
+            <td>mousedown</td>
+            <td>按下鼠标时触发此事件</td>
+        </tr>
+        <tr>
+            <td>mouseup</td>
+            <td>鼠标按下后松开鼠标时触发此事件</td>
+
+        </tr>
+        <tr>
+            <td>mouseover</td>
+            <td>当鼠标移动到某对象范围的上方时触发此事件</td>
+        </tr>
+        <tr>
+            <td>mousemove</td>
+            <td>鼠标移动时触发此事件</td>
+        </tr>
+        <tr>
+            <td>mouseout</td>
+            <td>当鼠标离开某对象范围时触发此事件</td>
+        </tr>
+        <tr>
+            <td>keypress</td>
+            <td>当键盘上的某个键被按下在释放时触发此事件</td>
+        </tr>
+        <tr>
+            <td>keydown</td>
+            <td>当键盘上某个按键被按下时触发此事件</td>
+        </tr>
+        <tr>
+            <td>keyup</td>
+            <td>当键盘上某个按键被按放开时触发此事件</td>
+        </tr>
+        <tr>
+            <td>error</td>
+            <td>出现错误时触发此事件</td>
+        </tr>
+        <tr>
+            <td>load</td>
+            <td>页面内容完成时触发此事件</td>
+        </tr>
+        <tr>
+            <td>move</td>
+            <td>浏览器的窗口被移动时触发此事件</td>
+        </tr>
+        <tr>
+            <td>resize</td>
+            <td>当浏览器的窗口大小被改变时触发此事件</td>
+        </tr>
+        <tr>
+            <td>scroll</td>
+            <td>浏览器的滚动条位置发生变化时触发此事件</td>
+
+        </tr>
+        <tr>
+            <td>blur</td>
+            <td>当前元素失去焦点时触发此事件</td>
+        </tr>
+        <tr>
+            <td>change</td>
+            <td>当前元素失去焦点并且元素的内容发生改变而触发此事件</td>
+        </tr>
+        <tr>
+            <td>focus</td>
+
+            <td>当某个元素获得焦点时触发此事件</td>
+        </tr>
+        <tr>
+            <td>submit</td>
+            <td>一个表单被递交时触发此事件</td>
+        </tr>
+        <tr>
+            <td>copy</td>
+            <td>当页面当前的被选择内容被复制后触发此事件</td>
+        </tr>
+        <tr>
+            <td>paste</td>
+            <td>当内容被粘贴时触发此事件</td>
+        </tr>
+        <tr>
+            <td>dragdrop</td>
+            <td>一个外部对象被鼠标拖进当前窗口或者帧</td>
+        </tr>
+        <tr>
+            <td>select</td>
+            <td>当文本内容被选择时的事件</td>
+        </tr>
+        <tr>
+            <td>selectstart</td>
+            <td>当文本内容选择将开始发生时触发的事件</td>
+        </tr>
+        <tr>
+            <td>drag</td>
+            <td>元素被拖动事件</td>
+        </tr>
+        <tr>
+            <td>contextmenu</td>
+            <td>鼠标右键菜单事件</td>
+        </tr>
+        <tr>
+            <td>mousewheel</td>
+            <td>鼠标滚轮事件</td>
+        </tr>
+
+        <tr>
+            <td>customclick</td>
+            <td>自定义点击事件 [自定义事件]</td>
+        </tr>
+
+        <tr>
+            <td>mouseenter</td>
+            <td>鼠标进入事件 [自定义事件]</td>
+        </tr>
+        <tr>
+            <td>mouseleave</td>
+            <td>鼠标离开事件 [自定义事件]</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+
+</div>
+
+</div>
+</div>
+<script src="http://0.web.qstatic.com/webqqpic/js/jet.all.js"></script>
+</body>
+</html>
