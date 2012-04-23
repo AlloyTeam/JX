@@ -4,7 +4,7 @@ JX(Javascript 扩展工具套件)
 
 ## 简介
 
-JX 是模块化的非侵入式Web前端框架，开发于2008年，并于2009年开源于GoogleCode - [http://code.google.com/p/j-et/](http://code.google.com/p/j-et/)。
+JX 是模块化的非侵入式Web前端框架，开发于2008年，并于2009年开源于GoogleCode - [http://code.google.com/p/j-et/](http://code.google.com/p/j-et/)，于2012年切换到Github，开始我们开源计划的新征途，谢谢大家来支持^_^。
 
 
 JX 框架同时适用于 Web Page 和 Web App 项目的开发，特别适合构建和组织大规模、工业级的Web App，腾讯 WebQQ - [http://web.qq.com](http://web.qq.com)、腾讯 Q+ [http://www.QPlus.com](http://www.QPlus.com) 等产品都是采用JX框架开发，兼容目前所有主流浏览器。
