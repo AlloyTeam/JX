@@ -32,7 +32,7 @@ var mini = (function(){
     
     function _find(selector, context) {
         
-        /**
+        /*
          * This is what you call via x()
          * Starts everything off...
          */
@@ -233,7 +233,10 @@ var mini = (function(){
 	 * ////////////////////////////////////////////////////////////////
 	 */
 	/**
-	 * 一个据说比jq还快的筛选器，可以满足日常99%的筛选需要
+     * 一个据说比jq还快的筛选器，可以满足日常99%的筛选需要
+     * @function
+     * @memberOf dom
+     * @name mini
 	 * 
 	 * @param {String} query string 筛选器语法
 	 * @returns {Element} 返回筛选出的dom元素

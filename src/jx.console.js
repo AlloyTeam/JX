@@ -59,12 +59,12 @@ Jx().$package(function(J){
 	 * 日志对象
 	 * @author tealin
 	 * @class Log
+     * @ignore
+     * @memberOf console
 	 * @name Log
 	 */
 	var Log = new J.Class(
-		/**
-		 * @lends Log
-		 */
+		
 		{
 		_defaultType : 3,
 		_defaultTag : 'information',
@@ -921,14 +921,13 @@ Jx().$package(function(J){
 	
 	/**
 	 * runtime处理工具静态类
-	 * 
+	 * @ignore
 	 * @namespace runtime处理工具静态类
 	 * @name runtime
 	 */
 	J.runtime = (function() {
 		/**
 		 * 是否debug环境
-		 * 
 		 * @return {Boolean} 是否呢
 		 */
 		function isDebugMode() {

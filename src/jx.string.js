@@ -13,10 +13,10 @@
 
 /**	
  * @description
- * Package: jet.string
+ * Package: Jx.string
  * 
  * Need package:
- * jet.core.js
+ * Jx.core.js
  * 
  */
 
@@ -605,23 +605,45 @@ Jx().$package(function(J){
 	 * 计算字符串的字节长度
 	 * 
 	 * @memberOf string
-	 * @return {String} 返回自己长度
+     * @param {String} string
+     * @param {Number} n 指定一个中文的字节数, 默认为2
+	 * @return {Number} 返回自己长度
 	 */
 	byteLength = function(string,n){
 		n= n||2;
 		return string.replace(/[^\x00-\xff]/g,({2:"aa",3:"aaa"})[n]).length;
 	};
-	
+	/**
+     * 按字符按给定长度裁剪给定字符串
+     * @memberOf string
+     * @param {String} string
+     * @param {Number} n 
+     * @return {String} 
+     */
 	cutRight = function(string, n){
 		return string.substring(0, (string.length - n));
 	};
+    /**
+     * 按字节按给定长度裁剪给定字符串
+     * @memberOf string
+     * @param {String} string
+     * @param {Number} n 
+     * @return {String} 
+     */
 	cutByBytes = function(string,n) {
 		var s= string;
 		while(byteLength(s)>n) {
 			s= cutRight(s,1);
 		}
 		return s;
-	}
+	};
+    /**
+     * 判断给定字符串是否是数字
+     * @memberOf string
+     * @param {String} string
+     * @param {Number} n 
+     * @return {String} 
+     */
 	isNumber = function(string){
 		if (string.search(/^\d+$/) !== -1){
 			return true;
@@ -630,6 +652,12 @@ Jx().$package(function(J){
 		   	return false;
 		}
 	};
+    /**
+     * 判断一个字符串是否是邮箱格式
+     * @memberOf string
+     * @param {String} emailStr
+     * @return {Boolean}
+     */
 	isEmail = function(emailStr){
 		if (emailStr.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) !== -1){
 			return true;
@@ -649,7 +677,12 @@ Jx().$package(function(J){
 	*/
 
 	
-	//html正文编码：对需要出现在HTML正文里(除了HTML属性外)的不信任输入进行编码
+    /**
+     * html正文编码, 对需要出现在HTML正文里(除了HTML属性外)的不信任输入进行编码
+     * @memberOf string
+     * @param {String} sStr
+     * @return {String} 
+     */
 	var encodeHtmlSimple = function(sStr){
 		sStr = sStr.replace(/&/g,"&amp;");
 		sStr = sStr.replace(/>/g,"&gt;");
@@ -659,7 +692,12 @@ Jx().$package(function(J){
 		return sStr;
 	};
 	
-	//html正文解码：对HtmlEncode函数的结果进行解码
+    /**
+     * html正文解码, 对HtmlEncode函数的结果进行解码
+     * @memberOf string
+     * @param {String} sStr
+     * @return {String} 
+     */
 	var decodeHtmlSimple = function(sStr){
 		sStr = sStr.replace(/&amp;/g,"&");
 		sStr = sStr.replace(/&gt;/g,">");
@@ -678,13 +716,16 @@ Jx().$package(function(J){
 		return sStr;
 	};
 	
-	/*
-	html属性编码：对需要出现在HTML属性里的不信任输入进行编码
-	注意:
-	(1)该函数不适用于属性为一个URL地址的编码.这些标记包括:a/img/frame/iframe/script/xml/embed/object...
-	属性包括:href/src/lowsrc/dynsrc/background/...
-	(2)该函数不适用于属性名为 style="[Un-trusted input]" 的编码
-	*/
+    /**
+     * html属性编码：对需要出现在HTML属性里的不信任输入进行编码
+        注意:
+        (1)该函数不适用于属性为一个URL地址的编码.这些标记包括:a/img/frame/iframe/script/xml/embed/object...
+        属性包括:href/src/lowsrc/dynsrc/background/...
+        (2)该函数不适用于属性名为 style="[Un-trusted input]" 的编码
+     * @memberOf string
+     * @param {String} sStr
+     * @return {String} 
+     */
 	var encodeHtmlAttributeSimple = function(sStr){
 		sStr = sStr.replace(/&/g,"&amp;");
 		sStr = sStr.replace(/>/g,"&gt;");
@@ -699,21 +740,36 @@ Jx().$package(function(J){
 	
 	
 	
-	//用做过滤直接放到HTML里的
+	/**
+	 * 用做过滤直接放到HTML里的
+     * @memberOf string
+     * @param {String} sStr
+     * @return {String} 
+     */
 	var encodeHtml = function(sStr) { 
 		return sStr.replace(/[&'"<>\/\\\-\x00-\x09\x0b-\x0c\x1f\x80-\xff]/g, function(r){ 
 			return "&#"+r.charCodeAt(0)+";";
 		}).replace(/ /g, "&nbsp;").replace(/\r\n/g, "<br />").replace(/\n/g, "<br />").replace(/\r/g, "<br />"); 
 	};
 	
-	//用做过滤HTML标签里面的东东 比如这个例子里的<input value="XXXX">  XXXX就是要过滤的
+    /**
+     * 用做过滤HTML标签里面的东东 比如这个例子里的<input value="XXXX">  XXXX就是要过滤的
+     * @memberOf string
+     * @param {String} sStr
+     * @return {String} 
+     */
 	var encodeHtmlAttribute = function(sStr) { 
 		return sStr.replace(/[&'"<>\/\\\-\x00-\x1f\x80-\xff]/g, function(r){ 
 			return "&#"+r.charCodeAt(0)+";";
 		}); 
 	};
 	
-	//用做过滤直接放到HTML里js中的
+    /**
+     * 用做过滤直接放到HTML里js中的
+     * @memberOf string
+     * @param {String} sStr
+     * @return {String} 
+     */
 	var encodeScript = function(sStr) {
 		sStr+="";//确保为String
 		return sStr.replace(/[\\"']/g, function(r){ 
@@ -723,30 +779,49 @@ Jx().$package(function(J){
 	
 	
 	
-	//用做过滤直接放到<a href="javascript:XXXX">中的
+    /**
+     * 用做过滤直接放到<a href="javascript:XXXX">中的
+     * @memberOf string
+     * @param {String} sStr
+     * @return {String} 
+     */
 	var encodeHrefScript = function(sStr) {
 		return encodeHtml(encodeUrl(escScript(sStr)));
 	};
 	
-	//用做过滤直接放到正则表达式中的
+    /**
+     * 用做过滤直接放到正则表达式中的
+     * @memberOf string
+     * @param {String} sStr
+     * @return {String} 
+     */
 	var encodeRegExp = function(sStr) {
 		return sStr.replace(/[\\\^\$\*\+\?\{\}\.\(\)\[\]]/g, function(a,b){
 			return "\\"+a;
 		});
 	};
 	
-	//用做过滤直接URL参数里的  比如 http://show8.qq.com/abc_cgi?a=XXX  XXX就是要过滤的
+    /**
+     * 用做过滤直接URL参数里的  比如 http://show8.qq.com/abc_cgi?a=XXX  XXX就是要过滤的
+     * @memberOf string
+     * @param {String} sStr
+     * @return {String} 
+     */
 	var encodeUrl = function(sStr) {
 		return escape(sStr).replace(/\+/g, "%2B");
 	};
 	
-	/*
-	对需要出现在一个URI的一部分的不信任输入进行编码 
-	例如:
-	<a href="http://search.msn.com/results.aspx?q1=[Un-trusted-input]& q2=[Un-trusted-input]">Click Here!</a>
-	以下字符将会被编码: 
-	除[a-zA-Z0-9.-_]以外的字符都会被替换成URL编码
-	*/
+	/**
+    	对需要出现在一个URI的一部分的不信任输入进行编码 
+    	例如:
+    	<a href="http://search.msn.com/results.aspx?q1=[Un-trusted-input]& q2=[Un-trusted-input]">Click Here!</a>
+    	以下字符将会被编码: 
+    	除[a-zA-Z0-9.-_]以外的字符都会被替换成URL编码
+	 *
+     * @memberOf string
+     * @param {String} sStr
+     * @return {String} 
+     */
 	var encodeUriComponent = function(sStr){
 		sStr = encodeURIComponent(sStr);
 		sStr = sStr.replace(/~/g,"%7E");
@@ -760,7 +835,7 @@ Jx().$package(function(J){
 		return sStr;
 	};
 	
-	/*
+	/**
 	url转向验证
 	描述：对通过javascript语句载入（或转向）的页面进行验证，防止转到第三方网页和跨站脚本攻击
 	返回值：true -- 合法；false -- 非法
@@ -773,13 +848,23 @@ Jx().$package(function(J){
 	    http://xxx.qq.com/hi/redirect.html?url=http://www.baidu.com
 	    http://xxx.qq.com/hi/redirect.html?url=javascript:codehere
 	    http://xxx.qq.com/hi/redirect.html?url=//www.qq.com
-	*/
+	 *
+     * @memberOf string
+     * @param {String} sUrl
+     * @return {String} 
+     */
 	var vaildTencentUrl = function(sUrl){
 		return (/^(https?:\/\/)?[\w\-.]+\.(qq|paipai|soso|taotao)\.com($|\/|\\)/i).test(sUrl)||(/^[\w][\w\/\.\-_%]+$/i).test(sUrl)||(/^[\/\\][^\/\\]/i).test(sUrl) ? true : false;
 	};
 	
 
-	
+	/**
+     * 验证给定字符串是否是url, 如果是url 则返回正常的url
+     * 
+     * @memberOf string
+     * @param {String} sUrl
+     * @return {String} 
+     */
 	var vaildUrl = function(url){ 
 		var url=encodeURI(url).replace(/(^\s*)|(\s*$)/g, ''),
 	  		protocolReg=/(^[a-zA-Z0-9]+[^.]):/,
@@ -808,19 +893,12 @@ Jx().$package(function(J){
 	};
 	
 	
-    /*
-	toHtml = function(str){
-		return encodeHtml(str);
-	};
-	
-	toTitle = function(str){
-		return encodeHtmlAttribute(str);
-	};
-	
-	*/
-	/* 获取字符实际宽度
-	 * str：需要计算的字符串
-	 * fontsize：字体大小，可以不填
+	/**
+     * 获取字符实际宽度
+     * @memberOf string
+	 * @param {String} str 需要计算的字符串
+	 * @param {Number} fontsize 字体大小，可以不填
+     * @return {
 	 */
 	var getCharWidth = function(str,fontsize) {
 		var d= document.createElement("div");
@@ -837,6 +915,14 @@ Jx().$package(function(J){
 		return width;
 	};
 	
+    /**
+     * 按给定宽度裁剪字符串
+     * @memberOf string
+     * @param {String} str 
+     * @param {Number} fontsize 字体大小
+     * @param {Number} width 限定的宽度
+     * @return {
+     */
 	var cutByWidth = function(str,fontsize,width) {
 		for(var i=str.length;i>=0;--i)
 		{

@@ -11,10 +11,7 @@
  * 
  */
 Jx().$package(function(J){
-	/**
-	 * @namespace
-	 * @name sound
-	 */
+	
 	var $D = J.dom,
 		$E = J.event,
 		$B = J.browser,
@@ -31,15 +28,18 @@ Jx().$package(function(J){
 		soundEventDispatcher;
 
 	
-	
+	/**
+     * @namespace
+     * @name sound
+     */
 	J.sound = J.sound || {};
 	/**
 	 * 声音类
-	 * @memberOf
+     * @ignore
 	 * @class
-	 * @param {string} url: mp3 url
-	 * @param {boolean} autoLoadAndPlay: 加载完成自动播放
-	 * @param {boolean} needEventSupport: 是否需要事件监听
+	 * @param {string} url  mp3 url
+	 * @param {boolean} autoLoadAndPlay  加载完成自动播放
+	 * @param {boolean} needEventSupport  是否需要事件监听
 	 */
 	baseSoundPrototype = {
 		_volume : 100,
@@ -466,6 +466,9 @@ Jx().$package(function(J){
 			soundObjectList[this._id]=null;
 		}
 	};
+    /**
+     * @ignore
+     */
 	embedSWF = function(path) {
 		if (path == undefined) {
 			path = "./swf/jxswfsound.swf";
@@ -501,6 +504,9 @@ Jx().$package(function(J){
 			// the swfobject javascript into your HTML!' );
 		}
 	};
+    /**
+     * @ignore
+     */
 	soundEventDispatcher = function(id,event){
 		//alert('SoundEvent:'+id+' '+event);
 		var obj=soundObjectList[id];
@@ -519,7 +525,9 @@ Jx().$package(function(J){
 		setPosition : function(){return true},
 		free : function(){}
 	};
-	
+	/**
+     * @ignore
+	 */
 	soundModeDetector = function(){
   		if(J.browser.chrome){
             return 1;//chrome新版有问题, 播放不了audio
@@ -593,6 +601,9 @@ Jx().$package(function(J){
 			J.sound.isReady=false;
 			break;
 	}
+    /**
+     * @static
+     */
 	J.sound.Global = {
 		_volume : 100, //between 0 to 100
 		_boolMute : false,

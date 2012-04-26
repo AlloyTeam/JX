@@ -25,7 +25,10 @@
 Jx().$package(function(J){
 	var JSON = window['JSON'] || {};
 
-
+    /**
+     * @namespace
+     * @name json
+     */
 
 	
 	
@@ -445,6 +448,12 @@ if (!this.JSON) {
 // If the JSON object does not yet have a parse method, give it one.
 
     if (typeof JSON.parse !== 'function') {
+        /**
+         * @memberOf json
+         * @function 
+         * @name parse
+         * @param {String} text
+         */
         JSON.parse = function (text, reviver) {
 
 // The parse method takes a text and an optional reviver function, and returns
@@ -525,7 +534,7 @@ replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
     }
 }());
 
-
+    
 	J.json = JSON;
 
 

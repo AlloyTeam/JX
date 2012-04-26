@@ -22,18 +22,16 @@
  */
  
  
- /**
- * fx
- */
+
 Jx().$package(function(J){
+    /**
+     * 动画包
+     * @namespace
+     * @name fx
+     */
 	J.fx = J.fx || {};
 	
-});
-/**
- * tween模块
- */
-Jx().$package(function(J){
-	var $D = J.dom,
+    var $D = J.dom,
 		$E = J.event;
 
 	/**
@@ -83,8 +81,39 @@ Jx().$package(function(J){
 		}
 	});
 	
+    /**
+     * @property transitions
+     * @memberOf fx
+     *
+     * 动画缓动公式
+     * 
+     * Linear：无缓动效果；
+     * Quadratic：二次方的缓动（t^2）；
+     * Cubic：三次方的缓动（t^3）；
+     * Quartic：四次方的缓动（t^4）；
+     * Quintic：五次方的缓动（t^5）；
+     * Sinusoidal：正弦曲线的缓动（sin(t)）；
+     * Exponential：指数曲线的缓动（2^t）；
+     * Circular：圆形曲线的缓动（sqrt(1-t^2)）；
+     * Elastic：指数衰减的正弦曲线缓动；
+     * Back：超过范围的三次方缓动（(s+1)*t^3 - s*t^2）；
+     * Bounce：指数衰减的反弹缓动。
+     * 
+     * 每个效果都分三个缓动方式（方法），分别是：
+     * easeIn：从0开始加速的缓动；
+     * easeOut：减速到0的缓动；
+     * easeInOut：前半段从0开始加速，后半段减速到0的缓动。
+     * 其中Linear是无缓动效果，没有以上效果。
+     * 
+     * p,pos: current（当前）；
+     * x: value（其他参数）；
+     */
 	var transitions = {
-		// linear：无缓动效果；
+		/**
+         * linear：无缓动效果；
+         * @memberOf fx.transitions
+         * @function
+		 */ 
 		linear: function(p){
 			return p;
 		},
@@ -99,35 +128,51 @@ Jx().$package(function(J){
 
 	
 	
-	transitions.extend({
+	transitions.extend(
+    /**
+     * @lends fx.transitions
+     */
+    {
 		
-		// pow：n次方的缓动（t^n）,n默认为6；
+        /**
+         * pow：n次方的缓动（t^n）,n默认为6；
+         */
 		pow: function(p, x){
 			return Math.pow(p, x && x[0] || 6);
 		},
 		
-		// exponential：指数曲线的缓动（2^t）；
+        /**
+         * exponential：指数曲线的缓动（2^t）；
+         */
 		exponential: function(p){
 			return Math.pow(2, 8 * (p - 1));
 		},
 		
-		// circular：圆形曲线的缓动（sqrt(1-t^2)）；
+		/**
+         * circular：圆形曲线的缓动（sqrt(1-t^2)）；
+		 */
 		circular: function(p){
 			return 1 - Math.sin(Math.acos(p));
 		},
 	
-		// sinusoidal：正弦曲线的缓动（sin(t)）；
+		/**
+         * sinusoidal：正弦曲线的缓动（sin(t)）；
+		 */
 		sinusoidal: function(p){
 			return 1 - Math.sin((1 - p) * Math.PI / 2);
 		},
 	
-		// back：超过范围的三次方缓动（(s+1)*t^3 - s*t^2）；
+		/**
+         * back：超过范围的三次方缓动（(s+1)*t^3 - s*t^2）；
+		 */
 		back: function(p, x){
 			x = x && x[0] || 1.618;
 			return Math.pow(p, 2) * ((x + 1) * p - x);
 		},
 		
-		// bounce：指数衰减的反弹缓动。
+		/**
+         * bounce：指数衰减的反弹缓动。
+		 */
 		bounce: function(p){
 			var value;
 			for (var a = 0, b = 1; 1; a += b, b /= 2){
@@ -139,7 +184,9 @@ Jx().$package(function(J){
 			return value;
 		},
 	
-		// elastic：指数衰减的正弦曲线缓动；
+		/**
+         * elastic：指数衰减的正弦曲线缓动；
+		 */
 		elastic: function(p, x){
 			return Math.pow(2, 10 * --p) * Math.cos(20 * p * Math.PI * (x && x[0] || 1) / 3);
 		}
@@ -158,13 +205,23 @@ Jx().$package(function(J){
 	
 	/**
 	 * 节拍器类
-	 * 
+     * @class 
+	 * @memberOf fx
+     * @name Beater
+     * 
 	 * @param {Number} duration: 节拍时长，单位毫秒
 	 * @param {Number} loop: 循环次数,默认为1,0为无限循环
 	 * @param {Number} fps: fps你懂的
 	 * @return 节拍器实例
 	 */
-	var Beater = new J.Class({
+	var Beater = new J.Class(
+    /**
+     * @lends fx.Beater
+     */    
+    {
+        /**
+         * @ignore
+         */
 		init : function(option){
 			
 			this.setOption(option);
@@ -317,8 +374,11 @@ Jx().$package(function(J){
 	
 	/**
 	 * 动画类
-	 * 
-	 * @param {Element} element: 动画的dom
+     * @class 
+     * @name Animation
+	 * @memberOf fx
+     * 
+     * @param {Element} element: 动画的dom
 	 * @param {String} property: css 属性
 	 * @param {Mix} from: 起始值
 	 * @param {Mix} to: 到达值
@@ -414,6 +474,7 @@ Jx().$package(function(J){
      * TODO 这是原来的动画类, peli改了原来的动画类,抽出了节拍器, 
      * 但是新的动画类有问题,但是我没时间改, 就先用着旧的
      * by az , 2011-3-28
+     * @ignore
      * 
      * @param {Element} element: 动画的dom
      * @param {String} property: css 属性

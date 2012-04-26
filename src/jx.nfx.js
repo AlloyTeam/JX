@@ -28,6 +28,9 @@ Jx().$package(function(J){
 			transform: 1
 		},
 		// which property name does this browser use for transform
+        /**
+         * @ignore
+         */
 		transform = function() {
 			var styles = doc.createElement('a').style,
 			props = ['webkitTransform', 'MozTransform', 'OTransform', 'msTransform', 'Transform'],
@@ -38,6 +41,9 @@ Jx().$package(function(J){
 		} (),
 
 		// does this browser support the opacity property?
+        /**
+         * @ignore
+         */
 		opasity = function() {
 			return typeof doc.createElement('a').style.opacity !== 'undefined'
 		} (),
@@ -71,6 +77,9 @@ Jx().$package(function(J){
 		}: function(el, property) {
 			return el.style[camelize(property)]
 		},
+        /**
+         * @ignore
+         */
 		frame = function() {
 			// native animation frames
 			// http://webstuff.nfshost.com/anim-timing/Overview.html
@@ -204,7 +213,9 @@ Jx().$package(function(J){
 		function nextColor(pos, start, finish) {
 			var r = [],
 			i,
-			e
+			e,
+            from,
+            to;
 			for (i = 0; i < 6; i++) {
 				from = Math.min(15, parseInt(start.charAt(i), 16))
 				to = Math.min(15, parseInt(finish.charAt(i), 16))

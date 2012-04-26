@@ -17,6 +17,8 @@ Jx().$package(function(J){
      * 让日期和时间按照指定的格式显示的方法
      * 
      * @memberOf date
+     * @name format
+     * @function
      * @param {String} format 格式字符串
      * @return {String} 返回生成的日期时间字符串
      * 

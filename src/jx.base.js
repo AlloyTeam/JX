@@ -208,7 +208,9 @@ Jx().$package(function(J){
         }
         
     };
-    
+    /**
+     * @ignore
+     */
     checkJSON = function(){
         
         return true;
@@ -625,6 +627,7 @@ Jx().$package(function(J){
      * 创建Class类的类
      * 
      * @class Class
+     * @memberOf Jx
      * @param {Object} option = {extend: superClass} 在option对象的extend属性中指定要继承的对象，可以不写
      * @param {Object} object 扩展的对象
      * @return {Object} 返回生成的日期时间字符串
@@ -732,6 +735,7 @@ Jx().$package(function(J){
         
         
     };
+    
     var Chunk = new Class({
         init : function(items, process, context, isShift, callback) {
             var todo = items.concat(), delay = 25;

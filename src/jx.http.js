@@ -443,12 +443,17 @@ Jx().$package(function(J){
     			}, timeout);
             }
         }
-        
+        /**
+         * @ignore
+         */
 		var func = function(node){
 			this._node = node;
 			this._head = head;
 		};
 		func.prototype={
+            /**
+             * @ignore
+             */
 			abort:function(){
 				this._node.src="";
 				this._head.removeChild(this._node);
@@ -490,12 +495,6 @@ Jx().$package(function(J){
 	
 	
 	
-	    /**
-     * 使用form请求数据
-     * @memberOf alloy.rpcService
-     * @param {String} url 
-     * @param {Object} option 请求参数
-     */
 	/**
 	 * TODO 这里的form send需要改造，建立一个iframe池，来处理并发问题
 	 */
@@ -555,7 +554,12 @@ Jx().$package(function(J){
 			doms[0].appendChild(formEl);
 		}
 	};
-	
+	/**
+     * 使用form请求数据
+     * @memberOf http
+     * @param {String} url 
+     * @param {Object} option 请求参数
+     */
 	formSend = function(url, option){
 		formSendIframePool.init(2);
 		var opt = {

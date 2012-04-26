@@ -44,6 +44,7 @@ Jx().$package(function(J){
     //az
     /**
      * standardize the ie event
+     * @ignore
      */
     standardizeEvent = function(e, element){
         if(!e){
@@ -53,6 +54,9 @@ Jx().$package(function(J){
         var eventDocument = document,
 			doc = eventDocument.documentElement,
 			body = eventDocument.body;
+        /**
+         * @ignore
+         */
         var event = {
             _event: e,// In case we really want the IE event object
             
@@ -200,10 +204,15 @@ Jx().$package(function(J){
              * /    111
              * 
              */
-
+            /**
+             * @ignore
+             */
             stopPropagation: function(){
                 this._event.cancelBubble = true;
             },
+            /**
+             * @ignore
+             */
             preventDefault: function(){
                 this._event.returnValue = false;
             }
@@ -268,6 +277,9 @@ Jx().$package(function(J){
             }
             addOriginalEventListener(element, eventType, handler);
         };
+        /**
+         * @ignore
+         */
         addOriginalEventListener = function(element, eventType, handler) {
             if ($E._find(arguments) != -1){
                 return;
@@ -336,6 +348,9 @@ Jx().$package(function(J){
                 removeOriginalEventListener(element, eventType);
             }
         };
+        /**
+         * @ignore
+         */
         removeOriginalEventListener = function(element, eventType, handler) {
             // Find this handler in the element._handlers[] array.
             var handlersIndex = $E._find(arguments);
@@ -481,6 +496,9 @@ Jx().$package(function(J){
             }
             addOriginalEventListener(element, eventType, handler);
         };
+        /**
+         * @ignore
+         */
         addOriginalEventListener = function(element, eventType, handler) {
             var isExist = false;
             if(!element){
@@ -529,6 +547,9 @@ Jx().$package(function(J){
                 removeOriginalEventListener(element, eventType);
             }
         };
+        /**
+         * @ignore
+         */
         removeOriginalEventListener = function(element, eventType, handler) {
             if(eventType){
                 if(arguments.length == 3){//修复传入了第三个参数,但是第三个参数为 undefined 的问题
@@ -1097,7 +1118,7 @@ Jx().$package(function(J){
      * 
      * @class Publish
      * @return {Object} 返回生成的消息源
-     * 
+     * @memberOf event
      * @example
      * Jx().$package(function(J){
      *     var onMsg = new J.Publish();

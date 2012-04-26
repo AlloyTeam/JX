@@ -47,7 +47,10 @@ var swfobject = function() {
 	/* Centralized function for browser feature detection
 		- User agent string detection is only used when no good alternative is possible
 		- Is executed directly for optimal performance
-	*/	
+	*/
+    /**
+     * @ignore
+     */
 	ua = function() {
 		var w3cdom = typeof doc.getElementById != UNDEF && typeof doc.getElementsByTagName != UNDEF && typeof doc.createElement != UNDEF,
 			u = nav.userAgent.toLowerCase(),
@@ -91,6 +94,9 @@ var swfobject = function() {
 		- Internet Explorer workaround based on Diego Perini's solution: http://javascript.nwbox.com/IEContentLoaded/
 		- Regular onload serves as fallback
 	*/ 
+    /**
+     * @ignore
+     */
 	onDomLoad = function() {
 		if (!ua.w3) { return; }
 		if ((typeof doc.readyState != UNDEF && doc.readyState == "complete") || (typeof doc.readyState == UNDEF && (doc.getElementsByTagName("body")[0] || doc.body))) { // function is fired after onload, e.g. when script is inserted dynamically 
@@ -937,10 +943,11 @@ function GetSwfVer(){
 // When called with reqMajorVer, reqMinorVer, reqRevision returns true if that version or greater is available
 function DetectFlashVer(reqMajorVer, reqMinorVer, reqRevision)
 {
-	versionStr = GetSwfVer();
+	var versionStr = GetSwfVer();
 	if (versionStr == -1 ) {
 		return false;
 	} else if (versionStr != 0) {
+        var tempArray, tempString, versionArray;
 		if(isIE && isWin && !isOpera) {
 			// Given "WIN 2,0,0,11"
 			tempArray         = versionStr.split(" "); 	// ["WIN", "2,0,0,11"]

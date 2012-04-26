@@ -471,7 +471,7 @@ Jx().$package(function(J){
     /**
      * 
      * 判断元素是否含有 class
-     * 
+     * @function
      * @method hasClass
      * @memberOf dom
      * 
@@ -499,7 +499,7 @@ Jx().$package(function(J){
     /**
      * 
      * 给元素添加 class
-     * 
+     * @function
      * @method addClass
      * @memberOf dom
      * 
@@ -527,7 +527,7 @@ Jx().$package(function(J){
     /**
      * 
      * 给元素移除 class
-     * 
+     * @function
      * @method addClass
      * @memberOf dom
      * 
@@ -563,6 +563,7 @@ Jx().$package(function(J){
      * 
      * 对元素 class 的切换方法，即：如果元素用此class则移除此class，如果没有此class则添加此class
      * 
+     * @function
      * @method toggleClass
      * @memberOf dom
      * 
@@ -1111,6 +1112,9 @@ Jx().$package(function(J){
     };
     
     /**
+     * @memberOf dom
+     * @method contains
+     * 
      * 判断一个节点是否是某个父节点的子节点, 
      * 默认不包含parent === child的情况
      * @param {HTMLElement} parent

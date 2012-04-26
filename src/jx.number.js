@@ -15,6 +15,10 @@ Jx().$package(function(J){
     
     /**
      * 格式化数字显示方式
+     * @memberOf number
+     * @function
+     * @name format
+     * 
      * @param num 要格式化的数字
      * @param pattern 格式
      * @example 

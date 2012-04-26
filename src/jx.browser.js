@@ -55,7 +55,7 @@ Jx().$package(function(J){
          * 操作系统的名称
          * 
          * @property name
-         * @lends platform
+         * @memberOf platform
          */
         name: (window.orientation != undefined) ? 'iPod' : (pf.match(/mac|win|linux/i) || ['unknown'])[0],
         
@@ -208,7 +208,11 @@ Jx().$package(function(J){
          * @name plugins
          * @memberOf browser
          */
-        plugins: {
+        plugins: 
+        /**
+         * @lends browser.plugins
+         */    
+        {
             flash: (function(){
                 //var ver = "none";
                 var ver = 0;
@@ -253,8 +257,9 @@ Jx().$package(function(J){
         name: "unknown",
         
         /**
+         * 浏览器的版本
          * @property version
-         * @lends browser
+         * @memberOf browser
          */
         version: 0,
         
@@ -389,14 +394,14 @@ Jx().$package(function(J){
         /**
          * trident 引擎的版本，0表示非此引擎
          * 
-         * @lends browser.engine
+         * @memberOf browser.engine
          */
         trident: 0,
         
         /**
          * gecko 引擎的版本，0表示非此引擎
          * 
-         * @lends browser.engine
+         * @memberOf browser.engine
          * 
          */
         gecko: 0,
@@ -404,14 +409,14 @@ Jx().$package(function(J){
         /**
          * webkit 引擎的版本，0表示非此引擎
          * 
-         * @lends browser.engine
+         * @memberOf browser.engine
          */
         webkit: 0,
         
         /**
          * presto 引擎的版本，0表示非此引擎
          * 
-         * @lends browser.engine
+         * @memberOf browser.engine
          * @property presto
          */
         presto: 0,
@@ -420,8 +425,6 @@ Jx().$package(function(J){
          * 设置浏览器引擎的类型和版本
          * 
          * @ignore
-         * @private
-         * @memberOf browser.engine
          * 
          */
         set: function(name, ver){
