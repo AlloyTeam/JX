@@ -1,0 +1,920 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>Jx API 开发参考文档 - event</title>
+
+		<style type="text/css">
+			/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	/*width: 800px;*/
+	margin:0;
+	padding:0;
+}
+
+#header
+{
+	clear: both;
+	/*background-color: #f2f2e2;*/
+	padding: 8px;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 0px solid #e0e0e0;
+	height: 0px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+	background: #ffffee;
+	color: #666666;
+}
+
+#index
+{
+	float: left;
+	width: 160px;
+	position: absolute;
+	left: 8px;
+	background-color: #efefe0;
+	border:0px solid #eeeeee;
+	padding: 15px 8px 8px;
+}
+
+#content
+{
+	margin-left: 190px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+h1{
+	margin:0;
+}
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+	background:#000044;
+	border-bottom: 1px solid #cccccc;
+	padding: 10px;
+	color:#ffffff;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #003399;
+	color: #fff;
+	font-size:118%;
+	text-align: left;
+	padding: 8px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+	color: #888888;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+.description{
+	color: #888888;
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.description .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+	color: #444444;
+}
+.description dt { margin: 10px 0 0 20px; }
+.description dd { color: #748189; }
+
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailTitle{
+	padding: 0 5px;
+	line-height:25px;
+	background: #ececec;
+	border-bottom: 1px solid #cccccc; 
+}
+.detailTitle span.methodType{
+	display:none;
+	color: #999999;
+	
+}
+.detailTitle span.methodReturn{
+	display:none;
+}
+
+
+.detailList dt { margin: 10px 0 0 20px; }
+.detailList dt b{ color: #222288; }
+.detailList dd { color: #748189; margin: 0 0 0 30px;}
+
+.paramsList dt { margin: 10px 0 0 20px; }
+.paramsList dt b{ color: #222288; }
+.paramsList dd { color: #748189; margin: 0 0 0 100px;}
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+	color: #444444;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	/*font-style: italic;*/
+}
+
+.fineprint
+{
+	text-align: right;
+	padding: 5px;
+	font-size: 12px;
+	color: #666666;
+	background:#f2f2e2;
+	width:590px;
+	margin: 10px 0 0 190px;
+}
+		</style>
+	</head>
+
+	<body>
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<div id="header">
+	<h1>Jx(Javascript Extend Tools) 1.0 API 开发参考文档</h1>
+	<p><a href="http://alloyteam.github.com/JX/" title="访问Jx官网">http://alloyteam.github.com/JX/</a></p>
+	<p>
+		站在巨人的肩上 Standing on shoulders of giants<br />
+		By Kinvix(Kinvix@gmail.com) 2012
+	</p>
+	
+</div>
+		<!-- end static/header.html -->
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a>
+| <a href="../files.html">File Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="classList">
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><a href="../symbols/array.html">array</a></li>
+	
+	<li><a href="../symbols/browser.html">browser</a></li>
+	
+	<li><a href="../symbols/browser.engine.html">browser.engine</a></li>
+	
+	<li><a href="../symbols/browser.features.html">browser.features</a></li>
+	
+	<li><a href="../symbols/browser.plugins.html">browser.plugins</a></li>
+	
+	<li><a href="../symbols/console.html">console</a></li>
+	
+	<li><a href="../symbols/cookie.html">cookie</a></li>
+	
+	<li><a href="../symbols/date.html">date</a></li>
+	
+	<li><a href="../symbols/dom.html">dom</a></li>
+	
+	<li><a href="../symbols/event.html">event</a></li>
+	
+	<li><a href="../symbols/event.Publish.html">event.Publish</a></li>
+	
+	<li><a href="../symbols/format.html">format</a></li>
+	
+	<li><a href="../symbols/fx.html">fx</a></li>
+	
+	<li><a href="../symbols/fx.Animation.html">fx.Animation</a></li>
+	
+	<li><a href="../symbols/fx.Beater.html">fx.Beater</a></li>
+	
+	<li><a href="../symbols/http.html">http</a></li>
+	
+	<li><a href="../symbols/json.html">json</a></li>
+	
+	<li><a href="../symbols/Jx.html">Jx</a></li>
+	
+	<li><a href="../symbols/Jx.Class.html">Jx.Class</a></li>
+	
+	<li><a href="../symbols/loader.html">loader</a></li>
+	
+	<li><a href="../symbols/localStorage.html">localStorage</a></li>
+	
+	<li><a href="../symbols/number.html">number</a></li>
+	
+	<li><a href="../symbols/platform.html">platform</a></li>
+	
+	<li><a href="../symbols/sound.html">sound</a></li>
+	
+	<li><a href="../symbols/string.html">string</a></li>
+	
+	<li><a href="../symbols/swfobject.html">swfobject</a></li>
+	
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				命名空间 event
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				
+			
+				
+				
+				
+					<br /><i>Defined in: </i> <a href="../symbols/src/src_jx.event.js.html">jx.event.js</a>.
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class event.">
+				<caption>命名空间 概要</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/event.html#constructor">event</a></b>
+							</div>
+							<div class="description">event 名字空间</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class event.">
+					<caption>方法概要</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">event.<b><a href="../symbols/event.html#.addObserver">addObserver</a></b>(targetModel, eventType, handler)
+								</div>
+								<div class="description">为自定义Model添加事件监听器</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">event.<b><a href="../symbols/event.html#.addObservers">addObservers</a></b>(obj)
+								</div>
+								<div class="description">批量为自定义Model添加事件监听器</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">event.<b><a href="../symbols/event.html#.isDomReady">isDomReady</a></b>(element, eventType, handler)
+								</div>
+								<div class="description">判断文档加载是否完成</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">event.<b><a href="../symbols/event.html#.notifyObservers">notifyObservers</a></b>(targetModel, eventType, options)
+								</div>
+								<div class="description">触发自定义Model事件的监听器</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">event.<b><a href="../symbols/event.html#.onDomReady">onDomReady</a></b>(element, eventType, handler)
+								</div>
+								<div class="description">文档加载完成时事件监听器</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">event.<b><a href="../symbols/event.html#.removeEventListener">removeEventListener</a></b>(element, eventType, handler)
+								</div>
+								<div class="description">移除事件监听器</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">event.<b><a href="../symbols/event.html#.removeObserver">removeObserver</a></b>(targetModel, eventType, handler)
+								</div>
+								<div class="description">为自定义 Model 移除事件监听器</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					命名空间  详解
+				</div>
+				
+				<div class="detailTitle fixedFont">
+					<span class="methodType"></span>
+						<b>event</b>
+				</div>
+				
+				
+				<dl class="description">
+					<dt class="heading">功能:</dt>
+					<dd>
+					event 名字空间
+					
+					</dd>
+				</dl>
+				
+				
+				
+				
+					
+					
+					
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					方法详解
+				</div>
+				
+					<a name=".addObserver"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					
+					<span class="light">event.</span><b>addObserver</b>(targetModel, eventType, handler)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						为自定义Model添加事件监听器
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>targetModel</b>
+											
+										</dt>
+										<dd>目标 model，即被观察的目标</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>eventType</b>
+											
+										</dt>
+										<dd>事件类型，不含on</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>handler</b>
+											
+										</dt>
+										<dd>观察者要注册的事件处理器</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".addObservers"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					
+					<span class="light">event.</span><b>addObservers</b>(obj)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						批量为自定义Model添加事件监听器
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>obj</b>
+											
+										</dt>
+										<dd>目标 model，即被观察的目标    obj = { targetModel : {eventType:handler,eventType2:handler2...} , targetModel2: {eventType:handler,eventType2:handler2...}  }</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isDomReady"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					
+					<span class="light">event.</span><b>isDomReady</b>(element, eventType, handler)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						判断文档加载是否完成
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>element</b>
+											
+										</dt>
+										<dd>元素</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>eventType</b>
+											
+										</dt>
+										<dd>事件类型，不含on</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>handler</b>
+											
+										</dt>
+										<dd>事件处理器</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".notifyObservers"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Boolean}</span>
+					<span class="light">event.</span><b>notifyObservers</b>(targetModel, eventType, options)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						触发自定义Model事件的监听器
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>targetModel</b>
+											
+										</dt>
+										<dd>目标 model，即被观察目标</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>eventType</b>
+											
+										</dt>
+										<dd>事件类型，不含on</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>options</b>
+											
+										</dt>
+										<dd>触发的参数对象</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".onDomReady"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					
+					<span class="light">event.</span><b>onDomReady</b>(element, eventType, handler)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						文档加载完成时事件监听器
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>element</b>
+											
+										</dt>
+										<dd>元素</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>eventType</b>
+											
+										</dt>
+										<dd>事件类型，不含on</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>handler</b>
+											
+										</dt>
+										<dd>事件处理器</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".removeEventListener"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Element}</span>
+					<span class="light">event.</span><b>removeEventListener</b>(element, eventType, handler)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						移除事件监听器
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>element</b>
+											
+										</dt>
+										<dd>元素</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>eventType</b>
+											
+										</dt>
+										<dd>事件类型，不含on</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>handler</b>
+											
+										</dt>
+										<dd>事件处理器</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Element}</span> 返回元素</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".removeObserver"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					
+					<span class="light">event.</span><b>removeObserver</b>(targetModel, eventType, handler)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						为自定义 Model 移除事件监听器
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>targetModel</b>
+											
+										</dt>
+										<dd>目标 model，即被观察的目标</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>eventType</b>
+											
+										</dt>
+										<dd>事件类型，不含on</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>handler</b>
+											
+										</dt>
+										<dd>观察者要取消注册的事件处理器</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			
+			<hr />
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			&copy;1998-2012<br />
+			文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Thu Apr 26 2012 19:43:29 GMT+0800 (CST)
+		</div>
+	</body>
+</html>
