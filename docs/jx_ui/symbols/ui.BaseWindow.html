@@ -1,0 +1,6424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>Jx API 开发参考文档 - ui.BaseWindow</title>
+
+		<style type="text/css">
+			/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	/*width: 800px;*/
+	margin:0;
+	padding:0;
+}
+
+#header
+{
+	clear: both;
+	/*background-color: #f2f2e2;*/
+	padding: 8px;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 0px solid #e0e0e0;
+	height: 0px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+	background: #ffffee;
+	color: #666666;
+}
+
+#index
+{
+	float: left;
+	width: 160px;
+	position: absolute;
+	left: 8px;
+	background-color: #efefe0;
+	border:0px solid #eeeeee;
+	padding: 15px 8px 8px;
+}
+
+#content
+{
+	margin-left: 190px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+h1{
+	margin:0;
+}
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+	background:#000044;
+	border-bottom: 1px solid #cccccc;
+	padding: 10px;
+	color:#ffffff;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #003399;
+	color: #fff;
+	font-size:118%;
+	text-align: left;
+	padding: 8px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+	color: #888888;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+.description{
+	color: #888888;
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.description .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+	color: #444444;
+}
+.description dt { margin: 10px 0 0 20px; }
+.description dd { color: #748189; }
+
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailTitle{
+	padding: 0 5px;
+	line-height:25px;
+	background: #ececec;
+	border-bottom: 1px solid #cccccc; 
+}
+.detailTitle span.methodType{
+	display:none;
+	color: #999999;
+	
+}
+.detailTitle span.methodReturn{
+	display:none;
+}
+
+
+.detailList dt { margin: 10px 0 0 20px; }
+.detailList dt b{ color: #222288; }
+.detailList dd { color: #748189; margin: 0 0 0 30px;}
+
+.paramsList dt { margin: 10px 0 0 20px; }
+.paramsList dt b{ color: #222288; }
+.paramsList dd { color: #748189; margin: 0 0 0 100px;}
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+	color: #444444;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	/*font-style: italic;*/
+}
+
+.fineprint
+{
+	text-align: right;
+	padding: 5px;
+	font-size: 12px;
+	color: #666666;
+	background:#f2f2e2;
+	width:590px;
+	margin: 10px 0 0 190px;
+}
+		</style>
+	</head>
+
+	<body>
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<div id="header">
+	<h1>Jx(Javascript Extend Tools) 1.0 API 开发参考文档</h1>
+	<p><a href="http://alloyteam.github.com/JX/" title="访问Jx官网">http://alloyteam.github.com/JX/</a></p>
+	<p>
+		站在巨人的肩上 Standing on shoulders of giants<br />
+		By Kinvix(Kinvix@gmail.com) 2012
+	</p>
+	
+</div>
+		<!-- end static/header.html -->
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a>
+| <a href="../files.html">File Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="classList">
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><a href="../symbols/ui.html">ui</a></li>
+	
+	<li><a href="../symbols/ui.BaseWindow.html">ui.BaseWindow</a></li>
+	
+	<li><a href="../symbols/ui.Boxy.html">ui.Boxy</a></li>
+	
+	<li><a href="../symbols/ui.Bubble.html">ui.Bubble</a></li>
+	
+	<li><a href="../symbols/ui.Button.html">ui.Button</a></li>
+	
+	<li><a href="../symbols/ui.CalendarClass.html">ui.CalendarClass</a></li>
+	
+	<li><a href="../symbols/ui.ContextMenu.html">ui.ContextMenu</a></li>
+	
+	<li><a href="../symbols/ui.ContextMenuItem.html">ui.ContextMenuItem</a></li>
+	
+	<li><a href="../symbols/ui.ContextMenuSeparator.html">ui.ContextMenuSeparator</a></li>
+	
+	<li><a href="../symbols/ui.ContextSubmenuItem.html">ui.ContextSubmenuItem</a></li>
+	
+	<li><a href="../symbols/ui.DivSelect.html">ui.DivSelect</a></li>
+	
+	<li><a href="../symbols/ui.Drag.html">ui.Drag</a></li>
+	
+	<li><a href="../symbols/ui.FlashContextMenuItem.html">ui.FlashContextMenuItem</a></li>
+	
+	<li><a href="../symbols/ui.IframeScroller.html">ui.IframeScroller</a></li>
+	
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				类 ui.BaseWindow
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				
+			
+				
+				
+				
+					<br /><i>Defined in: </i> <a href="../symbols/src/src_jx.ui.basewindow.js.html">jx.ui.basewindow.js</a>.
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class ui.BaseWindow.">
+				<caption>类 概要</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/ui.BaseWindow.html#constructor">ui.BaseWindow</a></b>(option)
+							</div>
+							<div class="description">【BaseWindow】
+window组件,可直接实例化,必须重写下列方法,不可直接使用baseWindow,垮平台的话可以在不同的文件夹重写此类</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the fields documented in the class ui.BaseWindow.">
+					<caption>属性概要</caption>
+					<thead>
+						<tr>
+							<th scope="col">Field Attributes</th>
+							<th scope="col">Field Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &lt;constant&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								ui.BaseWindow.<b><a href="../symbols/ui.BaseWindow.html#.CONST">CONST</a></b>
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class ui.BaseWindow.">
+					<caption>方法概要</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#addSubordinate">addSubordinate</a></b>(window, option)
+								</div>
+								<div class="description">添加一个从属子窗口</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#adjustSize">adjustSize</a></b>(clientWidth, clientHeight, y, y)
+								</div>
+								<div class="description">调整窗口尺寸</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#append">append</a></b>(node)
+								</div>
+								<div class="description">设置窗口body的节点</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#close">close</a></b>()
+								</div>
+								<div class="description">关闭窗口</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#createDom">createDom</a></b>()
+								</div>
+								<div class="description">创建window窗口及相关动作的设置(initDomReference,initObserver,initButtons)</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#createEvent">createEvent</a></b>()
+								</div>
+								<div class="description">初始化添加事件(此函数为接口,需在继承类里做具体实现)</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#destroy">destroy</a></b>()
+								</div>
+								<div class="description">销毁窗口对象</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#disableDrag">disableDrag</a></b>()
+								</div>
+								<div class="description">关闭拖拽</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#disableDragProxy">disableDragProxy</a></b>()
+								</div>
+								<div class="description">关闭拖拽代理</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#disableOkButton">disableOkButton</a></b>(isDisable)
+								</div>
+								<div class="description">禁止ok按钮</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#disableResize">disableResize</a></b>()
+								</div>
+								<div class="description">关闭Resize</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#enableDrag">enableDrag</a></b>()
+								</div>
+								<div class="description">开启拖拽</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#enableDragProxy">enableDragProxy</a></b>()
+								</div>
+								<div class="description">开启拖拽代理</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#enableResize">enableResize</a></b>()
+								</div>
+								<div class="description">开启Resize</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#focus">focus</a></b>()
+								</div>
+								<div class="description">广播需要聚焦的通知,chatbox做聚焦聊天输入框的相关处理</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#fullscreen">fullscreen</a></b>()
+								</div>
+								<div class="description">窗口全屏,并广播出去,通过管理者设置最大化的大小</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getAppId">getAppId</a></b>()
+								</div>
+								<div class="description">getAppId遗留方法不知道干嘛用的</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getBodyHeight">getBodyHeight</a></b>()
+								</div>
+								<div class="description">获取窗体body部分高度</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getBodySize">getBodySize</a></b>()
+								</div>
+								<div class="description">获取窗口body的size</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getBodyWidth">getBodyWidth</a></b>()
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getBoxStatus">getBoxStatus</a></b>()
+								</div>
+								<div class="description">获取窗口大小模式</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getButton">getButton</a></b>(name)
+								</div>
+								<div class="description">获取一个按钮的引用,不存在返回null值</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getButtons">getButtons</a></b>()
+								</div>
+								<div class="description">获取所有按钮</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getHeight">getHeight</a></b>()
+								</div>
+								<div class="description">获取窗口高度</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getId">getId</a></b>()
+								</div>
+								<div class="description">获取窗口id</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getLeft">getLeft</a></b>()
+								</div>
+								<div class="description">获取窗口左上角坐标</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getRestoreX">getRestoreX</a></b>()
+								</div>
+								<div class="description">获取窗口还原x位置</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getRestoreXY">getRestoreXY</a></b>()
+								</div>
+								<div class="description">获取窗口还原xy位置</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getRestoreY">getRestoreY</a></b>()
+								</div>
+								<div class="description">获取窗口还原y位置</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getSelfDomObj">getSelfDomObj</a></b>()
+								</div>
+								<div class="description">获取窗口本身的dom对象</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getSize">getSize</a></b>()
+								</div>
+								<div class="description">获取窗口的size</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getSubMode">getSubMode</a></b>()
+								</div>
+								<div class="description">获取子窗口模式, 0,无子窗口；1，内嵌子窗口；2，跟随子窗口</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getTemplate">getTemplate</a></b>()
+								</div>
+								<div class="description">获取window模版 此函数为接口,需在继承类里做具体实现</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getTitleBarHeight">getTitleBarHeight</a></b>()
+								</div>
+								<div class="description">获取标题栏的高度</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getToolBar">getToolBar</a></b>()
+								</div>
+								<div class="description">获取工具栏的dom</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getToolBarHeight">getToolBarHeight</a></b>()
+								</div>
+								<div class="description">获取工具栏的高度</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getWidth">getWidth</a></b>()
+								</div>
+								<div class="description">获取窗口宽度</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getWindowFlags">getWindowFlags</a></b>()
+								</div>
+								<div class="description">获取window的状态标志位(当前,非当前.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getWinHeight">getWinHeight</a></b>()
+								</div>
+								<div class="description">获取窗口高度</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getWinWidth">getWinWidth</a></b>()
+								</div>
+								<div class="description">获取窗口宽度</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getX">getX</a></b>(x)
+								</div>
+								<div class="description">获取窗口x位置</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getXY">getXY</a></b>(x)
+								</div>
+								<div class="description">获取窗口xy位置</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getY">getY</a></b>(y)
+								</div>
+								<div class="description">获取窗口y位置</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getZIndex">getZIndex</a></b>()
+								</div>
+								<div class="description">获取窗口的zIndex</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#getZIndexLevel">getZIndexLevel</a></b>()
+								</div>
+								<div class="description">获取窗口zIndex的层次,0为最低级</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#hide">hide</a></b>(visibility)
+								</div>
+								<div class="description">隐藏窗口</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#hideControlArea">hideControlArea</a></b>()
+								</div>
+								<div class="description">隐藏下方控制菜单栏</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#hideSubWinInner">hideSubWinInner</a></b>()
+								</div>
+								<div class="description">隐藏子窗口</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#hideToolBar">hideToolBar</a></b>()
+								</div>
+								<div class="description">隐藏工具栏</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#hideToolBarBtn">hideToolBarBtn</a></b>()
+								</div>
+								<div class="description">隐藏工具栏</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#hideWinBorder">hideWinBorder</a></b>()
+								</div>
+								<div class="description">隐藏窗口的边框</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#initButtons">initButtons</a></b>()
+								</div>
+								<div class="description">初始化添加按钮(此函数为接口,需在继承类里做具体实现)</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#initDomReference">initDomReference</a></b>()
+								</div>
+								<div class="description">初始化节点引用(此函数为接口,需在继承类里做具体实现)</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#initObserver">initObserver</a></b>()
+								</div>
+								<div class="description">初始化添加观察者或者事件时候的回调方法,这里的方法一般是window必须实现的(可在继承类继续添加)</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#isDestroy">isDestroy</a></b>()
+								</div>
+								<div class="description">指示窗口是否已经销毁</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#isLockZIndex">isLockZIndex</a></b>()
+								</div>
+								<div class="description">获取ZIndex是否被锁定</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#isShow">isShow</a></b>()
+								</div>
+								<div class="description">窗口是否显示</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#isToolBarShow">isToolBarShow</a></b>()
+								</div>
+								<div class="description">指示工具栏是否显示</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#max">max</a></b>()
+								</div>
+								<div class="description">窗口最大化,并广播出去,通过管理者设置最大化的大小</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#min">min</a></b>()
+								</div>
+								<div class="description">窗口最小化</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#parseOption">parseOption</a></b>()
+								</div>
+								<div class="description">解析参数(此函数为接口,需在继承类里做具体实现)</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#removeSubordinate">removeSubordinate</a></b>()
+								</div>
+								<div class="description">移除一个从属子窗口</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#restore">restore</a></b>()
+								</div>
+								<div class="description">窗口还原</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#restorefull">restorefull</a></b>()
+								</div>
+								<div class="description">全屏还原</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setBodyHeight">setBodyHeight</a></b>(bodyHeight)
+								</div>
+								<div class="description">设置窗口内高度(不包括外框)</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setBodySize">setBodySize</a></b>(width, height)
+								</div>
+								<div class="description">设置窗口的内部Body尺寸</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setBodyWidth">setBodyWidth</a></b>(bodyWidth)
+								</div>
+								<div class="description">设置窗口内宽度(不包括外框)</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setBorderOpacity">setBorderOpacity</a></b>(opacity)
+								</div>
+								<div class="description">设置遮罩的透明度</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setBottom">setBottom</a></b>(窗口bottom位置)
+								</div>
+								<div class="description">设置窗口bottom位置,会将top清空</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setBoxStatus">setBoxStatus</a></b>(status)
+								</div>
+								<div class="description">设置窗口大小模式</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setButton">setButton</a></b>(opt)
+								</div>
+								<div class="description">控制所有按钮显示</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setCurrent">setCurrent</a></b>(option)
+								</div>
+								<div class="description">设置窗口为当前</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setCurrentWithoutFocus">setCurrentWithoutFocus</a></b>(option)
+								</div>
+								<div class="description">设置窗口为当前激活的样式,并广播出去,windowmanager可以接收通知并处理相应的zindex</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setDisableDrag">setDisableDrag</a></b>()
+								</div>
+								<div class="description">开启拖拽brige</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setDisableResize">setDisableResize</a></b>()
+								</div>
+								<div class="description">关闭Resize brige</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setDragLimite">setDragLimite</a></b>(option)
+								</div>
+								<div class="description">设置拖拽的限制边界</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setEnableDrag">setEnableDrag</a></b>()
+								</div>
+								<div class="description">开启拖拽brige</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setEnableResize">setEnableResize</a></b>()
+								</div>
+								<div class="description">开启Resize brige</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setHeight">setHeight</a></b>(height)
+								</div>
+								<div class="description">设置窗口内高度(不包括外框)</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setHtml">setHtml</a></b>(html)
+								</div>
+								<div class="description">设置窗口body的html</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setLeft">setLeft</a></b>(窗口left位置)
+								</div>
+								<div class="description">设置窗口left位置,会将right清空</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setLimite">setLimite</a></b>(option)
+								</div>
+								<div class="description">设置边界限制</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setLockZIndex">setLockZIndex</a></b>(isLock)
+								</div>
+								<div class="description">锁定zindex,锁定后setCurrent将不会变更层级</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setMinLimite">setMinLimite</a></b>(option)
+								</div>
+								<div class="description">设置窗口的最小宽高</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setNotCurrent">setNotCurrent</a></b>()
+								</div>
+								<div class="description">设置窗口为非当前</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setOpacity">setOpacity</a></b>(opacity)
+								</div>
+								<div class="description">设置遮罩的透明度</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setPrivateProperty">setPrivateProperty</a></b>()
+								</div>
+								<div class="description">设置私有属性(此函数为接口,需在继承类里做具体实现)</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setRight">setRight</a></b>(窗口right位置)
+								</div>
+								<div class="description">设置窗口right位置,会将left清空</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setStyleCurrent">setStyleCurrent</a></b>()
+								</div>
+								<div class="description">设置窗口为当前的样式</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setStyleNotCurrent">setStyleNotCurrent</a></b>()
+								</div>
+								<div class="description">设置窗口为非当前的样式</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setSubMode">setSubMode</a></b>(mode, option)
+								</div>
+								<div class="description">设置窗口的子窗口模式</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setSubWinFollow">setSubWinFollow</a></b>()
+								</div>
+								<div class="description">让子窗口跟随父窗口</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setSubWinInner">setSubWinInner</a></b>(option)
+								</div>
+								<div class="description">设置子窗口的内容</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setSubWinNone">setSubWinNone</a></b>()
+								</div>
+								<div class="description">去除子窗口</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setTitle">setTitle</a></b>(title)
+								</div>
+								<div class="description">设置标题栏</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setTitleHtml">setTitleHtml</a></b>(title)
+								</div>
+								<div class="description">设置标题栏html</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setToolbar">setToolbar</a></b>(isShow)
+								</div>
+								<div class="description">设置工具栏显示或隐藏</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setToolBarHtml">setToolBarHtml</a></b>(html)
+								</div>
+								<div class="description">设置工具栏的html</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setTop">setTop</a></b>(窗口top位置)
+								</div>
+								<div class="description">设置窗口top位置,会将bottom清空</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setWidth">setWidth</a></b>(width)
+								</div>
+								<div class="description">设置窗口的内容宽度, 效果等同于 setBodyWidth</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setWindowCentered">setWindowCentered</a></b>()
+								</div>
+								<div class="description">设置窗口居中,广播出通知,需由管理者去设置</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setWindowCenteredRelative">setWindowCenteredRelative</a></b>(parentWindow)
+								</div>
+								<div class="description">设置窗口相对某窗口居中</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setWindowFlags">setWindowFlags</a></b>(window的状态标志位)
+								</div>
+								<div class="description">设置window的状态标志位(当前,非当前.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setWinHeight">setWinHeight</a></b>(height)
+								</div>
+								<div class="description">设置窗口高度</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setWinSize">setWinSize</a></b>(width, height)
+								</div>
+								<div class="description">设置窗口的外框尺寸</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setWinWidth">setWinWidth</a></b>(width)
+								</div>
+								<div class="description">设置窗体宽度</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setX">setX</a></b>(x)
+								</div>
+								<div class="description">设置窗口x位置</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setXY">setXY</a></b>(x, y)
+								</div>
+								<div class="description">设置窗口位置</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setY">setY</a></b>(y)
+								</div>
+								<div class="description">设置窗口y位置</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setZIndex">setZIndex</a></b>(zIndex)
+								</div>
+								<div class="description">设置窗口的zIndex</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#setZIndexLevel">setZIndexLevel</a></b>(level)
+								</div>
+								<div class="description">设置窗口zIndex的层次,0为最低级</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#show">show</a></b>()
+								</div>
+								<div class="description">显示窗口</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#showCloseButton">showCloseButton</a></b>()
+								</div>
+								<div class="description">显示关闭按钮</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#showControlButton">showControlButton</a></b>(button)
+								</div>
+								<div class="description">显示下方控制菜单栏,并显示指定按钮</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#showFullButton">showFullButton</a></b>()
+								</div>
+								<div class="description">显示全屏按钮</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#showMaxButton">showMaxButton</a></b>()
+								</div>
+								<div class="description">显示最大化按钮</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#showMinButton">showMinButton</a></b>()
+								</div>
+								<div class="description">显示最小化按钮</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#showPinDownButton">showPinDownButton</a></b>()
+								</div>
+								<div class="description">显示取消置顶按钮</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#showPinUpButton">showPinUpButton</a></b>()
+								</div>
+								<div class="description">显示置顶按钮</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#showRefreshButton">showRefreshButton</a></b>()
+								</div>
+								<div class="description">显示刷新按钮</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#showRestoreButton">showRestoreButton</a></b>()
+								</div>
+								<div class="description">显示还原按钮</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#showToolBar">showToolBar</a></b>()
+								</div>
+								<div class="description">显示工具栏</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#showToolBarBtn">showToolBarBtn</a></b>()
+								</div>
+								<div class="description">显示工具栏</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#showWinBorder">showWinBorder</a></b>()
+								</div>
+								<div class="description">显示窗口边框</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#startDrag">startDrag</a></b>(xy)
+								</div>
+								<div class="description">开启拖动</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#toggleShow">toggleShow</a></b>()
+								</div>
+								<div class="description">窗口显示隐藏开关</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#toggleToolBar">toggleToolBar</a></b>()
+								</div>
+								<div class="description">切换工具栏的显示和隐藏状态</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.BaseWindow.html#toggleWinBorder">toggleWinBorder</a></b>()
+								</div>
+								<div class="description">切换窗口边框的显示隐藏</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					类  详解
+				</div>
+				
+				<div class="detailTitle fixedFont">
+					<span class="methodType"></span>
+						<b>ui.BaseWindow</b>(option)
+				</div>
+				
+				
+				<dl class="description">
+					<dt class="heading">功能:</dt>
+					<dd>
+					【BaseWindow】
+window组件,可直接实例化,必须重写下列方法,不可直接使用baseWindow,垮平台的话可以在不同的文件夹重写此类
+					
+					</dd>
+				</dl>
+				
+				
+				
+				
+					
+						<dl class="detailList">
+							<dt class="heading">参数:</dt>
+							<dd>
+								
+								<dl class="paramsList">
+									<dt>
+										<span class="light fixedFont">{Object}</span>  <b>option</b>
+										
+									</dt>
+									<dd>参数对象</dd>
+								</dl>
+								
+							</dd>
+						</dl>
+					
+					
+					
+						<dl class="detailList">
+						<dt class="heading">Since:</dt>
+							<dd>version 1.0</dd>
+						</dl>
+					
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+				<div class="sectionTitle">
+					属性详解
+				</div>
+				
+					<a name=".CONST"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; &lt;constant&gt; </span>
+					
+					
+					<span class="light">ui.BaseWindow.</span><b>CONST</b>
+					
+					</div>
+					<div class="description">
+						
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					
+				
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					方法详解
+				</div>
+				
+					<a name="addSubordinate"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>addSubordinate</b>(window, option)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						添加一个从属子窗口
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{<a href="../symbols/ui.BaseWindow.html">ui.BaseWindow</a>}</span> <b>window</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Object}</span> <b>option</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="adjustSize"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>adjustSize</b>(clientWidth, clientHeight, y, y)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						调整窗口尺寸
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>clientWidth</b>
+											
+										</dt>
+										<dd>窗口宽度</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>clientHeight</b>
+											
+										</dt>
+										<dd>窗口高度</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>y</b>
+											
+										</dt>
+										<dd>窗口y位置(可缺省,默认为0)</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>y</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="append"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>append</b>(node)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口body的节点
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Element}</span> <b>node</b>
+											
+										</dt>
+										<dd>窗口body的节点</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="close"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>close</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						关闭窗口
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="createDom"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>createDom</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						创建window窗口及相关动作的设置(initDomReference,initObserver,initButtons)
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="createEvent"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>createEvent</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						初始化添加事件(此函数为接口,需在继承类里做具体实现)
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b></b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="destroy"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>destroy</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						销毁窗口对象
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="disableDrag"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>disableDrag</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						关闭拖拽
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="disableDragProxy"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>disableDragProxy</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						关闭拖拽代理
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="disableOkButton"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>disableOkButton</b>(isDisable)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						禁止ok按钮
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>isDisable</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="disableResize"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>disableResize</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						关闭Resize
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="enableDrag"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>enableDrag</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						开启拖拽
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="enableDragProxy"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>enableDragProxy</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						开启拖拽代理
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="enableResize"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>enableResize</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						开启Resize
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="focus"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>focus</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						广播需要聚焦的通知,chatbox做聚焦聊天输入框的相关处理
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="fullscreen"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>fullscreen</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						窗口全屏,并广播出去,通过管理者设置最大化的大小
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="getAppId"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>getAppId</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						getAppId遗留方法不知道干嘛用的
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getBodyHeight"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getBodyHeight</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗体body部分高度
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 窗体body部分高度</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getBodySize"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Object}</span>
+					<b>getBodySize</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口body的size
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Object}</span> size的对象</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getBodyWidth"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>getBodyWidth</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="getBoxStatus"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>getBoxStatus</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口大小模式
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="getButton"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{HTMLElement}</span>
+					<b>getButton</b>(name)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取一个按钮的引用,不存在返回null值
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>name</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{HTMLElement}</span> , null</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getButtons"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>getButtons</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取所有按钮
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="getHeight"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getHeight</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口高度
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 窗口高度</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getId"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>getId</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口id
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="getLeft"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getLeft</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口左上角坐标
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 窗口左上角坐标</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getRestoreX"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getRestoreX</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口还原x位置
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 窗口还原x位置</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getRestoreXY"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Object}</span>
+					<b>getRestoreXY</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口还原xy位置
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Object}</span> 窗口还原xy位置</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getRestoreY"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getRestoreY</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口还原y位置
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 窗口还原y位置</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getSelfDomObj"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Element}</span>
+					<b>getSelfDomObj</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口本身的dom对象
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Element}</span> 窗口本身的dom对象</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getSize"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Object}</span>
+					<b>getSize</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口的size
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Object}</span> size的对象</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getSubMode"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>getSubMode</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取子窗口模式, 0,无子窗口；1，内嵌子窗口；2，跟随子窗口
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="getTemplate"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{String}</span>
+					<b>getTemplate</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取window模版 此函数为接口,需在继承类里做具体实现
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> html html模版</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getTitleBarHeight"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getTitleBarHeight</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取标题栏的高度
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getToolBar"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{HTMLElement}</span>
+					<b>getToolBar</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取工具栏的dom
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{HTMLElement}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getToolBarHeight"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>getToolBarHeight</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取工具栏的高度
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b></b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="getWidth"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getWidth</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口宽度
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 窗口宽度</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getWindowFlags"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getWindowFlags</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取window的状态标志位(当前,非当前...)
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> window的状态标志位</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getWinHeight"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getWinHeight</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口高度
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 窗口高度</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getWinWidth"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getWinWidth</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口宽度
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 窗口宽度</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getX"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getX</b>(x)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口x位置
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>x</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 窗口x位置</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getXY"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Object}</span>
+					<b>getXY</b>(x)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口xy位置
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>x</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Object}</span> 窗口xy位置</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getY"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getY</b>(y)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口y位置
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>y</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 窗口y位置</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getZIndex"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getZIndex</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口的zIndex
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 窗口的zIndex</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getZIndexLevel"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getZIndexLevel</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取窗口zIndex的层次,0为最低级
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> level 窗口zIndex的层次</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="hide"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>hide</b>(visibility)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						隐藏窗口
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>visibility</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="hideControlArea"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>hideControlArea</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						隐藏下方控制菜单栏
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="hideSubWinInner"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>hideSubWinInner</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						隐藏子窗口
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="hideToolBar"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>hideToolBar</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						隐藏工具栏
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="hideToolBarBtn"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>hideToolBarBtn</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						隐藏工具栏
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="hideWinBorder"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>hideWinBorder</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						隐藏窗口的边框
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="initButtons"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>initButtons</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						初始化添加按钮(此函数为接口,需在继承类里做具体实现)
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b></b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="initDomReference"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>initDomReference</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						初始化节点引用(此函数为接口,需在继承类里做具体实现)
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b></b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="initObserver"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>initObserver</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						初始化添加观察者或者事件时候的回调方法,这里的方法一般是window必须实现的(可在继承类继续添加)
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b></b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="isDestroy"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>isDestroy</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						指示窗口是否已经销毁
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="isLockZIndex"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>isLockZIndex</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取ZIndex是否被锁定
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="isShow"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Boolen}</span>
+					<b>isShow</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						窗口是否显示
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Boolen}</span> 窗口是否显示</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="isToolBarShow"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Boolean}</span>
+					<b>isToolBarShow</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						指示工具栏是否显示
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="max"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>max</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						窗口最大化,并广播出去,通过管理者设置最大化的大小
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="min"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>min</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						窗口最小化
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="parseOption"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>parseOption</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						解析参数(此函数为接口,需在继承类里做具体实现)
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> window的状态标志位</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="removeSubordinate"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>removeSubordinate</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						移除一个从属子窗口
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="restore"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>restore</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						窗口还原
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="restorefull"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>restorefull</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						全屏还原
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setBodyHeight"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setBodyHeight</b>(bodyHeight)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口内高度(不包括外框)
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>bodyHeight</b>
+											
+										</dt>
+										<dd>窗口高度</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setBodySize"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setBodySize</b>(width, height)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口的内部Body尺寸
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>width</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>height</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setBodyWidth"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setBodyWidth</b>(bodyWidth)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口内宽度(不包括外框)
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>bodyWidth</b>
+											
+										</dt>
+										<dd>窗口宽度</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setBorderOpacity"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setBorderOpacity</b>(opacity)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置遮罩的透明度
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Decimal}</span> <b>opacity</b>
+											
+										</dt>
+										<dd>透明度,0~1之间的小数</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setBottom"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setBottom</b>(窗口bottom位置)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口bottom位置,会将top清空
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>窗口bottom位置</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setBoxStatus"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setBoxStatus</b>(status)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口大小模式
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>status</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setButton"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setButton</b>(opt)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						控制所有按钮显示
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>opt</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setCurrent"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setCurrent</b>(option)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口为当前
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>option</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setCurrentWithoutFocus"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setCurrentWithoutFocus</b>(option)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口为当前激活的样式,并广播出去,windowmanager可以接收通知并处理相应的zindex
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>option</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setDisableDrag"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setDisableDrag</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						开启拖拽brige
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setDisableResize"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setDisableResize</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						关闭Resize brige
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setDragLimite"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setDragLimite</b>(option)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置拖拽的限制边界
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Object}</span> <b>option</b>
+											
+										</dt>
+										<dd>option={ leftMargin: 0,
+                topMargin: 0,
+                rightMargin: 0,
+                bottomMargin: 0}</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setEnableDrag"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setEnableDrag</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						开启拖拽brige
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setEnableResize"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setEnableResize</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						开启Resize brige
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setHeight"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setHeight</b>(height)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口内高度(不包括外框)
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>height</b>
+											
+										</dt>
+										<dd>窗口高度</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setHtml"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setHtml</b>(html)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口body的html
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>html</b>
+											
+										</dt>
+										<dd>窗口body的html</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setLeft"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setLeft</b>(窗口left位置)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口left位置,会将right清空
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>窗口left位置</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setLimite"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setLimite</b>(option)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置边界限制
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Object}</span> <b>option</b>
+											
+										</dt>
+										<dd>option={ leftMargin: 0,
+                topMargin: 0,
+                rightMargin: 0,
+                bottomMargin: 0}</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setLockZIndex"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setLockZIndex</b>(isLock)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						锁定zindex,锁定后setCurrent将不会变更层级
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Boolean}</span> <b>isLock</b>
+											
+										</dt>
+										<dd>true将锁定</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setMinLimite"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setMinLimite</b>(option)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口的最小宽高
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Object}</span> <b>option</b>
+											
+										</dt>
+										<dd>option={ minHeight: 0, minWidth: 0}</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setNotCurrent"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setNotCurrent</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口为非当前
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setOpacity"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setOpacity</b>(opacity)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置遮罩的透明度
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Decimal}</span> <b>opacity</b>
+											
+										</dt>
+										<dd>透明度,0~1之间的小数</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setPrivateProperty"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setPrivateProperty</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置私有属性(此函数为接口,需在继承类里做具体实现)
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setRight"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setRight</b>(窗口right位置)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口right位置,会将left清空
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>窗口right位置</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setStyleCurrent"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setStyleCurrent</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口为当前的样式
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setStyleNotCurrent"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setStyleNotCurrent</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口为非当前的样式
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setSubMode"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setSubMode</b>(mode, option)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口的子窗口模式
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Object}</span> <b>mode</b>
+											
+										</dt>
+										<dd>0,无子窗口；1，内嵌子窗口；2，跟随子窗口</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Object}</span> <b>option</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setSubWinFollow"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setSubWinFollow</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						让子窗口跟随父窗口
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setSubWinInner"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setSubWinInner</b>(option)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置子窗口的内容
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>option</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setSubWinNone"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setSubWinNone</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						去除子窗口
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setTitle"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setTitle</b>(title)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置标题栏
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>title</b>
+											
+										</dt>
+										<dd>标题</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setTitleHtml"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setTitleHtml</b>(title)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置标题栏html
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>title</b>
+											
+										</dt>
+										<dd>标题html</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setToolbar"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setToolbar</b>(isShow)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置工具栏显示或隐藏
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Boolean}</span> <b>isShow</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setToolBarHtml"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setToolBarHtml</b>(html)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置工具栏的html
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>html</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setTop"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setTop</b>(窗口top位置)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口top位置,会将bottom清空
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>窗口top位置</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setWidth"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setWidth</b>(width)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口的内容宽度, 效果等同于 setBodyWidth
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>width</b>
+											
+										</dt>
+										<dd>窗口宽度</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">参看:</dt>
+							
+								<dd>setBodyWidth</dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name="setWindowCentered"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setWindowCentered</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口居中,广播出通知,需由管理者去设置
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setWindowCenteredRelative"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setWindowCenteredRelative</b>(parentWindow)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口相对某窗口居中
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Element}</span> <b>parentWindow</b>
+											
+										</dt>
+										<dd>需要相对居中的节点</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setWindowFlags"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setWindowFlags</b>(window的状态标志位)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置window的状态标志位(当前,非当前...)
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>window的状态标志位</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setWinHeight"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setWinHeight</b>(height)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口高度
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>height</b>
+											
+										</dt>
+										<dd>窗口高度</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setWinSize"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setWinSize</b>(width, height)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口的外框尺寸
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>width</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>height</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setWinWidth"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setWinWidth</b>(width)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗体宽度
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>width</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setX"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setX</b>(x)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口x位置
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>x</b>
+											
+										</dt>
+										<dd>窗口x位置置</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setXY"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setXY</b>(x, y)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口位置
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>x</b>
+											
+										</dt>
+										<dd>窗口x位置</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>y</b>
+											
+										</dt>
+										<dd>窗口y位置</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setY"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setY</b>(y)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口y位置
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>y</b>
+											
+										</dt>
+										<dd>窗口y位置</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setZIndex"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setZIndex</b>(zIndex)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口的zIndex
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>zIndex</b>
+											
+										</dt>
+										<dd>窗口的zIndex</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setZIndexLevel"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setZIndexLevel</b>(level)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置窗口zIndex的层次,0为最低级
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>level</b>
+											
+										</dt>
+										<dd>窗口zIndex的层次</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="show"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>show</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						显示窗口
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="showCloseButton"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>showCloseButton</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						显示关闭按钮
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="showControlButton"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>showControlButton</b>(button)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						显示下方控制菜单栏,并显示指定按钮
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Button}</span> <b>button</b>
+											
+										</dt>
+										<dd>按钮类</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="showFullButton"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>showFullButton</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						显示全屏按钮
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="showMaxButton"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>showMaxButton</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						显示最大化按钮
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="showMinButton"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>showMinButton</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						显示最小化按钮
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="showPinDownButton"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>showPinDownButton</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						显示取消置顶按钮
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="showPinUpButton"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>showPinUpButton</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						显示置顶按钮
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="showRefreshButton"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>showRefreshButton</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						显示刷新按钮
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="showRestoreButton"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>showRestoreButton</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						显示还原按钮
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="showToolBar"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>showToolBar</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						显示工具栏
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="showToolBarBtn"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>showToolBarBtn</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						显示工具栏
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="showWinBorder"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>showWinBorder</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						显示窗口边框
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="startDrag"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>startDrag</b>(xy)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						开启拖动
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>xy</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="toggleShow"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>toggleShow</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						窗口显示隐藏开关
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="toggleToolBar"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>toggleToolBar</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						切换工具栏的显示和隐藏状态
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="toggleWinBorder"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>toggleWinBorder</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						切换窗口边框的显示隐藏
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			
+			<hr />
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			&copy;1998-2010<br />
+			文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Fri Apr 27 2012 17:47:17 GMT+0800 (CST)
+		</div>
+	</body>
+</html>
