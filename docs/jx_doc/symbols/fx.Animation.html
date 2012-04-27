@@ -282,6 +282,8 @@ ul.inheritsList
 	
 	<li><a href="../symbols/fx.Beater.html">fx.Beater</a></li>
 	
+	<li><a href="../symbols/fx.transitions.html">fx.transitions</a></li>
+	
 	<li><a href="../symbols/http.html">http</a></li>
 	
 	<li><a href="../symbols/json.html">json</a></li>
@@ -318,6 +320,8 @@ ul.inheritsList
 
 <!-- ============================== class summary ========================== -->			
 			<p class="description">
+				<br />Extends
+					<a href="../symbols/fx.Beater.html">fx.Beater</a>.<br />
 				
 			
 				
@@ -342,7 +346,7 @@ ul.inheritsList
 						<td class="attributes">&nbsp;</td>
 						<td class="nameDescription" >
 							<div class="fixedFont">
-								<b><a href="../symbols/fx.Animation.html#constructor">fx.Animation</a></b>(element:, property:, from:, to:, unit:, duration:, loop:, transition:, fps:, css属性转换器)
+								<b><a href="../symbols/fx.Animation.html#constructor">fx.Animation</a></b>(element, property, from, to, unit, duration, loop, transition, fps, css属性转换器)
 							</div>
 							<div class="description">动画类</div>
 						</td>
@@ -356,6 +360,109 @@ ul.inheritsList
 
 <!-- ============================== methods summary ======================== -->
 			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class fx.Animation.">
+					<caption>方法概要</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/fx.Animation.html#compute">compute</a></b>(from, to, delta)
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/fx.Animation.html#getTransition">getTransition</a></b>()
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/fx.Animation.html#onBeater">onBeater</a></b>(progress)
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/fx.Animation.html#onCancel">onCancel</a></b>()
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/fx.Animation.html#onEnd">onEnd</a></b>()
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/fx.Animation.html#onStart">onStart</a></b>(from, to)
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/fx.Animation.html#render">render</a></b>(element, property, value, unit)
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/fx.Animation.html#set">set</a></b>(now)
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/fx.Animation.html#setFromTo">setFromTo</a></b>(from, to)
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+				<dl class="inheritsList">
+				<dt>Methods borrowed from class <a href="../symbols/fx.Beater.html">fx.Beater</a>: </dt><dd><a href="../symbols/fx.Beater.html#cancel">cancel</a>, <a href="../symbols/fx.Beater.html#check">check</a>, <a href="../symbols/fx.Beater.html#end">end</a>, <a href="../symbols/fx.Beater.html#onLoop">onLoop</a>, <a href="../symbols/fx.Beater.html#pause">pause</a>, <a href="../symbols/fx.Beater.html#resume">resume</a>, <a href="../symbols/fx.Beater.html#setDuration">setDuration</a>, <a href="../symbols/fx.Beater.html#setOption">setOption</a>, <a href="../symbols/fx.Beater.html#start">start</a>, <a href="../symbols/fx.Beater.html#startTimer">startTimer</a>, <a href="../symbols/fx.Beater.html#stopTimer">stopTimer</a>, <a href="../symbols/fx.Beater.html#update">update</a></dd>
+				</dl>
+				
+			
 <!-- ============================== events summary ======================== -->
 			
 
@@ -368,7 +475,7 @@ ul.inheritsList
 				
 				<div class="detailTitle fixedFont">
 					<span class="methodType"></span>
-						<b>fx.Animation</b>(element:, property:, from:, to:, unit:, duration:, loop:, transition:, fps:, css属性转换器)
+						<b>fx.Animation</b>(element, property, from, to, unit, duration, loop, transition, fps, css属性转换器)
 				</div>
 				
 				
@@ -390,7 +497,7 @@ ul.inheritsList
 								
 								<dl class="paramsList">
 									<dt>
-										<span class="light fixedFont">{Element}</span>  <b>element:</b>
+										<span class="light fixedFont">{Element}</span>  <b>element</b>
 										
 									</dt>
 									<dd>动画的dom</dd>
@@ -398,7 +505,7 @@ ul.inheritsList
 								
 								<dl class="paramsList">
 									<dt>
-										<span class="light fixedFont">{String}</span>  <b>property:</b>
+										<span class="light fixedFont">{String}</span>  <b>property</b>
 										
 									</dt>
 									<dd>css 属性</dd>
@@ -406,7 +513,7 @@ ul.inheritsList
 								
 								<dl class="paramsList">
 									<dt>
-										<span class="light fixedFont">{Mix}</span>  <b>from:</b>
+										<span class="light fixedFont">{Mix}</span>  <b>from</b>
 										
 									</dt>
 									<dd>起始值</dd>
@@ -414,7 +521,7 @@ ul.inheritsList
 								
 								<dl class="paramsList">
 									<dt>
-										<span class="light fixedFont">{Mix}</span>  <b>to:</b>
+										<span class="light fixedFont">{Mix}</span>  <b>to</b>
 										
 									</dt>
 									<dd>到达值</dd>
@@ -422,7 +529,7 @@ ul.inheritsList
 								
 								<dl class="paramsList">
 									<dt>
-										<span class="light fixedFont">{String}</span>  <b>unit:</b>
+										<span class="light fixedFont">{String}</span>  <b>unit</b>
 										
 									</dt>
 									<dd>单位</dd>
@@ -430,7 +537,7 @@ ul.inheritsList
 								
 								<dl class="paramsList">
 									<dt>
-										<span class="light fixedFont">{Number}</span>  <b>duration:</b>
+										<span class="light fixedFont">{Number}</span>  <b>duration</b>
 										
 									</dt>
 									<dd>动画时长，单位毫秒</dd>
@@ -438,7 +545,7 @@ ul.inheritsList
 								
 								<dl class="paramsList">
 									<dt>
-										<span class="light fixedFont">{Number}</span>  <b>loop:</b>
+										<span class="light fixedFont">{Number}</span>  <b>loop</b>
 										
 									</dt>
 									<dd>循环次数,默认为1,0为无限循环</dd>
@@ -446,7 +553,7 @@ ul.inheritsList
 								
 								<dl class="paramsList">
 									<dt>
-										<span class="light fixedFont">{Function}</span>  <b>transition:</b>
+										<span class="light fixedFont">{Function}</span>  <b>transition</b>
 										
 									</dt>
 									<dd>变化公式</dd>
@@ -454,7 +561,7 @@ ul.inheritsList
 								
 								<dl class="paramsList">
 									<dt>
-										<span class="light fixedFont">{Number}</span>  <b>fps:</b>
+										<span class="light fixedFont">{Number}</span>  <b>fps</b>
 										
 									</dt>
 									<dd>fps你懂的</dd>
@@ -493,6 +600,418 @@ ul.inheritsList
 
 <!-- ============================== method details ========================= -->		
 			
+				<div class="sectionTitle">
+					方法详解
+				</div>
+				
+					<a name="compute"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>compute</b>(from, to, delta)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>from</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>to</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>delta</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="getTransition"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>getTransition</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="onBeater"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>onBeater</b>(progress)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>progress</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="onCancel"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>onCancel</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="onEnd"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>onEnd</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="onStart"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>onStart</b>(from, to)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>from</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>to</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="render"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>render</b>(element, property, value, unit)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>element</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>property</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>value</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>unit</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="set"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>set</b>(now)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>now</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setFromTo"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setFromTo</b>(from, to)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>from</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>to</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					
+				
+			
 			
 <!-- ============================== event details ========================= -->		
 			
@@ -504,7 +1023,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			&copy;1998-2012<br />
-			文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Thu Apr 26 2012 19:43:29 GMT+0800 (CST)
+			文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Fri Apr 27 2012 11:38:23 GMT+0800 (CST)
 		</div>
 	</body>
 </html>

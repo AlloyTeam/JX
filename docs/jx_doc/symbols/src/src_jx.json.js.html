@@ -5,17 +5,17 @@
 	.STRN {color: #393;}
 	.REGX {color: #339;}
 	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
-	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">/**	
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">/** 
 <span class='line'>  2</span>  * JET (Javascript Extend Tools) 
 <span class='line'>  3</span>  * Copyright (c) 2009, KDV.cn, All rights reserved.
 <span class='line'>  4</span>  * 
 <span class='line'>  5</span>  *
-<span class='line'>  6</span>  * @version	1.0
-<span class='line'>  7</span>  * @author	Kinvix(&lt;a href="mailto:Kinvix@gmail.com">Kinvix@gmail.com&lt;/a>)
+<span class='line'>  6</span>  * @version 1.0
+<span class='line'>  7</span>  * @author  Kinvix(&lt;a href="mailto:Kinvix@gmail.com">Kinvix@gmail.com&lt;/a>)
 <span class='line'>  8</span>  * 
 <span class='line'>  9</span>  */</span><span class="WHIT">
 <span class='line'> 10</span> 
-<span class='line'> 11</span> </span><span class="COMM">/**	
+<span class='line'> 11</span> </span><span class="COMM">/** 
 <span class='line'> 12</span>  * @description
 <span class='line'> 13</span>  * Package: jet.json
 <span class='line'> 14</span>  *
@@ -30,17 +30,17 @@
 <span class='line'> 23</span> </span><span class="WHIT"> </span><span class="WHIT">
 <span class='line'> 24</span> </span><span class="WHIT"> </span><span class="WHIT">
 <span class='line'> 25</span> </span><span class="NAME">Jx</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">$package</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">J</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 26</span> </span><span class="WHIT">	</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">JSON</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">window</span><span class="PUNC">[</span><span class="STRN">'JSON'</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 26</span> </span><span class="WHIT">    </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">JSON</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">window</span><span class="PUNC">[</span><span class="STRN">'JSON'</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 27</span> 
 <span class='line'> 28</span> </span><span class="WHIT">    </span><span class="COMM">/**
 <span class='line'> 29</span>      * @namespace
 <span class='line'> 30</span>      * @name json
 <span class='line'> 31</span>      */</span><span class="WHIT">
 <span class='line'> 32</span> 
-<span class='line'> 33</span> </span><span class="WHIT">	</span><span class="WHIT">
-<span class='line'> 34</span> </span><span class="WHIT">	</span><span class="WHIT">
-<span class='line'> 35</span> </span><span class="WHIT">	</span><span class="WHIT">
-<span class='line'> 36</span> </span><span class="WHIT">	</span><span class="WHIT">
+<span class='line'> 33</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'> 34</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'> 35</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'> 36</span> </span><span class="WHIT">    </span><span class="WHIT">
 <span class='line'> 37</span> </span><span class="COMM">/*
 <span class='line'> 38</span>     http://www.JSON.org/json2.js
 <span class='line'> 39</span>     2009-08-17
@@ -213,11 +213,11 @@
 <span class='line'>206</span> </span><span class="WHIT">        </span><span class="COMM">// Format integers to have at least two digits.</span><span class="WHIT">
 <span class='line'>207</span> </span><span class="WHIT">        </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">n</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NUMB">10</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="STRN">'0'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">n</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">n</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>208</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>209</span> </span><span class="WHIT">	</span><span class="COMM">// if (typeof Date.prototype.toJSON !== 'function') {</span><span class="WHIT">
+<span class='line'>209</span> </span><span class="WHIT">    </span><span class="COMM">// if (typeof Date.prototype.toJSON !== 'function') {</span><span class="WHIT">
 <span class='line'>210</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">Date.prototype.toJSON</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">'function'</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>211</span> </span><span class="WHIT">		</span><span class="COMM">/** 
-<span class='line'>212</span> 		 * @ignore
-<span class='line'>213</span> 		 */</span><span class="WHIT">
+<span class='line'>211</span> </span><span class="WHIT">        </span><span class="COMM">/** 
+<span class='line'>212</span>          * @ignore
+<span class='line'>213</span>          */</span><span class="WHIT">
 <span class='line'>214</span> </span><span class="WHIT">        </span><span class="NAME">Date.prototype.toJSON</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>215</span> 
 <span class='line'>216</span> </span><span class="WHIT">            </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">isFinite</span><span class="PUNC">(</span><span class="NAME">this.valueOf</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT">
@@ -228,17 +228,17 @@
 <span class='line'>221</span> </span><span class="WHIT">                 </span><span class="NAME">f</span><span class="PUNC">(</span><span class="NAME">this.getUTCMinutes</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">   </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">':'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT">
 <span class='line'>222</span> </span><span class="WHIT">                 </span><span class="NAME">f</span><span class="PUNC">(</span><span class="NAME">this.getUTCSeconds</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">   </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">'Z'</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>223</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>224</span> </span><span class="WHIT">		</span><span class="COMM">/** 
-<span class='line'>225</span> 		 * @ignore
-<span class='line'>226</span> 		 */</span><span class="WHIT">
+<span class='line'>224</span> </span><span class="WHIT">        </span><span class="COMM">/** 
+<span class='line'>225</span>          * @ignore
+<span class='line'>226</span>          */</span><span class="WHIT">
 <span class='line'>227</span> </span><span class="WHIT">        </span><span class="NAME">String.prototype.toJSON</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT">
 <span class='line'>228</span> </span><span class="WHIT">        </span><span class="COMM">/** 
-<span class='line'>229</span> 		 * @ignore
-<span class='line'>230</span> 		 */</span><span class="WHIT">
+<span class='line'>229</span>          * @ignore
+<span class='line'>230</span>          */</span><span class="WHIT">
 <span class='line'>231</span> </span><span class="WHIT">        </span><span class="NAME">Number.prototype.toJSON</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT">
 <span class='line'>232</span> </span><span class="WHIT">        </span><span class="COMM">/** 
-<span class='line'>233</span> 		 * @ignore
-<span class='line'>234</span> 		 */</span><span class="WHIT">
+<span class='line'>233</span>          * @ignore
+<span class='line'>234</span>          */</span><span class="WHIT">
 <span class='line'>235</span> </span><span class="WHIT">        </span><span class="NAME">Boolean.prototype.toJSON</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>236</span> </span><span class="WHIT">            </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.valueOf</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>237</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
@@ -408,155 +408,155 @@
 <span class='line'>401</span> </span><span class="COMM">// If the JSON object does not yet have a stringify method, give it one.</span><span class="WHIT">
 <span class='line'>402</span> 
 <span class='line'>403</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">JSON.stringify</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">'function'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>404</span> </span><span class="WHIT">        </span><span class="NAME">JSON.stringify</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">replacer</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">space</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>405</span> 
-<span class='line'>406</span> </span><span class="COMM">// The stringify method takes a value and an optional replacer, and an optional</span><span class="WHIT">
-<span class='line'>407</span> </span><span class="COMM">// space parameter, and returns a JSON text. The replacer can be a function</span><span class="WHIT">
-<span class='line'>408</span> </span><span class="COMM">// that can replace values, or an array of strings that will select the keys.</span><span class="WHIT">
-<span class='line'>409</span> </span><span class="COMM">// A default replacer method can be provided. Use of the space parameter can</span><span class="WHIT">
-<span class='line'>410</span> </span><span class="COMM">// produce text that is more easily readable.</span><span class="WHIT">
-<span class='line'>411</span> 
-<span class='line'>412</span> </span><span class="WHIT">            </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>413</span> </span><span class="WHIT">            </span><span class="NAME">gap</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">''</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>414</span> </span><span class="WHIT">            </span><span class="NAME">indent</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">''</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>415</span> 
-<span class='line'>416</span> </span><span class="COMM">// If the space parameter is a number, make an indent string containing that</span><span class="WHIT">
-<span class='line'>417</span> </span><span class="COMM">// many spaces.</span><span class="WHIT">
-<span class='line'>418</span> 
-<span class='line'>419</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">space</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">'number'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>420</span> </span><span class="WHIT">                </span><span class="KEYW">for</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">i</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">i</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NAME">space</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">i</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>421</span> </span><span class="WHIT">                    </span><span class="NAME">indent</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">' '</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>422</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>423</span> 
-<span class='line'>424</span> </span><span class="COMM">// If the space parameter is a string, it will be used as the indent string.</span><span class="WHIT">
-<span class='line'>425</span> 
-<span class='line'>426</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">space</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">'string'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>427</span> </span><span class="WHIT">                </span><span class="NAME">indent</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">space</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>428</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>429</span> 
-<span class='line'>430</span> </span><span class="COMM">// If there is a replacer, it must be a function or an array.</span><span class="WHIT">
-<span class='line'>431</span> </span><span class="COMM">// Otherwise, throw an error.</span><span class="WHIT">
+<span class='line'>404</span> </span><span class="WHIT">        </span><span class="COMM">/**
+<span class='line'>405</span>          * 把给定object转换成json字符串
+<span class='line'>406</span>          * 
+<span class='line'>407</span>          * @name stringify
+<span class='line'>408</span>          * @memberOf json
+<span class='line'>409</span>          * @function
+<span class='line'>410</span>          * @param {Object} value
+<span class='line'>411</span>          * @return {String}
+<span class='line'>412</span>          */</span><span class="WHIT">
+<span class='line'>413</span> </span><span class="WHIT">        </span><span class="NAME">JSON.stringify</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">replacer</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">space</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>414</span> 
+<span class='line'>415</span> </span><span class="COMM">// The stringify method takes a value and an optional replacer, and an optional</span><span class="WHIT">
+<span class='line'>416</span> </span><span class="COMM">// space parameter, and returns a JSON text. The replacer can be a function</span><span class="WHIT">
+<span class='line'>417</span> </span><span class="COMM">// that can replace values, or an array of strings that will select the keys.</span><span class="WHIT">
+<span class='line'>418</span> </span><span class="COMM">// A default replacer method can be provided. Use of the space parameter can</span><span class="WHIT">
+<span class='line'>419</span> </span><span class="COMM">// produce text that is more easily readable.</span><span class="WHIT">
+<span class='line'>420</span> 
+<span class='line'>421</span> </span><span class="WHIT">            </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>422</span> </span><span class="WHIT">            </span><span class="NAME">gap</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">''</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>423</span> </span><span class="WHIT">            </span><span class="NAME">indent</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">''</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>424</span> 
+<span class='line'>425</span> </span><span class="COMM">// If the space parameter is a number, make an indent string containing that</span><span class="WHIT">
+<span class='line'>426</span> </span><span class="COMM">// many spaces.</span><span class="WHIT">
+<span class='line'>427</span> 
+<span class='line'>428</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">space</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">'number'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>429</span> </span><span class="WHIT">                </span><span class="KEYW">for</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">i</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">i</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NAME">space</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">i</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>430</span> </span><span class="WHIT">                    </span><span class="NAME">indent</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">' '</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>431</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="WHIT">
 <span class='line'>432</span> 
-<span class='line'>433</span> </span><span class="WHIT">            </span><span class="NAME">rep</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">replacer</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>434</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">replacer</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">replacer</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">'function'</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT">
-<span class='line'>435</span> </span><span class="WHIT">                    </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">replacer</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">'object'</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT">
-<span class='line'>436</span> </span><span class="WHIT">                     </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">replacer.length</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">'number'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>437</span> </span><span class="WHIT">                </span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">'JSON.stringify'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>438</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>439</span> 
-<span class='line'>440</span> </span><span class="COMM">// Make a fake root object containing our value under the key of ''.</span><span class="WHIT">
-<span class='line'>441</span> </span><span class="COMM">// Return the result of stringifying the value.</span><span class="WHIT">
-<span class='line'>442</span> 
-<span class='line'>443</span> </span><span class="WHIT">            </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">str</span><span class="PUNC">(</span><span class="STRN">''</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="STRN">''</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">value</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>444</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>445</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>446</span> 
-<span class='line'>447</span> 
-<span class='line'>448</span> </span><span class="COMM">// If the JSON object does not yet have a parse method, give it one.</span><span class="WHIT">
-<span class='line'>449</span> 
-<span class='line'>450</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">JSON.parse</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">'function'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>451</span> </span><span class="WHIT">        </span><span class="COMM">/**
-<span class='line'>452</span>          * @memberOf json
-<span class='line'>453</span>          * @function 
-<span class='line'>454</span>          * @name parse
-<span class='line'>455</span>          * @param {String} text
-<span class='line'>456</span>          */</span><span class="WHIT">
-<span class='line'>457</span> </span><span class="WHIT">        </span><span class="NAME">JSON.parse</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">text</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">reviver</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>433</span> </span><span class="COMM">// If the space parameter is a string, it will be used as the indent string.</span><span class="WHIT">
+<span class='line'>434</span> 
+<span class='line'>435</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">space</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">'string'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>436</span> </span><span class="WHIT">                </span><span class="NAME">indent</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">space</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>437</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>438</span> 
+<span class='line'>439</span> </span><span class="COMM">// If there is a replacer, it must be a function or an array.</span><span class="WHIT">
+<span class='line'>440</span> </span><span class="COMM">// Otherwise, throw an error.</span><span class="WHIT">
+<span class='line'>441</span> 
+<span class='line'>442</span> </span><span class="WHIT">            </span><span class="NAME">rep</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">replacer</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>443</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">replacer</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">replacer</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">'function'</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT">
+<span class='line'>444</span> </span><span class="WHIT">                    </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">replacer</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">'object'</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT">
+<span class='line'>445</span> </span><span class="WHIT">                     </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">replacer.length</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">'number'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>446</span> </span><span class="WHIT">                </span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">'JSON.stringify'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>447</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>448</span> 
+<span class='line'>449</span> </span><span class="COMM">// Make a fake root object containing our value under the key of ''.</span><span class="WHIT">
+<span class='line'>450</span> </span><span class="COMM">// Return the result of stringifying the value.</span><span class="WHIT">
+<span class='line'>451</span> 
+<span class='line'>452</span> </span><span class="WHIT">            </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">str</span><span class="PUNC">(</span><span class="STRN">''</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="STRN">''</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">value</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>453</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>454</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>455</span> 
+<span class='line'>456</span> 
+<span class='line'>457</span> </span><span class="COMM">// If the JSON object does not yet have a parse method, give it one.</span><span class="WHIT">
 <span class='line'>458</span> 
-<span class='line'>459</span> </span><span class="COMM">// The parse method takes a text and an optional reviver function, and returns</span><span class="WHIT">
-<span class='line'>460</span> </span><span class="COMM">// a JavaScript value if the text is a valid JSON text.</span><span class="WHIT">
-<span class='line'>461</span> 
-<span class='line'>462</span> </span><span class="WHIT">            </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">j</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>463</span> 
-<span class='line'>464</span> </span><span class="WHIT">            </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="NAME">walk</span><span class="PUNC">(</span><span class="NAME">holder</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">key</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>465</span> 
-<span class='line'>466</span> </span><span class="COMM">// The walk method is used to recursively walk the resulting structure so</span><span class="WHIT">
-<span class='line'>467</span> </span><span class="COMM">// that modifications can be made.</span><span class="WHIT">
-<span class='line'>468</span> 
-<span class='line'>469</span> </span><span class="WHIT">                </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">k</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">v</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">holder</span><span class="PUNC">[</span><span class="NAME">key</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>470</span> </span><span class="WHIT">                </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">'object'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>471</span> </span><span class="WHIT">                    </span><span class="KEYW">for</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">k</span><span class="WHIT"> </span><span class="KEYW">in</span><span class="WHIT"> </span><span class="NAME">value</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>472</span> </span><span class="WHIT">                        </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">Object.hasOwnProperty.call</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">k</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>473</span> </span><span class="WHIT">                            </span><span class="NAME">v</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">walk</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">k</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>474</span> </span><span class="WHIT">                            </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">v</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="NAME">undefined</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>475</span> </span><span class="WHIT">                                </span><span class="NAME">value</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">v</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>476</span> </span><span class="WHIT">                            </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>477</span> </span><span class="WHIT">                                </span><span class="KEYW">delete</span><span class="WHIT"> </span><span class="NAME">value</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>478</span> </span><span class="WHIT">                            </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>479</span> </span><span class="WHIT">                        </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>480</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>481</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>482</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">reviver.call</span><span class="PUNC">(</span><span class="NAME">holder</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">value</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>483</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>484</span> 
-<span class='line'>485</span> 
-<span class='line'>486</span> </span><span class="COMM">// Parsing happens in four stages. In the first stage, we replace certain</span><span class="WHIT">
-<span class='line'>487</span> </span><span class="COMM">// Unicode characters with escape sequences. JavaScript handles many characters</span><span class="WHIT">
-<span class='line'>488</span> </span><span class="COMM">// incorrectly, either silently deleting them, or treating them as line endings.</span><span class="WHIT">
-<span class='line'>489</span> 
-<span class='line'>490</span> </span><span class="WHIT">            </span><span class="NAME">cx.lastIndex</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>491</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">cx.test</span><span class="PUNC">(</span><span class="NAME">text</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>492</span> </span><span class="WHIT">                </span><span class="NAME">text</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">text.replace</span><span class="PUNC">(</span><span class="NAME">cx</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">a</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>493</span> </span><span class="WHIT">                    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="STRN">'\\u'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT">
-<span class='line'>494</span> </span><span class="WHIT">                        </span><span class="PUNC">(</span><span class="STRN">'0000'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">a.charCodeAt</span><span class="PUNC">(</span><span class="NUMB">0</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">toString</span><span class="PUNC">(</span><span class="NUMB">16</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">slice</span><span class="PUNC">(</span><span class="PUNC">-</span><span class="NUMB">4</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>495</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>496</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>497</span> 
-<span class='line'>498</span> </span><span class="COMM">// In the second stage, we run the text against regular expressions that look</span><span class="WHIT">
-<span class='line'>499</span> </span><span class="COMM">// for non-JSON patterns. We are especially concerned with '()' and 'new'</span><span class="WHIT">
-<span class='line'>500</span> </span><span class="COMM">// because they can cause invocation, and '=' because it can cause mutation.</span><span class="WHIT">
-<span class='line'>501</span> </span><span class="COMM">// But just to be safe, we want to reject all unexpected forms.</span><span class="WHIT">
-<span class='line'>502</span> 
-<span class='line'>503</span> </span><span class="COMM">// We split the second stage into 4 regexp operations in order to work around</span><span class="WHIT">
-<span class='line'>504</span> </span><span class="COMM">// crippling inefficiencies in IE's and Safari's regexp engines. First we</span><span class="WHIT">
-<span class='line'>505</span> </span><span class="COMM">// replace the JSON backslash pairs with '@' (a non-JSON character). Second, we</span><span class="WHIT">
-<span class='line'>506</span> </span><span class="COMM">// replace all simple value tokens with ']' characters. Third, we delete all</span><span class="WHIT">
-<span class='line'>507</span> </span><span class="COMM">// open brackets that follow a colon or comma or that begin the text. Finally,</span><span class="WHIT">
-<span class='line'>508</span> </span><span class="COMM">// we look to see that the remaining characters are only whitespace or ']' or</span><span class="WHIT">
-<span class='line'>509</span> </span><span class="COMM">// ',' or ':' or '{' or '}'. If that is so, then the text is safe for eval.</span><span class="WHIT">
-<span class='line'>510</span> 
-<span class='line'>511</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="REGX">/^[\],:{}\s]*$/</span><span class="PUNC">.</span><span class="WHIT">
-<span class='line'>512</span> </span><span class="NAME">test</span><span class="PUNC">(</span><span class="NAME">text.replace</span><span class="PUNC">(</span><span class="REGX">/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'@'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="WHIT">
-<span class='line'>513</span> </span><span class="NAME">replace</span><span class="PUNC">(</span><span class="REGX">/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">']'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="WHIT">
-<span class='line'>514</span> </span><span class="NAME">replace</span><span class="PUNC">(</span><span class="REGX">/(?:^|:|,)(?:\s*\[)+/g</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">''</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>515</span> 
-<span class='line'>516</span> </span><span class="COMM">// In the third stage we use the eval function to compile the text into a</span><span class="WHIT">
-<span class='line'>517</span> </span><span class="COMM">// JavaScript structure. The '{' operator is subject to a syntactic ambiguity</span><span class="WHIT">
-<span class='line'>518</span> </span><span class="COMM">// in JavaScript: it can begin a block or an object literal. We wrap the text</span><span class="WHIT">
-<span class='line'>519</span> </span><span class="COMM">// in parens to eliminate the ambiguity.</span><span class="WHIT">
-<span class='line'>520</span> 
-<span class='line'>521</span> </span><span class="WHIT">                </span><span class="NAME">j</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">eval</span><span class="PUNC">(</span><span class="STRN">'('</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">text</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">')'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>522</span> 
-<span class='line'>523</span> </span><span class="COMM">// In the optional fourth stage, we recursively walk the new structure, passing</span><span class="WHIT">
-<span class='line'>524</span> </span><span class="COMM">// each name/value pair to a reviver function for possible transformation.</span><span class="WHIT">
-<span class='line'>525</span> 
-<span class='line'>526</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">reviver</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">'function'</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT">
-<span class='line'>527</span> </span><span class="WHIT">                    </span><span class="NAME">walk</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="STRN">''</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">j</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">''</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">j</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>528</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>529</span> 
-<span class='line'>530</span> </span><span class="COMM">// If the text is not JSON parseable, then a SyntaxError is thrown.</span><span class="WHIT">
+<span class='line'>459</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">JSON.parse</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">'function'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>460</span> </span><span class="WHIT">        </span><span class="COMM">/**
+<span class='line'>461</span>          * 把给定json字符串转换成对象
+<span class='line'>462</span>          * @function 
+<span class='line'>463</span>          * @name parse
+<span class='line'>464</span>          * @memberOf json
+<span class='line'>465</span>          * @param {String} text
+<span class='line'>466</span>          * @return {Object}
+<span class='line'>467</span>          */</span><span class="WHIT">
+<span class='line'>468</span> </span><span class="WHIT">        </span><span class="NAME">JSON.parse</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">text</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">reviver</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>469</span> 
+<span class='line'>470</span> </span><span class="COMM">// The parse method takes a text and an optional reviver function, and returns</span><span class="WHIT">
+<span class='line'>471</span> </span><span class="COMM">// a JavaScript value if the text is a valid JSON text.</span><span class="WHIT">
+<span class='line'>472</span> 
+<span class='line'>473</span> </span><span class="WHIT">            </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">j</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>474</span> 
+<span class='line'>475</span> </span><span class="WHIT">            </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="NAME">walk</span><span class="PUNC">(</span><span class="NAME">holder</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">key</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>476</span> 
+<span class='line'>477</span> </span><span class="COMM">// The walk method is used to recursively walk the resulting structure so</span><span class="WHIT">
+<span class='line'>478</span> </span><span class="COMM">// that modifications can be made.</span><span class="WHIT">
+<span class='line'>479</span> 
+<span class='line'>480</span> </span><span class="WHIT">                </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">k</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">v</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">holder</span><span class="PUNC">[</span><span class="NAME">key</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>481</span> </span><span class="WHIT">                </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">'object'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>482</span> </span><span class="WHIT">                    </span><span class="KEYW">for</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">k</span><span class="WHIT"> </span><span class="KEYW">in</span><span class="WHIT"> </span><span class="NAME">value</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>483</span> </span><span class="WHIT">                        </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">Object.hasOwnProperty.call</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">k</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>484</span> </span><span class="WHIT">                            </span><span class="NAME">v</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">walk</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">k</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>485</span> </span><span class="WHIT">                            </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">v</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="NAME">undefined</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>486</span> </span><span class="WHIT">                                </span><span class="NAME">value</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">v</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>487</span> </span><span class="WHIT">                            </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>488</span> </span><span class="WHIT">                                </span><span class="KEYW">delete</span><span class="WHIT"> </span><span class="NAME">value</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>489</span> </span><span class="WHIT">                            </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>490</span> </span><span class="WHIT">                        </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>491</span> </span><span class="WHIT">                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>492</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>493</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">reviver.call</span><span class="PUNC">(</span><span class="NAME">holder</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">value</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>494</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>495</span> 
+<span class='line'>496</span> 
+<span class='line'>497</span> </span><span class="COMM">// Parsing happens in four stages. In the first stage, we replace certain</span><span class="WHIT">
+<span class='line'>498</span> </span><span class="COMM">// Unicode characters with escape sequences. JavaScript handles many characters</span><span class="WHIT">
+<span class='line'>499</span> </span><span class="COMM">// incorrectly, either silently deleting them, or treating them as line endings.</span><span class="WHIT">
+<span class='line'>500</span> 
+<span class='line'>501</span> </span><span class="WHIT">            </span><span class="NAME">cx.lastIndex</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>502</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">cx.test</span><span class="PUNC">(</span><span class="NAME">text</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>503</span> </span><span class="WHIT">                </span><span class="NAME">text</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">text.replace</span><span class="PUNC">(</span><span class="NAME">cx</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">a</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>504</span> </span><span class="WHIT">                    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="STRN">'\\u'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT">
+<span class='line'>505</span> </span><span class="WHIT">                        </span><span class="PUNC">(</span><span class="STRN">'0000'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">a.charCodeAt</span><span class="PUNC">(</span><span class="NUMB">0</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">toString</span><span class="PUNC">(</span><span class="NUMB">16</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">slice</span><span class="PUNC">(</span><span class="PUNC">-</span><span class="NUMB">4</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>506</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>507</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>508</span> 
+<span class='line'>509</span> </span><span class="COMM">// In the second stage, we run the text against regular expressions that look</span><span class="WHIT">
+<span class='line'>510</span> </span><span class="COMM">// for non-JSON patterns. We are especially concerned with '()' and 'new'</span><span class="WHIT">
+<span class='line'>511</span> </span><span class="COMM">// because they can cause invocation, and '=' because it can cause mutation.</span><span class="WHIT">
+<span class='line'>512</span> </span><span class="COMM">// But just to be safe, we want to reject all unexpected forms.</span><span class="WHIT">
+<span class='line'>513</span> 
+<span class='line'>514</span> </span><span class="COMM">// We split the second stage into 4 regexp operations in order to work around</span><span class="WHIT">
+<span class='line'>515</span> </span><span class="COMM">// crippling inefficiencies in IE's and Safari's regexp engines. First we</span><span class="WHIT">
+<span class='line'>516</span> </span><span class="COMM">// replace the JSON backslash pairs with '@' (a non-JSON character). Second, we</span><span class="WHIT">
+<span class='line'>517</span> </span><span class="COMM">// replace all simple value tokens with ']' characters. Third, we delete all</span><span class="WHIT">
+<span class='line'>518</span> </span><span class="COMM">// open brackets that follow a colon or comma or that begin the text. Finally,</span><span class="WHIT">
+<span class='line'>519</span> </span><span class="COMM">// we look to see that the remaining characters are only whitespace or ']' or</span><span class="WHIT">
+<span class='line'>520</span> </span><span class="COMM">// ',' or ':' or '{' or '}'. If that is so, then the text is safe for eval.</span><span class="WHIT">
+<span class='line'>521</span> 
+<span class='line'>522</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="REGX">/^[\],:{}\s]*$/</span><span class="PUNC">.</span><span class="WHIT">
+<span class='line'>523</span> </span><span class="NAME">test</span><span class="PUNC">(</span><span class="NAME">text.replace</span><span class="PUNC">(</span><span class="REGX">/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'@'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="WHIT">
+<span class='line'>524</span> </span><span class="NAME">replace</span><span class="PUNC">(</span><span class="REGX">/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">']'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="WHIT">
+<span class='line'>525</span> </span><span class="NAME">replace</span><span class="PUNC">(</span><span class="REGX">/(?:^|:|,)(?:\s*\[)+/g</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">''</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>526</span> 
+<span class='line'>527</span> </span><span class="COMM">// In the third stage we use the eval function to compile the text into a</span><span class="WHIT">
+<span class='line'>528</span> </span><span class="COMM">// JavaScript structure. The '{' operator is subject to a syntactic ambiguity</span><span class="WHIT">
+<span class='line'>529</span> </span><span class="COMM">// in JavaScript: it can begin a block or an object literal. We wrap the text</span><span class="WHIT">
+<span class='line'>530</span> </span><span class="COMM">// in parens to eliminate the ambiguity.</span><span class="WHIT">
 <span class='line'>531</span> 
-<span class='line'>532</span> </span><span class="WHIT">            </span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">SyntaxError</span><span class="PUNC">(</span><span class="STRN">'JSON.parse'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>533</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>534</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>535</span> </span><span class="PUNC">}</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>532</span> </span><span class="WHIT">                </span><span class="NAME">j</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">eval</span><span class="PUNC">(</span><span class="STRN">'('</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">text</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">')'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>533</span> 
+<span class='line'>534</span> </span><span class="COMM">// In the optional fourth stage, we recursively walk the new structure, passing</span><span class="WHIT">
+<span class='line'>535</span> </span><span class="COMM">// each name/value pair to a reviver function for possible transformation.</span><span class="WHIT">
 <span class='line'>536</span> 
-<span class='line'>537</span> </span><span class="WHIT">    </span><span class="WHIT">
-<span class='line'>538</span> </span><span class="WHIT">	</span><span class="NAME">J.json</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">JSON</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>539</span> 
+<span class='line'>537</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">reviver</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">'function'</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT">
+<span class='line'>538</span> </span><span class="WHIT">                    </span><span class="NAME">walk</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="STRN">''</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">j</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">''</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">j</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>539</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
 <span class='line'>540</span> 
-<span class='line'>541</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>541</span> </span><span class="COMM">// If the text is not JSON parseable, then a SyntaxError is thrown.</span><span class="WHIT">
 <span class='line'>542</span> 
-<span class='line'>543</span> 
-<span class='line'>544</span> 
-<span class='line'>545</span> 
-<span class='line'>546</span> 
+<span class='line'>543</span> </span><span class="WHIT">            </span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">SyntaxError</span><span class="PUNC">(</span><span class="STRN">'JSON.parse'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>544</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>545</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>546</span> </span><span class="PUNC">}</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>547</span> 
-<span class='line'>548</span> 
-<span class='line'>549</span> 
+<span class='line'>548</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'>549</span> </span><span class="WHIT">    </span><span class="NAME">J.json</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">JSON</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>550</span> 
 <span class='line'>551</span> 
-<span class='line'>552</span> 
+<span class='line'>552</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>553</span> 
 <span class='line'>554</span> 
 <span class='line'>555</span> 
@@ -564,4 +564,15 @@
 <span class='line'>557</span> 
 <span class='line'>558</span> 
 <span class='line'>559</span> 
-<span class='line'>560</span> </span></pre></body></html>
+<span class='line'>560</span> 
+<span class='line'>561</span> 
+<span class='line'>562</span> 
+<span class='line'>563</span> 
+<span class='line'>564</span> 
+<span class='line'>565</span> 
+<span class='line'>566</span> 
+<span class='line'>567</span> 
+<span class='line'>568</span> 
+<span class='line'>569</span> 
+<span class='line'>570</span> 
+<span class='line'>571</span> </span></pre></body></html>

@@ -360,10 +360,10 @@ Jx().$package(function(J){
     //browser.set("borderimage",browser.firefox>3 || browser.safari || browser.chrome);
     
     if(browser.ie){
-    	if(!document.documentMode) document.documentMode=Math.floor(browser.ie);
-    	else if(document.documentMode!==Math.floor(browser.ie)) browser.set("ie",toFixedVersion(document.documentMode));
+        if(!document.documentMode) document.documentMode=Math.floor(browser.ie);
+        else if(document.documentMode!==Math.floor(browser.ie)) browser.set("ie",toFixedVersion(document.documentMode));
     }
-	
+    
     //J.out(browser.name);
     //J.out(browser.ua);
     
@@ -423,9 +423,8 @@ Jx().$package(function(J){
         
         /**
          * 设置浏览器引擎的类型和版本
-         * 
          * @ignore
-         * 
+         * @memberOf browser.engine
          */
         set: function(name, ver){
             this.name = name;
@@ -503,7 +502,7 @@ Jx().$package(function(J){
             htmlClassName.push("flash");
             htmlClassName.push("flash" + filterDot(browser.plugins.flash));
         }
-		if(typeof(window['webTop']) != 'undefined' && window['webTop']) {
+        if(typeof(window['webTop']) != 'undefined' && window['webTop']) {
              htmlClassName.push("webTop");
         }
         htmlTag.className = htmlClassName.join(' ');

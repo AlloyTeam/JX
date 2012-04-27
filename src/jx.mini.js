@@ -1,4 +1,4 @@
-/**	
+/** 
  * @description
  * Package: jet.mini
  *
@@ -9,7 +9,7 @@
  
 Jx().$package(function(J){
 
-	
+    
 /**
  * "mini" Selector Engine
  * Copyright (c) 2009 James Padolsey
@@ -225,31 +225,31 @@ var mini = (function(){
 
 
 
-	/*
-	 * ////////////////////////////////////////////////////////////////
-	 * 
-	 * Adapter to JET
-	 * 
-	 * ////////////////////////////////////////////////////////////////
-	 */
-	/**
+    /*
+     * ////////////////////////////////////////////////////////////////
+     * 
+     * Adapter to JET
+     * 
+     * ////////////////////////////////////////////////////////////////
+     */
+    /**
      * 一个据说比jq还快的筛选器，可以满足日常99%的筛选需要
      * @function
      * @memberOf dom
      * @name mini
-	 * 
-	 * @param {String} query string 筛选器语法
-	 * @returns {Element} 返回筛选出的dom元素
-	 * 
-	 * @example
-	 * //创建一个匿名package包：
-	 * Jx().$package(function(J){
-	 * 	//这时上下文对象this指向全局window对象
-	 * 	var lists = J.dom.mini(".list");
-	 * };
-	 * 
-	 */
-	J.dom.mini = mini;
+     * 
+     * @param {String} query string 筛选器语法
+     * @returns {Element} 返回筛选出的dom元素
+     * 
+     * @example
+     * //创建一个匿名package包：
+     * Jx().$package(function(J){
+     *  //这时上下文对象this指向全局window对象
+     *  var lists = J.dom.mini(".list");
+     * };
+     * 
+     */
+    J.dom.mini = mini;
 
 
 

@@ -17,7 +17,7 @@ Jx().$package(function(J){
         removeClass,
         toggleClass,
         replaceClass,
-		createStyleNode,
+        createStyleNode,
         setStyle,
         getStyle,
         setCssText,
@@ -54,7 +54,7 @@ Jx().$package(function(J){
         getTextFieldSelection,
         
         contains,
-		getHref,
+        getHref,
     
         getDoc,
         _getDoc=null,
@@ -62,8 +62,8 @@ Jx().$package(function(J){
         w,
         getDocumentElement,
         DocumentElement,
-		getDocHead,
-		HeadElement;
+        getDocHead,
+        HeadElement;
     /**
      * dom 名字空间
      * 
@@ -82,10 +82,10 @@ Jx().$package(function(J){
     $D.win = w;
     $D.doc = w.document;
     
-	// feature detection 必须对已创建的对象检测
-	var hasClassListProperty = document && Object.prototype.hasOwnProperty.call(document.documentElement,'classList');
+    // feature detection 必须对已创建的对象检测
+    var hasClassListProperty = document && Object.prototype.hasOwnProperty.call(document.documentElement,'classList');
 
-	/**
+    /**
      * 获取DocumentElement
      * 
      * @memberOf dom
@@ -479,21 +479,21 @@ Jx().$package(function(J){
      * @param {String} className class 名称
      */
     hasClass = function(){
-		if (hasClassListProperty) {
-			return function (el, className) {
-				if (!el || !className) {
-					return false;
-				}
-				return el.classList.contains(className);
-			};
-		} else {
-			return function (el, className) {
-				if (!el || !className) {
-					return false;
-				}
-				return -1 < (' ' + el.className + ' ').indexOf(' ' + className + ' ');
-			};
-		}
+        if (hasClassListProperty) {
+            return function (el, className) {
+                if (!el || !className) {
+                    return false;
+                }
+                return el.classList.contains(className);
+            };
+        } else {
+            return function (el, className) {
+                if (!el || !className) {
+                    return false;
+                }
+                return -1 < (' ' + el.className + ' ').indexOf(' ' + className + ' ');
+            };
+        }
     }();
 
     /**
@@ -507,21 +507,21 @@ Jx().$package(function(J){
      * @param {String} className class 名称
      */
     addClass = function(){
-		if (hasClassListProperty) {
-			return function (el, className) {
-				if (!el || !className || hasClass(el, className)) {
-					return;
-				}
-				el.classList.add(className);
-			};
-		} else {
-			return function (el, className) {
-				if (!el || !className || hasClass(el, className)) {
-					return;
-				}
-				el.className += ' ' + className;
-			};
-		}
+        if (hasClassListProperty) {
+            return function (el, className) {
+                if (!el || !className || hasClass(el, className)) {
+                    return;
+                }
+                el.classList.add(className);
+            };
+        } else {
+            return function (el, className) {
+                if (!el || !className || hasClass(el, className)) {
+                    return;
+                }
+                el.className += ' ' + className;
+            };
+        }
     }();
 
     /**
@@ -535,21 +535,21 @@ Jx().$package(function(J){
      * @param {String} className class 名称
      */
     removeClass = function(){
-		if (hasClassListProperty) {
-			return function (el, className) {
-				if (!el || !className || !hasClass(el, className)) {
-					return;
-				}
-				el.classList.remove(className);
-			};
-		} else {
-			return function (el, className) {
-				if (!el || !className || !hasClass(el, className)) {
-					return;
-				}
-				el.className = el.className.replace(new RegExp('(?:^|\\s)' + className + '(?:\\s|$)'), ' ');
-			};
-		}
+        if (hasClassListProperty) {
+            return function (el, className) {
+                if (!el || !className || !hasClass(el, className)) {
+                    return;
+                }
+                el.classList.remove(className);
+            };
+        } else {
+            return function (el, className) {
+                if (!el || !className || !hasClass(el, className)) {
+                    return;
+                }
+                el.className = el.className.replace(new RegExp('(?:^|\\s)' + className + '(?:\\s|$)'), ' ');
+            };
+        }
     }();
     
     /*
@@ -571,21 +571,21 @@ Jx().$package(function(J){
      * @param {String} className class 名称
      */
     toggleClass = function(){
-		if (hasClassListProperty) {
-			return function (el, className) {
-				if (!el || !className) {
-					return;
-				}
-				el.classList.toggle(className);
-			};
-		} else {
-			return function (el, className) {
-				if (!el || !className) {
-					return;
-				}
-				hasClass(el, className) ? removeClass(el, className) : addClass(el, className);
-			};
-		}
+        if (hasClassListProperty) {
+            return function (el, className) {
+                if (!el || !className) {
+                    return;
+                }
+                el.classList.toggle(className);
+            };
+        } else {
+            return function (el, className) {
+                if (!el || !className) {
+                    return;
+                }
+                hasClass(el, className) ? removeClass(el, className) : addClass(el, className);
+            };
+        }
     }();
 
     /**
@@ -711,43 +711,43 @@ Jx().$package(function(J){
      * @return {String} 返回元素样式
      */
     getStyle = function(el, styleName){
-    	if(!el){
-    		return;
-    	}
-    	
-    	var win = getWin(el);
-    	var name = J.browser.name;
-    	//J.out(name);
-		if(styleName === "float" || styleName === "cssFloat"){
-    		if(name === "ie"){
-    			styleName = "styleFloat";
-    		}else{
-    			styleName = "cssFloat";
-    		}
-    	}
-    	if(styleName === "opacity" && name === "ie" && J.browser.ie<9){
-    		var opacity = 1,
-    			result = el.style.filter.match(/opacity=(\d+)/);
-    		if(result && result[1]){
-    			opacity = result[1]/100;
-    		}
-			return opacity;
-    	}
-    	
-    	if(el.style[styleName]){
-    		return el.style[styleName];
-    	}else if(el.currentStyle){
-    		//alert(el.currentStyle[styleName]);
-    		return el.currentStyle[styleName];
-    	}else if(win.getComputedStyle){
-    		//J.out(win.getComputedStyle(el, null));
-    		return win.getComputedStyle(el, null)[styleName];
-    	}else if(document.defaultView && document.defaultView.getComputedStyle){
-    		styleName = styleName.replace(/([/A-Z])/g, "-$1");
-    		styleName = styleName.toLowerCase();
-    		var style = document.defaultView.getComputedStyle(el, "");
-    		return style && style.getPropertyValue(styleName);
-    	}
+        if(!el){
+            return;
+        }
+        
+        var win = getWin(el);
+        var name = J.browser.name;
+        //J.out(name);
+        if(styleName === "float" || styleName === "cssFloat"){
+            if(name === "ie"){
+                styleName = "styleFloat";
+            }else{
+                styleName = "cssFloat";
+            }
+        }
+        if(styleName === "opacity" && name === "ie" && J.browser.ie<9){
+            var opacity = 1,
+                result = el.style.filter.match(/opacity=(\d+)/);
+            if(result && result[1]){
+                opacity = result[1]/100;
+            }
+            return opacity;
+        }
+        
+        if(el.style[styleName]){
+            return el.style[styleName];
+        }else if(el.currentStyle){
+            //alert(el.currentStyle[styleName]);
+            return el.currentStyle[styleName];
+        }else if(win.getComputedStyle){
+            //J.out(win.getComputedStyle(el, null));
+            return win.getComputedStyle(el, null)[styleName];
+        }else if(document.defaultView && document.defaultView.getComputedStyle){
+            styleName = styleName.replace(/([/A-Z])/g, "-$1");
+            styleName = styleName.toLowerCase();
+            var style = document.defaultView.getComputedStyle(el, "");
+            return style && style.getPropertyValue(styleName);
+        }
 
     };
     
@@ -1112,11 +1112,11 @@ Jx().$package(function(J){
     };
     
     /**
-     * @memberOf dom
-     * @method contains
-     * 
      * 判断一个节点是否是某个父节点的子节点, 
      * 默认不包含parent === child的情况
+     * @memberOf dom
+     * @name contains
+     * @function
      * @param {HTMLElement} parent
      * @param {HTMLElement} child
      * @param {Boolean} containSelf 指示是否包括parent等于child的情况
@@ -1148,13 +1148,13 @@ Jx().$package(function(J){
      * @return {String} 返回一个完整的url
      */
     getHref = function(el){
-    	var result;
-    	if($B.ie && $B.ie<=7){
-    		result=el.getAttribute('href',4);
-    	}else{
-    		result=el.href;
-    	}
-    	return result || null;
+        var result;
+        if($B.ie && $B.ie<=7){
+            result=el.getAttribute('href',4);
+        }else{
+            result=el.href;
+        }
+        return result || null;
     };
     
     
@@ -1237,6 +1237,6 @@ Jx().$package(function(J){
     $D.getDocHead = getDocHead;
     
     $D.contains = contains;
-	$D.getHref = getHref;
+    $D.getHref = getHref;
     
 });

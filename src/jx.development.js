@@ -1,15 +1,15 @@
-/**	
+/** 
  * JET (Javascript Extension Tools) 
  * Copyright (c) 2009, All rights reserved.
  *
  * @fileOverview Jx!
- * @version	1.0
- * @author	Kinvix(<a href="mailto:Kinvix@gmail.com">Kinvix@gmail.com</a>)
+ * @version 1.0
+ * @author  Kinvix(<a href="mailto:Kinvix@gmail.com">Kinvix@gmail.com</a>)
  * @description 
  * 
  */
 
-/**	
+/** 
  * @description
  * 这个文件用来配置一些开发的时候需要用到的功能
  * 把

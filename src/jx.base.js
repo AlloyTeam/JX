@@ -72,8 +72,8 @@ Jx().$package(function(J){
      * Determines whether or not the provided object is a number
      * 
      * @memberOf Jx.prototype
-     * @method isNumber
-     * 
+     * @name isNumber
+     * @function
      * @param {Mixed} o 传入被检测变量的名称
      * @return {Boolean} 当 o 的类型是 number 时返回 true
      */
@@ -249,6 +249,9 @@ Jx().$package(function(J){
      * };
      */
     clone = function(o){
+        /**
+         * @ignore
+         */
         var tempClass = function(){};
         tempClass.prototype = o;
         
@@ -691,7 +694,9 @@ Jx().$package(function(J){
             // 加一个对父类原型引用的静态属性
             subClass.superClass = superClass.prototype;
             //subClass.superClass = superClass;
-            
+            /**
+             * @ignore
+             */
             subClass.callSuper = function(context,func){
                 var slice = Array.prototype.slice;
                 var a = slice.call(arguments, 2);
@@ -710,7 +715,9 @@ Jx().$package(function(J){
             
             J.extend(subClass.prototype, option);
             
-            // 重载init方法，插入对父类init的调用
+            /**
+             * @ignore
+             */
             subClass.prototype.init = function(){
                 // 调用父类的构造函数
                 // subClass.superClass.init.apply(this, arguments);
@@ -726,7 +733,7 @@ Jx().$package(function(J){
              * @ignore
              */
             var newClass = function() {
-            	// 加了return，否则init返回的对象不生效
+                // 加了return，否则init返回的对象不生效
                 return this.init.apply(this, arguments);
             }
             newClass.prototype = option;

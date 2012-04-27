@@ -52,12 +52,16 @@ Jx().$package(function(J){
         }
         var element = element || e.srcElement;
         var eventDocument = document,
-			doc = eventDocument.documentElement,
-			body = eventDocument.body;
+            doc = eventDocument.documentElement,
+            body = eventDocument.body;
         /**
          * @ignore
          */
-        var event = {
+        var event = 
+        /**
+         * @ignore
+         */
+        {
             _event: e,// In case we really want the IE event object
             
             type: e.type,           // Event type
@@ -284,7 +288,9 @@ Jx().$package(function(J){
             if ($E._find(arguments) != -1){
                 return;
             }
-        
+            /**
+             * @ignore
+             */
             var wrappedEvent = function(e){
                 
                 var event = standardizeEvent(e, element);
@@ -481,7 +487,7 @@ Jx().$package(function(J){
          * 添加事件监听器
          * 
          * @method addEventListener
-         * @memberOf Event
+         * @memberOf event
          * 
          * @param element 元素
          * @param eventType 事件类型，不含on
@@ -889,6 +895,9 @@ Jx().$package(function(J){
         },
         "oncontextmenu" : function(element, eventType, handler){
             if(J.browser.ie == 9){
+                /**
+                 * @ignore
+                 */
                 var wrappedEvent = function(e){
                     var event = standardizeEvent(e, element);
                     handler.call(element, event);
@@ -962,7 +971,7 @@ Jx().$package(function(J){
                 if(customEventHandlers[i].handler==handler&&customEventHandlers[i].element==element&&customEventHandlers[i].eventType==eventType){
                     $E.removeEventListener(element, "mouseover",customEventHandlers[i].actions[0]);
                     customEventHandlers.splice(i, 1);
-					break;
+                    break;
                 }
             }
         },
@@ -990,29 +999,32 @@ Jx().$package(function(J){
                 if(customEventHandlers[i].handler==handler&&customEventHandlers[i].element==element&&customEventHandlers[i].eventType==eventType){
                     $E.removeEventListener(element, "mouseout",customEventHandlers[i].actions[0]);
                     customEventHandlers.splice(i, 1);
-					break;
+                    break;
                 }
             }
         },
         "oninput" : function(element, eventType, handler){
-        	if(J.browser.ie){
+            if(J.browser.ie){
+                /**
+                 * @ignore
+                 */
                 var wrappedEvent = function(e){
-                	if(e.propertyName.toLowerCase() == "value"){
-                    	var event = standardizeEvent(e, element);
-                    	handler.call(element, event);
-                	}
+                    if(e.propertyName.toLowerCase() == "value"){
+                        var event = standardizeEvent(e, element);
+                        handler.call(element, event);
+                    }
                 };
                 element.attachEvent("onpropertychange", wrappedEvent);
                 customEventHandlers.push({"element":element,"eventType":eventType,handler:handler,"actions":[wrappedEvent]});
                 if(J.browser.ie==9){ //fix ie9 bug, can not fire when characters are deleted
-                	$E.addOriginalEventListener(element, "change" , handler);
+                    $E.addOriginalEventListener(element, "change" , handler);
                 }
-        	}else{
-        		$E.addOriginalEventListener(element, "input" , handler);
-        	}
+            }else{
+                $E.addOriginalEventListener(element, "input" , handler);
+            }
         },
         "offinput" : function(element, eventType, handler){
-        	if(J.browser.ie){
+            if(J.browser.ie){
                 for(var i in customEventHandlers){
                     if(customEventHandlers[i].handler==handler&&customEventHandlers[i].element==element&&customEventHandlers[i].eventType==eventType){
                         element.detachEvent("onpropertychange", customEventHandlers[i].actions[0]);
@@ -1021,7 +1033,7 @@ Jx().$package(function(J){
                     }
                 }
                 if(J.browser.ie==9){
-                	$E.removeOriginalEventListener(element, "change" , handler);
+                    $E.removeOriginalEventListener(element, "change" , handler);
                 }
             }else{
                 $E.removeOriginalEventListener(element, "input", handler);
@@ -1119,6 +1131,7 @@ Jx().$package(function(J){
      * @class Publish
      * @return {Object} 返回生成的消息源
      * @memberOf event
+     * @constructor
      * @example
      * Jx().$package(function(J){
      *     var onMsg = new J.Publish();
@@ -1141,7 +1154,8 @@ Jx().$package(function(J){
     
     /**
      * 注册观察者
-     * @memberOf Publish.prototype
+     * @memberOf event.Publish.prototype
+     * @function
      * @param {Function} func 要注册的观察者
      * @return {Function} 返回结果
      */
@@ -1157,7 +1171,7 @@ Jx().$package(function(J){
     
     /**
      * 触发事件
-     * @memberOf Publish.prototype
+     * @memberOf event.Publish.prototype
      * @param {Mixed} msg 要注册的观察者
      * @return {Function} 返回结果
      */
@@ -1169,7 +1183,7 @@ Jx().$package(function(J){
     
     /**
      * 注销观察者
-     * @memberOf Publish.prototype
+     * @memberOf event.Publish.prototype
      * @param {Function} func 要注销的观察者
      * @return {Function} 返回结果
      */

@@ -282,6 +282,8 @@ ul.inheritsList
 	
 	<li><a href="../symbols/fx.Beater.html">fx.Beater</a></li>
 	
+	<li><a href="../symbols/fx.transitions.html">fx.transitions</a></li>
+	
 	<li><a href="../symbols/http.html">http</a></li>
 	
 	<li><a href="../symbols/json.html">json</a></li>
@@ -383,6 +385,15 @@ ul.inheritsList
 								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.addCssText">addCssText</a></b>(el, cssText)
 								</div>
 								<div class="description">给元素添加cssText</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.contains">contains</a></b>(parent, child, containSelf)
+								</div>
+								<div class="description">判断一个节点是否是某个父节点的子节点, 默认不包含parent === child的情况</div>
 							</td>
 						</tr>
 					
@@ -933,6 +944,73 @@ ul.inheritsList
 						
 						
 						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".contains"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Boolean}</span>
+					<span class="light">dom.</span><b>contains</b>(parent, child, containSelf)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						判断一个节点是否是某个父节点的子节点, 默认不包含parent === child的情况
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{HTMLElement}</span> <b>parent</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{HTMLElement}</span> <b>child</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Boolean}</span> <b>containSelf</b>
+											
+										</dt>
+										<dd>指示是否包括parent等于child的情况</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> 包含则返回true</dd>
+							
+							</dl>
 						
 						
 						
@@ -2502,7 +2580,7 @@ ul.inheritsList
 					
 					
 					
-					<pre class="code">//创建一个匿名package包：Jx().$package(function(J){	//这时上下文对象this指向全局window对象	var lists = J.dom.mini(".list");};</pre>
+					<pre class="code">//创建一个匿名package包：Jx().$package(function(J){ //这时上下文对象this指向全局window对象 var lists = J.dom.mini(".list");};</pre>
 					
 					
 					
@@ -3279,7 +3357,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			&copy;1998-2012<br />
-			文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Thu Apr 26 2012 19:43:29 GMT+0800 (CST)
+			文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Fri Apr 27 2012 11:38:23 GMT+0800 (CST)
 		</div>
 	</body>
 </html>

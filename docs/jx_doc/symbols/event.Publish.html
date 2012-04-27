@@ -282,6 +282,8 @@ ul.inheritsList
 	
 	<li><a href="../symbols/fx.Beater.html">fx.Beater</a></li>
 	
+	<li><a href="../symbols/fx.transitions.html">fx.transitions</a></li>
+	
 	<li><a href="../symbols/http.html">http</a></li>
 	
 	<li><a href="../symbols/json.html">json</a></li>
@@ -356,6 +358,51 @@ ul.inheritsList
 
 <!-- ============================== methods summary ======================== -->
 			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class event.Publish.">
+					<caption>方法概要</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/event.Publish.html#Publish#deliver">Publish#deliver</a></b>(msg)
+								</div>
+								<div class="description">触发事件</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/event.Publish.html#Publish#subscribe">Publish#subscribe</a></b>(func)
+								</div>
+								<div class="description">注册观察者</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/event.Publish.html#Publish#unsubscribe">Publish#unsubscribe</a></b>(func)
+								</div>
+								<div class="description">注销观察者</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
 <!-- ============================== events summary ======================== -->
 			
 
@@ -410,6 +457,164 @@ ul.inheritsList
 
 <!-- ============================== method details ========================= -->		
 			
+				<div class="sectionTitle">
+					方法详解
+				</div>
+				
+					<a name="Publish#deliver"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Function}</span>
+					<b>Publish#deliver</b>(msg)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						触发事件
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Mixed}</span> <b>msg</b>
+											
+										</dt>
+										<dd>要注册的观察者</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Function}</span> 返回结果</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="Publish#subscribe"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Function}</span>
+					<b>Publish#subscribe</b>(func)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						注册观察者
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Function}</span> <b>func</b>
+											
+										</dt>
+										<dd>要注册的观察者</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Function}</span> 返回结果</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="Publish#unsubscribe"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Function}</span>
+					<b>Publish#unsubscribe</b>(func)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						注销观察者
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Function}</span> <b>func</b>
+											
+										</dt>
+										<dd>要注销的观察者</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Function}</span> 返回结果</dd>
+							
+							</dl>
+						
+						
+						
+
+					
+				
+			
 			
 <!-- ============================== event details ========================= -->		
 			
@@ -421,7 +626,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			&copy;1998-2012<br />
-			文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Thu Apr 26 2012 19:43:29 GMT+0800 (CST)
+			文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Fri Apr 27 2012 11:38:23 GMT+0800 (CST)
 		</div>
 	</body>
 </html>

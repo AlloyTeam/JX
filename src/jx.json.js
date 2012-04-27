@@ -1,14 +1,14 @@
-/**	
+/** 
  * JET (Javascript Extend Tools) 
  * Copyright (c) 2009, KDV.cn, All rights reserved.
  * 
  *
- * @version	1.0
- * @author	Kinvix(<a href="mailto:Kinvix@gmail.com">Kinvix@gmail.com</a>)
+ * @version 1.0
+ * @author  Kinvix(<a href="mailto:Kinvix@gmail.com">Kinvix@gmail.com</a>)
  * 
  */
 
-/**	
+/** 
  * @description
  * Package: jet.json
  *
@@ -23,17 +23,17 @@
  
  
 Jx().$package(function(J){
-	var JSON = window['JSON'] || {};
+    var JSON = window['JSON'] || {};
 
     /**
      * @namespace
      * @name json
      */
 
-	
-	
-	
-	
+    
+    
+    
+    
 /*
     http://www.JSON.org/json2.js
     2009-08-17
@@ -206,11 +206,11 @@ if (!this.JSON) {
         // Format integers to have at least two digits.
         return n < 10 ? '0' + n : n;
     }
-	// if (typeof Date.prototype.toJSON !== 'function') {
+    // if (typeof Date.prototype.toJSON !== 'function') {
     if (typeof Date.prototype.toJSON !== 'function' && false) {
-		/** 
-		 * @ignore
-		 */
+        /** 
+         * @ignore
+         */
         Date.prototype.toJSON = function (key) {
 
             return isFinite(this.valueOf()) ?
@@ -221,17 +221,17 @@ if (!this.JSON) {
                  f(this.getUTCMinutes())   + ':' +
                  f(this.getUTCSeconds())   + 'Z' : null;
         };
-		/** 
-		 * @ignore
-		 */
+        /** 
+         * @ignore
+         */
         String.prototype.toJSON =
         /** 
-		 * @ignore
-		 */
+         * @ignore
+         */
         Number.prototype.toJSON =
         /** 
-		 * @ignore
-		 */
+         * @ignore
+         */
         Boolean.prototype.toJSON = function (key) {
             return this.valueOf();
         };
@@ -401,6 +401,15 @@ if (!this.JSON) {
 // If the JSON object does not yet have a stringify method, give it one.
 
     if (typeof JSON.stringify !== 'function') {
+        /**
+         * 把给定object转换成json字符串
+         * 
+         * @name stringify
+         * @memberOf json
+         * @function
+         * @param {Object} value
+         * @return {String}
+         */
         JSON.stringify = function (value, replacer, space) {
 
 // The stringify method takes a value and an optional replacer, and an optional
@@ -449,10 +458,12 @@ if (!this.JSON) {
 
     if (typeof JSON.parse !== 'function') {
         /**
-         * @memberOf json
+         * 把给定json字符串转换成对象
          * @function 
          * @name parse
+         * @memberOf json
          * @param {String} text
+         * @return {Object}
          */
         JSON.parse = function (text, reviver) {
 
@@ -535,7 +546,7 @@ replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
 }());
 
     
-	J.json = JSON;
+    J.json = JSON;
 
 
 });
