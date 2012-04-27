@@ -7,8 +7,8 @@
  
  Jet().$package(function (J) {
     var $D = J.dom,
-    	$S = J.string,
-		$E = J.event;
+        $S = J.string,
+        $E = J.event;
     
     var startId = 0,
         topZIndex = 9000000;
@@ -25,14 +25,14 @@
         e.stopPropagation();
     };
     J.ui = J.ui || {};
-	
+    
     /**
      * 【ContextMenu】
      * 
-     * @class J.ui.ContextMenu
-     * @memberOf J.ui
+     * @memberOf ui
      * @name ContextMenu
-     * @extends Object
+     * @class
+     * @constructor
      * @param {Object} option 构造参数
      * {
      * id: '',//random
@@ -51,9 +51,16 @@
      * 右击该节点就显示菜单
      * 也可以不使用这个属性, 调用的地方自己控制显示隐藏菜单
      */
-	var ContextMenu = J.ui.ContextMenu = new J.Class({
+    var ContextMenu = J.ui.ContextMenu = new J.Class(
+    /**
+     * @lends ui.ContextMenu.prototype
+     */
+    {
+        /**
+         * @ignore
+         */
         init: function (option){
-        	var context = this;
+            var context = this;
             var id = this.id = 'context_menu_' + (option.id || (startId++));
             var name = option.name || id;
             var parent = this._parent = option.container || (option.parentMenu ? option.parentMenu._parent : null) || document.body;
@@ -94,19 +101,22 @@
                 container: container
             });
             $E.addObserver(this._popupBox, 'hide', function(){
-            	context.hideSubmenu();
-            	$E.notifyObservers(context, 'onHide');
+                context.hideSubmenu();
+                $E.notifyObservers(context, 'onHide');
             });
             
             this.setZIndex(topZIndex);
             this._itemArr = [];
             this._key2Item = {};
             if(option.items){
-            	this._items_config= option.items;
+                this._items_config= option.items;
                 this.addItems(option.items);
             }
             if(option.triggers){
                 var evnet = option.triggerEvent || 'contextmenu';
+                /**
+                 * @ignore
+                 */
                 var onTriggerContextMenu = function(e){
                     e.preventDefault();
                     context.show(e.clientX, e.clientY);
@@ -121,12 +131,31 @@
             }
             contextHash[id] = this;
         },
+        /**
+         * 获取改菜单的id
+         */
         getId: function(){
-        	return this.id;
+            return this.id;
         },
+        /**
+         * 设置菜单的css类
+         */
         setClass: function(className){
             $D.setClass(this._el, 'context_menu ' + className);
         },
+        /**
+         * 添加菜单项
+         * @param {Object} option 
+         * {<br/>
+         *  title: 鼠标tips<br/>
+            text: 菜单项的文字<br/>
+            link: 指向链接<br/>
+            icon: 图标的配置{ url, style, className }<br/>
+            enable: 是否启用<br/>
+            onClick: 点击处理函数<br/>
+            argument: 点击处理函数接收的额外参数<br/>
+         * }
+         */
         addItem: function(option){
             var type = option.type || 'item';
             var item;
@@ -154,17 +183,28 @@
                 this._itemArr.push(item);
             }
         },
+        /**
+         * 批量添加菜单项
+         * @param {Array} optionArray
+         * @see ui.ContextMenu#addItem
+         */
         addItems: function(optionArray){
             for(var i = 0, len = optionArray.length; i < len; i++){
                 this.addItem(optionArray[i]);
             }
         },
+        /**
+         * 刷新, 重回菜单
+         */
         refresh: function() {
             if(this._items_config) {
-            	this.clearItems();
+                this.clearItems();
                 this.addItems(this._items_config);
             }
         },
+        /**
+         * 清空所有菜单项
+         */
         clearItems: function(){
             var item = this._itemArr.shift();
             while(item){
@@ -173,6 +213,10 @@
                 item = this._itemArr.shift();
             }
         },
+        /**
+         * 移除指定下标的菜单项
+         * @param {Number} index
+         */
         removeItemAt: function(index) {
             for(var i=0; i< this._itemArr.length;i++) {
                 var item= this._itemArr[i];
@@ -183,6 +227,11 @@
                 }
             }
         },
+        /**
+         * 获取指定下标的菜单项
+         * @param {Number} index
+         * @return {ContextMenuItem}, {ContextSubmenuItem}, {ContextMenuSeparator}
+         */
         getItemAt: function(index){
             if(index < this._itemArr.length){
                 if(index < 0){
@@ -193,32 +242,54 @@
                 return null;
             }
         },
+        /**
+         * 获取菜单本身的dom
+         * @return {HTMLElement}
+         */
         getElement: function(){
             return this._el;
         },
+        /**
+         * 获取菜单主体的dom
+         * @return {HTMLElement}
+         */
         getBody: function(){
             return this._body;
         },
+        /**
+         * 设置菜单的层级
+         * @param {Number} zIndex
+         * 
+         */
         setZIndex: function(zIndex){
             this._popupBox.setZIndex(zIndex);
         },
+        /**
+         * 获取菜单的层级
+         * @return {Number}
+         */
         getZIndex: function(zIndex){
-        	return this._popupBox.getZIndex();	
+            return this._popupBox.getZIndex();  
         },
         /**
          * 这两个方法可以用来保存临时数据,
          * show之前保存, 供给item的回调使用
+         * @param {Object} arg
          */
         setArgument: function(arg){
             this._argument = arg;
         },
+        /**
+         * @return {Object}
+         */
         getArgument: function(){
             return this._argument;
         },
         /**
-         * @param {Int} x
-         * @param {Int} y
-         * @param {Int} offset 菜单位置相对于给定xy的偏移, 0为不偏移
+         * 显示菜单
+         * @param {Number} x
+         * @param {Number} y
+         * @param {Number} offset 菜单位置相对于给定xy的偏移, 0为不偏移
          * @param {HTMLElement} relativeEl 相对某一元素定位
          */
         show: function(x, y, offset, relativeEl){
@@ -265,20 +336,33 @@
             popup.setXY(px, py);
             $E.notifyObservers(this, 'onShow', this);
         },
+        /**
+         * 隐藏菜单
+         */
         hide: function(){
             this._popupBox.hide();
             $E.notifyObservers(this, 'onHide', this);
         },
+        /**
+         * 隐藏所有子菜单
+         */
         hideSubmenu: function(){
-        	for(var i in this._itemArr){
+            for(var i in this._itemArr){
                 if(this._itemArr[i].getSubmenu){
                     this._itemArr[i].getSubmenu().hide();
                 }
             }
         },
+        /**
+         * 指示菜单是否显示
+         * @return {Boolean}
+         */
         isShow: function(){
             return this._popupBox.isShow();
         },
+        /**
+         * 销毁菜单
+         */
         destory: function(){
             this._el.innerHTML = '';
             $E.off(this._el, 'contextmenu');
@@ -292,17 +376,26 @@
         
     });
     
-    //静态方法
+    /**
+     * 获取给定id的菜单, 无则返回null
+     * @static
+     * @function
+     * @memberOf ui.ContextMenu
+     * @name getMenu
+     * @return {ui.ContextMenu},{Null}
+     */
     ContextMenu.getMenu = function(id){
-    	return contextHash[id];
+        return contextHash[id];
     };
     
     /**
-     * 【ContextMenuItem】
+     * 【ContextMenuItem】菜单项
+     * @see ui.ContextMenu
      * 
-     * @class J.ui.ContextMenuItem
+     * @class 
      * @name ContextMenuItem
-     * @extends Object
+     * @constructor
+     * @memberOf ui
      * @param {Object} option 参数对象
      * {
      * title: text,
@@ -321,7 +414,14 @@
      * @since version 1.0
      * @description
      */
-	var ContextMenuItem = J.ui.ContextMenuItem = new J.Class({
+    var ContextMenuItem = J.ui.ContextMenuItem = new J.Class(
+    /**
+     * @lends ui.ContextMenuItem.prototype
+     */
+    {
+        /**
+         * @ignore
+         */
         init: function (opt){
             var option = {
                 title: opt.title || opt.text || '',
@@ -347,6 +447,9 @@
             }
             var onClickFunc, context = this;
             if(option.onClick){
+                /**
+                 * @ignore
+                 */
                 onClickFunc = function(e){
                     e.preventDefault();
                     if(context._isEnable){
@@ -354,23 +457,35 @@
                     }
                 }
             }else{
+                /**
+                 * @ignore
+                 */
                 onClickFunc = function(e){
                     e.preventDefault();
                 }
             }
             $E.on(liNode, 'click', onClickFunc);
         },
+        /**
+         * 设置菜单项的文本
+         * @param {Object} text
+         */
         setText: function(text, title){
             this.option.text = text;
             this.option.title = title || text;
             this.render();
         },
+        /**
+         * 设置菜单项的图标
+         * @param {Object} icon
+         *  { style, url, className }
+         */
         setIcon: function(icon){
             this.option.icon = icon;
             this.render();
         },
         /**
-         * 绘制item的内容
+         * 绘制菜单项的内容
          */
         render: function(){
             var option = this.option;
@@ -387,23 +502,42 @@
             html += '</a>';
             this._el.innerHTML = html;
         },
+        /**
+         * 获取菜单项的dom
+         * @return {HTMLElement} 
+         */
         getElement: function(){
             return this._el;
         },
+        /**
+         * 显示该菜单项
+         */
         show: function(){
             $D.show(this._el);
         },
+        /**
+         * 隐藏该菜单项
+         */
         hide: function(){
             $D.hide(this._el);
         },
+        /**
+         * 禁用菜单项
+         */
         disable: function(){
             this._isEnable = false;
             $D.addClass(this._el, 'context_menu_item_disable');
         },
+        /**
+         * 启用菜单项
+         */
         enable: function(){
             this._isEnable = true;
             $D.removeClass(this._el, 'context_menu_item_disable');
         },
+        /**
+         * 销毁该菜单项
+         */
         destory: function(){
             this._el.innerHTML = '';
             $E.off(this._el, 'click');
@@ -415,10 +549,27 @@
         }
     });
     
-   
-    var FlashContextMenuItem = J.ui.FlashContextMenuItem = new J.Class({
-    	init: function (opt){
-    		//TODO hard code flash上传按钮环境
+    /**
+     * 【FlashContextMenuItem】flash 菜单项,用于需要用到flash的时候,
+     * 例如需要在右键菜单放置flash上传控件的时候
+     * @see ui.ContextMenu
+     * 
+     * @class 
+     * @name FlashContextMenuItem
+     * @constructor
+     * @memberOf ui
+     * @param {Object} option 参数对象
+     */
+    var FlashContextMenuItem = J.ui.FlashContextMenuItem = new J.Class(
+    /**
+     * @lends ui.FlashContextMenuItem.prototype
+     */
+    {
+        /**
+         * @ignore
+         */
+        init: function (opt){
+            //TODO hard code flash上传按钮环境
             var option = {
                 title: opt.title || opt.text || '',
                 text: opt.text || '',
@@ -436,15 +587,15 @@
             var liNode = this._el = $D.node('li', {
                 'class': 'context_menu_item_container'
             });
-            	
+                
             var flashLiNode = this._flashLi = $D.node('li', {
                 'class': 'context_menu_item_container'
             });
             
             var itemId = this._itemId = 'context_menu_flashItem_' + (++flashItemId);
             var flashUlNode = this._flashUl = $D.node('ul', {
-            	'id': itemId,
-            	'class': 'context_menu_item_list context_menu_flashitem_item'
+                'id': itemId,
+                'class': 'context_menu_item_list context_menu_flashitem_item'
             });
             flashItemHash[flashItemId] = flashUlNode;
             flashUlNode.appendChild(flashLiNode);
@@ -457,6 +608,9 @@
             }
             var onClickFunc, context = this;
             if(option.onClick){
+                /**
+                 * @ignore
+                 */
                 onClickFunc = function(e){
                     e.preventDefault();
                     if(context._isEnable){
@@ -464,6 +618,9 @@
                     }
                 }
             }else{
+                /**
+                 * @ignore
+                 */
                 onClickFunc = function(e){
                     e.preventDefault();
                 }
@@ -472,40 +629,55 @@
             
             var context = this;
             var observer = {
-            	onShow: function(opt){
-            		var xy = $D.getClientXY(context._el);
-            		var offsetX = 0,
-            			offsetY = 0;
-            		if(J.browser.ie){
-            			offsetX = 2;
-            			offsetY = 2;
-            			if(J.browser.ie == 6 || J.browser.ie == 7){
-	            			offsetY = 1;
-            			}
-            		}
-            		$D.setXY(context._flashUl, xy[0] + offsetX + 'px', xy[1] + offsetY + 'px');
-            		$D.setStyle(context._flashUl, 'width', $D.getClientWidth(context._el) + 'px');
-            		$D.setStyle(context._flashUl, 'height', $D.getClientHeight(context._el) + 'px');
-            		$D.setStyle(context._flashUl, 'zIndex', context.parentMenu.getZIndex() + 1);
-            		if(alloy.portal.getLoginLevel() > 1 && alloy.storage.getDefaultDisk()){
-            			context._flashUploader.showFileSelector();
-            		}else{
-            			context._flashUploader.hideFileSelector();
-            		}
-            	},
-            	onHide: function(opt){
-            		$D.setXY(context._flashUl, 0, 0);
-            		$D.setStyle(context._flashUl, 'width', '1px');
-            		$D.setStyle(context._flashUl, 'height', '1px');
-            	}
+                /**
+                 * @ignore
+                 */
+                onShow: function(opt){
+                    var xy = $D.getClientXY(context._el);
+                    var offsetX = 0,
+                        offsetY = 0;
+                    if(J.browser.ie){
+                        offsetX = 2;
+                        offsetY = 2;
+                        if(J.browser.ie == 6 || J.browser.ie == 7){
+                            offsetY = 1;
+                        }
+                    }
+                    $D.setXY(context._flashUl, xy[0] + offsetX + 'px', xy[1] + offsetY + 'px');
+                    $D.setStyle(context._flashUl, 'width', $D.getClientWidth(context._el) + 'px');
+                    $D.setStyle(context._flashUl, 'height', $D.getClientHeight(context._el) + 'px');
+                    $D.setStyle(context._flashUl, 'zIndex', context.parentMenu.getZIndex() + 1);
+                    if(alloy.portal.getLoginLevel() > 1 && alloy.storage.getDefaultDisk()){
+                        context._flashUploader.showFileSelector();
+                    }else{
+                        context._flashUploader.hideFileSelector();
+                    }
+                },
+                /**
+                 * @ignore
+                 */
+                onHide: function(opt){
+                    $D.setXY(context._flashUl, 0, 0);
+                    $D.setStyle(context._flashUl, 'width', '1px');
+                    $D.setStyle(context._flashUl, 'height', '1px');
+                }
             };
             $E.addObserver(this.parentMenu, 'onShow', observer.onShow);
             $E.addObserver(this.parentMenu, 'onHide', observer.onHide);
         },
+        /**
+         * 未实现
+         */
         setText: function(text, title){
         },
+        /**
+         * 未实现
+         */
         setIcon: function(icon){
         },
+        /**
+         * 绘制菜单项
+         */
         render: function(){
             var option = this.option;
             var elHtml = '<a class="context_menu_item" href="' + option.link + '"></a>';
@@ -523,40 +695,59 @@
             html += '</a>';
             this._flashLi.innerHTML = html;
             
-        	var holder = $D.mini('.explorer_upload_holder2', this._flashLi)[0];
-        	var opt = {
-        		callback:'alloy.flashUploadManager.flashEventListener',
-        		mode: 0,
-        		autoshow: false,
-        		holder: holder,
-        		text: '<span class="context_menu_item_text">' + option.text + '</span>',
-        		width: '100%',
-        		height: '100%',
-        		extInfo: '{"folderId":'+ this.option.folderId +'}'
-        	}
-        	this._flashUploader = new alloy.flashUploadManager.FlashUploader(opt);
-        	
-        	$D.setXY(this._flashUl, 0, 0);
-    		$D.setStyle(this._flashUl, 'width', '1px');
-    		$D.setStyle(this._flashUl, 'height', '1px');
+            var holder = $D.mini('.explorer_upload_holder2', this._flashLi)[0];
+            var opt = {
+                callback:'alloy.flashUploadManager.flashEventListener',
+                mode: 0,
+                autoshow: false,
+                holder: holder,
+                text: '<span class="context_menu_item_text">' + option.text + '</span>',
+                width: '100%',
+                height: '100%',
+                extInfo: '{"folderId":'+ this.option.folderId +'}'
+            }
+            this._flashUploader = new alloy.flashUploadManager.FlashUploader(opt);
+            
+            $D.setXY(this._flashUl, 0, 0);
+            $D.setStyle(this._flashUl, 'width', '1px');
+            $D.setStyle(this._flashUl, 'height', '1px');
         },
+        /**
+         * 获取菜单项的dom
+         * @return {HTMLElement}
+         */
         getElement: function(){
             return this._el;
         },
+        /**
+         * 显示
+         */
         show: function(){
             $D.show(this._el);
         },
+        /**
+         * 隐藏
+         */
         hide: function(){
             $D.hide(this._el);
         },
+        /**
+         * 禁用
+         */
         disable: function(){
             this._isEnable = false;
             $D.addClass(this._el, 'context_menu_item_disable');
         },
+        /**
+         * 启用
+         */
         enable: function(){
             this._isEnable = true;
             $D.removeClass(this._el, 'context_menu_item_disable');
         },
+        /**
+         * 销毁
+         */
         destory: function(){
             this._el.innerHTML = '';
             this._flashUl.innerHTML = '';
@@ -569,22 +760,36 @@
             }
         }
     });
-    FlashContextMenuItem.getItem = function(id){
-    	return flashItemHash[id];
-    };
-    
     
     /**
-     * 【ContextMenuSeparator】
-     * 
-     * @class J.ui.ContextMenuSeparator
-     * @name ContextMenuSeparator
-     * @extends Object
-     * 
-     * @since version 1.0
-     * @description
+     * @static
+     * @function
+     * @name getItem
+     * @memberOf ui.FlashContextMenuItem
+     * @return {HTMLElement},{Null}
      */
-	var ContextMenuSeparator = J.ui.ContextMenuSeparator = new J.Class({
+    FlashContextMenuItem.getItem = function(id){
+        return flashItemHash[id];
+    };
+    
+    /**
+     * 【ContextMenuSeparator】菜单项分隔符
+     * @see ui.ContextMenu
+     * 
+     * @class 
+     * @name ContextMenuSeparator
+     * @constructor
+     * @memberOf ui
+     * @param {Object} option 参数对象
+     */
+    var ContextMenuSeparator = J.ui.ContextMenuSeparator = new J.Class(
+    /**
+     * @lends ui.ContextMenuSeparator.prototype
+     */
+    {
+        /**
+         * @ignore
+         */
         init: function (option){
             var html = '<span class="context_menu_separator"></span>';
             var liNode = this._el = $D.node('li', {
@@ -592,15 +797,27 @@
             });
             liNode.innerHTML = html;
         },
+        /**
+         * 获取分隔符的dom
+         */
         getElement: function(){
             return this._el;
         },
+        /**
+         * 显示
+         */
         show: function(){
             $D.show(this._el);
         },
+        /**
+         * 隐藏
+         */
         hide: function(){
             $D.hide(this._el);
         },
+        /**
+         * 销毁
+         */
         destory: function(){
             this._el.innerHTML = '';
             for (var p in this) {
@@ -611,11 +828,13 @@
         }
     });
     /**
-     * 【ContextSubmenuItem】
+     * 【ContextSubmenuItem】子菜单项, 关联着一个子菜单
      * 
-     * @class J.ui.ContextSubmenuItem
+     * @class 
      * @name ContextSubmenuItem
-     * @extends Object
+     * @augments  ui.ContextMenuItem
+     * @constructor
+     * @memberOf ui
      * @param {Object} option 参数对象
      * {
      * title: text,
@@ -631,7 +850,14 @@
      * @since version 1.0
      * @description
      */
-    var ContextSubmenuItem = J.ui.ContextSubmenuItem = new J.Class({extend: ContextMenuItem}, {
+    var ContextSubmenuItem = J.ui.ContextSubmenuItem = new J.Class({extend: ContextMenuItem}, 
+    /**
+     * @lends ui.ContextSubmenuItem.prototype
+     */
+    {
+        /**
+         * @ignore
+         */
         init: function (option){
             if(!option.items){
                 throw new Error('J.ui.ContextSubmenuItem: option.items is null!');
@@ -670,12 +896,16 @@
             var onClickFunc, context = this;
             
             var submenuTimer = context.sunmenuTimer = 0, submenuHideTimeout = 200;
+            /**
+             * @ignore
+             */
             var hideSubmenu = function(){
                 if(context._submenu.isShow()){
                     context._submenu.hide();
                 }
             };
             var observer = {
+                /** @ignore */
                 onItemMouseenter: function(e){
                     e.stopPropagation();
                     if(context._isEnable){
@@ -684,6 +914,7 @@
                         context._submenu.show(xy[0], xy[1], 0, this);
                     }
                 },
+                /** @ignore */
                 onItemMouseleave: function(e){
                     if(submenuTimer){
                         window.clearTimeout(submenuTimer);
@@ -691,6 +922,7 @@
                     }
                     submenuTimer = window.setTimeout(hideSubmenu, submenuHideTimeout);
                 },
+                /** @ignore */
                 onSubmenuMouseenter: function(e){
                     if(submenuTimer){
                         window.clearTimeout(submenuTimer);
@@ -698,28 +930,34 @@
                     }
                     $D.addClass(liNode, 'context_menu_item_hover');
                 },
+                /** @ignore */
                 onSubmenuMouseleave: function(e){
                     observer.onItemMouseleave(e);
                     //$D.removeClass(liNode, 'context_menu_item_hover');
                 },
+                /** @ignore */
                 onSubmenuShow: function(){
-                	$D.addClass(liNode, 'context_menu_item_hover');	
+                    $D.addClass(liNode, 'context_menu_item_hover'); 
                 },
+                /** @ignore */
                 onSubmenuHide: function(){
-                	$D.removeClass(liNode, 'context_menu_item_hover');
+                    $D.removeClass(liNode, 'context_menu_item_hover');
                 }
             };
             
             var submenuEl = context._submenu.getElement();
             $E.on(liNode, 'mouseenter', observer.onItemMouseenter);
             if(option.autoHide){
-            	$E.on(liNode, 'mouseleave', observer.onItemMouseleave);
-            	$E.on(submenuEl, 'mouseenter', observer.onSubmenuMouseenter);
-            	$E.on(submenuEl, 'mouseleave', observer.onSubmenuMouseleave);
+                $E.on(liNode, 'mouseleave', observer.onItemMouseleave);
+                $E.on(submenuEl, 'mouseenter', observer.onSubmenuMouseenter);
+                $E.on(submenuEl, 'mouseleave', observer.onSubmenuMouseleave);
             }
             //$E.addObserver(context._submenu, 'onShow', observer.onSubmenuShow);
             $E.addObserver(context._submenu, 'onHide', observer.onSubmenuHide);
             if(option.onClick){
+                /**
+                 * @ignore
+                 */
                 onClickFunc = function(e){
                     e.preventDefault();
                     if(context._isEnable){
@@ -728,6 +966,9 @@
                     }
                 }
             }else{
+                /**
+                 * @ignore
+                 */
                 onClickFunc = function(e){
                     e.preventDefault();
                     observer.onItemMouseenter.call(this, e);
@@ -735,11 +976,14 @@
             }
             $E.on(liNode, 'click', onClickFunc);
         },
+        /**
+         * 获取该菜单项关联的子菜单
+         */
         getSubmenu: function(){
             return this._submenu;
         },
         /**
-         * 绘制item的内容
+         * 绘制菜单项的内容
          */
         render: function(){
             var option = this.option;

@@ -5,14 +5,26 @@
 		<meta http-equiv="content-type" content="text/html; charset={+IO.encoding+}" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		{! Link.base = "../"; /* all generated links will be relative to this */ !}
-		<title>Jx 开发参考文档 - {+data.alias+}</title>
+		<title>Jx API 开发参考文档 - {+data.alias+}</title>
 
 		<style type="text/css">
 			{+include("static/default.css")+}
 		</style>
 	</head>
 
-	<body>	
+	<body>
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		{+include("static/header.html")+}
+		<!-- end static/header.html -->
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			{+publish.classesIndex+}
+			<!-- end publish.classesIndex -->
+		</div>
+		
 		<div id="content">
 <!-- ============================== class title ============================ -->
 			<h1 class="classTitle">
@@ -51,6 +63,9 @@
 			
 				{+resolveLinks(data.classDesc)+}
 				
+				<if test="!data.isBuiltin()">{# isn't defined in any file #}
+					<br /><i>Defined in: </i> {+new Link().toSrc(data.srcFile)+}.
+				</if>
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
@@ -647,5 +662,11 @@
 			<hr />
 		</div>
 
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			<if test="JSDOC.opt.D.copyright">&copy;{+JSDOC.opt.D.copyright+}<br /></if>
+			文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> {+JSDOC.VERSION+} on {+new Date()+}
+		</div>
 	</body>
 </html>

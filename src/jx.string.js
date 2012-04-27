@@ -153,22 +153,7 @@ Jx().$package(function(J){
         return data ? fn( data ) : fn;
     };
 
-    
-    /*
-    template = function(str, obj){
-        var p,
-            RE;
-    
-        for(p in obj){
-            if(obj.hasOwnProperty(p)){
-                // RE = new RegExp("\\${" + p + "}","g");
-                // str = str.replace(RE, o[p]);
-                str = str.split("${" + p + "}").join(obj[p]);
-            }
-        }
-        return str;
-    };
-    */
+
 
     
     
@@ -902,7 +887,7 @@ Jx().$package(function(J){
      * @memberOf string
      * @param {String} str 需要计算的字符串
      * @param {Number} fontsize 字体大小，可以不填
-     * @return {
+     * @return {Number}
      */
     var getCharWidth = function(str,fontsize) {
         var d= document.createElement("div");
@@ -925,7 +910,7 @@ Jx().$package(function(J){
      * @param {String} str 
      * @param {Number} fontsize 字体大小
      * @param {Number} width 限定的宽度
-     * @return {
+     * @return {Number}
      */
     var cutByWidth = function(str,fontsize,width) {
         for(var i=str.length;i>=0;--i)

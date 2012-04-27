@@ -6,22 +6,42 @@
  
 Jet().$package(function (J) {
     var packageContext = this,
-    	$D = J.dom,
-    	$S = J.string,
-		$E = J.event;
-	J.ui = J.ui || {};
-	/*
+        $D = J.dom,
+        $S = J.string,
+        $E = J.event;
+    J.ui = J.ui || {};
+    /*
        * div模式select相关，可以移植到其他地方 示例： html:<div id="testdiv"></div> js:
        * divSelect.show("testdiv","test",selOptions,"",160,"test()");
        * 
        */
-      // var _divSelect;
-      // var divSelect = {
-      var DivSelect = J.ui.DivSelect = new J.Class({
+    /**
+     * 
+     * div模拟的下拉框, 直接 new一个实例即可
+     * 
+     * @memberOf ui
+     * @name DivSelect
+     * @class
+     * @constructor
+     * @param {String} objId 容器
+     * @param {String} selectName 名称
+     * @param {Object} dataObj 数据[数组]
+     * @param {Object} selOption 默认项
+     * @param {Number} width 宽度
+     * @param {Boolean} isUpper
+     * 
+     * @example
+     * html: &lt;div id="testdiv"&gt;&lt/div&gt; 
+     * js: new DivSelect("testdiv","test",selOptions,"",160);
+     * 
+     */
+     var DivSelect = J.ui.DivSelect = new J.Class(
+
+     {
         /*
          * 主调函数 参数含义：容器，名称，数据[数组]，默认项，宽度 注意：数据格式
          */
-
+        /** @ignore */
         init : function(objId, selectName, dataObj, selOption, width, isUpper) {
 
           this._selectName = selectName;
@@ -44,9 +64,9 @@ Jet().$package(function (J) {
           s1.style.width = width;
           var top = ""
           if(this._isUpper){
-	          s1.style.position = "relative";
-	          var height = (15*(data.length)); //每个item 15px
-	          top = "top:-"+((height>150?150:height)+4)+"px;";
+              s1.style.position = "relative";
+              var height = (15*(data.length)); //每个item 15px
+              top = "top:-"+((height>150?150:height)+4)+"px;";
           }
 
           var str = "";
@@ -151,16 +171,28 @@ Jet().$package(function (J) {
         /*
          * clickShowOption : function(){ divSelectObj.showOptions(); },
          */
-        // 返回选定项的值
+        /**
+         * 返回选定项的值
+         * @param {String} n id
+         * @return {String}
+         */
         value : function(n) {
           n = n || this._selectName;
           return document.getElementById(n).value;
         },
-        // 返回选定项的文本
+        /**
+         * 返回选定项的文本
+         * @param {String} n id
+         * @return {String}
+         */
         text : function(n) {
           n = n || this._selectName;
           return document.getElementById("_v_" + n).innerHTML;
         },
+        /**
+         * 选中给节点
+         * @param {HTMLElement} optionObj 
+         */
         selected : function(optionObj) {
           var data = this._dataObj.data;
           var value = optionObj.innerHTML;
@@ -197,6 +229,10 @@ Jet().$package(function (J) {
             return d[0][1];
           }
         },
+        /**
+         * 获取列表的高度
+         * @return {Number}
+         */
         height : function(l) {
           var h;
           if (l > 10 || l < 1)
@@ -247,5 +283,5 @@ Jet().$package(function (J) {
       });
       
 });
-	
-	
+    
+    

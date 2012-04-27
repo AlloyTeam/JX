@@ -16,11 +16,13 @@ Jet().$package(function (J) {
     var $D = J.dom,
         $S = J.string,
         $E = J.event;
-		
+        
     J.ui = J.ui || {};
     /**
-     * 气泡类
+     * 带箭头的气泡类
      * @class
+     * @memberOf ui
+     * @name Bubble
      * @constructor
      * @param {Object} option 构造参数
      * {
@@ -32,7 +34,7 @@ Jet().$package(function (J) {
      */
     var Bubble = J.ui.Bubble = J.Class(
     /**
-     * @lends Bubble.prototype
+     * @lends ui.Bubble.prototype
      */
     {
         /**
@@ -53,23 +55,23 @@ Jet().$package(function (J) {
             var id = this._getId();
             
             var html = '<div id="bubble_tip_pointer_' + id + '" class="bubble_tip_pointer bubble_tip_pointer_left"></div>\
-	            <div class="bubble_tip_head"></div>\
-	            <div class="bubble_tip_body">\
-	                <div class="bubble_tip_title"><a id="bubble_tip_close_' + id + '" href="###" class="bubble_tip_close" title="关闭">x</a>\
+                <div class="bubble_tip_head"></div>\
+                <div class="bubble_tip_body">\
+                    <div class="bubble_tip_title"><a id="bubble_tip_close_' + id + '" href="###" class="bubble_tip_close" title="关闭">x</a>\
                         <span id="bubble_tip_title_' + id + '"></span></div>\
-	                <div id="bubble_tip_content_' + id + '" class="bubble_tip_content"></div>\
-	            </div>\
-	            <div id="bubble_tip_foot_' + id + '" class="bubble_tip_foot">\
-	                <a id="bubble_tip_btn_next_' + id + '" href="###" class="bubble_tip_btn"></a>\
+                    <div id="bubble_tip_content_' + id + '" class="bubble_tip_content"></div>\
+                </div>\
+                <div id="bubble_tip_foot_' + id + '" class="bubble_tip_foot">\
+                    <a id="bubble_tip_btn_next_' + id + '" href="###" class="bubble_tip_btn"></a>\
                     <a id="bubble_tip_btn_ok_' + id + '" href="###" class="bubble_tip_btn"></a>\
-	            </div>\
+                </div>\
                 <iframe width="100%" height="100%" class="bubble_tip_bg_iframe" src="about:blank"></iframe>';
-	        var divNode = $D.node("div",{
-	            'class': 'bubble_tip_container ' + option.className
-	        });
-	        divNode.innerHTML = html;
+            var divNode = $D.node("div",{
+                'class': 'bubble_tip_container ' + option.className
+            });
+            divNode.innerHTML = html;
             $D.setCssText(divNode, 'left: -10000px; top: 0px; z-index: ' + option.zIndex + ';');
-	        option.bubbleParent.appendChild(divNode);
+            option.bubbleParent.appendChild(divNode);
             
             
             this._container = divNode;
@@ -85,18 +87,27 @@ Jet().$package(function (J) {
             var context = this;
             
             var observer = {
+                /**
+                 * @ignore
+                 */
                 onCloseBtnClick: function(e){
                     e.preventDefault();
                     e.stopPropagation();
                     $E.notifyObservers(context, 'onBubbleClose', context);
                     context.hide();
                 },
+                /**
+                 * @ignore
+                 */
                 onOkButtonClick: function(e){
                     e.preventDefault();
                     e.stopPropagation();
                     $E.notifyObservers(context, 'onBubbleOkBtnClick', context);
                     context.hide();
                 },
+                /**
+                 * @ignore
+                 */
                 onNextButtonClick: function(e){
                     e.preventDefault();
                     e.stopPropagation();
@@ -198,6 +209,7 @@ Jet().$package(function (J) {
          * 显示一个的按钮
          * @param {String} type 按钮的类型
          * @param {String} text 按钮的文字
+         * @param {Boolean} highlight 是否显示高亮的按钮
          */
         showButton: function(type, text, highlight){
             var btn = this['_' + type + 'Btn'];
@@ -206,9 +218,9 @@ Jet().$package(function (J) {
                 btn.innerHTML = text;
                 $D.show(btn);
                 if(highlight){
-                	$D.addClass(btn, 'bubble_tip_btn_next');
+                    $D.addClass(btn, 'bubble_tip_btn_next');
                 }else{
-                	$D.addClass(btn, 'bubble_tip_btn_ok');
+                    $D.addClass(btn, 'bubble_tip_btn_ok');
                 }
             }
             return btn;

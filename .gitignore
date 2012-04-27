@@ -17,3 +17,5 @@ tmp/
 # python compile bode
 *.pyc
 /lib/jx_doc
+/lib/jx
+/lib/jx_ui
