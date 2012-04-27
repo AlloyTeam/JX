@@ -1,0 +1,3353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>Jx API 开发参考文档 - string</title>
+
+		<style type="text/css">
+			/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	/*width: 800px;*/
+	margin:0;
+	padding:0;
+}
+
+#header
+{
+	clear: both;
+	/*background-color: #f2f2e2;*/
+	padding: 8px;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 0px solid #e0e0e0;
+	height: 0px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+	background: #ffffee;
+	color: #666666;
+}
+
+#index
+{
+	float: left;
+	width: 160px;
+	position: absolute;
+	left: 8px;
+	background-color: #efefe0;
+	border:0px solid #eeeeee;
+	padding: 15px 8px 8px;
+}
+
+#content
+{
+	margin-left: 190px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+h1{
+	margin:0;
+}
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+	background:#000044;
+	border-bottom: 1px solid #cccccc;
+	padding: 10px;
+	color:#ffffff;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #003399;
+	color: #fff;
+	font-size:118%;
+	text-align: left;
+	padding: 8px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+	color: #888888;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+.description{
+	color: #888888;
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.description .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+	color: #444444;
+}
+.description dt { margin: 10px 0 0 20px; }
+.description dd { color: #748189; }
+
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailTitle{
+	padding: 0 5px;
+	line-height:25px;
+	background: #ececec;
+	border-bottom: 1px solid #cccccc; 
+}
+.detailTitle span.methodType{
+	display:none;
+	color: #999999;
+	
+}
+.detailTitle span.methodReturn{
+	display:none;
+}
+
+
+.detailList dt { margin: 10px 0 0 20px; }
+.detailList dt b{ color: #222288; }
+.detailList dd { color: #748189; margin: 0 0 0 30px;}
+
+.paramsList dt { margin: 10px 0 0 20px; }
+.paramsList dt b{ color: #222288; }
+.paramsList dd { color: #748189; margin: 0 0 0 100px;}
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+	color: #444444;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	/*font-style: italic;*/
+}
+
+.fineprint
+{
+	text-align: right;
+	padding: 5px;
+	font-size: 12px;
+	color: #666666;
+	background:#f2f2e2;
+	width:590px;
+	margin: 10px 0 0 190px;
+}
+		</style>
+	</head>
+
+	<body>
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<div id="header">
+	<h1>Jx(Javascript Extend Tools) 1.0 API 开发参考文档</h1>
+	<p><a href="http://alloyteam.github.com/JX/" title="访问Jx官网">http://alloyteam.github.com/JX/</a></p>
+	<p>
+		站在巨人的肩上 Standing on shoulders of giants<br />
+		By Kinvix(Kinvix@gmail.com) 2012
+	</p>
+	
+</div>
+		<!-- end static/header.html -->
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a>
+| <a href="../files.html">File Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="classList">
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><a href="../symbols/array.html">array</a></li>
+	
+	<li><a href="../symbols/browser.html">browser</a></li>
+	
+	<li><a href="../symbols/browser.engine.html">browser.engine</a></li>
+	
+	<li><a href="../symbols/browser.features.html">browser.features</a></li>
+	
+	<li><a href="../symbols/browser.plugins.html">browser.plugins</a></li>
+	
+	<li><a href="../symbols/console.html">console</a></li>
+	
+	<li><a href="../symbols/cookie.html">cookie</a></li>
+	
+	<li><a href="../symbols/date.html">date</a></li>
+	
+	<li><a href="../symbols/dom.html">dom</a></li>
+	
+	<li><a href="../symbols/event.html">event</a></li>
+	
+	<li><a href="../symbols/event.Publish.html">event.Publish</a></li>
+	
+	<li><a href="../symbols/format.html">format</a></li>
+	
+	<li><a href="../symbols/fx.html">fx</a></li>
+	
+	<li><a href="../symbols/fx.Animation.html">fx.Animation</a></li>
+	
+	<li><a href="../symbols/fx.Beater.html">fx.Beater</a></li>
+	
+	<li><a href="../symbols/fx.transitions.html">fx.transitions</a></li>
+	
+	<li><a href="../symbols/http.html">http</a></li>
+	
+	<li><a href="../symbols/json.html">json</a></li>
+	
+	<li><a href="../symbols/Jx.html">Jx</a></li>
+	
+	<li><a href="../symbols/Jx.Class.html">Jx.Class</a></li>
+	
+	<li><a href="../symbols/loader.html">loader</a></li>
+	
+	<li><a href="../symbols/localStorage.html">localStorage</a></li>
+	
+	<li><a href="../symbols/number.html">number</a></li>
+	
+	<li><a href="../symbols/platform.html">platform</a></li>
+	
+	<li><a href="../symbols/sound.html">sound</a></li>
+	
+	<li><a href="../symbols/string.html">string</a></li>
+	
+	<li><a href="../symbols/swfobject.html">swfobject</a></li>
+	
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				命名空间 string
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				
+			
+				
+				
+				
+					<br /><i>Defined in: </i> <a href="../symbols/src/src_jx.string.js.html">jx.string.js</a>.
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class string.">
+				<caption>命名空间 概要</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/string.html#constructor">string</a></b>
+							</div>
+							<div class="description">string 名字空间</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class string.">
+					<caption>方法概要</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.buildURL">buildURL</a></b>(obj)
+								</div>
+								<div class="description">将一个对象（成员为：scheme, user, pass, host, port, path, query, fragment）重新组成为一个字符串</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.byteLength">byteLength</a></b>(string, n)
+								</div>
+								<div class="description">计算字符串的字节长度</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.camelCase">camelCase</a></b>(string)
+								</div>
+								<div class="description">将“-”连接的字符串转换成驼峰式写法</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.capitalize">capitalize</a></b>(string)
+								</div>
+								<div class="description">将字符串转换成全大写字母</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.clean">clean</a></b>(string)
+								</div>
+								<div class="description">清除字符串开头和结尾的空格，并把字符串之间的多个空格转换为一个空格</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.contains">contains</a></b>(string, separator)
+								</div>
+								<div class="description">判断是否含有指定的字符串</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.cutByBytes">cutByBytes</a></b>(string, n)
+								</div>
+								<div class="description">按字节按给定长度裁剪给定字符串</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.cutByWidth">cutByWidth</a></b>(str, fontsize, width)
+								</div>
+								<div class="description">按给定宽度裁剪字符串</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.cutRight">cutRight</a></b>(string, n)
+								</div>
+								<div class="description">按字符按给定长度裁剪给定字符串</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.decodeHtmlSimple">decodeHtmlSimple</a></b>(sStr)
+								</div>
+								<div class="description">html正文解码, 对HtmlEncode函数的结果进行解码</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.encodeHrefScript">encodeHrefScript</a></b>(sStr)
+								</div>
+								<div class="description">用做过滤直接放到<a href="javascript:XXXX">中的</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.encodeHtml">encodeHtml</a></b>(sStr)
+								</div>
+								<div class="description">用做过滤直接放到HTML里的</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.encodeHtmlAttribute">encodeHtmlAttribute</a></b>(sStr)
+								</div>
+								<div class="description">用做过滤HTML标签里面的东东 比如这个例子里的&lt;input value="XXXX"&gt;  XXXX就是要过滤的</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.encodeHtmlAttributeSimple">encodeHtmlAttributeSimple</a></b>(sStr)
+								</div>
+								<div class="description">html属性编码：对需要出现在HTML属性里的不信任输入进行编码
+        注意:
+        (1)该函数不适用于属性为一个URL地址的编码.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.encodeHtmlSimple">encodeHtmlSimple</a></b>(sStr)
+								</div>
+								<div class="description">html正文编码, 对需要出现在HTML正文里(除了HTML属性外)的不信任输入进行编码</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.encodeRegExp">encodeRegExp</a></b>(sStr)
+								</div>
+								<div class="description">用做过滤直接放到正则表达式中的</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.encodeScript">encodeScript</a></b>(sStr)
+								</div>
+								<div class="description">用做过滤直接放到HTML里js中的</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.encodeUriComponent">encodeUriComponent</a></b>(sStr)
+								</div>
+								<div class="description">对需要出现在一个URI的一部分的不信任输入进行编码 
+        例如:
+        <a href="http://search.msn.com/results.aspx?q1=[Un-trusted-input]& q2=[Un-trusted-input]">Click Here!</a>
+        以下字符将会被编码: 
+        除[a-zA-Z0-9.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.encodeUrl">encodeUrl</a></b>(sStr)
+								</div>
+								<div class="description">用做过滤直接URL参数里的  比如 http://show8.qq.com/abc_cgi?a=XXX  XXX就是要过滤的</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.escapeRegExp">escapeRegExp</a></b>(string)
+								</div>
+								<div class="description">转换 RegExp 正则表达式</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.getCharWidth">getCharWidth</a></b>(str, fontsize)
+								</div>
+								<div class="description">获取字符实际宽度</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.hexToRgb">hexToRgb</a></b>(string, array)
+								</div>
+								<div class="description">将颜色 Hex 写法转换成 RGB 写法</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.hyphenate">hyphenate</a></b>(string)
+								</div>
+								<div class="description">将驼峰式写法字符串转换成“-”连接的</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.isEmail">isEmail</a></b>(emailStr)
+								</div>
+								<div class="description">判断一个字符串是否是邮箱格式</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.isNumber">isNumber</a></b>(string, n)
+								</div>
+								<div class="description">判断给定字符串是否是数字</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.isURL">isURL</a></b>(str)
+								</div>
+								<div class="description">判断是否是一个可接受的 url 串</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.mapQuery">mapQuery</a></b>(uri)
+								</div>
+								<div class="description">将 uri 的查询字符串参数映射成对象</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.parseURL">parseURL</a></b>(str)
+								</div>
+								<div class="description">分解 URL 为一个对象，成员为：scheme, user, pass, host, port, path, query, fragment</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.replaceAll">replaceAll</a></b>(string, reallyDo, replaceWith, ignoreCase)
+								</div>
+								<div class="description">全局替换指定的字符串</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.rgbToHex">rgbToHex</a></b>(string, array)
+								</div>
+								<div class="description">将颜色 RGB 写法转换成 Hex 写法</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.stripScripts">stripScripts</a></b>(string, option)
+								</div>
+								<div class="description">脱去script标签</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.substitute">substitute</a></b>(string, object, regexp)
+								</div>
+								<div class="description">。。。。</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.template">template</a></b>(str, obj)
+								</div>
+								<div class="description">多行或单行字符串模板处理</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.test">test</a></b>(regex, params, params)
+								</div>
+								<div class="description">test的方法</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.toFloat">toFloat</a></b>(string)
+								</div>
+								<div class="description">将字符串转换成浮点数</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.toHtml">toHtml</a></b>(str)
+								</div>
+								<div class="description">将字符串转换成html源码</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.toInt">toInt</a></b>(string, base)
+								</div>
+								<div class="description">将字符串转换成整数</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.toQueryPair">toQueryPair</a></b>(obj, value)
+								</div>
+								<div class="description">。。。。</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.toQueryString">toQueryString</a></b>(obj)
+								</div>
+								<div class="description">。。。。</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.toSingleLine">toSingleLine</a></b>(str)
+								</div>
+								<div class="description">将带换行符的字符串转换成无换行符的字符串</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.toString">toString</a></b>(o)
+								</div>
+								<div class="description">将任意变量转换为字符串的方法</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.toTitle">toTitle</a></b>(str)
+								</div>
+								<div class="description">将字符串转换成用于title的字符串</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.trim">trim</a></b>(string)
+								</div>
+								<div class="description">清除字符串开头和结尾的空格</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.vaildTencentUrl">vaildTencentUrl</a></b>(sUrl)
+								</div>
+								<div class="description">url转向验证
+    描述：对通过javascript语句载入（或转向）的页面进行验证，防止转到第三方网页和跨站脚本攻击
+    返回值：true -- 合法；false -- 非法
+    例：
+    合法的值
+        http://xxx.qq.com/hi/redirect.html?url=http://www.qq.com
+        http://xxx.qq.com/hi/redirect.html?url=a.html
+        http://xxx.qq.com/hi/redirect.html?url=/a/1.html
+    非法的值
+        http://xxx.qq.com/hi/redirect.html?url=http://www.baidu.com
+        http://xxx.qq.com/hi/redirect.html?url=javascript:codehere
+        http://xxx.qq.com/hi/redirect.html?url=//www.qq.com</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">string.<b><a href="../symbols/string.html#.vaildUrl">vaildUrl</a></b>(sUrl)
+								</div>
+								<div class="description">验证给定字符串是否是url, 如果是url 则返回正常的url</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					命名空间  详解
+				</div>
+				
+				<div class="detailTitle fixedFont">
+					<span class="methodType"></span>
+						<b>string</b>
+				</div>
+				
+				
+				<dl class="description">
+					<dt class="heading">功能:</dt>
+					<dd>
+					string 名字空间
+					
+					</dd>
+				</dl>
+				
+				
+				
+				
+					
+					
+					
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					方法详解
+				</div>
+				
+					<a name=".buildURL"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>buildURL</b>(obj)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						将一个对象（成员为：scheme, user, pass, host, port, path, query, fragment）重新组成为一个字符串
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Object}</span> <b>obj</b>
+											
+										</dt>
+										<dd>URl 对象</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 如果是可接受的 url 则返回 true</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".byteLength"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Number}</span>
+					<span class="light">string.</span><b>byteLength</b>(string, n)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						计算字符串的字节长度
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>n</b>
+											
+										</dt>
+										<dd>指定一个中文的字节数, 默认为2</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 返回自己长度</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".camelCase"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>camelCase</b>(string)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						将“-”连接的字符串转换成驼峰式写法
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回转换后的字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".capitalize"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>capitalize</b>(string)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						将字符串转换成全大写字母
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回转换后的字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".clean"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>clean</b>(string)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						清除字符串开头和结尾的空格，并把字符串之间的多个空格转换为一个空格
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回清除后的字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".contains"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Boolean}</span>
+					<span class="light">string.</span><b>contains</b>(string, separator)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						判断是否含有指定的字符串
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>string</b>
+											
+										</dt>
+										<dd>是否含有的字符串</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>separator</b>
+											
+										</dt>
+										<dd>分隔符，可选</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> 如果含有，返回 true，否则返回 false</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".cutByBytes"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>cutByBytes</b>(string, n)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						按字节按给定长度裁剪给定字符串
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>n</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".cutByWidth"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Number}</span>
+					<span class="light">string.</span><b>cutByWidth</b>(str, fontsize, width)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						按给定宽度裁剪字符串
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>str</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>fontsize</b>
+											
+										</dt>
+										<dd>字体大小</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>width</b>
+											
+										</dt>
+										<dd>限定的宽度</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".cutRight"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>cutRight</b>(string, n)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						按字符按给定长度裁剪给定字符串
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>n</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".decodeHtmlSimple"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>decodeHtmlSimple</b>(sStr)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						html正文解码, 对HtmlEncode函数的结果进行解码
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>sStr</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".encodeHrefScript"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>encodeHrefScript</b>(sStr)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						用做过滤直接放到<a href="javascript:XXXX">中的
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>sStr</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".encodeHtml"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>encodeHtml</b>(sStr)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						用做过滤直接放到HTML里的
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>sStr</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".encodeHtmlAttribute"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>encodeHtmlAttribute</b>(sStr)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						用做过滤HTML标签里面的东东 比如这个例子里的&lt;input value="XXXX"&gt;  XXXX就是要过滤的
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>sStr</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".encodeHtmlAttributeSimple"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>encodeHtmlAttributeSimple</b>(sStr)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						html属性编码：对需要出现在HTML属性里的不信任输入进行编码
+        注意:
+        (1)该函数不适用于属性为一个URL地址的编码.这些标记包括:a/img/frame/iframe/script/xml/embed/object...
+        属性包括:href/src/lowsrc/dynsrc/background/...
+        (2)该函数不适用于属性名为 style="[Un-trusted input]" 的编码
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>sStr</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".encodeHtmlSimple"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>encodeHtmlSimple</b>(sStr)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						html正文编码, 对需要出现在HTML正文里(除了HTML属性外)的不信任输入进行编码
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>sStr</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".encodeRegExp"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>encodeRegExp</b>(sStr)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						用做过滤直接放到正则表达式中的
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>sStr</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".encodeScript"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>encodeScript</b>(sStr)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						用做过滤直接放到HTML里js中的
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>sStr</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".encodeUriComponent"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>encodeUriComponent</b>(sStr)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						对需要出现在一个URI的一部分的不信任输入进行编码 
+        例如:
+        <a href="http://search.msn.com/results.aspx?q1=[Un-trusted-input]& q2=[Un-trusted-input]">Click Here!</a>
+        以下字符将会被编码: 
+        除[a-zA-Z0-9.-_]以外的字符都会被替换成URL编码
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>sStr</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".encodeUrl"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>encodeUrl</b>(sStr)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						用做过滤直接URL参数里的  比如 http://show8.qq.com/abc_cgi?a=XXX  XXX就是要过滤的
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>sStr</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".escapeRegExp"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>escapeRegExp</b>(string)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						转换 RegExp 正则表达式
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回转换后的字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getCharWidth"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Number}</span>
+					<span class="light">string.</span><b>getCharWidth</b>(str, fontsize)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取字符实际宽度
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>str</b>
+											
+										</dt>
+										<dd>需要计算的字符串</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>fontsize</b>
+											
+										</dt>
+										<dd>字体大小，可以不填</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".hexToRgb"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>hexToRgb</b>(string, array)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						将颜色 Hex 写法转换成 RGB 写法
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>array</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回转换后的字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".hyphenate"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>hyphenate</b>(string)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						将驼峰式写法字符串转换成“-”连接的
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回转换后的字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isEmail"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Boolean}</span>
+					<span class="light">string.</span><b>isEmail</b>(emailStr)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						判断一个字符串是否是邮箱格式
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>emailStr</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isNumber"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>isNumber</b>(string, n)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						判断给定字符串是否是数字
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>n</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isURL"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Boolean}</span>
+					<span class="light">string.</span><b>isURL</b>(str)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						判断是否是一个可接受的 url 串
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>str</b>
+											
+										</dt>
+										<dd>要检测的字符串</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> 如果是可接受的 url 则返回 true</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".mapQuery"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Object}</span>
+					<span class="light">string.</span><b>mapQuery</b>(uri)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						将 uri 的查询字符串参数映射成对象
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+					<pre class="code">Jx().$package(function(J){ var url = "http://web.qq.com/?qq=4765078&style=blue"; // queryObj 则得到一个{qq:"4765078", style:"blue"}的对象。 var queryObj = J.mapQuery(url);};</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>uri</b>
+											
+										</dt>
+										<dd>要映射的 uri</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Object}</span> 按照 uri 映射成的对象</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".parseURL"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Object}</span>
+					<span class="light">string.</span><b>parseURL</b>(str)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						分解 URL 为一个对象，成员为：scheme, user, pass, host, port, path, query, fragment
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>str</b>
+											
+										</dt>
+										<dd>URL 地址</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Object}</span> 如果解析失败则返回 null</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".replaceAll"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>replaceAll</b>(string, reallyDo, replaceWith, ignoreCase)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						全局替换指定的字符串
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>reallyDo</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>replaceWith</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>ignoreCase</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回替换后的字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".rgbToHex"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>rgbToHex</b>(string, array)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						将颜色 RGB 写法转换成 Hex 写法
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>array</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回转换后的字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".stripScripts"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>stripScripts</b>(string, option)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						脱去script标签
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>option</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回转换后的字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".substitute"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>substitute</b>(string, object, regexp)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						。。。。
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>object</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>regexp</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回转换后的字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".template"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>template</b>(str, obj)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						多行或单行字符串模板处理
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+					<pre class="code"><script type="text/html" id="user_tmpl">  <% for ( var i = 0; i < users.length; i++ ) { %>    <li><a href="<%=users[i].url%>"><%=users[i].name%></a></li>  <% } %></script>Jx().$package(function(J){ // 用 obj 对象的数据合并到字符串模板中 J.template("Hello, {name}!", {     name:"Kinvix" });};</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>str</b>
+											
+										</dt>
+										<dd>模板字符串</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Object}</span> <b>obj</b>
+											
+										</dt>
+										<dd>要套入的数据对象</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回与数据对象合成后的字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".test"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Boolean}</span>
+					<span class="light">string.</span><b>test</b>(regex, params, params)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						test的方法
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String|RegExp}</span> <b>regex</b>
+											
+										</dt>
+										<dd>正则表达式，或者正则表达式的字符串</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>params</b>
+											
+										</dt>
+										<dd>正则的参数</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>params</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> 返回结果</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".toFloat"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Number}</span>
+					<span class="light">string.</span><b>toFloat</b>(string)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						将字符串转换成浮点数
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Sring}</span> <b>string</b>
+											
+										</dt>
+										<dd>要转换的字符串</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 返回转换后的浮点数</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".toHtml"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Sring}</span>
+					<span class="light">string.</span><b>toHtml</b>(str)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						将字符串转换成html源码
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Sring}</span> <b>str</b>
+											
+										</dt>
+										<dd>要转换的字符串</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Sring}</span> 返回转换后的html代码字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".toInt"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Number}</span>
+					<span class="light">string.</span><b>toInt</b>(string, base)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						将字符串转换成整数
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>base</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 返回转换后的整数</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".toQueryPair"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>toQueryPair</b>(obj, value)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						。。。。
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Object}</span> <b>obj</b>
+											
+										</dt>
+										<dd>要转换成查询字符串的对象</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>value</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回转换后的查询字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".toQueryString"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>toQueryString</b>(obj)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						。。。。
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Object}</span> <b>obj</b>
+											
+										</dt>
+										<dd>要转换成查询字符串的对象</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回转换后的查询字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".toSingleLine"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Sring}</span>
+					<span class="light">string.</span><b>toSingleLine</b>(str)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						将带换行符的字符串转换成无换行符的字符串
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Sring}</span> <b>str</b>
+											
+										</dt>
+										<dd>要转换的字符串</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Sring}</span> 返回转换后的字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".toString"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>toString</b>(o)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						将任意变量转换为字符串的方法
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Mixed}</span> <b>o</b>
+											
+										</dt>
+										<dd>任意变量</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回转换后的字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".toTitle"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{Number}</span>
+					<span class="light">string.</span><b>toTitle</b>(str)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						将字符串转换成用于title的字符串
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Sring}</span> <b>str</b>
+											
+										</dt>
+										<dd>要转换的字符串</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> 返回转换后的in title字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".trim"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>trim</b>(string)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						清除字符串开头和结尾的空格
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>string</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> 返回清除后的字符串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".vaildTencentUrl"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>vaildTencentUrl</b>(sUrl)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						url转向验证
+    描述：对通过javascript语句载入（或转向）的页面进行验证，防止转到第三方网页和跨站脚本攻击
+    返回值：true -- 合法；false -- 非法
+    例：
+    合法的值
+        http://xxx.qq.com/hi/redirect.html?url=http://www.qq.com
+        http://xxx.qq.com/hi/redirect.html?url=a.html
+        http://xxx.qq.com/hi/redirect.html?url=/a/1.html
+    非法的值
+        http://xxx.qq.com/hi/redirect.html?url=http://www.baidu.com
+        http://xxx.qq.com/hi/redirect.html?url=javascript:codehere
+        http://xxx.qq.com/hi/redirect.html?url=//www.qq.com
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>sUrl</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".vaildUrl"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{String}</span>
+					<span class="light">string.</span><b>vaildUrl</b>(sUrl)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						验证给定字符串是否是url, 如果是url 则返回正常的url
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{String}</span> <b>sUrl</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			
+			<hr />
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			&copy;1998-2012<br />
+			文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Fri Apr 27 2012 17:46:57 GMT+0800 (CST)
+		</div>
+	</body>
+</html>

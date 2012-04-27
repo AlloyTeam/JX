@@ -1,0 +1,1418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>Jx API 开发参考文档 - ui.ContextMenu</title>
+
+		<style type="text/css">
+			/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	/*width: 800px;*/
+	margin:0;
+	padding:0;
+}
+
+#header
+{
+	clear: both;
+	/*background-color: #f2f2e2;*/
+	padding: 8px;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 0px solid #e0e0e0;
+	height: 0px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+	background: #ffffee;
+	color: #666666;
+}
+
+#index
+{
+	float: left;
+	width: 160px;
+	position: absolute;
+	left: 8px;
+	background-color: #efefe0;
+	border:0px solid #eeeeee;
+	padding: 15px 8px 8px;
+}
+
+#content
+{
+	margin-left: 190px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+h1{
+	margin:0;
+}
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+	background:#000044;
+	border-bottom: 1px solid #cccccc;
+	padding: 10px;
+	color:#ffffff;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #003399;
+	color: #fff;
+	font-size:118%;
+	text-align: left;
+	padding: 8px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+	color: #888888;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+.description{
+	color: #888888;
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.description .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+	color: #444444;
+}
+.description dt { margin: 10px 0 0 20px; }
+.description dd { color: #748189; }
+
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailTitle{
+	padding: 0 5px;
+	line-height:25px;
+	background: #ececec;
+	border-bottom: 1px solid #cccccc; 
+}
+.detailTitle span.methodType{
+	display:none;
+	color: #999999;
+	
+}
+.detailTitle span.methodReturn{
+	display:none;
+}
+
+
+.detailList dt { margin: 10px 0 0 20px; }
+.detailList dt b{ color: #222288; }
+.detailList dd { color: #748189; margin: 0 0 0 30px;}
+
+.paramsList dt { margin: 10px 0 0 20px; }
+.paramsList dt b{ color: #222288; }
+.paramsList dd { color: #748189; margin: 0 0 0 100px;}
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+	color: #444444;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	/*font-style: italic;*/
+}
+
+.fineprint
+{
+	text-align: right;
+	padding: 5px;
+	font-size: 12px;
+	color: #666666;
+	background:#f2f2e2;
+	width:590px;
+	margin: 10px 0 0 190px;
+}
+		</style>
+	</head>
+
+	<body>
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<div id="header">
+	<h1>Jx(Javascript Extend Tools) 1.0 API 开发参考文档</h1>
+	<p><a href="http://alloyteam.github.com/JX/" title="访问Jx官网">http://alloyteam.github.com/JX/</a></p>
+	<p>
+		站在巨人的肩上 Standing on shoulders of giants<br />
+		By Kinvix(Kinvix@gmail.com) 2012
+	</p>
+	
+</div>
+		<!-- end static/header.html -->
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a>
+| <a href="../files.html">File Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="classList">
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><a href="../symbols/ui.html">ui</a></li>
+	
+	<li><a href="../symbols/ui.BaseWindow.html">ui.BaseWindow</a></li>
+	
+	<li><a href="../symbols/ui.Boxy.html">ui.Boxy</a></li>
+	
+	<li><a href="../symbols/ui.Bubble.html">ui.Bubble</a></li>
+	
+	<li><a href="../symbols/ui.Button.html">ui.Button</a></li>
+	
+	<li><a href="../symbols/ui.CalendarClass.html">ui.CalendarClass</a></li>
+	
+	<li><a href="../symbols/ui.ContextMenu.html">ui.ContextMenu</a></li>
+	
+	<li><a href="../symbols/ui.ContextMenuItem.html">ui.ContextMenuItem</a></li>
+	
+	<li><a href="../symbols/ui.ContextMenuSeparator.html">ui.ContextMenuSeparator</a></li>
+	
+	<li><a href="../symbols/ui.ContextSubmenuItem.html">ui.ContextSubmenuItem</a></li>
+	
+	<li><a href="../symbols/ui.DivSelect.html">ui.DivSelect</a></li>
+	
+	<li><a href="../symbols/ui.Drag.html">ui.Drag</a></li>
+	
+	<li><a href="../symbols/ui.FlashContextMenuItem.html">ui.FlashContextMenuItem</a></li>
+	
+	<li><a href="../symbols/ui.IframeScroller.html">ui.IframeScroller</a></li>
+	
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				类 ui.ContextMenu
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				
+			
+				
+				
+				
+					<br /><i>Defined in: </i> <a href="../symbols/src/src_jx.ui.contextmenu.js.html">jx.ui.contextmenu.js</a>.
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class ui.ContextMenu.">
+				<caption>类 概要</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/ui.ContextMenu.html#constructor">ui.ContextMenu</a></b>(option)
+							</div>
+							<div class="description">【ContextMenu】
+triggers 参数是指触发右键菜单显示的dom,右击该节点就显示菜单也可以不使用这个属性, 调用的地方自己控制显示隐藏菜单</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class ui.ContextMenu.">
+					<caption>方法概要</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#addItem">addItem</a></b>(option)
+								</div>
+								<div class="description">添加菜单项</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#addItems">addItems</a></b>(optionArray)
+								</div>
+								<div class="description">批量添加菜单项</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#clearItems">clearItems</a></b>()
+								</div>
+								<div class="description">清空所有菜单项</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#destory">destory</a></b>()
+								</div>
+								<div class="description">销毁菜单</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#getArgument">getArgument</a></b>()
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#getBody">getBody</a></b>()
+								</div>
+								<div class="description">获取菜单主体的dom</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#getElement">getElement</a></b>()
+								</div>
+								<div class="description">获取菜单本身的dom</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#getId">getId</a></b>()
+								</div>
+								<div class="description">获取改菜单的id</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#getItemAt">getItemAt</a></b>(index)
+								</div>
+								<div class="description">获取指定下标的菜单项</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">ui.ContextMenu.<b><a href="../symbols/ui.ContextMenu.html#.getMenu">getMenu</a></b>()
+								</div>
+								<div class="description">获取给定id的菜单, 无则返回null</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#getZIndex">getZIndex</a></b>(zIndex)
+								</div>
+								<div class="description">获取菜单的层级</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#hide">hide</a></b>()
+								</div>
+								<div class="description">隐藏菜单</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#hideSubmenu">hideSubmenu</a></b>()
+								</div>
+								<div class="description">隐藏所有子菜单</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#isShow">isShow</a></b>()
+								</div>
+								<div class="description">指示菜单是否显示</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#refresh">refresh</a></b>()
+								</div>
+								<div class="description">刷新, 重回菜单</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#removeItemAt">removeItemAt</a></b>(index)
+								</div>
+								<div class="description">移除指定下标的菜单项</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#setArgument">setArgument</a></b>(arg)
+								</div>
+								<div class="description">这两个方法可以用来保存临时数据,show之前保存, 供给item的回调使用</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#setClass">setClass</a></b>(className)
+								</div>
+								<div class="description">设置菜单的css类</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#setZIndex">setZIndex</a></b>(zIndex)
+								</div>
+								<div class="description">设置菜单的层级</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/ui.ContextMenu.html#show">show</a></b>(x, y, offset, relativeEl)
+								</div>
+								<div class="description">显示菜单</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					类  详解
+				</div>
+				
+				<div class="detailTitle fixedFont">
+					<span class="methodType"></span>
+						<b>ui.ContextMenu</b>(option)
+				</div>
+				
+				
+				<dl class="description">
+					<dt class="heading">功能:</dt>
+					<dd>
+					【ContextMenu】
+triggers 参数是指触发右键菜单显示的dom,右击该节点就显示菜单也可以不使用这个属性, 调用的地方自己控制显示隐藏菜单
+					
+					</dd>
+				</dl>
+				
+				
+				
+				
+					
+						<dl class="detailList">
+							<dt class="heading">参数:</dt>
+							<dd>
+								
+								<dl class="paramsList">
+									<dt>
+										<span class="light fixedFont">{Object}</span>  <b>option</b>
+										
+									</dt>
+									<dd>构造参数{id: '',//randomname: id,container: document.body,className: '' ,width: null,triggerEvent: 'contextmenu',triggers: null,//HTMLElement数组 ,触发右键菜单的domitems: []}</dd>
+								</dl>
+								
+							</dd>
+						</dl>
+					
+					
+					
+						<dl class="detailList">
+						<dt class="heading">Since:</dt>
+							<dd>version 1.0</dd>
+						</dl>
+					
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					方法详解
+				</div>
+				
+					<a name="addItem"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>addItem</b>(option)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						添加菜单项
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Object}</span> <b>option</b>
+											
+										</dt>
+										<dd>{<br/> title: 鼠标tips<br/>
+            text: 菜单项的文字<br/>
+            link: 指向链接<br/>
+            icon: 图标的配置{ url, style, className }<br/>
+            enable: 是否启用<br/>
+            onClick: 点击处理函数<br/>
+            argument: 点击处理函数接收的额外参数<br/>}</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="addItems"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>addItems</b>(optionArray)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						批量添加菜单项
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Array}</span> <b>optionArray</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">参看:</dt>
+							
+								<dd><a href="../symbols/ui.ContextMenu.html#addItem">ui.ContextMenu#addItem</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name="clearItems"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>clearItems</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						清空所有菜单项
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="destory"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>destory</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						销毁菜单
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="getArgument"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Object}</span>
+					<b>getArgument</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Object}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getBody"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{HTMLElement}</span>
+					<b>getBody</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取菜单主体的dom
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{HTMLElement}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getElement"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{HTMLElement}</span>
+					<b>getElement</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取菜单本身的dom
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{HTMLElement}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getId"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>getId</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取改菜单的id
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="getItemAt"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{ContextMenuItem}</span>
+					<b>getItemAt</b>(index)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取指定下标的菜单项
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>index</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{ContextMenuItem}</span> , {ContextSubmenuItem}, {ContextMenuSeparator}</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getMenu"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType">&lt;static&gt; </span>
+					
+					<span class="methodReturn">{<a href="../symbols/ui.ContextMenu.html">ui.ContextMenu</a>}</span>
+					<span class="light">ui.ContextMenu.</span><b>getMenu</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取给定id的菜单, 无则返回null
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/ui.ContextMenu.html">ui.ContextMenu</a>}</span> ,{Null}</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getZIndex"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Number}</span>
+					<b>getZIndex</b>(zIndex)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						获取菜单的层级
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>zIndex</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Number}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="hide"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>hide</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						隐藏菜单
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="hideSubmenu"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>hideSubmenu</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						隐藏所有子菜单
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="isShow"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					<span class="methodReturn">{Boolean}</span>
+					<b>isShow</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						指示菜单是否显示
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">返回:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="refresh"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>refresh</b>()
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						刷新, 重回菜单
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="removeItemAt"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>removeItemAt</b>(index)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						移除指定下标的菜单项
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>index</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setArgument"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setArgument</b>(arg)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						这两个方法可以用来保存临时数据,show之前保存, 供给item的回调使用
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Object}</span> <b>arg</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setClass"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setClass</b>(className)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置菜单的css类
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<b>className</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setZIndex"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>setZIndex</b>(zIndex)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						设置菜单的层级
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>zIndex</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="show"> </a>
+					<div class="detailTitle fixedFont">
+						<span class="methodType"></span>
+					
+					
+					<b>show</b>(x, y, offset, relativeEl)
+					
+					</div>
+					<dl class="description">
+						<dt class="heading">功能:</dt>
+						<dd>
+						显示菜单
+						
+						
+						</dd>
+					</dl>
+					
+					
+					
+						
+							<dl class="detailList">
+								<dt class="heading">参数:</dt>
+								<dd>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>x</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>y</b>
+											
+										</dt>
+										<dd></dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{Number}</span> <b>offset</b>
+											
+										</dt>
+										<dd>菜单位置相对于给定xy的偏移, 0为不偏移</dd>
+									</dl>
+									
+									<dl class="paramsList">
+										<dt>
+											<span class="light fixedFont">{HTMLElement}</span> <b>relativeEl</b>
+											
+										</dt>
+										<dd>相对某一元素定位</dd>
+									</dl>
+									
+								</dd>
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			
+			<hr />
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			&copy;1998-2010<br />
+			文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Fri Apr 27 2012 17:47:17 GMT+0800 (CST)
+		</div>
+	</body>
+</html>
