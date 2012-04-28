@@ -185,7 +185,7 @@
 <span class='line'>178</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
 <span class='line'>179</span> </span><span class="WHIT">        </span><span class="COMM">/**
 <span class='line'>180</span>          * 设置气泡的z-index
-<span class='line'>181</span>          * @param {Int} zIndex
+<span class='line'>181</span>          * @param {Number} zIndex
 <span class='line'>182</span>          */</span><span class="WHIT">
 <span class='line'>183</span> </span><span class="WHIT">        </span><span class="NAME">setZIndex</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">zIndex</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>184</span> </span><span class="WHIT">            </span><span class="NAME">$D.setStyle</span><span class="PUNC">(</span><span class="NAME">this._container</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'zIndex'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">zIndex</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">  </span><span class="WHIT">
@@ -281,7 +281,7 @@
 <span class='line'>274</span> </span><span class="WHIT">        </span><span class="COMM">/**
 <span class='line'>275</span>          * 返回一个内部使用的id
 <span class='line'>276</span>          * @private
-<span class='line'>277</span>          * @return {Int} 
+<span class='line'>277</span>          * @return {Number} 
 <span class='line'>278</span>          */</span><span class="WHIT">
 <span class='line'>279</span> </span><span class="WHIT">        </span><span class="NAME">_getId</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>280</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">Bubble.__id</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
@@ -293,7 +293,7 @@
 <span class='line'>286</span>          * 设置箭头的指示方向和位置
 <span class='line'>287</span>          * @private
 <span class='line'>288</span>          * @param {String} position 箭头的位置, 由两个单词(top/bottom/left/right中的一个)组成
-<span class='line'>289</span>          * @param {Int} offset 箭头的偏移位置
+<span class='line'>289</span>          * @param {Number} offset 箭头的偏移位置
 <span class='line'>290</span>          * @example
 <span class='line'>291</span>          *  position的值可为
 <span class='line'>292</span>          *  "top left"
@@ -340,7 +340,7 @@
 <span class='line'>333</span>          * 计算气泡的位置
 <span class='line'>334</span>          * @param {HTMLElement} target 箭头所指的dom
 <span class='line'>335</span>          * @param {Array} pointerSize 箭头的大小,[width, height]
-<span class='line'>336</span>          * @param {Int} pointerOffset 箭头的偏移
+<span class='line'>336</span>          * @param {Number} pointerOffset 箭头的偏移
 <span class='line'>337</span>          * @private
 <span class='line'>338</span>          * @return {Object} 计算得到的结果
 <span class='line'>339</span>          * @example 
