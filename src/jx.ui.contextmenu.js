@@ -832,7 +832,7 @@
      * 
      * @class 
      * @name ContextSubmenuItem
-     * @augments  ui.ContextMenuItem
+     * @extends  ui.ContextMenuItem
      * @constructor
      * @memberOf ui
      * @param {Object} option 参数对象

@@ -4,7 +4,7 @@
 Jx().$package(function (J) {
     J.ui = J.ui || {};
     var $D = J.dom,
-		$E = J.event;
+        $E = J.event;
 
     var id = 0;
     var handleNames = {
@@ -17,23 +17,29 @@ Jx().$package(function (J) {
         lb: "lb",
         lt: "lt"
     };
-    	
+        
     var clientHeight = 0;
     var clientWidth = 0;
     /**
     * resize类
     * 
-    * @memberOf Jx.ui
-    * @Class
-    * 
+    * @memberOf ui
+    * @class
+    * @name Resize
+    * @constructor
     * @param {Element} apperceiveEl 监听resize动作的元素
     * @param {Element} effectEl 展现resize结果的元素
     * @param {Object} option 其他选项，如:dragProxy,size,minWidth...
-    * @returns 
-    * 
     * 
     */
-    J.ui.Resize = new J.Class({
+    J.ui.Resize = new J.Class(
+    /**
+     * @lends ui.Resize.prototype
+     */
+    {
+        /**
+         * @ignore
+         */
         init: function (apperceiveEl, effectEl, option) {
             var context = this;
             option = option || {};
@@ -44,7 +50,7 @@ Jx().$package(function (J) {
             } else {
                 this.effectEl = effectEl || apperceiveEl;
             }
-			
+            
             this.size = option.size || 5;
             this.minWidth = option.minWidth || 0;
             this.minHeight = option.minHeight || 0;
@@ -80,7 +86,7 @@ Jx().$package(function (J) {
             };
             this._onDragEnd = function () {
 //                J.out("this._width： " + context._width);
-//			    J.out("this._height： " + context._height);
+//              J.out("this._height： " + context._height);
                 $E.notifyObservers(context, "end", {
                     x: context.getLeft(),
                     y: context.getTop(),
@@ -113,7 +119,7 @@ Jx().$package(function (J) {
                 $E.notifyObservers(context, "mousedown", { width: context._width, height: context._height });
                 context._startLeft = context._left = context.getLeft();
                 context._startWidth = context._width = context.getWidth();
-				context._startHeight = context._height = context.getHeight();
+                context._startHeight = context._height = context.getHeight();
             };
             this._onDragLeft = function (xy) {
                 var w = context._startWidth - xy.x;
@@ -123,8 +129,8 @@ Jx().$package(function (J) {
                     x = context._startLeft + (context._startWidth - w);
                 }
                 if (context.isLimited && (x - context._leftMargin) < 0) {
-                	x = context._leftMargin;
-                	w = context._startLeft + context._startWidth - context._leftMargin;
+                    x = context._leftMargin;
+                    w = context._startLeft + context._startWidth - context._leftMargin;
                 }
                 context.setLeft(x);
                 context.setWidth(w);
@@ -146,8 +152,8 @@ Jx().$package(function (J) {
                     y = context._startTop + (context._startHeight - h);
                 }
                 if (context.isLimited && (y - context._topMargin) < 0) {
-                	y = context._topMargin;
-                	h = context._startTop + context._startHeight - context._topMargin;
+                    y = context._topMargin;
+                    h = context._startTop + context._startHeight - context._topMargin;
                 }
                 context.setTop(y);
                 context.setHeight(h);
@@ -159,9 +165,9 @@ Jx().$package(function (J) {
             // 右侧
             this._onDragRightStart = function (xy) {
                  $E.notifyObservers(context, "mousedown", { width: context._width, height: context._height });
-				context._startWidth = context._width = context.getWidth();
-				context._startLeft = context._left = context.getLeft();
-				context._startHeight = context._height = context.getHeight();
+                context._startWidth = context._width = context.getWidth();
+                context._startLeft = context._left = context.getLeft();
+                context._startHeight = context._height = context.getHeight();
                 clientWidth = qqweb.layout.getClientWidth();
             };
             this._onDragRight = function (xy) {
@@ -169,10 +175,10 @@ Jx().$package(function (J) {
                 if (w < context.minWidth) {
                     w = context.minWidth;
                 }
-    			var clientWidth = $D.getClientWidth() || 0;
+                var clientWidth = $D.getClientWidth() || 0;
                 var maxWidth = clientWidth - context._startLeft - context._rightMargin;
                 if (context.isLimited && maxWidth < w) {
-                	w = maxWidth;
+                    w = maxWidth;
                 }
                 context.setWidth(w);
                 $E.notifyObservers(context, "resize", { width: context._width, height: context._height });
@@ -194,7 +200,7 @@ Jx().$package(function (J) {
                 var clientHeight = $D.getClientHeight() || 0;
                 var maxHeight = clientHeight - context._startTop - context._bottomMargin;
                 if (context.isLimited && maxHeight < h) {
-                	h = maxHeight;
+                    h = maxHeight;
                 }
                 context.setHeight(h);
                 $E.notifyObservers(context, "resize", { width: context._width, height: context._height });
@@ -277,64 +283,109 @@ Jx().$package(function (J) {
             $E.addObserver(this["_dragController_" + handleNames.lb], "move", this._onDragLeftBottom);
             $E.addObserver(this["_dragController_" + handleNames.lb], "end", this._onDragEnd);
         },
+        /**
+         * 设置effectEl的宽度
+         * @param {Number} w
+         */
         setWidth: function (w) {
             $D.setStyle(this.effectEl, "width", w + "px");
             this._width = w;
         },
+        /**
+         * 设置effectEl的高度
+         * @param {Number} h
+         */
         setHeight: function (h) {
             $D.setStyle(this.effectEl, "height", h + "px");
             this._height = h;
         },
-
+        /**
+         * 设置effectEl的x坐标
+         * @param {Number} x
+         */
         setLeft: function (x) {
             $D.setStyle(this.effectEl, "left", x + "px");
             this._left = x;
         },
+        /**
+         * 设置effectEl的y坐标
+         * @param {Number} y
+         */
         setTop: function (y) {
             $D.setStyle(this.effectEl, "top", y + "px");
             this._top = y;
         },
-
-
+        /**
+         * 获取effectEl的宽度
+         * @return {Number}
+         */
         getWidth: function () {
             return parseInt($D.getStyle(this.effectEl, "width"));
         },
+        /**
+         * 获取effectEl的高度
+         * @return {Number}
+         */
         getHeight: function () {
             return parseInt($D.getStyle(this.effectEl, "height"));
         },
-
+        /**
+         * 获取effectEl的x
+         * @return {Number}
+         */
         getLeft: function () {
             return parseInt($D.getStyle(this.effectEl, "left"));
         },
+        /**
+         * 获取effectEl的y
+         * @return {Number}
+         */
         getTop: function () {
             return parseInt($D.getStyle(this.effectEl, "top"));
         },
+        /**
+         * @private
+         */
         getId: function () {
             return id++;
         },
-
+        /**
+         * 锁定resize
+         */
         lock: function () {
             for (var p in handleNames) {
                 this["_dragController_" + handleNames[p]].lock();
             }
         },
+        /**
+         * 解锁resize
+         */
         unlock: function () {
             for (var p in handleNames) {
                 this["_dragController_" + handleNames[p]].unlock();
             }
         },
+        /**
+         * 显示触发resize的节点
+         */
         show: function () {
             for (var p in handleNames) {
                 this["_dragController_" + handleNames[p]].show();
             }
         },
+        /**
+         * 隐藏触发resize的节点
+         */
         hide: function () {
             for (var p in handleNames) {
                 this["_dragController_" + handleNames[p]].hide();
             }
         },
+        /**
+         * 设置resize的限定边界
+         */
         setLimite : function(option){
-        	option = option || {};
+            option = option || {};
             this.isLimited = option.isLimited || true;
             if (this.isLimited) {
                 this._leftMargin = option.leftMargin || 0;
@@ -343,10 +394,13 @@ Jx().$package(function (J) {
                 this._bottomMargin = option.bottomMargin || 0;
             }
         },
+        /**
+         * 设置最小宽高
+         */
         setMinLimite : function(option){
-        	option = option||{};
-        	this.minWidth = option.minWidth||0;
-        	this.minHeight = option.minHeight||0;
+            option = option||{};
+            this.minWidth = option.minWidth||0;
+            this.minHeight = option.minHeight||0;
         }
     });
 

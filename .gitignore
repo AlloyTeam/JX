@@ -19,3 +19,5 @@ tmp/
 /lib/jx_doc
 /lib/jx
 /lib/jx_ui
+/lib/core
+/lib/ui

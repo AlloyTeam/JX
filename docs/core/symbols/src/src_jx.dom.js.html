@@ -340,7 +340,7 @@
 <span class='line'>333</span>      * @memberOf dom
 <span class='line'>334</span>      * 
 <span class='line'>335</span>      * @param {HTMLElement} element The html element. 
-<span class='line'>336</span>      * @return {Int} The width of the actual document (which includes the body and its margin).
+<span class='line'>336</span>      * @return {Number} The width of the actual document (which includes the body and its margin).
 <span class='line'>337</span>      */</span><span class="WHIT">
 <span class='line'>338</span> </span><span class="WHIT">    </span><span class="NAME">getScrollWidth</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">el</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>339</span> </span><span class="WHIT">        </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">scrollWidth</span><span class="PUNC">;</span><span class="WHIT">
@@ -358,7 +358,7 @@
 <span class='line'>351</span>      * 
 <span class='line'>352</span>      * @method getClientHeight
 <span class='line'>353</span>      * @memberOf dom
-<span class='line'>354</span>      * @return {Int} The height of the viewable area of the page (excludes scrollbars).
+<span class='line'>354</span>      * @return {Number} The height of the viewable area of the page (excludes scrollbars).
 <span class='line'>355</span>      */</span><span class="WHIT">
 <span class='line'>356</span> </span><span class="WHIT">    </span><span class="NAME">getClientHeight</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">el</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>357</span> </span><span class="WHIT">        </span><span class="COMM">//var name = J.browser.engine.name;</span><span class="WHIT">
@@ -388,7 +388,7 @@
 <span class='line'>381</span>      * 
 <span class='line'>382</span>      * @method getOffsetHeight
 <span class='line'>383</span>      * @memberOf dom
-<span class='line'>384</span>      * @return {Int} The height of the viewable area of the page (excludes scrollbars).
+<span class='line'>384</span>      * @return {Number} The height of the viewable area of the page (excludes scrollbars).
 <span class='line'>385</span>      */</span><span class="WHIT">
 <span class='line'>386</span> </span><span class="WHIT">    </span><span class="NAME">getOffsetHeight</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">el</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>387</span> </span><span class="WHIT">        </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">name</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">J.browser.engine.name</span><span class="PUNC">;</span><span class="WHIT">
@@ -416,7 +416,7 @@
 <span class='line'>409</span>      * @method getDocumentScrollLeft
 <span class='line'>410</span>      * @memberOf dom
 <span class='line'>411</span>      * @param {HTMLDocument} document (optional) The document to get the scroll value of
-<span class='line'>412</span>      * @return {Int}  The amount that the document is scrolled to the left
+<span class='line'>412</span>      * @return {Number}  The amount that the document is scrolled to the left
 <span class='line'>413</span>      */</span><span class="WHIT">
 <span class='line'>414</span> </span><span class="WHIT">    </span><span class="NAME">getScrollLeft</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">el</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>415</span> </span><span class="WHIT">        </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">scrollLeft</span><span class="PUNC">;</span><span class="WHIT">
@@ -434,7 +434,7 @@
 <span class='line'>427</span>      * @method getDocumentScrollTop
 <span class='line'>428</span>      * @memberOf dom
 <span class='line'>429</span>      * @param {HTMLDocument} document (optional) The document to get the scroll value of
-<span class='line'>430</span>      * @return {Int}  The amount that the document is scrolled to the top
+<span class='line'>430</span>      * @return {Number}  The amount that the document is scrolled to the top
 <span class='line'>431</span>      */</span><span class="WHIT">
 <span class='line'>432</span> </span><span class="WHIT">    </span><span class="NAME">getScrollTop</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">el</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>433</span> </span><span class="WHIT">        </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">scrollTop</span><span class="PUNC">;</span><span class="WHIT">

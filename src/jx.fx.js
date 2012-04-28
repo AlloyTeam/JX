@@ -381,7 +381,7 @@ Jx().$package(function(J){
      * @class 
      * @name Animation
      * @memberOf fx
-     * @augments fx.Beater
+     * @extends fx.Beater
      * 
      * @param {Element} element  动画的dom
      * @param {String} property  css 属性

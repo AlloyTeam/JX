@@ -7,27 +7,30 @@
     var packageContext=this,
     $E = J.event, $D = J.dom, $B = J.browser;
 /**
- * @class BaseEditor
- * 基本的富文本编辑器
+ * 处理基本逻辑的文本编辑器
+ * @class 
+ * @name BaseEditor
+ * @memberOf ui
+ * @constructor
  * @param {Object} option
+ * option = {<br/>
+ *  appendTo: {HTMLElement} //富文本的容器<br/>
+ *  className: {String},<br/>
+ *  richClassName: {String},<br/>
+ *  textClassName: {String},<br/>
+ *  keepCursor: {Boolean} default: false //是否保存光标位置, 因为要进行保存选区和还原, 如果不关心光标位置, 则设置为false<br/>
+ *  brNewline: {Boolean} default: false //使用统一使用br标签进行换行 <br/>
+ *  clearNode: {Boolean} default: false //是否要对粘贴或拖拽进输入框的内容进行过滤, NOTE: opera只支持 ctrl+v 粘贴进来的内容<br/>
+ *  nodeFilter: {Function} default: null //clearNode时过滤节点的函数, return true则不过滤该节点, 参数为 HTMLElement<br/>
+ * }
  * @description
  * BaseEditor只处理编辑器自身的逻辑
  * 保存当前光标位置, 防止插入到页面其他地方
  * 
  * 富文本的扩展功能如设置字体样式/工具条等在RichEditor实现
- * @see J.ui.RichEditor
+ * @see ui.RichEditor
  * @example 
- * option = {
- *  appendTo: {HTMLElement} //富文本的容器
- *  className: {String},
- *  richClassName: {String},
- *  textClassName: {String},
- *  keepCursor: {Boolean} default: false //是否保存光标位置, 因为要进行保存选区和还原, 如果不关心光标位置, 则设置为false
- *  brNewline: {Boolean} default: false //使用统一使用br标签进行换行 
- *  clearNode: {Boolean} default: false //是否要对粘贴或拖拽进输入框的内容进行过滤, NOTE: opera只支持 ctrl+v 粘贴进来的内容
- *  nodeFilter: {Function} default: null //clearNode时过滤节点的函数, return true则不过滤该节点, 参数为 HTMLElement
- * }
- * example: 
+ * 
  * new J.ui.BaseEditor({
  *       appendTo: el,
  *       className: 'rich_editor',
@@ -38,9 +41,12 @@
  * 
  */
 var BaseEditor = new J.Class(
+/**
+ * @lends ui.BaseEditor.prototype
+ */
 {
     /**
-     * 初始化代码
+     * @ignore
      */
     init: function(option){
         if(!option.appendTo){
@@ -71,28 +77,34 @@ var BaseEditor = new J.Class(
         
         var context = this;
         
-        // 私有方法
+        /** @ignore */
         this._private = {
+            /** @ignore */
             startTimeoutSaveRange : function(timeout){
                 this.clearTimeoutSaveRange();
                 this._keyupTimer = window.setTimeout(this.timeoutSaveRange, timeout || 0);
             },
+            /** @ignore */
             timeoutSaveRange : function(){
                 context.saveRange(true);
             },
+            /** @ignore */
             clearTimeoutSaveRange : function(){
                 if(this._keyupTimer){
                     window.clearTimeout(this._keyupTimer);
                     this._keyupTimer = 0;
                 }
             },
+            /** @ignore */
             startTimeoutClearNodes : function(timeout){
                 this.clearTimeoutClearNodes();
                 this._clearNodesTimer = window.setTimeout(this.timeoutClearNodes, timeout || 0);
             },
+            /** @ignore */
             timeoutClearNodes : function(){
                 context.clearNodes();
             },
+            /** @ignore */
             clearTimeoutClearNodes : function(){
                 if(this._clearNodesTimer){
                     window.clearTimeout(this._clearNodesTimer);
@@ -130,10 +142,14 @@ var BaseEditor = new J.Class(
     },
     /**
      * 按键抬起操作
+     * @ignore
      */
     onKeyUp: function() {
         
     },
+    /**
+     * 返回是否启用了富文本
+     */
     isEnable: function(){
         return this._isEnable;
     },
@@ -269,7 +285,7 @@ var BaseEditor = new J.Class(
         }
     },
     /**
-     * 
+     * 让编辑区获得输入焦点
      */
     focus: function(){
         if(this._isEnable){
@@ -282,7 +298,7 @@ var BaseEditor = new J.Class(
         }
     },
     /**
-     * 
+     * 移除输入焦点
      */
     blur: function(){
         if(this._isEnable){
@@ -418,11 +434,11 @@ var BaseEditor = new J.Class(
             range.collapse(false);
             range.select();
         }else if(range.createContextualFragment){//ie9竟然不支持这个方法
-		    // 使用img标签是因为img是行内元素的同时, 又能设置宽高占位
+            // 使用img标签是因为img是行内元素的同时, 又能设置宽高占位
             html += '<img style="display:inline;width:1px;height:1px;">';
             var fragment = range.createContextualFragment(html);
             var lastNode = fragment.lastChild;
-			//如果已经选中了内容, 先把选中的删除
+            //如果已经选中了内容, 先把选中的删除
             range.deleteContents();
             range.insertNode(fragment);
             //插入后把开始和结束位置都放到lastNode后面, 然后添加到selection
@@ -433,7 +449,7 @@ var BaseEditor = new J.Class(
             selection.addRange(range);
             //把光标滚动到可视区
 //            if(lastNode.nodeType === 1){
-//				  ff开了firbug的时候, 会导致样式错乱, 换用scrollTop的方式
+//                ff开了firbug的时候, 会导致样式错乱, 换用scrollTop的方式
 //                lastNode.scrollIntoView();
 //            }
             var divArea = this._divArea;
@@ -545,8 +561,8 @@ var BaseEditor = new J.Class(
         }
     }
 });
-
-BaseEditor.observer = {
+/** @ignore */
+BaseEditor.observer = /** @ignore */{
     onBlur: function(e){
         //本来想在blur的时候保存range, 但是执行这个事件的时候,
         //光标已经不在输入框了, 也许ie可以用onfocusout事件来做
@@ -638,6 +654,9 @@ BaseEditor.observer = {
 
 /**
  * 获取当前页面的selection对象
+ * @memberOf ui.BaseEditor
+ * @name getSelection
+ * @function
  * @return {Selection}
  */
 BaseEditor.getSelection = function() {
@@ -647,7 +666,10 @@ BaseEditor.getSelection = function() {
 
 /**
  * 获取选中区, 如果传入了container, 则返回container的range
- * @param {HTMLElement} container, 目标range的容器, 可选
+ * @memberOf ui.BaseEditor
+ * @function
+ * @name getRange
+ * @param {HTMLElement} container  目标range的容器, 可选
  * @return {Range}, null
  */
 BaseEditor.getRange = function(container) {
@@ -675,6 +697,9 @@ BaseEditor.getRange = function(container) {
 /**
  * 判断一个节点是否是某个父节点的子节点, 
  * 默认不包含parent === child的情况
+ * @memberOf ui.BaseEditor
+ * @function
+ * @name contains
  * @param {HTMLElement} parent
  * @param {HTMLElement} child
  * @param {Boolean} containSelf 指示是否可包含parent等于child的情况
@@ -698,6 +723,9 @@ BaseEditor.contains = function(parent, child, containSelf){
 };
 /**
  * 判断一个range是否被包含在container中
+ * @memberOf ui.BaseEditor
+ * @function
+ * @name containsRange
  * @param {HTMLElement} container
  * @param {Range} range
  * @return {Boolean}
@@ -711,13 +739,24 @@ BaseEditor.containsRange = function(container, range){
 };
 
 /**
- * @class RichEditor
  * 富文本编辑器
+ * @class 
+ * @name RichEditor
+ * @memberOf ui
+ * @extends ui.BaseEditor
+ * @constructor
  * @param {Object} option
+ * option = {<br/>
+ *  appendTo: {HTMLElement} //富文本的容器<br/>
+ *  keepCursor: {Boolean} default: false //是否保存光标位置, 因为要进行保存选区和还原, 如果不关心光标位置, 则设置为false<br/>
+ *  brNewline: {Boolean} default: false //使用统一使用br标签进行换行 <br/>
+ *  clearNode: {Boolean} default: false //是否要对粘贴或拖拽进输入框的内容进行过滤, NOTE: opera只支持 ctrl+v 粘贴进来的内容<br/>
+ * }
  * @description
  * RichEditor实现了富文本的扩展功能如设置字体样式/工具条等
  * 包装了BaseEditor
- * @see J.ui.BaseEditor
+ * 注意: 该类尚未完成
+ * @see ui.BaseEditor
  * @example 
  * option = {
  *  appendTo: {HTMLElement} //富文本的容器
@@ -727,22 +766,17 @@ BaseEditor.containsRange = function(container, range){
  * }
  */
 var RichEditor = new J.Class({ extend: BaseEditor}, 
+/**
+ * @lends ui.RichEditor.prototype
+ */
 {
+    /**
+     * @ignore
+     */
     init: function(option){
-        var context = this;
-        /**
-         * 简化对父类方法的调用,每个子类都要有一个
-         * @param func,String 方法名称
-         * @ignore
-         */
-        this.callSuper = function(func){
-            var slice = Array.prototype.slice;
-            var a = slice.call(arguments, 1);
-            RichEditor.superClass[func].apply(context, a.concat(slice.call(arguments)));
-        };
-        
+  
         //调用父层初始化方法
-        this.callSuper("init",option);
+        BaseEditor.callSuper(this, "init",option);
     }
     //TODO 未完成
 });

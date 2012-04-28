@@ -178,7 +178,7 @@ Jet().$package(function (J) {
         },
         /**
          * 设置气泡的z-index
-         * @param {Int} zIndex
+         * @param {Number} zIndex
          */
         setZIndex: function(zIndex){
             $D.setStyle(this._container, 'zIndex', zIndex);  
@@ -274,7 +274,7 @@ Jet().$package(function (J) {
         /**
          * 返回一个内部使用的id
          * @private
-         * @return {Int} 
+         * @return {Number} 
          */
         _getId: function(){
             if(!Bubble.__id){
@@ -286,7 +286,7 @@ Jet().$package(function (J) {
          * 设置箭头的指示方向和位置
          * @private
          * @param {String} position 箭头的位置, 由两个单词(top/bottom/left/right中的一个)组成
-         * @param {Int} offset 箭头的偏移位置
+         * @param {Number} offset 箭头的偏移位置
          * @example
          *  position的值可为
          *  "top left"
@@ -333,7 +333,7 @@ Jet().$package(function (J) {
          * 计算气泡的位置
          * @param {HTMLElement} target 箭头所指的dom
          * @param {Array} pointerSize 箭头的大小,[width, height]
-         * @param {Int} pointerOffset 箭头的偏移
+         * @param {Number} pointerOffset 箭头的偏移
          * @private
          * @return {Object} 计算得到的结果
          * @example 

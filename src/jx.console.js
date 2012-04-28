@@ -602,7 +602,7 @@ Jx().$package(function(J){
         },
         /**
          * 设置模版类型
-         * @param {Int} temp 模版类型
+         * @param {Number} temp 模版类型
          */
         setTemplate : function(temp){
             if(this._templateArr[temp]){
@@ -629,7 +629,7 @@ Jx().$package(function(J){
         /**
          * 过滤type
          * @param {Log[]} logArr 日志数组
-         * @param {Int} type 类型
+         * @param {Number} type 类型
          * @return {Log[]} logArr 匹配的日志数组
          */
         filterByType : function(logArr,type){

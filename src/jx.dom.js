@@ -333,7 +333,7 @@ Jx().$package(function(J){
      * @memberOf dom
      * 
      * @param {HTMLElement} element The html element. 
-     * @return {Int} The width of the actual document (which includes the body and its margin).
+     * @return {Number} The width of the actual document (which includes the body and its margin).
      */
     getScrollWidth = function(el) {
         var scrollWidth;
@@ -351,7 +351,7 @@ Jx().$package(function(J){
      * 
      * @method getClientHeight
      * @memberOf dom
-     * @return {Int} The height of the viewable area of the page (excludes scrollbars).
+     * @return {Number} The height of the viewable area of the page (excludes scrollbars).
      */
     getClientHeight = function(el) {
         //var name = J.browser.engine.name;
@@ -381,7 +381,7 @@ Jx().$package(function(J){
      * 
      * @method getOffsetHeight
      * @memberOf dom
-     * @return {Int} The height of the viewable area of the page (excludes scrollbars).
+     * @return {Number} The height of the viewable area of the page (excludes scrollbars).
      */
     getOffsetHeight = function(el) {
         var name = J.browser.engine.name;
@@ -409,7 +409,7 @@ Jx().$package(function(J){
      * @method getDocumentScrollLeft
      * @memberOf dom
      * @param {HTMLDocument} document (optional) The document to get the scroll value of
-     * @return {Int}  The amount that the document is scrolled to the left
+     * @return {Number}  The amount that the document is scrolled to the left
      */
     getScrollLeft = function(el) {
         var scrollLeft;
@@ -427,7 +427,7 @@ Jx().$package(function(J){
      * @method getDocumentScrollTop
      * @memberOf dom
      * @param {HTMLDocument} document (optional) The document to get the scroll value of
-     * @return {Int}  The amount that the document is scrolled to the top
+     * @return {Number}  The amount that the document is scrolled to the top
      */
     getScrollTop = function(el) {
         var scrollTop;
