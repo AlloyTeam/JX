@@ -24,10 +24,6 @@ h1 {
 	margin: 0;
 }
 .box {
-	padding: 10px 18px;
-	background: #236696;
-	background: rgba(0, 0, 0, 0.1);
-	-webkit-border-radius: 5px;
 	margin-top: 14px;
 }
 .box h2 {
@@ -42,9 +38,20 @@ h1 {
 	text-decoration: none;
 	-webkit-border-radius: 4px;
 }
-.box a.btn:hover {
+.box a:hover {
 	opacity: 0.5;
 	filter: alpha(opacity=50);
+}
+.btn-row {
+	display: block;
+	padding: 10px 18px;
+	background: #236696;
+	background: rgba(255, 255, 255, 0.7);
+	-webkit-border-radius: 5px;
+	font-family: Georgia;
+	font-size: 14px;
+	font-weight: 600;
+	color: #1968A0
 }
 </style>
 </head>
@@ -54,11 +61,11 @@ h1 {
 <h1>Docs</h1>
 
 <div class="box">
-	<a href="./core/index.html" target="_blank"><span>Core</span></a>
+	<a class="btn-row" href="./core/index.html" target="_blank"><span>Core</span></a>
 </div>
 
 <div class="box">
-	<a href="./ui/index.html" target="_blank"><span>UI</span></a>
+	<a class="btn-row" href="./ui/index.html" target="_blank"><span>UI</span></a>
 </div>
 
 
