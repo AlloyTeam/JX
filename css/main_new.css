@@ -17,15 +17,16 @@ body,button,input,select,textarea{font: 12px/1.5 Tahoma, Arial, "\5b8b\4f53", sa
 .clr:after {content: ".";display: block; height: 0; clear: both; visibility: hidden;}
 .clr{zoom:1;}
 
-body {
-	font-family: Arial, 'Microsoft Yahei', Simsun, sans-serif;
-	font-size: 13px;
-}
+
 html, body {
 	overflow:hidden;
 	position: absolute;
 	width: 100%;
 	height: 100%;
+}
+body {
+	font-family: 'Segoe UI Light','Segoe UI','Microsoft Jhenghei','微软雅黑',sans-serif;
+	font-size: 14px;
 }
 .hide { display:none }
 .opa0 { opacity: 0 }
@@ -178,3 +179,12 @@ html, body {
 	padding-top: 14px;
 }
 .item-wrap {display: none}
+
+.footer{
+	margin:50px 0 0 0;
+	height:50px;
+	color:#999999;
+	font-family:Tahoma;
+	font-size: 12px;
+	text-align:center;
+}

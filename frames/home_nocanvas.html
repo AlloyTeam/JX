@@ -1,83 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<title>Jx Home</title>
-<style>
-body {
-	margin:0;
-	padding: 0;
-}
-.doc {
-	padding: 10px 20px;
-	font-family: 微软雅黑,Arial,Tahoma,Verdana,Helvetica,sans-serif;
-	word-break:break-all;
-	word-wrap: break-word;
-	color: #f1f1f1;
-}
-a { color: #A4FFFF}
+	<meta charset="utf-8" />
+	<title>JX Home</title>
+	<style>
+	body {
+		font-family: 'Segoe UI Light','Segoe UI','Microsoft Jhenghei','微软雅黑',sans-serif;
+		margin:0;
+		padding: 0;
+	}
+	.doc {
+		padding: 10px 20px;
+		word-break:break-all;
+		word-wrap: break-word;
+		color: #f1f1f1;
+	}
+	a { color: #A4FFFF}
 
-</style>
+	</style>
 </head>
 
 <body style="background: none">
-<article>
-<div class="doc">
-<h1>JX(Javascript eXtension tools - Javascript 扩展工具库)</h1>
+	<article>
+	<div class="doc">
+	<h1>JX(Javascript eXtension tools - Javascript 扩展工具库)</h1>
 
-<p>站在巨人的肩上 Standing on shoulders of giants</p>
+	<p>站在巨人的肩上 Standing on shoulders of giants</p>
 
-<h2>简介</h2>
+	<h2>简介</h2>
 
-<p>JX 是模块化的非侵入式Web前端框架，开发于2008年。JX框架同时适用于 Web Page 和 Web App 项目的开发，特别适合构建和组织大规模、工业级的Web App，腾讯 WebQQ [<a href="http://web.qq.com">http://web.qq.com</a>] 等产品都是采用JX框架开发，兼容目前所有主流浏览器。
-</p>
+	<p>JX 是模块化的非侵入式Web前端框架，开发于2008年。JX框架同时适用于 Web Page 和 Web App 项目的开发，特别适合构建和组织大规模、工业级的Web App，腾讯 WebQQ [<a href="http://web.qq.com">http://web.qq.com</a>] 等产品都是采用JX框架开发，兼容目前所有主流浏览器。
+	</p>
 
-<h2>特性</h2>
+	<h2>特性</h2>
 
-<ul>
-<li>微内核设计</li>
-</ul><p>内核可完全分离出来，用于构建自己的框架</p>
+	<ul>
+	<li>微内核设计</li>
+	</ul><p>内核可完全分离出来，用于构建自己的框架</p>
 
-<ul>
-<li><p>自由拼装各个模块</p></li>
-<li><p>命名空间、原生对象零污染</p></li>
-<li><p>无缝集成各种js框架</p></li>
-</ul><p>与jQuery, YUI, Mootools, Prototype.js 等框架无缝集成
-  与多种局部框架无缝集成，如：Mini, Sizzle, cssQuery, xpath, JSON 等等</p>
+	<ul>
+	<li><p>自由拼装各个模块</p></li>
+	<li><p>命名空间、原生对象零污染</p></li>
+	<li><p>无缝集成各种js框架</p></li>
+	</ul><p>与jQuery, YUI, Mootools, Prototype.js 等框架无缝集成
+	  与多种局部框架无缝集成，如：Mini, Sizzle, cssQuery, xpath, JSON 等等</p>
 
-<ul>
-<li>多版本共存</li>
-</ul><p>如采用的JET版本过旧，旧有的Javascript代码不能与新版本JET兼容，则可以采用多版本共存的方式保持程序的可延续性</p>
+	<ul>
+	<li>多版本共存</li>
+	</ul><p>如采用的JET版本过旧，旧有的Javascript代码不能与新版本JET兼容，则可以采用多版本共存的方式保持程序的可延续性</p>
 
-<ul>
-<li>分层设计</li>
-</ul><p>Javascript核心层，与Javascript解释引擎无关的封装和扩展
-  浏览器端Javascript层，对浏览器中的Javascript引擎部分的封装和扩展</p>
+	<ul>
+	<li>分层设计</li>
+	</ul><p>Javascript核心层，与Javascript解释引擎无关的封装和扩展
+	  浏览器端Javascript层，对浏览器中的Javascript引擎部分的封装和扩展</p>
 
-<h2>代码示范</h2>
+	<h2>代码示范</h2>
 
-<ul>
-<li>
-<p>JET 代码组织方式一(传统)：</p>
+	<ul>
+	<li>
+	<p>JET 代码组织方式一(传统)：</p>
 
-<p>var J = new Jet();
-J.out(J.version);</p>
-</li>
-<li>
-<p>JET 代码组织方式二(推荐)：</p>
+	<p>var J = new Jet();
+	J.out(J.version);</p>
+	</li>
+	<li>
+	<p>JET 代码组织方式二(推荐)：</p>
 
-<p>Jet().$package(function(J){
-    J.out(J.version);
-});</p>
-</li>
-</ul><h3>JET设计理念</h3>
+	<p>Jet().$package(function(J){
+	    J.out(J.version);
+	});</p>
+	</li>
+	</ul><h3>JET设计理念</h3>
 
-<p>不要重复自己（Don’t Repeat Yourself）</p>
+	<p>不要重复自己（Don’t Repeat Yourself）</p>
 
-<p>//=========================================================</p>
+	<p>//=========================================================</p>
 
-<p>感谢 David Flanagan, John Resig, 以及QZFL, MooTools, YUI, Prototype, Dojo, ExtJs的作者们！</p>
-</div>
-</article>
+	<p>感谢 David Flanagan, John Resig, 以及QZFL, MooTools, YUI, Prototype, Dojo, ExtJs的作者们！</p>
+	</div>
+	</article>
 </body>
 </html>
