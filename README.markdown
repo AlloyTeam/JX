@@ -1,6 +1,6 @@
 JX(Javascript 扩展工具套件)
 ===================================================
-站在巨人的肩上 Standing on shoulders of giants - [http://www.AlloyTeam.com/](http://www.AlloyTeam.com/)
+站在巨人的肩上 Standing on shoulders of giants - [http://www.AlloyTeam1.com/](http://www.AlloyTeam.com/)
 
 ## 简介
 
