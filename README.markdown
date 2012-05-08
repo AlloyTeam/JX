@@ -24,17 +24,13 @@ JX 框架同时适用于 Web Page 和 Web App 项目的开发，特别适合构�
 
 ## 特性
 
-- 微内核设计：内核可完全分离出来，用于构建其他的框架
-  
-- 自由拼装各个模块
-
-- 命名空间、原生对象零污染
-
-- 无缝集成各种js框架：与jQuery, YUI, Mootools, Prototype.js 等框架无缝集成；与多种局部框架无缝集成，如：Mini, Sizzle, cssQuery, xpath, JSON 等等
-  
-- 多版本共存：如采用的Jx版本过旧，旧有的Javascript代码不能与新版本Jx兼容，则可以采用多版本共存的方式保持程序的可延续性
-
-- 分层设计：Javascript核心层，与Javascript解释引擎无关的封装和扩展；浏览器端Javascript层，对浏览器中的Javascript引擎部分的封装和扩展
+- **微内核设计**：内核可完全分离出来，用于构建其他的框架
+- **原生对象零污染**
+- **命名空间**
+- **模块自由拼装**
+- **无缝集成各种js框架**：与jQuery, YUI, Mootools, Prototype.js 等框架无缝集成；与多种局部框架无缝集成，如：Mini, Sizzle, cssQuery, xpath, JSON 等等
+- **多版本共存**：如采用的Jx版本过旧，旧有的Javascript代码不能与新版本Jx兼容，则可以采用多版本共存的方式保持程序的可延续性
+- **分层设计**：Javascript核心层，与Javascript解释引擎无关的封装和扩展；浏览器端Javascript层，对浏览器中的Javascript引擎部分的封装和扩展
 
 
 ## 架构
