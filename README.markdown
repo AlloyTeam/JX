@@ -1,6 +1,7 @@
 JX(Javascript 扩展工具套件)
 ===================================================
 Don't repeat yourself.
+
 [Tencent AlloyTeam](http://www.AlloyTeam.com/)
 
 ## 简介
