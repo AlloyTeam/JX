@@ -102,3 +102,8 @@ code p{
 	visibility: hidden; 
 } 
 
+.copyright{
+	margin: 50px auto;
+	font-family:tahoma;
+	font-size:12px;
+}
