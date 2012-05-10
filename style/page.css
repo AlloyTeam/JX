@@ -1,10 +1,20 @@
+html { 
+	
+} 
+
 body {
 	font-family: 'Segoe UI Light','Segoe UI','Microsoft Jhenghei','微软雅黑',sans-serif;
-	font-size: 14px;
+	font-size: 16px;
+	line-height:1.8;
 	word-break:break-all;
 	word-wrap: break-word;
 	color: #f1f1f1;
 	margin: 0;
+	padding: 20px 50px;
+}
+a{
+	color: #eeee99;
+	text-decoration:none;
 }
 
 .doc {
@@ -12,10 +22,8 @@ body {
 	margin: 0 auto;
 }
 h1 {
-	font-size: 2.5em; 
-
+	font-size: 2em; 
 	font-weight:normal;
-	color: #fff;
 	border-bottom: 1px solid #eee;
 	line-height: 1.8;
 	margin: 0;
@@ -30,6 +38,7 @@ h1 {
 .box h2 {
 	font-size: 16px;
 }
+
 .box a.btn {
 	display: inline-block;
 	font-size: 12px;
@@ -45,52 +54,32 @@ h1 {
 }
 
 
-		html { 
-			overflow: hidden; 
-		} 
-		body { 
-			font-family: 'Segoe UI Light','Segoe UI','Microsoft Jhenghei','微软雅黑',sans-serif;
-			background: none;
-			width: 100%; 
-			height: 100%; 
-			color: #fff; 
-			margin: 0;
-			padding: 0;
-		} 
-		#frm { 
-			position: absolute; 
-			height: 60%; 
-			width: 90%; 
-			left: 5%; 
-			top: 60px; 
-			font-size: 2em; 
-			font-weight: normal; 
+ 
+#frm { 
+	position: absolute;
+	height: 60%; 
+	width: 90%; 
+	left: 5%; 
+	margin-top: 20px; 
+	font-size: 2em; 
+	font-weight: normal; 
 
-			overflow: hidden; 
-			padding: 0.5em; 
-		} 
-		#frm span { 
-			position: relative; 
-			text-align: center; 
-			z-index: 1; 
-		} 
-		#mtxform { 
-			position: relative; 
-			z-index: 10; 
-		} 
-		.hidden { 
-			visibility: hidden; 
-		} 
-		h1 {
-			font-size: 2.5em; 
-			font-weight: normal; 
-			
-			color: #fff;
-			border-bottom: 1px solid #eee;
-			width: 90%;
-			line-height: 1.8;
-			margin: 0 auto;
-		}
-		.content{
-			text-indent:2em;
-		}
+	overflow: hidden; 
+
+} 
+#frm span { 
+	position: relative; 
+	text-align: center; 
+	z-index: 1; 
+} 
+#mtxform { 
+	position: relative; 
+	z-index: 10; 
+} 
+.hidden { 
+	visibility: hidden; 
+} 
+
+.content{
+	text-indent:2em;
+}
