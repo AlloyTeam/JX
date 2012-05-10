@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Jx</title>
-	<link href="css/main_new.css" rel="stylesheet" />
+	<link href="./style/index.css" rel="stylesheet" />
 	<script src="js/jx.dom.event.fx.js"></script>
 </head>
 
@@ -13,10 +13,10 @@
 		<h1 class="nav-title"></h1>
 		<ul id="nav-ul" class="nav-ul">
 			<li data-key="home" class="selected"><span>Home</span></li>
-			<li data-key="docs"><span>Docs</span></li>
-			<li data-key="demos"><span>Demos</span></li>
+			<li data-key="doc"><span>Doc</span></li>
+			<li data-key="demo"><span>Demo</span></li>
 			<li data-key="jxui"><span>Jx UI</span></li>
-			<li data-key="downloads"><span>Downloads</span></li>
+			<li data-key="download"><span>Download</span></li>
 			<li data-key="about"><span>About</span></li>
 		</ul>
 	</div>
@@ -35,12 +35,12 @@ Jx().$package('JxHome', function (J) {
 		pkg = this;
 	
 	var urlHash = {
-		'home': supportCanvas() ? 'frames/home.html' : 'frames/home_nocanvas.html',
-		'docs': 'jxdocs/index.html',
-		'demos': 'frames/demos.html',
-		'jxui': 'frames/jxui.html',
-		'downloads': 'frames/downloads.html',
-		'about': 'frames/about.html'
+		'home': supportCanvas() ? './home.html' : './home_nocanvas.html',
+		'doc': 'doc/index.html',
+		'demo': './demo.html',
+		'jxui': './jxui.html',
+		'download': './download.html',
+		'about': './about.html'
 	}, $ifm, $navUl, $lis, $doc;	
 	
 	function supportCanvas () {
