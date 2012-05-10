@@ -24,12 +24,21 @@ h1,h2,h3,h4,h5,h6{
 	font-weight:normal;
 	line-height: 1.8;
 }
+p{
+	margin: 10px auto;
+}
 h1 {
 	font-size: 2em;
 	border-bottom: 1px solid #eee;
 }
 h2{
 	font-size: 1.6em;
+}
+
+button {
+	padding: 4px;
+	width: 50px;
+	cursor: pointer;
 }
 
 .docBox {
@@ -58,13 +67,14 @@ h2{
 	filter: alpha(opacity=50);
 }
 
-code p{
-	margin:0;
+code{
 	/*font-family: courier;*/
 	font-family: consolas;
 	font-size:14px;
 	line-height:1.4;
-
+}
+code p{
+	margin:0;
 }
  
 #frm { 
