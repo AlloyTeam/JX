@@ -9,59 +9,82 @@
 <body style="background: none">
 	<article class="docBox">
 
-		<h1>JX(Javascript eXtension tools - Javascript 扩展工具库)</h1>
-
-		<p>站在巨人的肩上 Standing on shoulders of giants</p>
+		<h1>JX(Javascript eXtension tools - Javascript 扩展工具套件)</h1>
+		<span>Don’t Repeat Yourself</span>
 
 		<h2>简介</h2>
+		<p>
+			JX 是模块化的非侵入式Web前端框架，开发于2008年，并于2009年开源于GoogleCode - <a href="http://code.google.com/p/j-et/">http://code.google.com/p/j-et/</a>，于2012年切换到Github，开始我们开源计划的新征途，请记住我们的最新开源地址：<a href="https://github.com/AlloyTeam/JX">https://github.com/AlloyTeam/JX</a>，谢谢大家来支持^_^。
 
-		<p>JX 是模块化的非侵入式Web前端框架，开发于2008年。JX框架同时适用于 Web Page 和 Web App 项目的开发，特别适合构建和组织大规模、工业级的Web App，腾讯 WebQQ [<a href="http://web.qq.com">http://web.qq.com</a>] 等产品都是采用JX框架开发，兼容目前所有主流浏览器。
+			JX 框架同时适用于 Web Page 和 Web App 项目的开发，特别适合构建和组织大规模、工业级的Web App，<a href="http://web.qq.com">腾讯 WebQQ</a>、<a href="http://www.QPlus.com">腾讯Q+</a>等产品都是采用JX框架开发，兼容目前所有主流浏览器。
 		</p>
 
+		<h2>设计理念</h2>
+		<ul>
+			<li>保持最优的执行效率</li>
+			<li>保持 Javascript 原有的代码风格，降低学习难度</li>
+			<li>不做任何的过度封装</li>
+			<li>更好的组织工业级 Javascript 应用程序</li>
+			<li>探索在前端使用 MVP、MVC 等模式来构建大型 WebApp</li>
+			<li>探索工业级 Javascript 的开发技术</li>
+		</ul>
+
 		<h2>特性</h2>
-
 		<ul>
-		<li>微内核设计</li>
-		</ul><p>内核可完全分离出来，用于构建自己的框架</p>
-
-		<ul>
-			<li><p>自由拼装各个模块</p></li>
-			<li><p>命名空间、原生对象零污染</p></li>
-			<li><p>无缝集成各种js框架</p></li>
-		</ul><p>与jQuery, YUI, Mootools, Prototype.js 等框架无缝集成
-		  与多种局部框架无缝集成，如：Mini, Sizzle, cssQuery, xpath, JSON 等等</p>
-
-		<ul>
-		<li>多版本共存</li>
-		</ul><p>如采用的JET版本过旧，旧有的Javascript代码不能与新版本JET兼容，则可以采用多版本共存的方式保持程序的可延续性</p>
-
-		<ul>
-		<li>分层设计</li>
-		</ul><p>Javascript核心层，与Javascript解释引擎无关的封装和扩展
-		  浏览器端Javascript层，对浏览器中的Javascript引擎部分的封装和扩展</p>
+			<li>微内核设计：内核可完全分离出来，用于构建其他的框架</li>
+			<li>原生对象零污染：你懂的，随着js的App越来约复杂，对原生对象的零污染也体现的越来越重要了</li>
+			<li>模块封包：采用命名空间、闭包等方式建立了模块封包的体系，帮助更好的组织海量js代码</li>
+			<li>模块自由拼装：自身模块做了良好的架构分离，尽可能让各个模块之间可以自由的拼装组合</li>
+			<li>无缝集成各种js框架：与jQuery, YUI, Mootools, Prototype.js 等框架无缝集成；与多种局部框架无缝集成，如：Mini, Sizzle, cssQuery, xpath, JSON 等等</li>
+			<li>
+				多版本共存：如采用的Jx版本过旧，旧有的Javascript代码不能与新版本Jx兼容，则可以采用多版本共存的方式保持程序的可延续性</li>
+			<li>分层设计：Javascript核心层，与Javascript解释引擎无关的封装和扩展；浏览器端Javascript层，对浏览器中的Javascript引擎部分的封装和扩展</li>
+		</ul>
 
 		<h2>代码示范</h2>
-
 		<ul>
-		<li>
-		<p>JET 代码组织方式一(传统)：</p>
+			<li>
+				<p>JET 代码组织方式一(传统)：</p>
+				
+				<code>
+					<p>var J = new Jet();</p>
+					<p>J.out(J.version);</p>
+				</code>
+			</li>
+			<li>
+				<p>JET 代码组织方式二(推荐)：</p>
+				<code>
+					<p>Jet().$package(function(J){</p>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;J.out(J.version);</p>
+					<p>});</p>
+				</code>
+			</li>
+		</ul>
 
-		<p>var J = new Jet();
-		J.out(J.version);</p>
-		</li>
-		<li>
-		<p>JET 代码组织方式二(推荐)：</p>
+		<h3>设计原则</h3>
+		<p>不要重复你自己（Don’t Repeat Yourself）</p>
 
-		<p>Jet().$package(function(J){
-		    J.out(J.version);
-		});</p>
-		</li>
-		</ul><h3>JET设计理念</h3>
-
-		<p>不要重复自己（Don’t Repeat Yourself）</p>
-
+		<h3>感谢</h3>
+		<p>感谢团队每一位成员做出的努力，有你我们会更精彩！</p>
 
 
 	</article>
+
+	<div class="copyright">Copyright &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://www.AlloyTeam.com/">Tencent AlloyTeam</a>. All Rights Reserved.</div>
+
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=8957212" charset="utf-8"></script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-393149-9']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
 </body>
 </html>

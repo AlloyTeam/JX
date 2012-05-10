@@ -19,14 +19,19 @@ a:hover{
 
 }
 
-
-h1 {
-	font-size: 2em; 
-	font-weight:normal;
-	border-bottom: 1px solid #eee;
-	line-height: 1.8;
+h1,h2,h3,h4,h5,h6{
 	margin: 0;
+	font-weight:normal;
+	line-height: 1.8;
 }
+h1 {
+	font-size: 2em;
+	border-bottom: 1px solid #eee;
+}
+h2{
+	font-size: 1.6em;
+}
+
 .docBox {
 	padding: 10px 18px;
 	background: #236696;
@@ -53,7 +58,14 @@ h1 {
 	filter: alpha(opacity=50);
 }
 
+code p{
+	margin:0;
+	/*font-family: courier;*/
+	font-family: consolas;
+	font-size:14px;
+	line-height:1.4;
 
+}
  
 #frm { 
 	position: absolute;
