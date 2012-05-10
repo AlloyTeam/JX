@@ -1,26 +1,25 @@
-html { 
-	
-} 
-
 body {
+	margin: 0;
+	padding: 10px 30px;
+	color: #f1f1f1;
 	font-family: 'Segoe UI Light','Segoe UI','Microsoft Jhenghei','微软雅黑',sans-serif;
 	font-size: 16px;
 	line-height:1.8;
 	word-break:break-all;
 	word-wrap: break-word;
-	color: #f1f1f1;
-	margin: 0;
-	padding: 10px 30px;
-}
-a{
-	color: #eeee99;
-	text-decoration:none;
 }
 
-.doc {
-	width: 90%;
-	margin: 0 auto;
+a{
+	color: #A4FFFF;
+	text-decoration:none;
 }
+a:focus,
+a:hover{
+	color: #eeee99;
+
+}
+
+
 h1 {
 	font-size: 2em; 
 	font-weight:normal;
@@ -28,18 +27,19 @@ h1 {
 	line-height: 1.8;
 	margin: 0;
 }
-.box {
+.docBox {
 	padding: 10px 18px;
 	background: #236696;
-	background: rgba(0, 0, 0, 0.1);
+	background: rgba(0, 0, 0, 0.2);
 	-webkit-border-radius: 5px;
 	margin-top: 14px;
 }
-.box h2 {
-	font-size: 16px;
+
+.docBox p{
+	text-indent:2em;
 }
 
-.box a.btn {
+.docBox a.btn {
 	display: inline-block;
 	font-size: 12px;
 	padding: 4px 10px;
@@ -48,7 +48,7 @@ h1 {
 	text-decoration: none;
 	-webkit-border-radius: 4px;
 }
-.box a.btn:hover {
+.docBox a.btn:hover {
 	opacity: 0.5;
 	filter: alpha(opacity=50);
 }
@@ -80,6 +80,3 @@ h1 {
 	visibility: hidden; 
 } 
 
-.content{
-	text-indent:2em;
-}
