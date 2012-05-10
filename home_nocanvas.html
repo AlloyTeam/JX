@@ -6,7 +6,7 @@
 	<link href="./style/page.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body style="background: none">
+<body>
 	<article class="docBox">
 
 		<h1>JX(Javascript eXtension tools - Javascript 扩展工具套件)</h1>
@@ -18,6 +18,26 @@
 
 			JX 框架同时适用于 Web Page 和 Web App 项目的开发，特别适合构建和组织大规模、工业级的Web App，<a href="http://web.qq.com">腾讯 WebQQ</a>、<a href="http://www.QPlus.com">腾讯Q+</a>等产品都是采用JX框架开发，兼容目前所有主流浏览器。
 		</p>
+
+		<h2>代码示范</h2>
+		<ul>
+			<li>
+				<p>JET 代码组织方式一(传统)：</p>
+				
+				<code>
+					<p>var J = new Jet();</p>
+					<p>J.out(J.version);</p>
+				</code>
+			</li>
+			<li>
+				<p>JET 代码组织方式二(推荐)：</p>
+				<code>
+					<p>Jet().$package(function(J){</p>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;J.out(J.version);</p>
+					<p>});</p>
+				</code>
+			</li>
+		</ul>
 
 		<h2>设计理念</h2>
 		<ul>
@@ -41,24 +61,21 @@
 			<li>分层设计：Javascript核心层，与Javascript解释引擎无关的封装和扩展；浏览器端Javascript层，对浏览器中的Javascript引擎部分的封装和扩展</li>
 		</ul>
 
-		<h2>代码示范</h2>
+		<h2>架构</h2>
 		<ul>
-			<li>
-				<p>JET 代码组织方式一(传统)：</p>
-				
-				<code>
-					<p>var J = new Jet();</p>
-					<p>J.out(J.version);</p>
-				</code>
-			</li>
-			<li>
-				<p>JET 代码组织方式二(推荐)：</p>
-				<code>
-					<p>Jet().$package(function(J){</p>
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;J.out(J.version);</p>
-					<p>});</p>
-				</code>
-			</li>
+			<li>第一层：Core Javascript 扩展模块 / 代码组织模块(可用于NodeJs等其他js引擎,轻松组织大型应用,无缝接入其它js库)</li>
+			<li>第二层：Browser Javasccript 扩展模块(跨浏览器,基础封装) / 可选模块(设计模式相关模块,选择器模块...)</li>
+			<li>第三层：UI 组件 / 实时动画模块 / 游戏引擎模块</li>
+
+		</ul>
+
+		<h2>发展规划</h2>
+		<ul>
+			<li>核心底层 - 纯Js底层功能封装/代码组织/无缝接入其它js库 - [完成]</li>
+			<li>基础扩展 - 跨浏览器封装/工具函数/设计模式相关 - [完成]</li>
+			<li>UI 基础控件 - 按钮/面板/窗口/树形列表/Tab/lightbox/widgets...</li>
+			<li>实时动画系统 - 实时定时器/关键帧动画/加速度公式/物理引擎/声音控制器...</li>
+			<li>游戏引擎 - 角色控制/地图系统/游戏异步通讯系统/寻路算法/键盘控制/人工智能/...</li>
 		</ul>
 
 		<h3>设计原则</h3>
