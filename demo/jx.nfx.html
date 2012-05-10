@@ -1,0 +1,259 @@
+<!DOCTYPE HTML> 
+<html lang="en-us"> 
+  <head> 
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
+    <title>Fx example</title> 
+    <link href="../style/page.css" rel="stylesheet" type="text/css" />
+    <style type="text/css" media="screen"> 
+
+     
+      .box {
+        top: 0;
+        left: 0;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        background: #f00;
+        margin: 5px 0;
+        border: 1px solid #999;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+      }
+      #last {
+        margin-bottom: 100px;
+      }
+    </style> 
+
+	<script type="text/javascript" src="../jx/js/jx.core.js"></script>
+  <script type="text/javascript" src="../jx/js/jx.dom.js"></script>
+  <script type="text/javascript" src="../jx/js/jx.nfx.js"></script> 
+
+  </head> 
+  <body> 
+
+      <h1>Fx Demo</h1> 
+ 
+      <div class="docBox"> 
+        <h3>普通</h3> 
+        <div id="ex1" class="box"></div> 
+        <button id="go-ex1">Go</button> 
+
+      </div> 
+ 
+      <div class="docBox"> 
+        <h3>颜色变化</h3> 
+        <div id="ex3" class="box"></div> 
+        <button id="go-ex3">Go</button> 
+ 
+      </div> 
+ 
+      <div class="docBox"> 
+        <h3>运动 + 颜色变化</h3> 
+        <div id="ex2" class="box"></div> 
+        <button id="go-ex2">Go</button> 
+
+      </div> 
+ 
+      <div class="docBox"> 
+        <h3>自定义单位：比如 em</h3> 
+        <div id="ex4" style="font-size: 1.2em;left: 200px;position: absolute;">hello world</div> 
+        <button id="go-ex4">Go</button> 
+
+      </div> 
+ 
+      <div class="docBox"> 
+        <h3>贝塞尔曲线支持</h3> 
+        <div id="ex5" class="box"></div> 
+        <button id="go-ex5">Go</button> 
+
+      </div> 
+ 
+      <div class="docBox"> 
+        <h3>多元素同时变化</h3> 
+        <div id="ex6"> 
+          <div data-to="#0f0" class="box"></div> 
+          <div data-to="#00c" class="box"></div> 
+        </div> 
+        <button id="go-ex6">Go</button> 
+
+      </div> 
+ 
+      <div class="docBox"> 
+        <h3>animation stop 控制</h3> 
+        <div style="width:100px;height:100px;" id="ex7" class="box"></div> 
+
+      </div> 
+ 
+      <div class="docBox" id="last"> 
+        <h3>css3 transform 支持</h3> 
+        <div id="ex8-scale" class="box">scale</div> 
+        <div id="ex8-rotate" class="box">rotate</div> 
+        <div id="ex8-skew" class="box">skew</div> 
+        <div id="ex8-translate" class="box">translate</div> 
+        <button id="go-ex8">Go</button> 
+        <button id="reset-ex8">Reset</button> 
+
+      </div> 
+
+	
+	<script type="text/javascript"> 	
+	Jx().$package(function (J) {
+		var $fx = J.fx,
+			fx = $fx.animate,
+      $=J.dom.id,
+			easings = $fx.easings;
+		
+		
+		//1
+		$('go-ex1').onclick = function () {
+            $('go-ex1').disabled = true
+            $('ex1').style.left = 0
+            fx($('ex1'), {
+              left: 400,
+              complete: function () {
+                $('go-ex1').disabled = false
+              }
+            })
+          }
+		//2
+		$('go-ex3').onclick = function () {
+            $('go-ex3').disabled = true
+            $('ex3').style.backgroundColor = '#f00'
+            fx($('ex3'), {
+              backgroundColor: '#00f',
+              duration: 2000,
+              complete: function () {
+                $('go-ex3').disabled = false
+              }
+            })
+          }
+		// 3
+		 $('go-ex2').onclick = function () {
+            $('go-ex2').disabled = true
+            $('ex2').style.left = 0
+            $('ex2').style.backgroundColor = '#f00'
+            $('ex2').style.width = '20px'
+            fx($('ex2'), {
+              left: 400,
+              width: '+=20',
+              backgroundColor: '#00f',
+              easing: easings.bounce,
+              complete: function () {
+                $('go-ex2').disabled = false
+              }
+            })
+          }
+		// 4
+		 $('go-ex4').onclick = function () {
+            $('go-ex4').disabled = true
+            $('ex4').style.fontSize = '1.2'
+            fx($('ex4'), {
+              fontSize: '+=3em',
+              easing: easings.spring,
+              complete: function () {
+                $('go-ex4').disabled = false
+              }
+            })
+          }
+		// 5
+		$('go-ex5').onclick = function () {
+            $('go-ex5').disabled = true
+            $('ex5').style.left = 0
+            fx($('ex5'), {
+              duration: 2000,
+              easing: easings.easeIn,
+              left: 400,
+              bezier: [[150, 300], [300, -300]],
+              complete: function () {
+                $('go-ex5').disabled = false
+              }
+            })
+          }
+		// 6
+		 function rand(n) {
+            var poz = [' ', '-']
+            var prefix = poz[Math.floor(Math.random() * 2)]
+            var r = parseInt(prefix + Math.floor(Math.random() * n), 10)
+            return r;
+          }
+          $('go-ex6').onclick = function () {
+            $('go-ex6').disabled = true
+
+            fx($('ex6').getElementsByTagName('div'), {
+              duration: 3000,
+              easing: easings.swingTo,
+              left: function () {
+                return '+=' + Math.abs(rand(400))
+              },
+              w$th: '+=80',
+              backgroundColor: function (el) {
+                return el.getAttribute('data-to')
+              },
+              bezier: function (el) {
+                return [[rand(300), rand(300)], [rand(300), rand(300)]]
+              },
+              complete: function () {
+                $('go-ex6').disabled = false
+              }
+            })
+          }
+		// 7
+		!function () {
+          var anim = {
+            stop: function () {}
+          }
+ 
+          $('ex7').onclick = function () {
+            anim.stop(true);
+          };
+ 
+          $('ex7').onmouseover = function () {
+            anim.stop();
+            anim = fx($('ex7'), {
+              backgroundColor: '#00f',
+              width: 400
+            })
+          };
+ 
+          $('ex7').onmouseout = function () {
+            anim.stop();
+            anim = fx($('ex7'), {
+              backgroundColor: '#f00',
+              width: 100
+            })
+          };
+ 
+        }();
+		
+		// 8
+		 function reset() {
+            $('ex8-rotate').style[fx.transform] = 'rotate(0deg)'
+            $('ex8-scale').style[fx.transform] = 'scale(1)'
+            $('ex8-skew').style[fx.transform] = 'skew(0deg, 0deg)'
+            $('ex8-translate').style[fx.transform] = 'translate(0px,0px)'
+          }
+          reset()
+          $('reset-ex8').onclick = reset
+          $('go-ex8').onclick = function () {
+            $('go-ex8').disabled = true
+            fx($('ex8-rotate'), {
+              transform: 'rotate(+=70deg)'
+            })
+            fx($('ex8-scale'), {
+              transform: 'scale(+=1)'
+            })
+            fx($('ex8-skew'), {
+              transform: 'skew(10deg,+=10deg)'
+            })
+            fx($('ex8-translate'), {
+              transform: 'translate(+=50px,+=25px)',
+              complete: function () {
+                $('go-ex8').disabled = false
+              }
+            })
+          }
+	})
+    </script> 
+  </body> 
+</html>
