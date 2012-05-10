@@ -5,7 +5,6 @@
 	<title>Jx About</title> 
 	<meta http-equiv="imagetoolbar" content="no"> 
 	<link href="./style/page.css" rel="stylesheet" type="text/css" />
-
 	 
 	<script type="text/javascript"> 
 	 
@@ -88,7 +87,7 @@
 			this.y0 = -this.o.offsetHeight * 1.5; 
 			this.x1 = this.x0; 
 			this.x2 = this.x0; 
-			this.y1 = (line + 1) * this.o.offsetHeight; 
+			this.y1 = (line-1) * this.o.offsetHeight; 
 			this.y2 = frm.offsetHeight; 
 			this.mx = new Ease(); 
 			this.my = new Ease(); 
@@ -246,7 +245,7 @@
 	 
 	/* ==== init text ==== */ 
 	onload = function () { 
-		document.getElementById('frm').style['height'] = document.documentElement.clientHeight - 60 + 'px';
+		document.getElementById('frm').style['height'] = document.documentElement.clientHeight - document.getElementById('box').offsetHeight - 60 + 'px';
 	//	mtx.init( el, linesDelay, charsDelay, cText, cMatch, cGhost); 
 		mtx.init("frm", 800, 150, [255,255,255], [255,64,0], [44,44,44]); 
 	} 
@@ -258,7 +257,7 @@
 <h1>About</h1> 
 
  
-<div class="docBox">
+<div id="box" class="docBox">
 	<p>
 	 	腾讯Web前端团队 - TAT(Tencent Alloy Team)主要来自于<a href="http://www.qplus.com" target="_blank">腾讯Q+</a>、<a href="http://web.qq.com" target="_blank">WebQQ</a>、<a href="http://qun.qq.com/">QQ群空间</a>项目团队，致力于Web前端技术的研究，主要作品有：<a href="http://web.qq.com" target="_blank">http://web.qq.com</a>, <a href="http://www.qplus.com" target="_blank">http://www.qplus.com</a>,<a href="http://qun.qq.com/">http://qun.qq.com/</a>, 另有其他开源项目，请访问我们的Github - <a href="http://AlloyTeam.github.com/" target="_blank">http://AlloyTeam.github.com/</a>
 	</p>
