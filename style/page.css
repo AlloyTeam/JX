@@ -1,0 +1,96 @@
+body {
+	font-family: 'Segoe UI Light','Segoe UI','Microsoft Jhenghei','微软雅黑',sans-serif;
+	font-size: 14px;
+	word-break:break-all;
+	word-wrap: break-word;
+	color: #f1f1f1;
+	margin: 0;
+}
+
+.doc {
+	width: 90%;
+	margin: 0 auto;
+}
+h1 {
+	font-size: 2.5em; 
+
+	font-weight:normal;
+	color: #fff;
+	border-bottom: 1px solid #eee;
+	line-height: 1.8;
+	margin: 0;
+}
+.box {
+	padding: 10px 18px;
+	background: #236696;
+	background: rgba(0, 0, 0, 0.1);
+	-webkit-border-radius: 5px;
+	margin-top: 14px;
+}
+.box h2 {
+	font-size: 16px;
+}
+.box a.btn {
+	display: inline-block;
+	font-size: 12px;
+	padding: 4px 10px;
+	background: #f3f3f3;
+	color: #1968A0;
+	text-decoration: none;
+	-webkit-border-radius: 4px;
+}
+.box a.btn:hover {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+
+		html { 
+			overflow: hidden; 
+		} 
+		body { 
+			font-family: 'Segoe UI Light','Segoe UI','Microsoft Jhenghei','微软雅黑',sans-serif;
+			background: none;
+			width: 100%; 
+			height: 100%; 
+			color: #fff; 
+			margin: 0;
+			padding: 0;
+		} 
+		#frm { 
+			position: absolute; 
+			height: 60%; 
+			width: 90%; 
+			left: 5%; 
+			top: 60px; 
+			font-size: 2em; 
+			font-weight: normal; 
+
+			overflow: hidden; 
+			padding: 0.5em; 
+		} 
+		#frm span { 
+			position: relative; 
+			text-align: center; 
+			z-index: 1; 
+		} 
+		#mtxform { 
+			position: relative; 
+			z-index: 10; 
+		} 
+		.hidden { 
+			visibility: hidden; 
+		} 
+		h1 {
+			font-size: 2.5em; 
+			font-weight: normal; 
+			
+			color: #fff;
+			border-bottom: 1px solid #eee;
+			width: 90%;
+			line-height: 1.8;
+			margin: 0 auto;
+		}
+		.content{
+			text-indent:2em;
+		}
