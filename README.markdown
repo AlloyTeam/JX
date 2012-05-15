@@ -1,6 +1,8 @@
 JX(Javascript 扩展工具套件)
 ===================================================
-站在巨人的肩上 Standing on shoulders of giants
+Don't repeat yourself.
+
+[Tencent AlloyTeam](http://www.AlloyTeam.com/)
 
 ## 简介
 
@@ -16,6 +18,7 @@ JX 框架同时适用于 Web Page 和 Web App 项目的开发，特别适合构�
 ## 设计理念
  * 保持最优的执行效率
  * 保持 Javascript 原有的代码风格，降低学习难度
+ * 不做任何的过度封装
  * 更好的组织工业级 Javascript 应用程序
  * 探索在前端使用 MVP、MVC 等模式来构建大型 WebApp
  * 探索工业级 Javascript 的开发技术
@@ -24,26 +27,22 @@ JX 框架同时适用于 Web Page 和 Web App 项目的开发，特别适合构�
 
 ## 特性
 
-- 微内核设计：内核可完全分离出来，用于构建其他的框架
-  
-- 自由拼装各个模块
-
-- 命名空间、原生对象零污染
-
-- 无缝集成各种js框架：与jQuery, YUI, Mootools, Prototype.js 等框架无缝集成；与多种局部框架无缝集成，如：Mini, Sizzle, cssQuery, xpath, JSON 等等
-  
-- 多版本共存：如采用的Jx版本过旧，旧有的Javascript代码不能与新版本Jx兼容，则可以采用多版本共存的方式保持程序的可延续性
-
-- 分层设计：Javascript核心层，与Javascript解释引擎无关的封装和扩展；浏览器端Javascript层，对浏览器中的Javascript引擎部分的封装和扩展
+- **微内核设计**：内核可完全分离出来，用于构建其他的框架
+- **原生对象零污染**：你懂的，随着js的App越来约复杂，对原生对象的零污染也体现的越来越重要了
+- **模块封包**：采用命名空间、闭包等方式建立了模块封包的体系，帮助更好的组织海量js代码
+- **模块自由拼装**：自身模块做了良好的架构分离，尽可能让各个模块之间可以自由的拼装组合
+- **无缝集成各种js框架**：与jQuery, YUI, Mootools, Prototype.js 等框架无缝集成；与多种局部框架无缝集成，如：Mini, Sizzle, cssQuery, xpath, JSON 等等
+- **多版本共存**：如采用的Jx版本过旧，旧有的Javascript代码不能与新版本Jx兼容，则可以采用多版本共存的方式保持程序的可延续性
+- **分层设计**：Javascript核心层，与Javascript解释引擎无关的封装和扩展；浏览器端Javascript层，对浏览器中的Javascript引擎部分的封装和扩展
 
 
 ## 架构
 
- || 第一层 || *Core Javascript 扩展模块* || **代码组织模块**(轻松组织大型应用,无缝接入其它js库) ||
+第一层：**Core Javascript 扩展模块** / **代码组织模块**(可用于NodeJs等其他js引擎,轻松组织大型应用,无缝接入其它js库)
  
- || 第二层 || *Browser Javasccript 扩展模块*(跨浏览器,基础封装) || **可选模块**(设计模式相关模块,选择器模块...) ||
+第二层：**Browser Javasccript 扩展模块**(跨浏览器,基础封装) / **可选模块**(设计模式相关模块,选择器模块...)
  
- || 第三层 || *UI 组件* || **实时动画模块** || **游戏引擎模块** ||
+第三层：**UI 组件** / **实时动画模块** / **游戏引擎模块**
 
 
 ## 代码示范
