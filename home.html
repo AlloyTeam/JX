@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8" />
-<style>
-html {overflow:hidden}
-body {font-family: 'Segoe UI Light','Segoe UI','Microsoft Jhenghei','微软雅黑',sans-serif;position: absolute; margin:0; padding:0;width:100%; height:100%;}
-canvas {display:block}
-p {text-align: center; font-size:12px;color:#454545;}
-</style>
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Tencent.AlloyTeam.Horizon" />
+    <meta name="copyright" content="Tencent.AlloyTeam" />
+    <title>Jx 官网</title>
+    <style>
+    html {overflow:hidden}
+    body {font-family: 'Segoe UI Light','Segoe UI','Microsoft Jhenghei','微软雅黑',sans-serif;position: absolute; margin:0; padding:0;width:100%; height:100%;}
+    canvas {display:block}
+    p {text-align: center; font-size:12px;color:#454545;}
+    .skip-btn {
+        position: absolute;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 10px 16px;
+        bottom: 40px;
+        right: 40px;
+        background: rgba(10, 10, 10, 0.2);
+        -webkit-border-radius: 5px;
+        color: #fff;
+    }
+    .skip-btn:hover { background: rgba(10, 10, 10, 0.5)}
+    </style>
+    <script src="./js/laro.fsm.js"></script>
+    <script src="./js/JCanvas.0.1.js"></script>
+</head>
 
 <body>
-<script src="./js/laro.fsm.js"></script>
-<script src="./js/JCanvas.0.1.js"></script>
+
 <canvas id="canvas" width="600" height="400"></canvas>
+<a href="javascript:;" id="skip-btn" class="skip-btn" >跳过</a>
 <img id="qq" style="display:none" src="./style/image/qq40.png" />
 <img id="jx" style="display:none" src="./style/image/jx.png" />
 <img id="qplus" style="display:none" src="./style/image/qplus.png" />
@@ -70,13 +90,7 @@ Laro.register('JxHome', function (La) {
 
 			var ball = CVS.createPoint3D(this.stage.ctx, function () {
                 var color = 'rgb('+range(0, 256)+', '+range(0, 256)+', '+range(0, 256)+')';
-				//var a = Math.PI * 2 * Math.random();
-                //var b = Math.PI * 2 * Math.random();
-				//var r = range(vpx, vpy);
 
-				//this.xpos = Math.sin(a) * Math.sin(b) * r;
-				//this.ypos = Math.cos(a) * Math.sin(b) * r;
-				//this.zpos = Math.cos(b) * r;
 				this.xpos = range(-vpx, vpx);
 				this.ypos = range(-vpy, vpy);
 				this.zpos = range(-vpx, vpx);
@@ -134,7 +148,11 @@ Laro.register('JxHome', function (La) {
 		this.stage.addEventListener('mousemove', function (x, y) {
 			_this.angleY = (x - _this.vpx) * .00001;
             _this.angleX = (y - _this.vpy) * .00001;
-		})
+		});
+        document.getElementById('skip-btn').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = 'home_nocanvas.html';
+        }, false);
 	}
 	
 	this.initParticles = function () {
