@@ -30,7 +30,8 @@ Jx().$package(function(J){
     var domainPrefix = window.location.host;
     
     /**
-     * @namespace cookie 名字空间
+     * cookie 名字空间
+     * @namespace 
      * @name cookie
      */
     J.cookie = 
@@ -90,7 +91,8 @@ Jx().$package(function(J){
 
 Jx().$package(function(J){
     /**
-     * @namespace localStorage 名字空间
+     * localStorage 名字空间
+     * @namespace 
      * @name localStorage
      */
     J.localStorage = 

@@ -1127,8 +1127,8 @@ Jx().$package(function(J){
     
     /**
      * 创建一个消息源发布者的类
-     * 
-     * @class Publish
+     * Publish
+     * @class 
      * @return {Object} 返回生成的消息源
      * @memberOf event
      * @constructor

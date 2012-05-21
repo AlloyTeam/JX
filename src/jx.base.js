@@ -628,8 +628,8 @@ Jx().$package(function(J){
     
     /**
      * 创建Class类的类
-     * 
-     * @class Class
+     * Class
+     * @class 
      * @memberOf Jx
      * @param {Object} option = {extend: superClass} 在option对象的extend属性中指定要继承的对象，可以不写
      * @param {Object} object 扩展的对象

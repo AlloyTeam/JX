@@ -73,8 +73,8 @@
             
             /**
              * 【Jx 对象原型】
-             * 
-             * @class Jx
+             * Jx
+             * @class 
              * @constructor Jx
              * @global
              * 
