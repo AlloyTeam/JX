@@ -18,14 +18,14 @@
 }
 
 .textbox_button{
-	background: url(./images/cross.gif) no-repeat;
+	background: url(./image/cross.gif) no-repeat;
 	height:9px;
 	width:9px;
 	margin:6px;
 }
 /*
 .ie6_0 .textbox_button{
-	background: url(./images/app_toolbar_sprite.gif?t=20111011001) no-repeat -60px -140px;
+	background: url(./image/app_toolbar_sprite.gif?t=20111011001) no-repeat -60px -140px;
 }
 */
 .share_box_titleTxt{
@@ -119,11 +119,11 @@
 	width:20px;
 	height:20px;
 	float:left;
-	background:url(./images/thumb.gif) no-repeat;
+	background:url(./image/thumb.gif) no-repeat;
 	cursor:pointer;
 }
 /* .ie6_0 .share_box_showthumb{
-	background:url('./images/app_toolbar_sprite.gif?t=20111011001') -60px -160px no-repeat;
+	background:url('./image/app_toolbar_sprite.gif?t=20111011001') -60px -160px no-repeat;
 }
 */
 .share_box_thumb{

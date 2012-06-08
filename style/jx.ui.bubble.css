@@ -7,21 +7,21 @@
 .bubble_tip_head{
     font-size: 0;
     height: 10px;
-    background: url(./images/bubble_head.png) no-repeat;
+    background: url(./image/bubble_head.png) no-repeat;
 }
 html.ie6_0 .bubble_tip_head{
     background: none;
     zoom: 1;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/assets/images/bubble_head.png', sizingMethod='crop');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/style/image/bubble_head.png', sizingMethod='crop');
 }
 .bubble_tip_body{
     font-size: 12px;
-    background: url(./images/bubble_body.png) repeat-y;
+    background: url(./image/bubble_body.png) repeat-y;
 }
 html.ie6_0 .bubble_tip_body{
     background: none;
     zoom: 1;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/assets/images/bubble_body.png', sizingMethod='scale');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/style/image/bubble_body.png', sizingMethod='scale');
 }
 .bubble_tip_title{
     font-weight: bold;
@@ -46,12 +46,12 @@ html.ie6_0 .bubble_tip_close{
 }
 .bubble_tip_foot{
     height: 37px;
-    background: url(./images/bubble_foot.png) no-repeat;
+    background: url(./image/bubble_foot.png) no-repeat;
 }
 html.ie6_0 .bubble_tip_foot{
     background: none;
     zoom: 1;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/assets/images/bubble_foot.png', sizingMethod='crop');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/style/image/bubble_foot.png', sizingMethod='crop');
 }
 .bubble_tip_btn{
     width: 62px;
@@ -75,16 +75,16 @@ html.ie6_0 .bubble_tip_foot{
     margin-right: 5px;
 }
 .bubble_tip_btn_ok{
-    background: url(./images/bubble_btn.png) no-repeat;
+    background: url(./image/bubble_btn.png) no-repeat;
 }
 html.ie6_0 .bubble_tip_btn_ok{
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/assets/images/bubble_btn.png', sizingMethod='crop');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/style/image/bubble_btn.png', sizingMethod='crop');
 }
 .bubble_tip_btn_next{
-    background: url(./images/bubble_btn_hl.png) no-repeat;
+    background: url(./image/bubble_btn_hl.png) no-repeat;
 }
 html.ie6_0 .bubble_tip_btn_next{
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/assets/images/bubble_btn_hl.png', sizingMethod='crop');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/style/image/bubble_btn_hl.png', sizingMethod='crop');
 }
 .bubble_tip_pointer{
     width: 19px;
@@ -97,32 +97,32 @@ html.ie6_0 .bubble_tip_pointer{
     background: none;
 }
 .bubble_tip_pointer_top{
-    background: url(./images/point_up.png) no-repeat;
+    background: url(./image/point_up.png) no-repeat;
     top: -12px;
 }
 html.ie6_0 .bubble_tip_pointer_top{
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/assets/images/point_up.png', sizingMethod='crop');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/style/image/point_up.png', sizingMethod='crop');
 }
 .bubble_tip_pointer_bottom{
-    background: url(./images/point_down.png) no-repeat;
+    background: url(./image/point_down.png) no-repeat;
     bottom: -12px;
 }
 html.ie6_0 .bubble_tip_pointer_bottom{
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/assets/images/point_down.png', sizingMethod='crop');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/style/image/point_down.png', sizingMethod='crop');
 }
 .bubble_tip_pointer_right{
-    background: url(./images/point_right.png) no-repeat;
+    background: url(./image/point_right.png) no-repeat;
     right: -12px;
 }
 html.ie6_0 .bubble_tip_pointer_right{
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/assets/images/point_right.png', sizingMethod='crop');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/style/image/point_right.png', sizingMethod='crop');
 }
 .bubble_tip_pointer_left{
-    background: url(./images/point_left.png) no-repeat;
+    background: url(./image/point_left.png) no-repeat;
     left: -12px;
 }
 html.ie6_0 .bubble_tip_pointer_left{
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/assets/images/point_left.png', sizingMethod='crop');
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/style/image/point_left.png', sizingMethod='crop');
 }
 .bubble_tip_count{
     color: #999;

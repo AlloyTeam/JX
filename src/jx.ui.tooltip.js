@@ -117,14 +117,14 @@ Jx().$package(function (J) {
             var tempRightEL;
             
             
-            var tooltipTextELBg = 'background:url(http://qplus1.idqqimg.com/jx/assets/images/tooltip_c.png?t=20111011001);',
-                tooltipLeftELBg =  'background:url(http://qplus1.idqqimg.com/jx/assets/images/tooltip.png?t=20111011001) no-repeat;',
-                tooltipRightELBg = ' background:url(http://qplus1.idqqimg.com/jx/assets/images/tooltip.png?t=20111011001) no-repeat right';
+            var tooltipTextELBg = 'background:url(http://qplus1.idqqimg.com/jx/style/image/tooltip_c.png?t=20111011001);',
+                tooltipLeftELBg =  'background:url(http://qplus1.idqqimg.com/jx/style/image/tooltip.png?t=20111011001) no-repeat;',
+                tooltipRightELBg = ' background:url(http://qplus1.idqqimg.com/jx/style/image/tooltip.png?t=20111011001) no-repeat right';
             
             if(J.browser.ie && J.browser.ie == 6){
-                tooltipTextELBg = 'filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://qplus1.idqqimg.com/jx/assets/images/tooltip_c.png?t=20111011001", sizingMethod="scale");';
-                tooltipLeftELBg = 'filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://qplus1.idqqimg.com/jx/assets/images/tooltip_l.png?t=20111011001", sizingMethod="scale");';
-                tooltipRightELBg = 'filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://qplus1.idqqimg.com/jx/assets/images/tooltip_r.png?t=20111011001", sizingMethod="scale");';
+                tooltipTextELBg = 'filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://qplus1.idqqimg.com/jx/style/image/tooltip_c.png?t=20111011001", sizingMethod="scale");';
+                tooltipLeftELBg = 'filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://qplus1.idqqimg.com/jx/style/image/tooltip_l.png?t=20111011001", sizingMethod="scale");';
+                tooltipRightELBg = 'filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://qplus1.idqqimg.com/jx/style/image/tooltip_r.png?t=20111011001", sizingMethod="scale");';
             }
             
             tooltipContext.tooltipEL = tooltipEL = $D.node("div",{
@@ -224,7 +224,7 @@ Jx().$package(function (J) {
 
     
 //  Tooltip.options = {
-//      src: "http://images.apple.com/global/elements/zoomerlay/zoomerlay_tooltip.png?t=20111011001",
+//      src: "http://image.apple.com/global/elements/zoomerlay/zoomerlay_tooltip.png?t=20111011001",
 //      pos: "top",
 //      dist: 5,
 //      deadspace: 0

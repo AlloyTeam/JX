@@ -19,11 +19,11 @@
 	top:-10px;
 	right:-10px;
 	cursor:pointer;
-	background:url(images/boxy_btn.png) no-repeat;
+	background:url(image/boxy_btn.png) no-repeat;
 	z-index:1;
 }
 
 .ie6_0 .ui_boxyClose{
 	background:none;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/assets/images/boxy_btn.png', sizingMethod='scale');	
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qplus1.idqqimg.com/jx/style/image/boxy_btn.png', sizingMethod='scale');	
 }

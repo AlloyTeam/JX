@@ -1,2 +1,0 @@
-(function(styleText){var d=document,n=d.createElement('style'),s,t;n.type='text/css';if(s=n.styleSheet){s.cssText=styleText;}else{t=d.createTextNode(styleText);n.appendChild(t);}(d.head || d.documentElement).appendChild(n);})(
-'.ui_button{ background:url(http://qplus1.idqqimg.com/jx/assets/images/button.png) no-repeat scroll transparent; color:#333333; cursor:pointer; float:right; height:23px; line-height:23px; margin-left:10px; text-align:center; width:66px; -webkit-tap-highlight-color: rgba(6,6,6,0.3); }');

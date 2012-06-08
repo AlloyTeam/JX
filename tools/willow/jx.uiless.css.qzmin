@@ -4,9 +4,9 @@
 			name: "Jx Framework",
 			target: "./combined/jx.uiless.css",
 			include: [
-				"../assets/jx.960grid.css",
-				"../assets/jx.reset.css",
-				"../assets/jx.typography.css"
+				"../style/jx.960grid.css",
+				"../style/jx.reset.css",
+				"../style/jx.typography.css"
 			]
 		}
 	],

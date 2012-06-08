@@ -84,7 +84,7 @@
     position: absolute;
     top: 5px;
     right: 5px;
-    background: url(./images/subicon.gif) no-repeat;
+    background: url(./image/subicon.gif) no-repeat;
 }
 .context_menu_item:hover .context_menu_item_subicon, .context_menu_item_hover .context_menu_item_subicon{
     background-position: -140px -458px;
@@ -98,7 +98,7 @@
     line-height: 0;
 }
 .context_menu_separator{
-	background: url(./images/context_menu_separator.gif) repeat-x left center;
+	background: url(./image/context_menu_separator.gif) repeat-x left center;
 	display: block;
 	height: 7px;
 	margin: 0 3px;
@@ -114,7 +114,7 @@
 /*********为了可恶的阴影*********
 .context_menu_outer_rt{
 	position: absolute;
-	background: url(./images/context_menu_rt.png) no-repeat left top;
+	background: url(./image/context_menu_rt.png) no-repeat left top;
 	width: 5px;
 	height: 5px;
 	right: -5px;
@@ -122,7 +122,7 @@
 }
 .context_menu_outer_r{
 	position: absolute;
-    background: url(./images/context_menu_r.png) repeat-y left top;
+    background: url(./image/context_menu_r.png) repeat-y left top;
     width: 5px;
     height: 100%;
     top: 0;
@@ -130,7 +130,7 @@
 }
 .context_menu_outer_rb{
 	position: absolute;
-    background: url(./images/context_menu_rb.png) no-repeat left top;
+    background: url(./image/context_menu_rb.png) no-repeat left top;
     width: 5px;
     height: 6px;
     right: -5px;
@@ -138,7 +138,7 @@
 }
 .context_menu_outer_lb{
 	position: absolute;
-    background: url(./images/context_menu_lb.png) no-repeat left top;
+    background: url(./image/context_menu_lb.png) no-repeat left top;
     width: 4px;
     height: 6px;
     left: -1px;
@@ -146,7 +146,7 @@
 }
 .context_menu_outer_b{
 	position: absolute;
-    background: url(./images/context_menu_b.png) repeat-x left top;
+    background: url(./image/context_menu_b.png) repeat-x left top;
     width: 100%;
     height: 6px;
     left: 0;

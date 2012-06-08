@@ -63,9 +63,9 @@ rules = {
 		'ext' : ['js'],
 		'blacklist' : ['jx.loader2.js'],
 	},
-	'assets' : {
-		'source' : './assets/',
-		'target' : './assets/',
+	'style' : {
+		'source' : './style/',
+		'target' : './style/',
 		'recursive' : True,
 	},
 	'all_js' : {
@@ -78,11 +78,11 @@ rules = {
 	},
 	'all_css' : {
 		'source' : './tools/jx.all.css.qzmin',
-		'target' : './assets/jx.all.css',
+		'target' : './style/jx.all.css',
 	},
 	'uiless_css' : {
 		'source' : './tools/jx.uiless.css.qzmin',
-		'target' : './assets/jx.uiless.css',
+		'target' : './style/jx.uiless.css',
 	},
 	
 	# [dom, event]
@@ -101,7 +101,7 @@ rules = {
 # 编译模式，
 # -default 必须，为默认编译模式，对按照后面数组规则顺序进行编译
 modes = {
-	'-default': ['config','js','assets','all_js','uiless_js','all_css','uiless_css'],
+	'-default': ['config','js','style','all_js','uiless_js','all_css','uiless_css'],
 	'-solo': ['all_js', 'dom_event_js', 'dom_event_fx_js']
 	#'-dev': [],
 	#'-debug': [],

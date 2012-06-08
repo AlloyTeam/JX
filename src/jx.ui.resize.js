@@ -101,7 +101,7 @@ Jx().$package(function (J) {
                 });
 
                 this.apperceiveEl.appendChild(tempEl);
-                $D.setCssText(tempEl, "position:absolute; overflow:hidden; background:url(" + J.path + "assets/images/transparent.gif);" + styles[p]);
+                $D.setCssText(tempEl, "position:absolute; overflow:hidden; background:url(" + J.path + "style/image/transparent.gif);" + styles[p]);
                 if (this._dragProxy) {
                     //$E.on(tempEl, "mousedown", this._onMousedown);
                 } else {

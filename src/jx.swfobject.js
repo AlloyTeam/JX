@@ -166,7 +166,7 @@ var swfobject = function() {
     
     /* Cross-browser onload
         - Based on James Edwards' solution: http://brothercake.com/site/resources/scripts/onload/
-        - Will fire an event as soon as a web page including all of its assets are loaded 
+        - Will fire an event as soon as a web page including all of its style are loaded 
      */
     function addLoadEvent(fn) {
         if (typeof win.addEventListener != UNDEF) {

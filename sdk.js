@@ -179,8 +179,8 @@ Jx().$package('sdk.pack',function(J){
 		var list=sdk.list.getList(),text,html='';
 		if(currentCat=='cat1'){
 			if(list.css.length){
-				text='{\n\tprojects: [\n\t\t{\n\t\t\tname: "Jx Framework",\n\t\t\ttarget: "jx.custom.css",\n\t\t\tinclude: [\n\t\t\t\t"assets/jx.'+
-					list.css.join('.css",\n\t\t\t\t"assets/jx.').toLowerCase()+
+				text='{\n\tprojects: [\n\t\t{\n\t\t\tname: "Jx Framework",\n\t\t\ttarget: "jx.custom.css",\n\t\t\tinclude: [\n\t\t\t\t"style/jx.'+
+					list.css.join('.css",\n\t\t\t\t"style/jx.').toLowerCase()+
 					'.css"\n\t\t\t]\n\t\t}\n\t],\n\tlevel: 0,\n\tshrink: false,\n\tencode: "utf-8"\n}';
 				html+='<a href="'+sdk.util.str2file(text)+'" download="jx.custom.css.qzmin">jx.custom.css.qzmin</a> | ';
 			}
@@ -190,7 +190,7 @@ Jx().$package('sdk.pack',function(J){
 			html+='<a href="'+sdk.util.str2file(text)+'" download="jx.custom.js.qzmin">jx.custom.js.qzmin</a>';
 		}else if(currentCat=='cat2'){
 			text='{\n\tprojects: [\n\t\t{\n\t\t\tname: "Jx Framework",\n\t\t\ttarget: "jx.custom.js",\n\t\t\tinclude: ['+
-				(list.css.length?'\n\t\t\t\t"assets/jx.'+list.css.join('.css.js",\n\t\t\t\t"assets/jx.').toLowerCase()+'.css.js",':'')+
+				(list.css.length?'\n\t\t\t\t"style/jx.'+list.css.join('.css.js",\n\t\t\t\t"style/jx.').toLowerCase()+'.css.js",':'')+
 				'\n\t\t\t\t"js/jx.core.js",\n\t\t\t\t"js/jx.'+
 				list.js.join('.js",\n\t\t\t\t"js/jx.').toLowerCase()+
 				'.js"\n\t\t\t]\n\t\t}\n\t],\n\tlevel: 0,\n\tshrink: false,\n\tencode: "utf-8"\n}';

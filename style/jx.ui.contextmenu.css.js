@@ -12,10 +12,10 @@
 .context_menu_item{ display: block; padding: 0 5px; color: #000; text-decoration: none; line-height: 24px; height: 25px; overflow: hidden; position: relative; }\
 .context_menu_item:hover, .context_menu_item_hover .context_menu_item{ color: #fff; background: #348CCC; text-decoration: none; }\
 .context_menu_item_icon{ width: 16px; height: 16px; position: absolute; top: 5px; left: 4px; }\
-.context_menu_item_subicon{ width: 16px; height: 16px; position: absolute; top: 5px; right: 5px; background: url(http://qplus1.idqqimg.com/jx/assets/images/subicon.gif) no-repeat; }\
+.context_menu_item_subicon{ width: 16px; height: 16px; position: absolute; top: 5px; right: 5px; background: url(http://qplus1.idqqimg.com/jx/style/image/subicon.gif) no-repeat; }\
 .context_menu_item:hover .context_menu_item_subicon, .context_menu_item_hover .context_menu_item_subicon{ background-position: -140px -458px; }\
 .context_menu_item_text{ margin: 0 20px; display: block; }\
 .context_menu_separator_container{ font-size: 0; line-height: 0; }\
-.context_menu_separator{ background: url(http://qplus1.idqqimg.com/jx/assets/images/context_menu_separator.gif) repeat-x left center; display: block; height: 7px; margin: 0 3px; }\
+.context_menu_separator{ background: url(http://qplus1.idqqimg.com/jx/style/image/context_menu_separator.gif) repeat-x left center; display: block; height: 7px; margin: 0 3px; }\
 .context_menu_item_disable .context_menu_item{ color: #999; cursor: default; }\
 .context_menu_item_disable .context_menu_item:hover{ color: #999; background: none; }');
