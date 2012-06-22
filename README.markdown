@@ -1,6 +1,6 @@
 JX - Javascript eXtension tools
 ===============================
-一个类似Google Closure Library的Web前端框架，服役于WebQQ等大规模WebApp
+一个类似 Google Closure Library 的 Web 前端开发框架，服役于 WebQQ 等大规模的 WebApp
 
 By [腾讯 Web 前端 AlloyTeam](http://www.AlloyTeam.com/)
 
