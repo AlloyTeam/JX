@@ -68,8 +68,9 @@ JX 框架同时适用于 Web Page 和 Web App 项目的开发，特别适合构�
  
 
 ## 设计原则
-- 不要重复自己（Don’t Repeat Yourself）
-业界已经有很多优秀的局部框架，比如JSON、Mini Selector Engine、SWFObject、
+- 不要重复造轮子
+
+业界已经有很多优秀的局部框架，比如JSON、Mini Selector Engine、SWFObject等等，作为一个综合性的Web前端框架直接做兼容即可，没有再写一遍的必要了，所以JX框架针对出色的局部框架做了良好的兼容工作。
 
 ## 谁在用JX
 - [腾讯 WebQQ](http://web.qq.com)
