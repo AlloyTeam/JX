@@ -1,5 +1,5 @@
-JX(Javascript 扩展工具套件)
-===================================================
+JX - Javascript eXtension tools
+===============================
 一个类似Google Closure Library的Web前端框架，服役于WebQQ等大规模WebApp
 
 By [腾讯 Web 前端 AlloyTeam](http://www.AlloyTeam.com/)
