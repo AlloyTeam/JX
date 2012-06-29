@@ -871,6 +871,8 @@ Jx().$package(function(J){
     J.warn = J.console.warn;
     J.error = J.console.error;
     J.info = J.console.info;
+    // log === info
+    J.log = J.console.log = J.console.info;
     J.debug = J.console.debug;
     
     
