@@ -292,7 +292,7 @@ Jx().$package(function(J){
         var i,
             key,
             value,
-            uri = uri || window.location.href,
+            uri = uri && uri.split('#')[0] || window.location.search, //remove hash
             index = uri.indexOf("?"),
             pieces = uri.substring(index + 1).split("&"),
             params = {};
