@@ -5,10 +5,10 @@ echo launch nodejs ...
 start "JX server" ".\compile\node.exe" ".\combine\server.js"
 echo open configuration page ...
 if exist %xp_chrome% (
-	start "" %xp_chrome% "%cd%\..\index.html"
+	start "" %xp_chrome% "%cd%\combine\index.html"
 ) else if exist %win7_chrome% (
-	start "" %win7_chrome% "%cd%\..\index.html"
+	start "" %win7_chrome% "%cd%\combine\index.html"
 ) else (
-	start "" "%cd%\..\index.html"
+	start "" "%cd%\combine\index.html"
 )
 echo done

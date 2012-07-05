@@ -22,7 +22,8 @@
 		#listText{ width:100%; -webkit-box-sizing:border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 		.cat-item{ display:block; line-height:24px; height:24px; }
 		.title{ margin:0; padding:0; font:normal 14px/24px "Microsoft Yahei"; }
-		.code{ border:1px solid #ccf; font:12px/18px "Lucida Console","Courier New"; margin:0 0 5px; padding:10px; }
+		.code{ border:1px solid #ccf; font:12px/18px "Lucida Console","Courier New"; margin:0 0 5px; padding:10px; white-space:normal; word-break:break-all; }
+		.del{ text-decoration:line-through; }
 	</style>
 </head>
 <body>
@@ -45,21 +46,21 @@
 		<div id="catPane">
 			<label class="cat-item"><input type="radio" name="category" value="cat1" checked />通过script标签，样式通过css文件引入</label>
 			<label class="cat-item"><input type="radio" name="category" value="cat2" />通过script标签，样式嵌入js中</label>
-			<label class="cat-item"><input type="radio" name="category" value="cat3" />动态加载(仅支持与模块关联的样式)</label>
+			<!--<label class="cat-item"><input type="radio" name="category" value="cat3" />动态加载(仅支持与模块关联的样式)</label>-->
 		</div>
 		<a class="step" id="step3"></a>
 		<h5 class="title">Step 3 完成</h5>
 		<div id="res1">
 代码:
 <pre class="code">
-&lt;link&nbsp;type=&quot;text/css&quot;&nbsp;rel=&quot;stylesheet&quot;&nbsp;href=&quot;<a href="#">jx.custom.css</a>&quot;&nbsp;/&gt;
-&lt;script&nbsp;type=&quot;text/javascript&quot;&nbsp;src=&quot;<a href="#">jx.custom.js</a>&quot;&nbsp;charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+<p id="res1line1" class="del">&lt;link&nbsp;type=&quot;text/css&quot;&nbsp;rel=&quot;stylesheet&quot;&nbsp;href=&quot;<a id="res1css" href="#"></a>&quot;&nbsp;/&gt;</p>
+<p id="res1line2" class="del">&lt;script&nbsp;type=&quot;text/javascript&quot;&nbsp;src=&quot;<a id="res1js" href="#"></a>&quot;&nbsp;charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</p>
 </pre>
 		</div>
 		<div id="res2" style="display:none;">
 代码:
 <pre class="code">
-&lt;script&nbsp;type=&quot;text/javascript&quot;&nbsp;src=&quot;<a href="#">jx.custom.js</a>&quot;&nbsp;charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+<p id="res2line1" class="del">&lt;script&nbsp;type=&quot;text/javascript&quot;&nbsp;src=&quot;<a id="res2js" href="#"></a>&quot;&nbsp;charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</p>
 </pre>
 		</div>
 		<div id="res3" style="display:none;">
@@ -73,12 +74,11 @@ Jx().$require([<span id="res3List"></span>],function(J){
 &lt;/script&gt;
 </pre>
 		</div>
-<input id="buildBtn" type="button" value="生成Qzmin文件" /><span id="link"></span>
-<!-- <script type="text/javascript" src="http://qplus1.idqqimg.com/jx/jet.uiless.js"></script> -->
-<script type="text/javascript" src="http://0.web.qstatic.com/webqqpic/js/jet.all.js"></script>
+<!--<input id="buildBtn" type="button" value="生成Qzmin文件" /><span id="link"></span>-->
+<script type="text/javascript" src="jx.uiless.min.js"></script>
 <script type="text/javascript" src="loader_override.js"></script>
-<script type="text/javascript" src="config.js"></script>
-<script type="text/javascript" src="base64.js"></script>
+<script type="text/javascript" src="../../config.js"></script>
+<!--<script type="text/javascript" src="base64.js"></script>-->
 <script type="text/javascript" src="sdk.js"></script>
 </body>
 </html>
