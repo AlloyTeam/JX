@@ -34,10 +34,8 @@ Jx().$package(function(J){
 		return true;
 	};
 	J.loader.joinUrlByList = function(list){
-		/*var cgi='http://pelli.www.qq.com/jx_loader/merge.php';
-		return cgi+'?scripts='+list.join(',').toLowerCase();*/
-		var cgi='http://cgi.qplus.com/qplusown/merge_script_resources';
-		return cgi+'?scripts=["'+list.join('","').toLowerCase()+'"]&t='+TIME_STAMP;
+		var cgi='http://127.0.0.1:1337/merge/';
+		return cgi+list.join().toLowerCase()+'/jx.custom.js?t='+TIME_STAMP;
 	}
 	var depends={
 		'array':['base'],

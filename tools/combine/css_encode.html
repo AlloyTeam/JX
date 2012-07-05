@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Css Encode</title>
+	<style type="text/css">
+		html{ margin:0; padding:0; }
+		body{ width:1000px; margin:0 auto; }
+		.title{ margin:0; padding:0; font:normal 14px/24px "Microsoft Yahei"; }
+		.code{ border:1px solid #ccf; font:12px/18px "Lucida Console","Courier New"; margin:0 0 5px; padding:5px; width:100%; height:400px; box-sizing:border-box; }
+		.button{ display:block; text-align:center; border:1px solid #999; width:80px; height:20px; font:14px/20px "Arial"; color:#000; text-decoration:none; border-radius:3px;
+			background:rgb(242,242,242);
+			background:-webkit-linear-gradient(top, rgb(242,242,242), rgb(207,207,207));
+			box-shadow:inset 0 0 1px #fff;
+		}
+		.button:hover{ border-color:#3c7fb1; background:rgb(234,246,253); background:-webkit-linear-gradient(top, rgb(234,246,253), rgb(167,217,245)); }
+		.button:active{ border-color:#2c628b; background:rgb(229,244,252); background:-webkit-linear-gradient(top, rgb(229,244,252), rgb(104,179,219)); box-shadow:inset 0 0 1px #000; }
+	</style>
+</head>
+<body>
+<h5 class="title">CSS Code</h5>
+<textarea id="res" class="code"></textarea>
+<a class="button" id="link" download="jx._.css.js" href="#" onclick="build()">Create Js</a>
+</body>
+<script type="text/javascript" src="base64.js"></script>
+<script type="text/javascript">
+function str2file(text){
+	var code=Base64.encode(text);
+	var uri='data:application/octetstream;charset=utf-8;base64,'+code;
+	return uri;
+}
+function build(){
+	var obj=document.getElementById('link');
+	var text=document.getElementById('res').value;
+	text=text.replace(/\s+/g,' ').replace(/\/\*.*?\*\//g,'').replace(/('|\\)/g,'\\$1').replace(/\}\s*/g,'}\\\n').replace(/(^\s+|\\\s*$)/g,'');
+	text=text.replace(/url\((?:\.\/)?([^\):]+)\)/g,'url(http://qplus1.idqqimg.com/jx/style/$1)');
+	text='(function(styleText){\
+var d=document,n=d.createElement(\'style\'),s,t;\
+n.type=\'text/css\';\
+if(s=n.styleSheet){\
+s.cssText=styleText;\
+}else{\
+t=d.createTextNode(styleText);\
+n.appendChild(t);\
+}\
+(d.head || d.documentElement).appendChild(n);\
+})(\n\''+text+'\');';
+	var uri=str2file(text);
+	obj.href=uri;
+}
+</script>
+</html>
