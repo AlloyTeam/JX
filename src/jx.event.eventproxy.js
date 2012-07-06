@@ -1,5 +1,23 @@
 /**
  * @example
+ *     	$E.eventProxy(
+			confirm.container,
+			{
+				".confirm_select click": function(e) {
+					var check= J.dom.mini(".confirm_remove_select", confirm.container)[0];
+					if(check) {
+		        		if(check.checked) {
+		        			check.checked= false;
+		        		}else {
+		        			check.checked= true;
+		        		}
+	        		}
+				},
+				".confirm_htmlAllName,.confirm_avatar click": function(e) {
+					alloy.portal.runApp("userDetails", user.uin);
+				}
+			}
+		);
  */
 Jx().$package(function(J){
     var $E= J.event;
