@@ -41,7 +41,7 @@ Jx().$package(function(J){
 		'array':['base'],
 		'base':[],
 		'browser':[],
-		'console':['base','dom','event','string','http','browser','array'],
+		'console':['base','dom','event','string','browser','array'],
 		'cookie':[],
 		'date':['format'],
 		'development':['console'],
@@ -88,6 +88,7 @@ Jx().$package(function(J){
 	};
 	var sheets={
 		'960grid':null,
+		'console':'console',
 		'reset':null,
 		'typography':null,
 		'ui.Boxy':'ui.Boxy',
