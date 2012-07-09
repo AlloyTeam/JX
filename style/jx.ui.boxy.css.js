@@ -1,4 +1,0 @@
-(function(styleText){var d=document,n=d.createElement('style'),s,t;n.type='text/css';if(s=n.styleSheet){s.cssText=styleText;}else{t=d.createTextNode(styleText);n.appendChild(t);}(d.head || d.documentElement).appendChild(n);})(
-'.ui_boxy{ position:absolute; top:0; left:0; border:1px solid #ccc; background: #F6F6F6; -moz-border-radius:10px; -webkit-border-radius:10px; border-radius:10px; -moz-box-shadow: 0px 0px 8px #000000; -webkit-box-shadow: 0px 0px 8px #000000; box-shadow: 0px 0px 8px #000000; }\
-.ui_boxyClose{ width:28px; height:28px; position:absolute; top:-10px; right:-10px; cursor:pointer; background:url(http://qplus1.idqqimg.com/jx/style/image/boxy_btn.png) no-repeat; z-index:1; }\
-.ie6_0 .ui_boxyClose{ background:none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\'http://qplus1.idqqimg.com/jx/style/image/boxy_btn.png\', sizingMethod=\'scale\'); }');

@@ -28,8 +28,8 @@ Jx().$package(function(J){
     var $ = J.dom.id,
         $D = J.dom,
         $E = J.event,
-        $S = J.string,
-        $H = J.http;
+        $S = J.string/*,
+        $H = J.http*/;
         
     
     var topNamespace = this,
@@ -345,7 +345,7 @@ Jx().$package(function(J){
         _create:function(){
             
             
-            $H.loadCss(J.path+"style/jet.css");
+            //$H.loadCss(J.path+"style/jet.css");
             this._main = document.createElement("div");
             
             this._main.id="JxConsole";
