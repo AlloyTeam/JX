@@ -1,6 +1,7 @@
 @echo off
 set xp_chrome="%userprofile%\Local Settings\Application Data\Google\Chrome\Application\Chrome.exe"
 set win7_chrome="%localAppdata%\Google\Chrome\Application\chrome.exe"
+taskkill /FI "WINDOWTITLE eq JX Server" /IM "node.exe"
 echo launch nodejs ...
 start "JX server" ".\compile\node.exe" ".\combine\server.js"
 echo open configuration page ...
