@@ -37,7 +37,7 @@ function joinCss(res,keys){
 	}
 	function next(){
 		var key=keyArr.shift();
-		if(key){
+		if(key!==undefined){
 			fs.readFile('../style/jx.'+key+'.css',callback);
 		}else{
 			res.end();
@@ -69,7 +69,7 @@ function joinJs(res,keys){
 	}
 	function next(){
 		var key=keyArr.shift();
-		if(key){
+		if(key!==undefined){
 			if(/\.css$/.test(key)){ //js-ed css file
 				fs.readFile('../style/jx.'+key,cssCallback);
 			}else{
