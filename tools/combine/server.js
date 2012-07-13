@@ -1,7 +1,6 @@
 var http = require('http'),
 	url = require('url'),
-	fs = require('fs'),
-	childProcess = require('child_process');
+	fs = require('fs');
 
 process.on('uncaughtException', function (err) {
 	console.log('Caught exception: ' + err);
