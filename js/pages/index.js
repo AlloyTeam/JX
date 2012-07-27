@@ -5,7 +5,8 @@ Jx().$package('JxHome', function (J) {
 		pkg = this;
 	
 	var urlHash = {
-		'home': supportCanvas() ? './home.html' : './home_nocanvas.html',
+		//'home': supportCanvas() ? './home.html' : './home_nocanvas.html',
+		'home': './home_nocanvas.html',
 		'doc': './doc/index.html',
 		'demo': './demo/index.html',
 		'download': './download.html',
@@ -38,39 +39,39 @@ Jx().$package('JxHome', function (J) {
 	}
 	
 	function navItemClick (e) {
-		var url;
-		if (typeof e == 'string') {
-			url = urlHash[e];
-		} else {
-			var tar = bubbleTo(e.target, 'li', 'data-url');
-			if (tar) {
-				url = tar.getAttribute('data-url');
-			}
+		var tar = bubbleTo(e.target, 'li', 'data-key'),id;
+		if (tar) {
+			id = tar.getAttribute('data-key');
 		}
-		if (tar && $D.hasClass(tar, 'selected')) {
-			//return;
+		selectItem(id);
+	}
+	function selectItem(id){
+		var url = urlHash[id],tar;
+		if(!url){
+			url = urlHash['home'];
+			tar = document.getElementById('nav-home');
+		}else{
+			tar = document.getElementById('nav-'+id);
 		}
-		
-		if (!!url) {
+		if (!!url && url!==$ifm.getAttribute('src')) {
 			//$D.setStyle($ifm, 'opacity', 0);
 			$ifm.setAttribute('src', url);
 		}
-		
 		if (tar) {
 			for (var i = 0; i < $lis.length; i ++) {
 				$D.removeClass($lis[i], 'selected');
 			}
 			$D.addClass(tar, 'selected');
 		}
-		
 	}
 	
 	this.init = function () {
 		this.getEls();
-		this.setDataUrl();
+		//this.setDataUrl();
 		this.bind();
 		resize();
-		navItemClick('home');		
+		var hash=(location.hash || '#home').substr(1);
+		selectItem(hash);
 	}
 	this.getEls = function () {
 		$ifm = $D.id('ifm');
@@ -79,14 +80,14 @@ Jx().$package('JxHome', function (J) {
 		$lis = $navUl.getElementsByTagName('li');
 	}
 	this.setDataUrl = function () {
-		var lis = $navUl.getElementsByTagName('li');
-		for (var i = 0; i < lis.length; i ++) {
-			var li = lis[i],
-				key = li.getAttribute('data-key');
-			if (!!urlHash[key]) {
-				li.setAttribute('data-url', urlHash[key]);	
-			}
-		}
+		// var lis = $navUl.getElementsByTagName('li');
+		// for (var i = 0; i < lis.length; i ++) {
+			// var li = lis[i],
+				// key = li.getAttribute('data-key');
+			// if (!!urlHash[key]) {
+				// li.setAttribute('data-url', urlHash[key]);	
+			// }
+		// }
 	}
 	this.bind = function () {
 		$E.on($navUl, 'click', navItemClick);
@@ -96,7 +97,11 @@ Jx().$package('JxHome', function (J) {
 				opacity: 1
 			});
 			resize();
-		})
+		});
+		$E.on(window, 'hashchange', function(){
+			var hash=(location.hash || '#home').substr(1);
+			selectItem(hash);
+		});
 	}
 	
 	$E.onDomReady(function () {
