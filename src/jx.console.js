@@ -345,7 +345,7 @@ Jx().$package(function(J){
         _create:function(){
             
             
-            //$H.loadCss(J.path+"style/jet.css");
+            $H.loadCss(J.path+"jx.console.css");
             this._main = document.createElement("div");
             
             this._main.id="JxConsole";
