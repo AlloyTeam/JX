@@ -15,9 +15,12 @@
  *
  * Need package:
  * jet.core.js
+ * jet.base.js
+ * jet.array.js
  * jet.string.js
- * jet.http.js
- * 
+ * jet.dom.js
+ * jet.browser.js
+ * jet.event.js
  */
 
 
@@ -235,8 +238,8 @@ Jx().$package(function(J){
          */
         _html :    '<div id="ConsoleBoxHead" class="consoleBoxHead">\
                         <a href="###" id="ConsoleCloseButton" class="consoleCloseButton" title="关闭">X</a>\
-                        <a href="###" id="ConsoleClearButton" class="consoleCloseButton" title="清除所有日志">cls</a>\
-                        <a href="###" id="ConsoleRefreshButton" class="consoleCloseButton" title="还原所有日志">r</a>\
+                        <a href="###" id="ConsoleClearButton" class="consoleCloseButton" title="清除所有日志">C</a>\
+                        <a href="###" id="ConsoleRefreshButton" class="consoleCloseButton" title="还原所有日志">R</a>\
                         <a href="###" id="ConsoleHelpButton" class="consoleCloseButton" title="控制台帮助">H</a>\
                         <h5 class="title" title="控制台">Console</h5>\
                     </div>\
@@ -246,7 +249,218 @@ Jx().$package(function(J){
                     <div class="consoleInputBox">\
                         &gt;<input id="ConsoleInput" class="consoleInput" title="请输入控制台指令或者Javascript语句..." />\
                     </div>',
-    
+
+        /**
+         * console的css文本
+         *
+         * @type String
+         */
+        _cssText :    '\
+                        html{\
+                            _background:url(about:blank);\
+                        }\
+                        \
+                        .consoleBox{\
+                            display:none;\
+                            position:fixed;\
+                            _position: absolute;\
+                            _top:expression(documentElement.scrollTop+documentElement.clientHeight-this.offsetHeight);\
+                            _left:expression(documentElement.scrollLeft+documentElement.clientWidth-this.offsetWidth-200);\
+                            right: 200px;\
+                            bottom: 30px;\
+                            z-index: 10000000;\
+                            border: 2px solid #bbb;\
+                            padding: 5px;\
+                            width: 300px;\
+                            height:310px;\
+                            background: #000;\
+                            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.75);\
+                            filter: Alpha(opacity:75);\
+                            font-family: "Courier New", Consolas, "LucidaConsole", Monaco, monospace;\
+                            font-size: 12px;\
+                            color: #fff;\
+                        }\
+                        \
+                        html.webkit .consoleBox{\
+                            background: rgba(0,0,0,0.75);\
+                        }\
+                        \
+                        .consoleBoxHead{\
+                            height:20px;\
+                            background: rgba(255,255,255,0.15);\
+                            overflow:hidden;\
+                            cursor:default;\
+                            padding: 2px;\
+                        }\
+                        \
+                        .consoleBoxHead .title{\
+                            margin:0;\
+                            padding: 0 0 0 3px;\
+                            height:20px;\
+                            line-height:20px;\
+                            font-family: Verdana;\
+                        }\
+                        \
+                        .consoleBoxHead .consoleCloseButton{\
+                            float:right;\
+                            border:0px solid #000;\
+                            width:20px;\
+                            height:18px;\
+                            line-height:16px;\
+                            background: white;\
+                            margin:1px 1px;\
+                            padding:0px;\
+                            color:#666;\
+                            font-family: Verdana;\
+                            font-weight:bold;\
+                            cursor:pointer;\
+                            border-radius:3px;\
+                            -moz-border-radius:3px;\
+                            -webkit-border-radius:3px;\
+                            text-align:center;\
+                            text-decoration:none;\
+                        }\
+                        \
+                        .consoleBoxHead .consoleCloseButton:hover{\
+                            background: orange;\
+                            color:white;\
+                            text-decoration:none;\
+                        }\
+                        \
+                        #ConsoleCloseButton:hover{\
+                            background: red;\
+                        }\
+                        \
+                        #ConsoleClearButton:hover{\
+                            background: blue;\
+                        }\
+                        \
+                        #ConsoleRefreshButton:hover{\
+                            background: green;\
+                        }\
+                        \
+                        .consoleMain{\
+                            position:relative;\
+                            top:2px;\
+                            bottom:0px;\
+                            width:100%;\
+                            height:255px;\
+                            overflow:auto;\
+                        }\
+                        html.mobileSafari .consoleMain{\
+                            overflow:hidden;\
+                        }\
+                        \
+                        ul.consoleOutput li{\
+                            list-style:none;\
+                            padding:3px;\
+                            border-bottom:1px solid #333333;\
+                            word-break: break-all;\
+                            word-wrap: break-word;\
+                            overflow: hidden;\
+                            zoom: 1;\
+                        }\
+                        \
+                        .consoleOutput .log_icon{\
+                            width:13px;\
+                            height:13px;\
+                            background:#fff;\
+                            overflow:hidden;\
+                            float:left;\
+                            margin-top:2px;\
+                            font-weight:bold;\
+                            text-align:center;\
+                            font-size:12px;\
+                            color:#8B8B8B;\
+                            line-height:135%;\
+                            cursor:default;\
+                            border-radius:3px;\
+                            -moz-border-radius:3px;\
+                            -webkit-border-radius:3px;\
+                        }\
+                        \
+                        .consoleOutput .log_text{\
+                            margin: 0px 0px 0px 20px;\
+                            line-height:150%;\
+                            zoom: 1;\
+                        }\
+                        \
+                        .log_error_type{}\
+                        \
+                        .log_error_type .log_icon{\
+                            background:#FF0000;\
+                            color:#660000;\
+                        }\
+                        \
+                        .log_error_type .log_text{\
+                            color:#FF0000;\
+                        }\
+                        \
+                        .log_warning_type{}\
+                        \
+                        .log_warning_type .log_icon{\
+                            background:#FFFF00;\
+                            color:#8C7E00;\
+                        }\
+                        \
+                        .log_warning_type .log_text{\
+                            color:#FFFF00;\
+                        }\
+                        \
+                        .log_debug_type{}\
+                        \
+                        .log_debug_type .log_icon{\
+                            background:#33CC00;\
+                            color:#006600;\
+                        }\
+                        \
+                        .log_debug_type .log_text{\
+                            color:#33cc00;\
+                        }\
+                        \
+                        .log_info_type{}\
+                        \
+                        .log_info_type .log_icon{\
+                            background:#0066FF;\
+                            color:#000066\
+                        }\
+                        \
+                        .log_info_type .log_text{\
+                            color:#0066FF;\
+                        }\
+                        \
+                        .log_profile_type{}\
+                        \
+                        .log_profile_type .log_icon{\
+                        }\
+                        \
+                        .log_profile_type .log_text{\
+                            color:white;\
+                        }\
+                        \
+                        #JxConsole .consoleInputBox{\
+                            font-family: Verdana;\
+                            font-size:12px;\
+                            margin:5px 0;\
+                            padding:2px 0;\
+                            border-top:1px solid #aaa;\
+                            width:100%;\
+                            color:#CCFF00;\
+                        }\
+                        \
+                        #JxConsole  input.consoleInput{\
+                            border:0px solid #666;\
+                            background:transparent;\
+                            color:#CCFF00;\
+                            font-family: "Courier New", Consolas, "LucidaConsole", Monaco, monospace;\
+                            font-size:12px;\
+                            width:285px;\
+                            height:25px;\
+                            margin-left:4px;\
+                            outline:none;\
+                        }\
+                         ',
+
         /**
          * 提示框是否打开了
          * 
@@ -269,7 +483,7 @@ Jx().$package(function(J){
         /**
          * 样式类
          * 
-         * @type
+         * @type Array
          */
         _typeInfo : [["log_profile_type", "└"], ["log_warning_type", "!"], ["log_error_type", "x"], ["log_info_type", "i"],["log_debug_type", "√"]],
         TYPE : {
@@ -279,6 +493,7 @@ Jx().$package(function(J){
             INFO : 3,
             DEBUG : 4
         },
+
         /**
          * 显示console
          */
@@ -343,9 +558,9 @@ Jx().$package(function(J){
          * 建立控制台面板,初始化DOM事件监听
          */
         _create:function(){
-            
-            
-            $H.loadCss(J.path+"jx.console.css");
+
+            $D.addStyles(this._cssText);
+            //$H.loadCss(J.path+"jx.console.css");
             this._main = document.createElement("div");
             
             this._main.id="JxConsole";
