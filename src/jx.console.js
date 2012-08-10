@@ -351,6 +351,14 @@ Jx().$package(function(J){
                             overflow:hidden;\
                         }\
                         \
+                        ul.consoleOutput{\
+                            display:block;\
+                            margin:0;\
+                            padding:0;\
+                            width:100%;\
+                            list-style:none;\
+                        }\
+                        \
                         ul.consoleOutput li{\
                             list-style:none;\
                             padding:3px;\
