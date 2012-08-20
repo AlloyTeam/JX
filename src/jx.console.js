@@ -949,9 +949,9 @@ Jx().$package(function(J){
             } else {
                 if (type == 'error') {
                     info = msg;
-                } else if (type == 'warn') {
+                }// else if (type == 'warn') {
                     // TBD
-                }
+                //}
             }
             J.Debug.errorLogs.push(info);
         }
