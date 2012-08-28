@@ -351,9 +351,9 @@ Jx().$package(function(J){
                         o.arguments = arguments;
                         onSuccess(o);
                         onComplete(o);
-                        if(type === "script"){
+                        //if(type === "script"){
                             //purge(id);
-                        }
+                        //}
                     }
                 }
             };

@@ -749,7 +749,7 @@ Jx().$package(function(J){
             if(isShift){
                 todo = items;
             }
-            this.timeout;
+            //this.timeout;
              this.timeout = window.setTimeout(function() {
                 var start = +new Date();
      
