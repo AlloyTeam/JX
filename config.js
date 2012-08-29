@@ -51,7 +51,7 @@ Jx().$package(function(J){
 		'event.eventProxy':['event','event.eventParser'],
 		'format':[],
 		'fx':['dom','event','base','array'],
-		'http':['dom','event','browser'],
+		'http':['dom','event','string','browser','json'],
 		'json':[],
 		'mini':[],
 		'number':['format'],
