@@ -88,7 +88,6 @@ Jx().$package(function(J){
 	};
 	var sheets={
 		'960grid':null,
-		'console':'console',
 		'reset':null,
 		'typography':null,
 		'ui.Boxy':'ui.Boxy',

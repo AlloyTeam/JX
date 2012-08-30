@@ -21,7 +21,7 @@
  * 1.[JET core]: JET 微内核
  */
 ;(function(tn){
-    var version = "1.0",
+    var version = "1.0.%Version%",
         mark = "JxMark",
         topNamespace = tn,
         undefined,
