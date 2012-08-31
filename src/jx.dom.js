@@ -627,21 +627,38 @@ Jx().$package(function(J){
      * @method setStyle
      * @memberOf dom
      * 
-     * @param {String} styleText 样式语句
+     * @param 样式内容，支持string和object
      * @param {String} id 样式标签的 id
      */
-    createStyleNode = function(styleText, id){
+    createStyleNode = function(styles, id){
         var styleNode = $D.node('style', {
             'id': id || '',
             'type': 'text/css'
         });
-        if(styleNode.styleSheet) {   // IE
-            styleNode.styleSheet.cssText = styleText;
-        }else {                // the world
-            var tn = document.createTextNode(styleText);
-            styleNode.appendChild(tn);
-        }
+
         $D.getDocHead().appendChild(styleNode);
+
+        var stylesType = typeof(styles);
+        if(stylesType == "string"){     //参数是文本
+            if(styleNode.styleSheet){    //IE
+                styleNode.styleSheet.cssText = styles;
+            }else{
+                var tn = document.createTextNode(styles);
+                styleNode.appendChild(tn);
+            }
+        }else if(stylesType == "object"){   //参数是对象
+            var i = 0,
+                styleSheet = document.styleSheets[document.styleSheets.length-1];
+            for(selector in styles){
+                if(styleSheet.insertRule){
+                    var rule = selector + "{" + styles[selector] + "}";
+                    styleSheet.insertRule(rule, i++);
+                }else {                  //IE
+                    styleSheet.addRule(selector, styles[selector], i++);
+                }
+            }
+        }
+
         return styleNode;
     };
     
@@ -750,54 +767,6 @@ Jx().$package(function(J){
         }
 
     };
-
-
-
-
-    /**
-     *
-     * 给页面添加样式表
-     *
-     * @method addStyles
-     * @memberOf dom
-     *
-     * @param {String/Object} css 文本或对象类型
-     */
-    addStyles = function (styles){
-        //创建一个新的样式表
-        var styleElement,styleSheet;
-        if(document.createStyleSheet){      //IE的API
-            styleSheet = document.createStyleSheet();
-        }else{
-            styleElement = document.createElement('style');
-            var head = document.getElementsByTagName("head")[0];
-            head.appendChild(styleElement);
-            styleSheet = document.styleSheets[document.styleSheets.length-1]
-        }
-
-        //往样式表中添加样式
-        var stylesType = typeof(styles);
-        if(stylesType == "string"){     //参数是文本
-            if(styleElement){
-                styleElement.innerHTML = styles;
-            }else{
-                styleSheet.cssText = styles;
-            }
-        }else if(stylesType == "object"){   //参数是对象
-            var i = 0;
-            for(selector in styles){
-                if(styleSheet.insertRule){
-                    var rule = selector + "{" + styles[selector] + "}";
-                    styleSheet.insertRule(rule, i++);
-                }else {
-                    styleSheet.addRule(selector, styles[selector], i++);
-                }
-            }
-        }
-    };
-
-
-
 
     /**
      * 
@@ -1241,7 +1210,6 @@ Jx().$package(function(J){
     $D.createStyleNode = createStyleNode;
     $D.setStyle = setStyle;
     $D.getStyle = getStyle;
-    $D.addStyles = addStyles;
     
     $D.setCssText = setCssText;
     $D.getCssText = getCssText;

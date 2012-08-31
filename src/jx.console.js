@@ -464,7 +464,7 @@ Jx().$package(function(J){
                             font-size:12px;\
                             width:285px;\
                             height:25px;\
-                            margin-left:4px;\
+                            margin-left:3px;\
                             outline:none;\
                         }\
                          ',
@@ -567,7 +567,7 @@ Jx().$package(function(J){
          */
         _create:function(){
 
-            $D.addStyles(this._cssText);
+            $D.createStyleNode(this._cssText);
             //$H.loadCss(J.path+"jx.console.css");
             this._main = document.createElement("div");
             
