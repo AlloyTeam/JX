@@ -59,41 +59,40 @@ Jx().$package(function(J){
      * @method  ajax
      * 
      * @param {String} uri 要加载的数据的uri
-     * @param {Object} options 配置对象，如：isAsync,data,arguments,onSuccess,onError,onComplete,onTimeout,timeout,contentType,type
+     * @param {Object} option 配置对象，如：isAsync,data,arguments,onSuccess,onError,onComplete,onTimeout,timeout,contentType,type
      * @return {Object} ajax 返回一个ajax对象，可以abort掉
      */
-    ajax = function(uri, options){
+    ajax = function(uri, option){
         var httpRequest,
             httpSuccess,
             timeout,
             isTimeout = false,
             isComplete = false;
         
-        options = {
-            method: options.method || "GET",
-            data: options.data || null,
-            arguments: options.arguments || null,
+        option = {
+            method: (option.method || "GET").toUpperCase(),
+            data: option.data || null,
+            arguments: option.arguments || null,
 
-            onSuccess: options.onSuccess || function(){},
-            onError: options.onError || function(){},
-            onComplete: options.onComplete || function(){},
+            onSuccess: option.onSuccess || function(){},
+            onError: option.onError || function(){},
+            onComplete: option.onComplete || function(){},
             //尚未测试
-            onTimeout: options.onTimeout || function(){},
+            onTimeout: option.onTimeout || function(){},
 
-            isAsync: options.isAsync || true,
-            timeout: options.timeout ? options.timeout : 30000,
-            contentType: options.contentType ? options.contentType : "utf-8",
-            type: options.type || "xml"
+            isAsync: option.isAsync || true,
+            timeout: option.timeout || 30000,
+            contentType: option.contentType,
+            type: option.type || "xml"
         };
+        if(option.data && typeof option.data === "object"){
+            option.data = J.string.toQueryString(option.data);
+        }
+
         uri = uri || "";
-        timeout = options.timeout;
-        
+        timeout = option.timeout;
         
         httpRequest = new window.XMLHttpRequest();
-        httpRequest.open(options.method, uri, options.isAsync);
-        //设置编码集
-        //httpRequest.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-        httpRequest.setRequestHeader("Content-Type",options.contentType);
 
         /**
          * @ignore
@@ -119,21 +118,22 @@ Jx().$package(function(J){
                     var o={};
                         o.responseText = httpRequest.responseText;
                         o.responseXML = httpRequest.responseXML;
-                        o.data= options.data;
+                        o.data= option.data;
                         o.status= httpRequest.status;
                         o.uri=uri;
-                        o.arguments=options.arguments;
-                        
-                    if(httpSuccess(httpRequest)){
-                        if(options.type === "script"){
-                            eval.call(window, data);
+                        o.arguments=option.arguments;
+                        if(option.type === 'json'){
+                            try{
+                                o.responseJSON = J.json.parse(httpRequest.responseText);
+                            }catch(e){
+                            }
                         }
-                        options.onSuccess(o);
-                        
+                    if(httpSuccess(httpRequest)){
+                        option.onSuccess(o);
                     }else{
-                        options.onError(o);
+                        option.onError(o);
                     }
-                    options.onComplete(o);
+                    option.onComplete(o);
                 }
                 isComplete = true;
                 //删除对象,防止内存溢出
@@ -141,7 +141,22 @@ Jx().$package(function(J){
             }
         };
         
-        httpRequest.send(options.data);
+        if(option.method === "GET"){
+            if(option.data){
+                uri += (uri.indexOf("?")>-1?"&":"?") + option.data;
+                option.data = null;
+            }
+            httpRequest.open("GET", uri, option.isAsync);
+            httpRequest.setRequestHeader("Content-Type",option.contentType || "text/plain;charset=UTF-8");
+            httpRequest.send();
+        }else if(option.method === "POST"){
+            httpRequest.open("POST", uri, option.isAsync);
+            httpRequest.setRequestHeader("Content-Type",option.contentType || "application/x-www-form-urlencoded;charset=UTF-8");
+            httpRequest.send(option.data);
+        }else{
+            httpRequest.open(option.method, uri, option.isAsync);
+            httpRequest.send();
+        }
         
         window.setTimeout(function(){
             var o;
@@ -149,9 +164,9 @@ Jx().$package(function(J){
                 isTimeout = true;
                 o={};
                 o.uri=uri;
-                o.arguments=options.arguments;
-                options.onTimeout(o);
-                options.onComplete(o);
+                o.arguments=option.arguments;
+                option.onTimeout(o);
+                option.onComplete(o);
             }
         }, timeout);    
         
@@ -165,20 +180,20 @@ Jx().$package(function(J){
      * @memberOf http
      * @method  comet
      * @param {String} uri uri地址
-     * @param {Object} options 配置对象
+     * @param {Object} option 配置对象
      * @return {Object} 返回一个comet dom对象
      */
-    comet = function(uri, options){
+    comet = function(uri, option){
 
         uri = uri || "";
-        options = {
-            method : options.method || "GET",
-            data : options.data || null,
-            arguments : options.arguments || null,
-            callback : options.callback || function(){},
-            onLoad : options.onLoad || function(){},
+        option = {
+            method : option.method || "GET",
+            data : option.data || null,
+            arguments : option.arguments || null,
+            callback : option.callback || function(){},
+            onLoad : option.onLoad || function(){},
 
-            contentType: options.contentType ? options.contentType : "utf-8"
+            contentType: option.contentType ? option.contentType : "utf-8"
         };
 
         var connection;
@@ -189,7 +204,7 @@ Jx().$package(function(J){
             var iframediv = htmlfile.createElement("div");
             htmlfile.appendChild(iframediv);
             htmlfile.parentWindow._parent = self;
-            iframediv.innerHTML = '<iframe id="_cometIframe" src="'+uri+'?callback=window.parent._parent.'+options.callback+'"></iframe>';
+            iframediv.innerHTML = '<iframe id="_cometIframe" src="'+uri+'?callback=window.parent._parent.'+option.callback+'"></iframe>';
             
             connection = htmlfile.getElementById("_cometIframe");
         
@@ -197,7 +212,7 @@ Jx().$package(function(J){
         else{
             connection = $D.node("iframe");
             connection.setAttribute("id", "_cometIframe");
-            connection.setAttribute("src", uri+'?callback=window.parent._parent.'+options.callback);
+            connection.setAttribute("src", uri+'?callback=window.parent._parent.'+option.callback);
             connection.style.position = "absolute";
             connection.style.visibility = "hidden";
             connection.style.left = connection.style.top = "-999px";
@@ -206,7 +221,7 @@ Jx().$package(function(J){
             self._parent = self;
         };
 
-        $E.on(connection,"load", options.onLoad);
+        $E.on(connection,"load", option.onLoad);
 
         return connection;
         
@@ -224,10 +239,10 @@ Jx().$package(function(J){
      * @method load
      * 
      * @param {String} type 一个配置对象
-     * @param {Object} options 一个配置对象
+     * @param {Object} option 一个配置对象
      * @return {Object} ajax 返回一个ajax对象
      */
-    load = function(type, uri, options){
+    load = function(type, uri, option){
         var node,
             linkNode,
             scriptNode,
@@ -236,22 +251,22 @@ Jx().$package(function(J){
             timer,
             isTimeout = false,
             isComplete = false,
-            options = options || {},
-            isDefer = options.isDefer || false,
-            query = options.query || null,
-            arguments = options.arguments || null,
+            option = option || {},
+            isDefer = option.isDefer || false,
+            query = option.query || null,
+            arguments = option.arguments || null,
             
-            onSuccess = options.onSuccess || function(){},
-            onError = options.onError || function(){},
-            onComplete = options.onComplete || function(){},
+            onSuccess = option.onSuccess || function(){},
+            onError = option.onError || function(){},
+            onComplete = option.onComplete || function(){},
             purge,
             //尚未测试
-            onTimeout = options.onTimeout || function(){},
+            onTimeout = option.onTimeout || function(){},
 
-//          timeout = options.timeout ? options.timeout : 10000,
-            timeout = options.timeout, //az 2011-2-21 修改为默认不需要超时
-            charset = options.charset ? options.charset : "utf-8",
-            win = options.win || window,
+//          timeout = option.timeout ? option.timeout : 10000,
+            timeout = option.timeout, //az 2011-2-21 修改为默认不需要超时
+            charset = option.charset ? option.charset : "utf-8",
+            win = option.win || window,
             o,
             
             getId;
@@ -323,9 +338,9 @@ Jx().$package(function(J){
         
         
         if(type === "script"){
-            node = options.node || scriptNode(uri, win, charset, isDefer);
+            node = option.node || scriptNode(uri, win, charset, isDefer);
         }else if(type === "css"){
-            node = options.node || linkNode(uri, win, charset);
+            node = option.node || linkNode(uri, win, charset);
         }
         
 
@@ -351,9 +366,9 @@ Jx().$package(function(J){
                         o.arguments = arguments;
                         onSuccess(o);
                         onComplete(o);
-                        if(type === "script"){
+                        //if(type === "script"){
                             //purge(id);
-                        }
+                        //}
                     }
                 }
             };
@@ -397,7 +412,7 @@ Jx().$package(function(J){
                     o={};
                     o.id = id;
                     o.uri = uri;
-                    o.arguments = options.arguments;
+                    o.arguments = option.arguments;
                     onSuccess(o);
                     onComplete(o);
                     
@@ -431,7 +446,7 @@ Jx().$package(function(J){
         }
         
         
-        if(options.node){
+        if(option.node){
             if(type === "script"){
                 node.src = uri;
             }else if(type === "css"){
@@ -487,11 +502,11 @@ Jx().$package(function(J){
      * @method loadCss
      * 
      * @param {String} uri 要加载的css的uri
-     * @param {Object} options 配置对象，如：isDefer,query,arguments,onSuccess,onError,onComplete,onTimeout,timeout,charset
+     * @param {Object} option 配置对象，如：isDefer,query,arguments,onSuccess,onError,onComplete,onTimeout,timeout,charset
      * @return {Object} ajax 返回一个ajax对象
      */
-    loadCss = function(uri, options){
-        return load("css", uri, options);
+    loadCss = function(uri, option){
+        return load("css", uri, option);
     };
     
     /**
@@ -501,11 +516,11 @@ Jx().$package(function(J){
      * @method loadScript
      * 
      * @param {String} uri 要加载的js脚本的uri
-     * @param {Object} options 配置对象，如：isDefer,query,arguments,onSuccess,onError,onComplete,onTimeout,timeout,charset
+     * @param {Object} option 配置对象，如：isDefer,query,arguments,onSuccess,onError,onComplete,onTimeout,timeout,charset
      * @return {Element} 返回控制对象，可以abort掉
      */
-    loadScript = function(uri, options){
-        return load("script", uri, options);
+    loadScript = function(uri, option){
+        return load("script", uri, option);
     };
     
     

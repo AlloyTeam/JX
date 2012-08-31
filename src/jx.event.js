@@ -721,9 +721,9 @@ Jx().$package(function(J){
                     }
                 }else{
                     $E.removeEventListener(document, "mousemove", onElMousemove);
-                    if(!isMove){
+                    //if(!isMove){
                         //@TODO fire the event
-                    }
+                    //}
                 }
             };
             if(J.browser.mobileSafari){

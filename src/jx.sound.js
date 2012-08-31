@@ -488,7 +488,7 @@ Jx().$package(function(J){
      */
     embedSWF = function(path) {
         if (path == undefined) {
-            path = "./swf/jxswfsound.swf";
+            path = J.path+'style/swf/jxswfsound.swf';
         }
 
         var flashvars = false;
@@ -514,7 +514,7 @@ Jx().$package(function(J){
         // make sure the flash movie is visible, otherwise the onload is not fired!
         try {
             J.swfobject.embedSWF(path, 'swfSound_Flash_div', '1', '1', '8.0.0',
-                    './swf/expressInstall.swf', flashvars, params, attributes);
+                    J.path+'style/swf/expressInstall.swf', flashvars, params, attributes);
         } catch (e) {
             J.error('J.Sound module error: ' + e.message, 'Sound');
             // alert( 'Seems like you are missing swfobject! - Please include

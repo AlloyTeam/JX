@@ -20,10 +20,10 @@
 /**
  * 1.[JET core]: JET 微内核
  */
-;(function(){
-    var version = "1.0",
+;(function(tn){
+    var version = "1.0.%Version%",
         mark = "JxMark",
-        topNamespace = this,
+        topNamespace = tn,
         undefined,
         
         // 将顶级命名空间中可能存在的 Jx 对象引入
@@ -112,9 +112,17 @@
             Jx = function(ver, isCreateNew){
                 var J = this;
 
+                var instanceOf = function(o, type) {
+                    return (o && o.hasOwnProperty && (o instanceof type));
+                };
+
                 if(isCreateNew){
                     // 如果是第一次执行则初始化对象
-                    this._init();
+                    if ( !( instanceOf(J, Jx) ) ) {
+                        J = new Jx(ver);
+                    } else {
+                        J._init();
+                    }
                 }else{
                     if(ver){
                         ver = String(ver);
@@ -189,10 +197,17 @@
                  * 
                  */
                 $namespace: function(name) {
+                    // Handle "", null, undefined, false
+                    if ( !name ) {
+                        return topNamespace;
+                    }
+
+                    name = String(name);
+
                     var i,
                         ni,
                         nis = name.split("."),
-                        ns = window;
+                        ns = topNamespace;
 
                     for(i = 0; i < nis.length; i=i+1){
                         ni = nis[i];
@@ -233,14 +248,15 @@
                         ns = topNamespace,
                         returnValue;
                         if(typeof func === "function"){
+                            // handle name as ""
                             if(typeof name === "string"){
                                 ns = this.$namespace(name);
-                                if(Jx.PACKAGES[name]){
+                                if( Jx.PACKAGES[name] ){
                                     //throw new Error("Package name [" + name + "] is exist!");
                                 }else{
-                                       Jx.PACKAGES[name] = {
+                                    Jx.PACKAGES[name] = {
                                         isLoaded: true,
-                                        returnValue: returnValue
+                                        returnValue: returnValue    // undefined as default
                                     };
                                 }
                                 ns.packageName = name;
@@ -249,6 +265,7 @@
                             }
                             
                             returnValue = func.call(ns, this);
+                            typeof name === "string" && (Jx.PACKAGES[name].returnValue = returnValue);
                         }else{
                             throw new Error("Function required");
                         }
@@ -393,4 +410,4 @@
         // 微内核初始化失败，输出出错信息
         out("JET 微内核初始化失败! " + "B.错误：[" + e.name + "] "+e.message+", " + e.fileName+", 行号:"+e.lineNumber+"; stack:"+typeof e.stack, 1);
     }
-})();
+})(this);
