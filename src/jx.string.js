@@ -128,10 +128,10 @@ Jx().$package(function(J){
           * 
           * Modify by azrael @ 2012/9/28
           */
-        var global = typeof window != 'undefined' ? window : {},
+        var //global = typeof window != 'undefined' ? window : {},
             openTag = '<%',
             closeTag = '%>',
-            retTag = 'ret',
+            retTag = '$return',
             vars = 'var ',
             varsInTpl,
             codeArr = ''.trim ?
@@ -171,7 +171,7 @@ Jx().$package(function(J){
             }
         
             var code = vars + codeArr[0] + tmpCode + 'return ' + codeArr[3];
-            var fn = new Function('$data', '$getValue', code);
+            var fn = new Function('$data', code);
             
             return fn;
         }
@@ -208,16 +208,16 @@ Jx().$package(function(J){
                     if (c === 'print') {
                         vars += codeArr[4];
                     } else {
-                        vars += (c + '= $getValue("' + c + '", $data),');
+                        vars += (c + '=$data.hasOwnProperty("'+c+'")?$data.' + c + ':window.' + c + ',');
                     }
                     varsInTpl[c] = 1;
                 }
             }
         }
         
-        function getValue (v, $data){
-            return $data.hasOwnProperty(v) ? $data[v] : global[v];
-        }
+        // function getValue (v, $data){
+        //     return $data.hasOwnProperty(v) ? $data[v] : global[v];
+        // }
 
         // function jstemplate (id, source, data) {
         //     if (typeof arguments[1] == 'object' && arguments[2] == undefined) {
@@ -252,9 +252,7 @@ Jx().$package(function(J){
                 _getCompileFn(str);
             
             // Provide some basic currying to the user
-            return data ? fn(data, getValue) : function(data){
-                return fn(data, getValue);
-            };
+            return data ? fn(data) : fn;
         };
     }();
 
