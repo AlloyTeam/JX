@@ -32,7 +32,7 @@ body {
 .opa0 { opacity: 0 }
 .full {
 	/* fallback */
-  background: #AED2E4 url(../images/bg.png) repeat-x;
+  background: #AED2E4 url(image/bg.png) repeat-x;
   
   /* Safari 4-5, Chrome 1-9 */
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a82f7), to(#2F2727));
