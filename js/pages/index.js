@@ -5,8 +5,9 @@ Jx().$package('JxHome', function (J) {
 		pkg = this;
 	
 	var urlHash = {
-		//'home': supportCanvas() ? './home.html' : './home_nocanvas.html',
-		'home': './home_nocanvas.html',
+		//'home': './home_nocanvas.html',
+		'home': supportCanvas() ? './home.html' : './home_nocanvas.html',
+		
 		'doc': './doc/index.html',
 		'demo': './demo/index.html',
 		'download': './download.html',
