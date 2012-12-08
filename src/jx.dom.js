@@ -28,7 +28,8 @@ Jx().$package(function(J){
         recover,
         hide,
         
-        
+        setTransform,
+        getTransform,
         
         getScrollHeight,
         getScrollWidth,
@@ -905,6 +906,131 @@ Jx().$package(function(J){
         setStyle(el, "display", "none");
     };
     
+
+    //获取当前浏览器支持的transform属性
+    var transform = function() {
+        var styles = document.createElement('a').style,
+            props = ['webkitTransform', 'MozTransform', 'OTransform', 'msTransform', 'Transform'];
+
+        for (var i = props.length; i--;) {
+            if (props[i] in styles) return props[i];
+        }
+    } ();
+    /**
+     *
+     * 设置元素的transform属性
+     * 
+     * @method setTransform
+     * @memberOf dom
+     * 
+     * @param {element} target  要设置属性的元素
+     * @param {mixed}   value   属性值，类型视具体属性而定
+     * @param {string}  style   要设置的属性，如果不指定则默认为transform
+     */
+    setTransform = function(target, value, style){
+        var v = target.style[transform] || '';
+        
+        switch(style) {
+            case 'translate3d'  :
+            case 'translate3d-x':
+            case 'translate3d-y':
+            case 'translate3d-z':
+                if(!/translate3d\([^)]*\)/.test(v)) v += ' translate3d(0px,0px,0px)';
+                if (style != 'translate3d') {
+                    var temp = {x : '$1', y : '$2', z : '$3'};
+                    var map = {'translate3d-x':'x', 'translate3d-y':'y', 'translate3d-z':'z'};
+                    temp[map[style]] = value;
+                    value = temp;
+                }
+                v = v.replace(/translate3d\(([^,]*)px,([^,]*)px,([^,]*)px\)/,
+                    'translate3d(' + value.x + 'px,' + value.y + 'px,' + value.z + 'px)');
+                break;
+            case 'translate'    :
+            case 'translate-x':
+            case 'translate-y':
+                if(!/translate\([^)]*\)/.test(v)) v += ' translate(0px,0px)';
+                if (style != 'translate') {
+                    var temp = {x : '$1', y : '$2'};
+                    var map = {'translate3d-x':'x', 'translate3d-y':'y'};
+                    temp[map[style]] = value;
+                    value = temp;
+                }
+                v = v.replace(/translate\(([^,]*)px,([^,]*)px\)/,
+                    'translate(' + value.x + 'px,' + value.y + 'px)');
+                break;
+            case 'scale':
+                v = (/scale\([^)]*\)/.test(v)?
+                    v.replace(/scale\([^)]*\)/, 'scale(' + value + ')'):
+                    v + ' scale(' + value + ')'
+                );
+                break;
+            case 'rotate':
+                v = (/rotate\([^)]*\)/.test(v)?
+                    v.replace(/rotate\([^)]*\)/, 'rotate(' + value + 'deg)'):
+                    v + ' rotate(' + value + 'deg)'
+                );
+                break;
+            default:
+                //没有设置style的话，直接修改transform属性
+                v = value;
+        }
+        
+        target.style[transform] = v;
+    };
+    
+    /**
+     *
+     * 获取CSS3 transform属性的值，或具体的scale等的值
+     * 
+     * @method getTransform
+     * @memberOf dom
+     * 
+     * @param {element} target  要获取属性的元素
+     * @param {string}  style   要获取的属性，如果不指定则默认为transform
+     */
+    getTransform = function(target, style){
+        //获取属性。就算设置的时候写的是0，读取的时候还是会读到 0px
+        var v = target.style[transform] || 'scale(1) translate(0px, 0px) translate3d(0px, 0px, 0px) rotate(0deg)';
+        
+        switch(style){
+            case 'scale':
+                v = /scale\(([^)]*)\)/.exec(v);
+                v = v? Number(v[1]): 1;
+                break;
+            case 'translate3d':
+            case 'translate3d-x':
+            case 'translate3d-y':
+            case 'translate3d-z':
+                v = /translate3d\(([^,]*)px,([^,]*)px,([^,]*)px\)/.exec(v) || [0,0,0,0];
+                if(style != 'translate3d') {
+                    var map = {'translate3d-x':1, 'translate3d-y':2, 'translate3d-z':3};
+                    v = Number(v[map[style]]);
+                }
+                else {
+                    v = {x : Number(v[1]), y : Number(v[2]), z : Number(v[3])};
+                }
+                break;
+            case 'translate':
+            case 'translate-x':
+            case 'translate-y':
+                v = /translate\(([^,]*)px,([^,]*)px\)/.exec(v) || [0,0,0];
+                if(style != 'translate') {
+                    var map = {'translate-x':1, 'translate-y':2};
+                    v = Number(v[map[style]]);
+                }
+                else {
+                    v = {x : Number(v[1]), y : Number(v[2])};
+                }
+                break;
+            case 'rotate':
+                v = /rotate\(([^)]*)deg\)/.exec(v);
+                v = v? Number(v[1]): 0;
+                break;
+            default:
+        }
+        
+        return v;
+    };
     
     
     /**
