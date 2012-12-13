@@ -125,7 +125,7 @@ Jx().$package(function(J){
      * @return {Boolean} 当 o 的类型是 object 时返回 true
      */
     isObject = function(o) {
-        return (o && (o.constructor === Object)) || (String(o)==="[object Object]");
+        return o && (o.constructor === Object || Object.prototype.toString.call(o) === "[object Object]");
     };
     
     /**
@@ -140,7 +140,7 @@ Jx().$package(function(J){
      * @return {Boolean} 当 o 的类型是 array 时返回 true
      */
     isArray = function(o) {
-        return (o && (o.constructor === Array)) || (Object.prototype.toString.call(o)==="[object Array]");
+        return o && (o.constructor === Array || Object.prototype.toString.call(o) === "[object Array]");
     };
     
     /**
