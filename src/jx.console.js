@@ -37,7 +37,7 @@ Jx().$package(function(J){
     
     var topNamespace = this,
         query = J.string.mapQuery(window.location.search);
-    var _open=window.open;
+    /*var _open=window.open;
     var open=function(sURL, sName, sFeatures, bReplace){
         if(sName == undefined){
             sName="_blank";
@@ -57,7 +57,7 @@ Jx().$package(function(J){
         
         return true;
     };
-    window.open = open;
+    window.open = open;*/
     /**
      * 日志对象
      * @author tealin
