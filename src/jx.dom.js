@@ -1041,7 +1041,6 @@ Jx().$package(function(J){
      * 
      * @param {HTMLElement} el
      * @return Array [left,top]
-     * @type Array
      */
     getClientXY = function(el) {
         var _t = 0,

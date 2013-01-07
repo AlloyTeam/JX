@@ -39,6 +39,7 @@ Jx().$package(function(J){
 	}
 	var depends={
 		'array':['base'],
+		'audio':['base','array','browser','dom','event'],
 		'base':[],
 		'browser':[],
 		'console':['base','dom','event','string','browser','array'],
@@ -55,7 +56,7 @@ Jx().$package(function(J){
 		'json':[],
 		'mini':[],
 		'number':['format'],
-		'sound':['dom','event','browser','swfobject','base'],
+		'sound':['audio'],
 		'string':[],
 		'swfobject':[],
 		'ui.BaseWindow':['dom','event','base','browser','string','array','ui.Drag','ui.MaskLayer','ui.Resize'],

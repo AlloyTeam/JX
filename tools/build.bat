@@ -40,6 +40,7 @@ type ..\src\jx.json.js >> ..\build\jx.uiless.js
 type ..\src\jx.http.js >> ..\build\jx.uiless.js
 type ..\src\jx.mini.js >> ..\build\jx.uiless.js
 type ..\src\jx.number.js >> ..\build\jx.uiless.js
+type ..\src\jx.audio.js >> ..\build\jx.uiless.js
 :: add ui
 type ..\build\jx.uiless.js > ..\build\jx.all.js
 type ..\src\jx.swfobject.js >> ..\build\jx.all.js

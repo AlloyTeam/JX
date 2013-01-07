@@ -419,7 +419,7 @@ Jx().$package(function(J){
      * 
      * @memberOf string
      * 
-     * @param {String, RegExp} regex 正则表达式，或者正则表达式的字符串
+     * @param {String|RegExp} regex 正则表达式，或者正则表达式的字符串
      * @param {String} params 正则的参数
      * @return {Boolean} 返回结果
      */

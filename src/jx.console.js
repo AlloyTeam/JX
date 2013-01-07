@@ -851,9 +851,9 @@ Jx().$package(function(J){
         },
         /**
          * 过滤type
-         * @param {Log[]} logArr 日志数组
+         * @param {Array} logArr 日志数组
          * @param {Number} type 类型
-         * @return {Log[]} logArr 匹配的日志数组
+         * @return {Array} logArr 匹配的日志数组
          */
         filterByType : function(logArr,type){
             var result = [];
@@ -873,9 +873,9 @@ Jx().$package(function(J){
         },
         /**
          * 过滤tag
-         * @param {Log[]} logArr 日志数组
+         * @param {Array} logArr 日志数组
          * @param {String} tag 类型
-         * @return {Log[]} logArr 匹配的日志数组
+         * @return {Array} logArr 匹配的日志数组
          */
         filterByTag : function(logArr,tag){
             var result = [];
@@ -895,9 +895,9 @@ Jx().$package(function(J){
         },
         /**
          * 过滤Msg
-         * @param {Log[]} logArr 日志数组
+         * @param {Array} logArr 日志数组
          * @param {String} msg 类型
-         * @return {Log[]} logArr 匹配的日志数组
+         * @return {Array} logArr 匹配的日志数组
          */
         filterByMsg : function(logArr,msg){
             var result = [];
@@ -1101,48 +1101,20 @@ Jx().$package(function(J){
     
     
     
-        $E.onDomReady(function(){
-                J.console._init();
-                if(query.console == "true"){
-                    J.console=J.extend(J.console,{
-                        'profile':J.emptyFunc,
-                        'warn':J.emptyFunc,
-                        'error':J.emptyFunc,
-                        'info':J.emptyFunc,
-                        'debug':J.emptyFunc
-                    });
-                    J.console.show();
-                    
-                }
-        });
-        if(query.console&&query.console == "firebug"){
-            /* not available any longer
-            if(!topNamespace.console){
-                // http://getfirebug.com/releases/lite/1.2/firebug-lite.js
-                $H.loadScript(J.path+"firebug/firebug-lite.js",{
-                    onSuccess : function(){
-                        if(firebug){
-                            firebug.env.height = 220;
-                            // http://getfirebug.com/releases/lite/1.2/firebug-lite.css
-                            firebug.env.css = "../../source/firebug/firebug-lite.css";
-                            J.out("...控制台开启");
-                            J.out("...测试成功");
-                        }
-                        
-                    }
-                });
-            }
-            */
+    $E.onDomReady(function(){
+        J.console._init();
+        if(query.console == "true"){
+            J.console=J.extend(J.console,{
+                'profile':J.emptyFunc,
+                'warn':J.emptyFunc,
+                'error':J.emptyFunc,
+                'info':J.emptyFunc,
+                'debug':J.emptyFunc
+            });
+            J.console.show();
+            
         }
-    
-
-    
-    
-    
-    
-    
-    
-    
+    });
     
     /**
      * runtime处理工具静态类
