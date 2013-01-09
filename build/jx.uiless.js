@@ -4067,10 +4067,133 @@ Jx().$package(function(J){
     
     // From: David Flanagan.
     
+    // In DOM-compliant browsers, our functions are trivial wrappers around
+    // addEventListener( ) and removeEventListener( ).
+    if (document.addEventListener) {
+        /**
+         * 
+         * 添加事件监听器
+         * 
+         * @method addEventListener
+         * @memberOf event
+         * 
+         * @param element 元素
+         * @param eventType 事件类型，不含on
+         * @param handler 事件处理器
+         * @return {Element} 返回元素
+         */
+        addEventListener = function(element, eventType, handler, options) {
+            //var id = $E._uid( );  // Generate a unique property name
+            if(customEvent["on"+eventType]){
+                customEvent["on"+eventType](element, eventType, handler, options);
+                return;
+            }
+            addOriginalEventListener(element, eventType, handler);
+        };
+        /**
+         * @ignore
+         */
+        addOriginalEventListener = function(element, eventType, handler) {
+            var isExist = false;
+            if(!element){
+                J.out('targetModel undefined:'+eventType+handler);
+            }
+            if(!element._eventTypes){
+                element._eventTypes = {};
+            }
+            if (!element._eventTypes[eventType]){
+                element._eventTypes[eventType] = [];
+            }
+            element.addEventListener(eventType, handler, false);
+            
+            var handlers= element._eventTypes[eventType];
+            for(var i=0; i<handlers.length; i++){
+                if(handlers[i] == handler){
+                    isExist = true;
+                    break;
+                }
+            }
+            if(!isExist){
+                handlers.push(handler);
+            }
+        };
+        
+        /**
+         * 
+         * 移除事件监听器
+         * 
+         * @memberOf event
+         * @method removeEventListener
+         * 
+         * @param element 元素
+         * @param eventType 事件类型，不含on
+         * @param handler 事件处理器
+         * @return {Element} 返回元素
+         */
+        removeEventListener = function(element, eventType, handler) {
+            if(customEvent["off"+eventType]){
+                customEvent["off"+eventType](element, eventType,handler);
+                return;
+            }
+            if(arguments.length == 3){
+                removeOriginalEventListener(element, eventType, handler);
+            }else{
+                removeOriginalEventListener(element, eventType);
+            }
+        };
+        /**
+         * @ignore
+         */
+        removeOriginalEventListener = function(element, eventType, handler) {
+            if(eventType){
+                if(arguments.length == 3){//修复传入了第三个参数,但是第三个参数为 undefined 的问题
+                    if(handler){
+                        element.removeEventListener(eventType, handler, false);
+                        if(element._eventTypes && element._eventTypes[eventType]){
+                            var handlers = element._eventTypes[eventType];
+                            for(var i=0; i<handlers.length; i++){
+                                if(handlers[i] === handler){
+                                    handlers[i]=null;
+                                    handlers.splice(i, 1);
+                                    break;
+                                }
+                            }
+                        }
+                    }else{
+//                        J.out('removeEventListener: handler is undefined. \n caller: '+ removeEventListener.caller);
+                        //J.out('removeEventListener: handler is undefined. \n element: '+ element + ', eventType:' + eventType);
+                    }
+                }else{
+                    
+                    if(element._eventTypes && element._eventTypes[eventType]){
+                        var handlers = element._eventTypes[eventType];
+                        
+                        for(var i=0; i<handlers.length; i++){
+                            element.removeEventListener(eventType, handlers[i], false);
+                        }
+                        element._eventTypes[eventType] = [];
+                    }
+                    
+                }
+            }else{
+                if(element._eventTypes){
+                    var eventTypes = element._eventTypes;
+                    for(var p in eventTypes){
+                        var handlers = element._eventTypes[p];
+                        for(var i=0; i<handlers.length; i++){
+                            element.removeEventListener(p, handlers[i], false);
+                        }
+                    }
+                    eventTypes = {};
+                }
+            }
+            
+        };
+    }
     // In IE 5 and later, we use attachEvent( ) and detachEvent( ), with a number of
     // hacks to make them compatible with addEventListener and removeEventListener.
-    if (J.browser.ie/*document.attachEvent*/) {//这里不能用特性判断, 否则opera也会使用这个方法绑定事件
-        //ie都用这个方法是因为ie9对标准的addEventListener支持不完整
+    else if (document.attachEvent) {//<del>这里不能用特性判断, 否则opera也会使用这个方法绑定事件</del>
+        //<del>ie都用这个方法是因为ie9对标准的addEventListener支持不完整</del>
         /**
          * 兼容ie的写法
          * @ignore
@@ -4278,129 +4401,6 @@ Jx().$package(function(J){
         $E._counter = 0;
         $E._uid = function(){
             return "h" + $E._counter++;
-        };
-    }
-    // In DOM-compliant browsers, our functions are trivial wrappers around
-    // addEventListener( ) and removeEventListener( ).
-    else if (document.addEventListener) {
-        /**
-         * 
-         * 添加事件监听器
-         * 
-         * @method addEventListener
-         * @memberOf event
-         * 
-         * @param element 元素
-         * @param eventType 事件类型，不含on
-         * @param handler 事件处理器
-         * @return {Element} 返回元素
-         */
-        addEventListener = function(element, eventType, handler, options) {
-            //var id = $E._uid( );  // Generate a unique property name
-            if(customEvent["on"+eventType]){
-                customEvent["on"+eventType](element, eventType, handler, options);
-                return;
-            }
-            addOriginalEventListener(element, eventType, handler);
-        };
-        /**
-         * @ignore
-         */
-        addOriginalEventListener = function(element, eventType, handler) {
-            var isExist = false;
-            if(!element){
-                J.out('targetModel undefined:'+eventType+handler);
-            }
-            if(!element._eventTypes){
-                element._eventTypes = {};
-            }
-            if (!element._eventTypes[eventType]){
-                element._eventTypes[eventType] = [];
-            }
-            element.addEventListener(eventType, handler, false);
-            
-            var handlers= element._eventTypes[eventType];
-            for(var i=0; i<handlers.length; i++){
-                if(handlers[i] == handler){
-                    isExist = true;
-                    break;
-                }
-            }
-            if(!isExist){
-                handlers.push(handler);
-            }
-        };
-        
-        /**
-         * 
-         * 移除事件监听器
-         * 
-         * @memberOf event
-         * @method removeEventListener
-         * 
-         * @param element 元素
-         * @param eventType 事件类型，不含on
-         * @param handler 事件处理器
-         * @return {Element} 返回元素
-         */
-        removeEventListener = function(element, eventType, handler) {
-            if(customEvent["off"+eventType]){
-                customEvent["off"+eventType](element, eventType,handler);
-                return;
-            }
-            if(arguments.length == 3){
-                removeOriginalEventListener(element, eventType, handler);
-            }else{
-                removeOriginalEventListener(element, eventType);
-            }
-        };
-        /**
-         * @ignore
-         */
-        removeOriginalEventListener = function(element, eventType, handler) {
-            if(eventType){
-                if(arguments.length == 3){//修复传入了第三个参数,但是第三个参数为 undefined 的问题
-                    if(handler){
-                        element.removeEventListener(eventType, handler, false);
-                        if(element._eventTypes && element._eventTypes[eventType]){
-                            var handlers = element._eventTypes[eventType];
-                            for(var i=0; i<handlers.length; i++){
-                                if(handlers[i] === handler){
-                                    handlers[i]=null;
-                                    handlers.splice(i, 1);
-                                    break;
-                                }
-                            }
-                        }
-                    }else{
-//                        J.out('removeEventListener: handler is undefined. \n caller: '+ removeEventListener.caller);
-                        //J.out('removeEventListener: handler is undefined. \n element: '+ element + ', eventType:' + eventType);
-                    }
-                }else{
-                    
-                    if(element._eventTypes && element._eventTypes[eventType]){
-                        var handlers = element._eventTypes[eventType];
-                        
-                        for(var i=0; i<handlers.length; i++){
-                            element.removeEventListener(eventType, handlers[i], false);
-                        }
-                        element._eventTypes[eventType] = [];
-                    }
-                    
-                }
-            }else{
-                if(element._eventTypes){
-                    var eventTypes = element._eventTypes;
-                    for(var p in eventTypes){
-                        var handlers = element._eventTypes[p];
-                        for(var i=0; i<handlers.length; i++){
-                            element.removeEventListener(p, handlers[i], false);
-                        }
-                    }
-                    eventTypes = {};
-                }
-            }
-            
         };
     }
     customEvent = {
@@ -9641,58 +9641,58 @@ Jx().$package(function(J){
     };
 
     
-    /**
-     * comet方法
-     * 
-     * @memberOf http
-     * @method  comet
-     * @param {String} uri uri地址
-     * @param {Object} option 配置对象
-     * @return {Object} 返回一个comet dom对象
-     */
-    comet = function(uri, option){
+    // /**
+    //  * comet方法
+    //  * 
+    //  * @memberOf http
+    //  * @method  comet
+    //  * @param {String} uri uri地址
+    //  * @param {Object} option 配置对象
+    //  * @return {Object} 返回一个comet dom对象
+    //  */
+    // comet = function(uri, option){
 
-        uri = uri || "";
-        option = {
-            method : option.method || "GET",
-            data : option.data || null,
-            arguments : option.arguments || null,
-            callback : option.callback || function(){},
-            onLoad : option.onLoad || function(){},
+    //     uri = uri || "";
+    //     option = {
+    //         method : option.method || "GET",
+    //         data : option.data || null,
+    //         arguments : option.arguments || null,
+    //         callback : option.callback || function(){},
+    //         onLoad : option.onLoad || function(){},
 
-            contentType: option.contentType ? option.contentType : "utf-8"
-        };
+    //         contentType: option.contentType ? option.contentType : "utf-8"
+    //     };
 
-        var connection;
-        if(J.browser.ie){
-            var htmlfile = new ActiveXObject("htmlfile");
-            htmlfile.open();
-            htmlfile.close();
-            var iframediv = htmlfile.createElement("div");
-            htmlfile.appendChild(iframediv);
-            htmlfile.parentWindow._parent = self;
-            iframediv.innerHTML = '<iframe id="_cometIframe" src="'+uri+'?callback=window.parent._parent.'+option.callback+'"></iframe>';
+    //     var connection;
+    //     if(J.browser.ie){
+    //         var htmlfile = new ActiveXObject("htmlfile");
+    //         htmlfile.open();
+    //         htmlfile.close();
+    //         var iframediv = htmlfile.createElement("div");
+    //         htmlfile.appendChild(iframediv);
+    //         htmlfile.parentWindow._parent = self;
+    //         iframediv.innerHTML = '<iframe id="_cometIframe" src="'+uri+'?callback=window.parent._parent.'+option.callback+'"></iframe>';
             
-            connection = htmlfile.getElementById("_cometIframe");
+    //         connection = htmlfile.getElementById("_cometIframe");
         
-        }
-        else{
-            connection = $D.node("iframe");
-            connection.setAttribute("id", "_cometIframe");
-            connection.setAttribute("src", uri+'?callback=window.parent._parent.'+option.callback);
-            connection.style.position = "absolute";
-            connection.style.visibility = "hidden";
-            connection.style.left = connection.style.top = "-999px";
-            connection.style.width = connection.style.height = "1px";
-            document.body.appendChild(connection);
-            self._parent = self;
-        };
+    //     }
+    //     else{
+    //         connection = $D.node("iframe");
+    //         connection.setAttribute("id", "_cometIframe");
+    //         connection.setAttribute("src", uri+'?callback=window.parent._parent.'+option.callback);
+    //         connection.style.position = "absolute";
+    //         connection.style.visibility = "hidden";
+    //         connection.style.left = connection.style.top = "-999px";
+    //         connection.style.width = connection.style.height = "1px";
+    //         document.body.appendChild(connection);
+    //         self._parent = self;
+    //     };
 
-        $E.on(connection,"load", option.onLoad);
+    //     $E.on(connection,"load", option.onLoad);
 
-        return connection;
+    //     return connection;
         
-    };
+    // };
     
 
     
