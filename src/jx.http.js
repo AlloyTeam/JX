@@ -174,58 +174,58 @@ Jx().$package(function(J){
     };
 
     
-    /**
-     * comet方法
-     * 
-     * @memberOf http
-     * @method  comet
-     * @param {String} uri uri地址
-     * @param {Object} option 配置对象
-     * @return {Object} 返回一个comet dom对象
-     */
-    comet = function(uri, option){
+    // /**
+    //  * comet方法
+    //  * 
+    //  * @memberOf http
+    //  * @method  comet
+    //  * @param {String} uri uri地址
+    //  * @param {Object} option 配置对象
+    //  * @return {Object} 返回一个comet dom对象
+    //  */
+    // comet = function(uri, option){
 
-        uri = uri || "";
-        option = {
-            method : option.method || "GET",
-            data : option.data || null,
-            arguments : option.arguments || null,
-            callback : option.callback || function(){},
-            onLoad : option.onLoad || function(){},
+    //     uri = uri || "";
+    //     option = {
+    //         method : option.method || "GET",
+    //         data : option.data || null,
+    //         arguments : option.arguments || null,
+    //         callback : option.callback || function(){},
+    //         onLoad : option.onLoad || function(){},
 
-            contentType: option.contentType ? option.contentType : "utf-8"
-        };
+    //         contentType: option.contentType ? option.contentType : "utf-8"
+    //     };
 
-        var connection;
-        if(J.browser.ie){
-            var htmlfile = new ActiveXObject("htmlfile");
-            htmlfile.open();
-            htmlfile.close();
-            var iframediv = htmlfile.createElement("div");
-            htmlfile.appendChild(iframediv);
-            htmlfile.parentWindow._parent = self;
-            iframediv.innerHTML = '<iframe id="_cometIframe" src="'+uri+'?callback=window.parent._parent.'+option.callback+'"></iframe>';
+    //     var connection;
+    //     if(J.browser.ie){
+    //         var htmlfile = new ActiveXObject("htmlfile");
+    //         htmlfile.open();
+    //         htmlfile.close();
+    //         var iframediv = htmlfile.createElement("div");
+    //         htmlfile.appendChild(iframediv);
+    //         htmlfile.parentWindow._parent = self;
+    //         iframediv.innerHTML = '<iframe id="_cometIframe" src="'+uri+'?callback=window.parent._parent.'+option.callback+'"></iframe>';
             
-            connection = htmlfile.getElementById("_cometIframe");
+    //         connection = htmlfile.getElementById("_cometIframe");
         
-        }
-        else{
-            connection = $D.node("iframe");
-            connection.setAttribute("id", "_cometIframe");
-            connection.setAttribute("src", uri+'?callback=window.parent._parent.'+option.callback);
-            connection.style.position = "absolute";
-            connection.style.visibility = "hidden";
-            connection.style.left = connection.style.top = "-999px";
-            connection.style.width = connection.style.height = "1px";
-            document.body.appendChild(connection);
-            self._parent = self;
-        };
+    //     }
+    //     else{
+    //         connection = $D.node("iframe");
+    //         connection.setAttribute("id", "_cometIframe");
+    //         connection.setAttribute("src", uri+'?callback=window.parent._parent.'+option.callback);
+    //         connection.style.position = "absolute";
+    //         connection.style.visibility = "hidden";
+    //         connection.style.left = connection.style.top = "-999px";
+    //         connection.style.width = connection.style.height = "1px";
+    //         document.body.appendChild(connection);
+    //         self._parent = self;
+    //     };
 
-        $E.on(connection,"load", option.onLoad);
+    //     $E.on(connection,"load", option.onLoad);
 
-        return connection;
+    //     return connection;
         
-    };
+    // };
     
 
     
