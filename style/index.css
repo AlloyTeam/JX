@@ -29,7 +29,7 @@ body {
 	font-size: 14px;
 }
 .hide { display:none }
-.opa0 { opacity: 0 }
+/* .opa0 { opacity: 0 } */
 .full {
 	/* fallback */
   background: #AED2E4 url(image/bg.png) repeat-x;

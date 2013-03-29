@@ -94,9 +94,9 @@ Jx().$package('JxHome', function (J) {
 		$E.on($navUl, 'click', navItemClick);
 		$E.on(window, 'resize', resize);
 		$E.on($ifm, 'load', function () {
-			$FX.animate($ifm, {
-				opacity: 1
-			});
+			// $FX.animate($ifm, {
+				// opacity: 1
+			// });
 			resize();
 		});
 		$E.on(window, 'hashchange', function(){
