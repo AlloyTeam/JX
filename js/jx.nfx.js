@@ -153,8 +153,10 @@ Jx().$package(function(J){
 			end = 0
 			frame(run)
 
-			function run(t) {
-				var delta = t - start
+			function run() {
+				//fix chrome24 DOMHighResTimeStamp bug		
+				var timestampNow  = window.performance && window.performance.now ? (performance.now() + performance.timing.navigationStart) : +new Date(),
+					delta = timestampNow - start;
 				if (delta > time || stop) {
 					to = isFinite(to) ? to: 1
 					stop ? end && fn(to) : fn(to)
