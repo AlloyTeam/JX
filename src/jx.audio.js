@@ -126,7 +126,7 @@ Jx().$package(function(J){
                     this._el.pause();
                 },
                 stop : function(){
-                    this._el.duration = Infinity;
+                    this._el.currentTime = Infinity;
                 },
 
                 getVolume : function(){
