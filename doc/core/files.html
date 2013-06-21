@@ -1,162 +1,36 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="zh-ch">
 	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8"" />
-		
-		<title>Jx API 开发参考文档 - 源文件索引</title>
+		<meta charset="UTF-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
+		<title>Jx API 开发参考文档 - 源文件索引</title>
+		<link href="http://alloyteam.github.io/style/bootstrap.min.css" rel="stylesheet" media="screen">
 		<style type="text/css">
-		/* default.css */
-
-body
-{
-	font: 12px 'Lucida Grande', Tahoma, Arial, Helvetica, sans-serif;
-	/*width: 800px;*/
-	margin:0;
-	padding:0;
-}
-
-#header
-{
-	clear: both;
-	/*background-color: #f2f2e2;*/
-	padding: 8px;
-}
-
-h1
-{
-	font-size: 150%;
-	font-weight: bold;
-	padding: 0;
-	margin: 1em 0 0 .3em;
-}
-
-hr
-{
-	border: none 0;
-	border-top: 0px solid #e0e0e0;
-	height: 0px;
-}
-
-pre.code
-{
-	display: block;
-	padding: 8px;
-	border: 1px dashed #ccc;
-	background: #ffffee;
-	color: #666666;
-}
-
-#index
-{
-	float: left;
-	width: 160px;
-	position: absolute;
-	left: 8px;
-	background-color: #efefe0;
-	border:0px solid #eeeeee;
-	padding: 15px 8px 8px;
-}
-
-#content
-{
-	margin-left: 190px;
-	width: 600px;
-}
-
-.classList
-{
-	list-style-type: none;
-	padding: 0;
-	margin: 0 0 0 8px;
-	font-family: arial, sans-serif;
-	font-size: 1em;
-	overflow: auto;
-}
-
-.classList li
-{
-	padding: 0;
-	margin: 0 0 8px 0;
-}
-
-.summaryTable { width: 100%; }
-h1{
-	margin:0;
-}
-h1.classTitle
-{
-	font-size:170%;
-	line-height:130%;
-	background:#000044;
-	border-bottom: 1px solid #cccccc;
-	padding: 10px;
-	color:#ffffff;
-}
-
-h2 { font-size: 110%; }
-caption, div.sectionTitle
-{
+		caption, div.sectionTitle{
 	background-color: #003399;
 	color: #fff;
-	font-size:118%;
+	font-size: 118%;
 	text-align: left;
 	padding: 8px 6px;
 	border: 1px #7F8FB1 solid;
 }
 
-div.sectionTitle { margin-bottom: 8px; }
-.summaryTable thead { display: none; }
-
-.summaryTable td
-{
-	vertical-align: top;
-	padding: 4px;
-	border-bottom: 1px #7F8FB1 solid;
-	border-right: 1px #7F8FB1 solid;
+.detailTitle {
+	padding: 0 5px;
+	line-height:25px;
+	background: #ececec;
+	border-bottom: 1px solid #cccccc; 
+}
+.detailTitle span.methodType{
+	display:none;
+	color: #999999;
+	
+}
+.detailTitle span.methodReturn{
+	display:none;
 }
 
-/*col#summaryAttributes {}*/
-.summaryTable td.attributes
-{
-	border-left: 1px #7F8FB1 solid;
-	width: 140px;
-	text-align: right;
-}
-
-td.attributes, .fixedFont
-{
-	line-height: 15px;
-	color: #002EBE;
-	font-family: "Courier New",Courier,monospace;
-	font-size: 13px;
-}
-
-.summaryTable td.nameDescription
-{
-	text-align: left;
-	font-size: 13px;
-	line-height: 15px;
-}
-
-.summaryTable td.nameDescription
-{
-	line-height: 15px;
-	padding: 4px;
-	padding-left: 4px;
-	color: #888888;
-}
-
-.summaryTable { margin-bottom: 8px; }
-
-ul.inheritsList
-{
-	list-style: square;
-	margin-left: 20px;
-	padding-left: 0;
-}
 .description{
 	color: #888888;
 	margin-left: 20px; 
@@ -172,27 +46,10 @@ ul.inheritsList
 .description dt { margin: 10px 0 0 20px; }
 .description dd { color: #748189; }
 
-
 .detailList {
 	margin-left: 20px; 
 	line-height: 15px;
 }
-.detailTitle{
-	padding: 0 5px;
-	line-height:25px;
-	background: #ececec;
-	border-bottom: 1px solid #cccccc; 
-}
-.detailTitle span.methodType{
-	display:none;
-	color: #999999;
-	
-}
-.detailTitle span.methodReturn{
-	display:none;
-}
-
-
 .detailList dt { margin: 10px 0 0 20px; }
 .detailList dt b{ color: #222288; }
 .detailList dd { color: #748189; margin: 0 0 0 30px;}
@@ -208,45 +65,36 @@ ul.inheritsList
 	margin-left: 0;
 	color: #444444;
 }
-
-.light, td.attributes, .light a:link, .light a:visited
-{
-	color: #777;
-	/*font-style: italic;*/
-}
-
-.fineprint
-{
-	text-align: right;
-	padding: 5px;
-	font-size: 12px;
-	color: #666666;
-	background:#f2f2e2;
-	width:590px;
-	margin: 10px 0 0 190px;
-}
 		</style>
 	</head>
 	
 	<body>
-		<div id="header">
-	<h1>Jx(Javascript Extend Tools) 1.0 API 开发参考文档</h1>
-	<p><a href="http://alloyteam.github.com/JX/" title="访问Jx官网">http://alloyteam.github.com/JX/</a></p>
-	<p>
-		站在巨人的肩上 Standing on shoulders of giants<br />
-		By AlloyTeam(http://www.alloyteam.com) 2012
-	</p>
-	
+	<div class="container">
+		<div class="page-header">
+    <h2>
+    	JX(Javascript Extend Tools) 1.0 API 开发参考文档<br />
+    	<small>站在巨人的肩上 Standing on shoulders of giants</small>
+    </h2>
+    <a href="http://alloyteam.github.io/JX/" class="btn btn-primary" target="_blank"> View on Github</a>
 </div>
 		
-		<div id="index">
-			<div align="center"><a href="index.html">Class Index</a>
-| <a href="files.html">File Index</a></div>
-<hr />
-<h2>Classes</h2>
+		<div class="container-fluid">
+  			<div class="row-fluid">
+
+				<div id="index" class="span3">
+					<div align="center">
+	<ul class="nav nav-tabs">
+		<li>
+	    	<a href="index.html">Class Index</a>
+	  	</li>
+		<li>
+			<a href="files.html">File Index</a>
+		</li>
+	</ul>
+</div>
 <ul class="classList">
 	
-	<li><i><a href="symbols/_global_.html">_global_</a></i></li>
+	<li><em><a href="symbols/_global_.html">_global_</a></em></li>
 	
 	<li><a href="symbols/array.html">array</a></li>
 	
@@ -302,14 +150,14 @@ ul.inheritsList
 	
 </ul>
 <hr />
-		</div>
+				</div>
 		
-		<div id="content">
-			<h1 class="classTitle">文件索引</h1>
+				<div id="content" class="span9">
+			<h3 class="classTitle">文件索引</h3>
 			
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.http.js.html">jx.http.js</a></h2>
+				<h4><a href="symbols/src/src_jx.http.js.html">jx.http.js</a></h4>
 				JET (Javascript Extension Tools) Copyright (c) 2009, KDV.cn, All rights reserved.Code licensed under the BSD License:http://developer.kdv.cn/jet/license.txt
 
 Jx!
@@ -329,7 +177,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.array.js.html">jx.array.js</a></h2>
+				<h4><a href="symbols/src/src_jx.array.js.html">jx.array.js</a></h4>
 				JET (Javascript Extension Tools) Copyright (c) 2009, KDV.cn, All rights reserved.Code licensed under the BSD License:http://developer.kdv.cn/jet/license.txt
 
 Jx!
@@ -349,7 +197,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.fx.js.html">jx.fx.js</a></h2>
+				<h4><a href="symbols/src/src_jx.fx.js.html">jx.fx.js</a></h4>
 				JET (Javascript Extension Tools) Copyright (c) 2009, KDV.cn, All rights reserved.Code licensed under the BSD License:http://developer.kdv.cn/jet/license.txt
 
 Jx!
@@ -369,7 +217,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.cookie.js.html">jx.cookie.js</a></h2>
+				<h4><a href="symbols/src/src_jx.cookie.js.html">jx.cookie.js</a></h4>
 				JET (Javascript Extension Tools) Copyright (c) 2009, KDV.cn, All rights reserved.Code licensed under the BSD License:http://developer.kdv.cn/jet/license.txt
 
 Jx!
@@ -389,7 +237,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.string.js.html">jx.string.js</a></h2>
+				<h4><a href="symbols/src/src_jx.string.js.html">jx.string.js</a></h4>
 				JET (Javascript Extension Tools) Copyright (c) 2009, KDV.cn, All rights reserved.Code licensed under the BSD License:http://developer.kdv.cn/jet/license.txt
 
 Jx!
@@ -409,7 +257,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.console.js.html">jx.console.js</a></h2>
+				<h4><a href="symbols/src/src_jx.console.js.html">jx.console.js</a></h4>
 				JET (Javascript Extension Tools) Copyright (c) 2009, All rights reserved.
 
 Jx!
@@ -429,7 +277,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.base.js.html">..\src\jx.base.js</a></h2>
+				<h4><a href="symbols/src/src_jx.base.js.html">..\src\jx.base.js</a></h4>
 				
 				<dl>
 					
@@ -441,7 +289,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.browser.js.html">..\src\jx.browser.js</a></h2>
+				<h4><a href="symbols/src/src_jx.browser.js.html">..\src\jx.browser.js</a></h4>
 				
 				<dl>
 					
@@ -453,7 +301,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.core.js.html">..\src\jx.core.js</a></h2>
+				<h4><a href="symbols/src/src_jx.core.js.html">..\src\jx.core.js</a></h4>
 				
 				<dl>
 					
@@ -465,7 +313,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.date.js.html">..\src\jx.date.js</a></h2>
+				<h4><a href="symbols/src/src_jx.date.js.html">..\src\jx.date.js</a></h4>
 				
 				<dl>
 					
@@ -477,7 +325,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.dom.js.html">..\src\jx.dom.js</a></h2>
+				<h4><a href="symbols/src/src_jx.dom.js.html">..\src\jx.dom.js</a></h4>
 				
 				<dl>
 					
@@ -489,7 +337,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.event.eventparser.js.html">..\src\jx.event.eventparser.js</a></h2>
+				<h4><a href="symbols/src/src_jx.event.eventparser.js.html">..\src\jx.event.eventparser.js</a></h4>
 				
 				<dl>
 					
@@ -501,7 +349,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.event.eventproxy.js.html">..\src\jx.event.eventproxy.js</a></h2>
+				<h4><a href="symbols/src/src_jx.event.eventproxy.js.html">..\src\jx.event.eventproxy.js</a></h4>
 				
 				<dl>
 					
@@ -513,7 +361,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.event.js.html">..\src\jx.event.js</a></h2>
+				<h4><a href="symbols/src/src_jx.event.js.html">..\src\jx.event.js</a></h4>
 				
 				<dl>
 					
@@ -525,7 +373,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.format.js.html">..\src\jx.format.js</a></h2>
+				<h4><a href="symbols/src/src_jx.format.js.html">..\src\jx.format.js</a></h4>
 				
 				<dl>
 					
@@ -537,7 +385,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.json.js.html">..\src\jx.json.js</a></h2>
+				<h4><a href="symbols/src/src_jx.json.js.html">..\src\jx.json.js</a></h4>
 				
 				<dl>
 					
@@ -549,7 +397,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.loader.js.html">..\src\jx.loader.js</a></h2>
+				<h4><a href="symbols/src/src_jx.loader.js.html">..\src\jx.loader.js</a></h4>
 				
 				<dl>
 					
@@ -561,7 +409,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.mini.js.html">..\src\jx.mini.js</a></h2>
+				<h4><a href="symbols/src/src_jx.mini.js.html">..\src\jx.mini.js</a></h4>
 				
 				<dl>
 					
@@ -573,7 +421,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.nfx.js.html">..\src\jx.nfx.js</a></h2>
+				<h4><a href="symbols/src/src_jx.nfx.js.html">..\src\jx.nfx.js</a></h4>
 				
 				<dl>
 					
@@ -585,7 +433,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.number.js.html">..\src\jx.number.js</a></h2>
+				<h4><a href="symbols/src/src_jx.number.js.html">..\src\jx.number.js</a></h4>
 				
 				<dl>
 					
@@ -597,7 +445,7 @@ Jx!
 			<hr />
 			
 			<div>
-				<h2><a href="symbols/src/src_jx.sound.js.html">..\src\jx.sound.js</a></h2>
+				<h4><a href="symbols/src/src_jx.sound.js.html">..\src\jx.sound.js</a></h4>
 				
 				<dl>
 					
@@ -610,9 +458,12 @@ Jx!
 			
 			
 		</div>
-		<div class="fineprint" style="clear:both">
+	</div>
+	<div class="footer">
+		<div class="container">
 			&copy;1998-2012<br />
-			文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.4.0 on Mon May 21 2012 15:55:38 GMT+0800 (CST)
+			文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.4.0 on Fri Jun 21 2013 14:53:56 GMT+0800 (CST)
 		</div>
+	</div>
 	</body>
 </html>

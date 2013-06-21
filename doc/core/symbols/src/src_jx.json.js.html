@@ -214,36 +214,36 @@
 <span class='line'>207</span> </span><span class="WHIT">        </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">n</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NUMB">10</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="STRN">'0'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">n</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">n</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>208</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
 <span class='line'>209</span> </span><span class="WHIT">    </span><span class="COMM">// if (typeof Date.prototype.toJSON !== 'function') {</span><span class="WHIT">
-<span class='line'>210</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">Date.prototype.toJSON</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">'function'</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>211</span> </span><span class="WHIT">        </span><span class="COMM">/** 
-<span class='line'>212</span>          * @ignore
-<span class='line'>213</span>          */</span><span class="WHIT">
-<span class='line'>214</span> </span><span class="WHIT">        </span><span class="NAME">Date.prototype.toJSON</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>210</span> </span><span class="WHIT">    </span><span class="COMM">// if (typeof Date.prototype.toJSON !== 'function' && false) {</span><span class="WHIT">
+<span class='line'>211</span> </span><span class="WHIT">        </span><span class="COMM">// /** </span><span class="WHIT">
+<span class='line'>212</span> </span><span class="WHIT">         </span><span class="COMM">// * @ignore</span><span class="WHIT">
+<span class='line'>213</span> </span><span class="WHIT">         </span><span class="COMM">// */</span><span class="WHIT">
+<span class='line'>214</span> </span><span class="WHIT">        </span><span class="COMM">// Date.prototype.toJSON = function (key) {</span><span class="WHIT">
 <span class='line'>215</span> 
-<span class='line'>216</span> </span><span class="WHIT">            </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">isFinite</span><span class="PUNC">(</span><span class="NAME">this.valueOf</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT">
-<span class='line'>217</span> </span><span class="WHIT">                   </span><span class="NAME">this.getUTCFullYear</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">   </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">'-'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT">
-<span class='line'>218</span> </span><span class="WHIT">                 </span><span class="NAME">f</span><span class="PUNC">(</span><span class="NAME">this.getUTCMonth</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">'-'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT">
-<span class='line'>219</span> </span><span class="WHIT">                 </span><span class="NAME">f</span><span class="PUNC">(</span><span class="NAME">this.getUTCDate</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">      </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">'T'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT">
-<span class='line'>220</span> </span><span class="WHIT">                 </span><span class="NAME">f</span><span class="PUNC">(</span><span class="NAME">this.getUTCHours</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">     </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">':'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT">
-<span class='line'>221</span> </span><span class="WHIT">                 </span><span class="NAME">f</span><span class="PUNC">(</span><span class="NAME">this.getUTCMinutes</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">   </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">':'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT">
-<span class='line'>222</span> </span><span class="WHIT">                 </span><span class="NAME">f</span><span class="PUNC">(</span><span class="NAME">this.getUTCSeconds</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT">   </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">'Z'</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>223</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>224</span> </span><span class="WHIT">        </span><span class="COMM">/** 
-<span class='line'>225</span>          * @ignore
-<span class='line'>226</span>          */</span><span class="WHIT">
-<span class='line'>227</span> </span><span class="WHIT">        </span><span class="NAME">String.prototype.toJSON</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT">
-<span class='line'>228</span> </span><span class="WHIT">        </span><span class="COMM">/** 
-<span class='line'>229</span>          * @ignore
-<span class='line'>230</span>          */</span><span class="WHIT">
-<span class='line'>231</span> </span><span class="WHIT">        </span><span class="NAME">Number.prototype.toJSON</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT">
-<span class='line'>232</span> </span><span class="WHIT">        </span><span class="COMM">/** 
-<span class='line'>233</span>          * @ignore
-<span class='line'>234</span>          */</span><span class="WHIT">
-<span class='line'>235</span> </span><span class="WHIT">        </span><span class="NAME">Boolean.prototype.toJSON</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>236</span> </span><span class="WHIT">            </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.valueOf</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>237</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>216</span> </span><span class="WHIT">            </span><span class="COMM">// return isFinite(this.valueOf()) ?</span><span class="WHIT">
+<span class='line'>217</span> </span><span class="WHIT">                   </span><span class="COMM">// this.getUTCFullYear()   + '-' +</span><span class="WHIT">
+<span class='line'>218</span> </span><span class="WHIT">                 </span><span class="COMM">// f(this.getUTCMonth() + 1) + '-' +</span><span class="WHIT">
+<span class='line'>219</span> </span><span class="WHIT">                 </span><span class="COMM">// f(this.getUTCDate())      + 'T' +</span><span class="WHIT">
+<span class='line'>220</span> </span><span class="WHIT">                 </span><span class="COMM">// f(this.getUTCHours())     + ':' +</span><span class="WHIT">
+<span class='line'>221</span> </span><span class="WHIT">                 </span><span class="COMM">// f(this.getUTCMinutes())   + ':' +</span><span class="WHIT">
+<span class='line'>222</span> </span><span class="WHIT">                 </span><span class="COMM">// f(this.getUTCSeconds())   + 'Z' : null;</span><span class="WHIT">
+<span class='line'>223</span> </span><span class="WHIT">        </span><span class="COMM">// };</span><span class="WHIT">
+<span class='line'>224</span> </span><span class="WHIT">        </span><span class="COMM">// /** </span><span class="WHIT">
+<span class='line'>225</span> </span><span class="WHIT">         </span><span class="COMM">// * @ignore</span><span class="WHIT">
+<span class='line'>226</span> </span><span class="WHIT">         </span><span class="COMM">// */</span><span class="WHIT">
+<span class='line'>227</span> </span><span class="WHIT">        </span><span class="COMM">// String.prototype.toJSON =</span><span class="WHIT">
+<span class='line'>228</span> </span><span class="WHIT">        </span><span class="COMM">// /** </span><span class="WHIT">
+<span class='line'>229</span> </span><span class="WHIT">         </span><span class="COMM">// * @ignore</span><span class="WHIT">
+<span class='line'>230</span> </span><span class="WHIT">         </span><span class="COMM">// */</span><span class="WHIT">
+<span class='line'>231</span> </span><span class="WHIT">        </span><span class="COMM">// Number.prototype.toJSON =</span><span class="WHIT">
+<span class='line'>232</span> </span><span class="WHIT">        </span><span class="COMM">// /** </span><span class="WHIT">
+<span class='line'>233</span> </span><span class="WHIT">         </span><span class="COMM">// * @ignore</span><span class="WHIT">
+<span class='line'>234</span> </span><span class="WHIT">         </span><span class="COMM">// */</span><span class="WHIT">
+<span class='line'>235</span> </span><span class="WHIT">        </span><span class="COMM">// Boolean.prototype.toJSON = function (key) {</span><span class="WHIT">
+<span class='line'>236</span> </span><span class="WHIT">            </span><span class="COMM">// return this.valueOf();</span><span class="WHIT">
+<span class='line'>237</span> </span><span class="WHIT">        </span><span class="COMM">// };</span><span class="WHIT">
 <span class='line'>238</span> 
-<span class='line'>239</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>239</span> </span><span class="WHIT">    </span><span class="COMM">// }</span><span class="WHIT">
 <span class='line'>240</span> 
 <span class='line'>241</span> </span><span class="WHIT">    </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">cx</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="REGX">/[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g</span><span class="PUNC">,</span><span class="WHIT">
 <span class='line'>242</span> </span><span class="WHIT">        </span><span class="NAME">escapable</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="REGX">/[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g</span><span class="PUNC">,</span><span class="WHIT">

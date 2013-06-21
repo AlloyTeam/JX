@@ -1,162 +1,36 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="zh-ch">
 	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta charset="UTF-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
 		<title>Jx API 开发参考文档 - dom</title>
-
+		<link href="http://alloyteam.github.io/style/bootstrap.min.css" rel="stylesheet" media="screen">
 		<style type="text/css">
-			/* default.css */
-
-body
-{
-	font: 12px 'Lucida Grande', Tahoma, Arial, Helvetica, sans-serif;
-	/*width: 800px;*/
-	margin:0;
-	padding:0;
-}
-
-#header
-{
-	clear: both;
-	/*background-color: #f2f2e2;*/
-	padding: 8px;
-}
-
-h1
-{
-	font-size: 150%;
-	font-weight: bold;
-	padding: 0;
-	margin: 1em 0 0 .3em;
-}
-
-hr
-{
-	border: none 0;
-	border-top: 0px solid #e0e0e0;
-	height: 0px;
-}
-
-pre.code
-{
-	display: block;
-	padding: 8px;
-	border: 1px dashed #ccc;
-	background: #ffffee;
-	color: #666666;
-}
-
-#index
-{
-	float: left;
-	width: 160px;
-	position: absolute;
-	left: 8px;
-	background-color: #efefe0;
-	border:0px solid #eeeeee;
-	padding: 15px 8px 8px;
-}
-
-#content
-{
-	margin-left: 190px;
-	width: 600px;
-}
-
-.classList
-{
-	list-style-type: none;
-	padding: 0;
-	margin: 0 0 0 8px;
-	font-family: arial, sans-serif;
-	font-size: 1em;
-	overflow: auto;
-}
-
-.classList li
-{
-	padding: 0;
-	margin: 0 0 8px 0;
-}
-
-.summaryTable { width: 100%; }
-h1{
-	margin:0;
-}
-h1.classTitle
-{
-	font-size:170%;
-	line-height:130%;
-	background:#000044;
-	border-bottom: 1px solid #cccccc;
-	padding: 10px;
-	color:#ffffff;
-}
-
-h2 { font-size: 110%; }
-caption, div.sectionTitle
-{
+			caption, div.sectionTitle{
 	background-color: #003399;
 	color: #fff;
-	font-size:118%;
+	font-size: 118%;
 	text-align: left;
 	padding: 8px 6px;
 	border: 1px #7F8FB1 solid;
 }
 
-div.sectionTitle { margin-bottom: 8px; }
-.summaryTable thead { display: none; }
-
-.summaryTable td
-{
-	vertical-align: top;
-	padding: 4px;
-	border-bottom: 1px #7F8FB1 solid;
-	border-right: 1px #7F8FB1 solid;
+.detailTitle {
+	padding: 0 5px;
+	line-height:25px;
+	background: #ececec;
+	border-bottom: 1px solid #cccccc; 
+}
+.detailTitle span.methodType{
+	display:none;
+	color: #999999;
+	
+}
+.detailTitle span.methodReturn{
+	display:none;
 }
 
-/*col#summaryAttributes {}*/
-.summaryTable td.attributes
-{
-	border-left: 1px #7F8FB1 solid;
-	width: 140px;
-	text-align: right;
-}
-
-td.attributes, .fixedFont
-{
-	line-height: 15px;
-	color: #002EBE;
-	font-family: "Courier New",Courier,monospace;
-	font-size: 13px;
-}
-
-.summaryTable td.nameDescription
-{
-	text-align: left;
-	font-size: 13px;
-	line-height: 15px;
-}
-
-.summaryTable td.nameDescription
-{
-	line-height: 15px;
-	padding: 4px;
-	padding-left: 4px;
-	color: #888888;
-}
-
-.summaryTable { margin-bottom: 8px; }
-
-ul.inheritsList
-{
-	list-style: square;
-	margin-left: 20px;
-	padding-left: 0;
-}
 .description{
 	color: #888888;
 	margin-left: 20px; 
@@ -172,27 +46,10 @@ ul.inheritsList
 .description dt { margin: 10px 0 0 20px; }
 .description dd { color: #748189; }
 
-
 .detailList {
 	margin-left: 20px; 
 	line-height: 15px;
 }
-.detailTitle{
-	padding: 0 5px;
-	line-height:25px;
-	background: #ececec;
-	border-bottom: 1px solid #cccccc; 
-}
-.detailTitle span.methodType{
-	display:none;
-	color: #999999;
-	
-}
-.detailTitle span.methodReturn{
-	display:none;
-}
-
-
 .detailList dt { margin: 10px 0 0 20px; }
 .detailList dt b{ color: #222288; }
 .detailList dd { color: #748189; margin: 0 0 0 30px;}
@@ -208,50 +65,41 @@ ul.inheritsList
 	margin-left: 0;
 	color: #444444;
 }
-
-.light, td.attributes, .light a:link, .light a:visited
-{
-	color: #777;
-	/*font-style: italic;*/
-}
-
-.fineprint
-{
-	text-align: right;
-	padding: 5px;
-	font-size: 12px;
-	color: #666666;
-	background:#f2f2e2;
-	width:590px;
-	margin: 10px 0 0 190px;
-}
 		</style>
 	</head>
 
 	<body>
+	<div class="container">
 <!-- ============================== header ================================= -->	
 		<!-- begin static/header.html -->
-		<div id="header">
-	<h1>Jx(Javascript Extend Tools) 1.0 API 开发参考文档</h1>
-	<p><a href="http://alloyteam.github.com/JX/" title="访问Jx官网">http://alloyteam.github.com/JX/</a></p>
-	<p>
-		站在巨人的肩上 Standing on shoulders of giants<br />
-		By AlloyTeam(http://www.alloyteam.com) 2012
-	</p>
-	
+		<div class="page-header">
+    <h2>
+    	JX(Javascript Extend Tools) 1.0 API 开发参考文档<br />
+    	<small>站在巨人的肩上 Standing on shoulders of giants</small>
+    </h2>
+    <a href="http://alloyteam.github.io/JX/" class="btn btn-primary" target="_blank"> View on Github</a>
 </div>
 		<!-- end static/header.html -->
 
+		<div class="container-fluid">
+  			<div class="row-fluid">
+
 <!-- ============================== classes index ============================ -->
-		<div id="index">
-			<!-- begin publish.classesIndex -->
-			<div align="center"><a href="../index.html">Class Index</a>
-| <a href="../files.html">File Index</a></div>
-<hr />
-<h2>Classes</h2>
+				<div id="index" class="span3">
+					<!-- begin publish.classesIndex -->
+					<div align="center">
+	<ul class="nav nav-tabs">
+		<li>
+	    	<a href="../index.html">Class Index</a>
+	  	</li>
+		<li>
+			<a href="../files.html">File Index</a>
+		</li>
+	</ul>
+</div>
 <ul class="classList">
 	
-	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	<li><em><a href="../symbols/_global_.html">_global_</a></em></li>
 	
 	<li><a href="../symbols/array.html">array</a></li>
 	
@@ -307,3056 +155,3188 @@ ul.inheritsList
 	
 </ul>
 <hr />
-			<!-- end publish.classesIndex -->
-		</div>
+					<!-- end publish.classesIndex -->
+				</div>
 		
-		<div id="content">
-<!-- ============================== class title ============================ -->
-			<h1 class="classTitle">
-				
-				命名空间 dom
-			</h1>
+				<div id="content" class="span9">
+		<!-- ============================== class title ============================ -->
+					<h3 class="classTitle">
+						
+						命名空间 dom
+					</h3>
 
-<!-- ============================== class summary ========================== -->			
-			<p class="description">
-				
-			
-				
-				
-				
-					<br /><i>Defined in: </i> <a href="../symbols/src/src_jx.dom.js.html">jx.dom.js</a>.
-				
-			</p>
+		<!-- ============================== class summary ========================== -->			
+					<p class="description">
+						
+					
+						
+						
+						
+							<br /><i>Defined in: </i> <a href="../symbols/src/src_jx.dom.js.html">jx.dom.js</a>.
+						
+					</p>
 
-<!-- ============================== constructor summary ==================== -->			
-			
-			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class dom.">
-				<caption>命名空间 概要</caption>
-				<thead>
-					<tr>
-						<th scope="col">Constructor Attributes</th>
-						<th scope="col">Constructor Name and Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="attributes">&nbsp;</td>
-						<td class="nameDescription" >
-							<div class="fixedFont">
-								<b><a href="../symbols/dom.html#constructor">dom</a></b>
+		<!-- ============================== constructor summary ==================== -->			
+					
+					<table class="table table-bordered table-striped table-hover" summary="A summary of the constructor documented in the class dom.">
+						<caption>命名空间 概要</caption>
+						<thead>
+							<tr>
+								<th scope="col">Constructor Attributes</th>
+								<th scope="col">Constructor Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription" >
+									<div class="fixedFont">
+										<b><a href="../symbols/dom.html#constructor">dom</a></b>
+									</div>
+									<div class="description">dom 名字空间</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					
+
+		<!-- ============================== properties summary ===================== -->
+					
+
+		<!-- ============================== methods summary ======================== -->
+					
+						
+						
+						<table class="table table-bordered table-striped table-hover" summary="A summary of the methods documented in the class dom.">
+							<caption>方法概要</caption>
+							<thead>
+								<tr>
+									<th scope="col">Method Attributes</th>
+									<th scope="col">Method Name and Description</th>
+								</tr>
+							</thead>
+							<tbody>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.addClass">addClass</a></b>(el, className)
+										</div>
+										<div class="description">给元素添加 class</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.addCssText">addCssText</a></b>(el, cssText)
+										</div>
+										<div class="description">给元素添加cssText</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.contains">contains</a></b>(parent, child, containSelf)
+										</div>
+										<div class="description">判断一个节点是否是某个父节点的子节点, 默认不包含parent === child的情况</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.createStyleNode">createStyleNode</a></b>(样式内容，支持string和object, id)
+										</div>
+										<div class="description">创建 style 标签</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getAttributeByParent">getAttributeByParent</a></b>(element, startNode, topNode)
+										</div>
+										<div class="description">从起始元素查找某个属性，直到找到，或者到达顶层元素位置Returns the text content of the HTMLElement.</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getClass">getClass</a></b>(el, className)
+										</div>
+										<div class="description">获取元素的class属性</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getClientHeight">getClientHeight</a></b>(el)
+										</div>
+										<div class="description">获取当前视窗的高度Returns the current height of the viewport.</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getClientWidth">getClientWidth</a></b>(el)
+										</div>
+										<div class="description">获取元素的client宽度Returns the current width of the viewport.</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getClientXY">getClientXY</a></b>(el)
+										</div>
+										<div class="description">获取对象坐标</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getCssText">getCssText</a></b>(el)
+										</div>
+										<div class="description">获取元素的cssText</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getDoc">getDoc</a></b>(element)
+										</div>
+										<div class="description">获取元素所属的根文档</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getDocumentElement">getDocumentElement</a></b>()
+										</div>
+										<div class="description">获取DocumentElement</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getHeight">getHeight</a></b>(el)
+										</div>
+										<div class="description">获取高度的简便方法</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getHref">getHref</a></b>(el)
+										</div>
+										<div class="description">取一个a标签的href的绝对路径</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getOffsetHeight">getOffsetHeight</a></b>(el)
+										</div>
+										<div class="description">获取当前视窗的高度Returns the current height of the viewport.</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getOffsetWidth">getOffsetWidth</a></b>(el)
+										</div>
+										<div class="description">获取元素的client宽度Returns the current width of the viewport.</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getPosX">getPosX</a></b>(el)
+										</div>
+										<div class="description">获取x坐标的简便方法</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getPosY">getPosY</a></b>(el)
+										</div>
+										<div class="description">获取y坐标的简便方法</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getRelativeXY">getRelativeXY</a></b>(el, relativeEl)
+										</div>
+										<div class="description">获取对象相对一个节点的坐标</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getScrollHeight">getScrollHeight</a></b>(element)
+										</div>
+										<div class="description">获取文档的 scroll 高度，即文档的实际高度Returns the height of the document.</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getScrollLeft">getScrollLeft</a></b>(document)
+										</div>
+										<div class="description">获取当前文档的左边已卷动的宽度Returns the left scroll value of the document</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getScrollTop">getScrollTop</a></b>(document)
+										</div>
+										<div class="description">获取当前文档的上边已卷动的宽度Returns the top scroll value of the document</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getScrollWidth">getScrollWidth</a></b>(element)
+										</div>
+										<div class="description">获取文档的 scroll 宽度，即文档的实际宽度Returns the width of the document.</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getSelectionText">getSelectionText</a></b>(win)
+										</div>
+										<div class="description">获取选择的文本</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getStyle">getStyle</a></b>(el, styleName)
+										</div>
+										<div class="description">获取元素的当前实际样式，css 属性需要用驼峰式写法，如：fontFamily</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getText">getText</a></b>(element)
+										</div>
+										<div class="description">获取元素中的文本内容Returns the text content of the HTMLElement.</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getTextFieldSelection">getTextFieldSelection</a></b>(el)
+										</div>
+										<div class="description">FireFox 下获取 input 或者 textarea 中选中的文字</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getTransform">getTransform</a></b>(target, style)
+										</div>
+										<div class="description">获取CSS3 transform属性的值，或具体的scale等的值</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getWidth">getWidth</a></b>(el)
+										</div>
+										<div class="description">获取宽度的简便方法</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getXY">getXY</a></b>(el)
+										</div>
+										<div class="description">获取对象坐标</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.hasClass">hasClass</a></b>(el, className)
+										</div>
+										<div class="description">判断元素是否含有 class</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.hide">hide</a></b>(el)
+										</div>
+										<div class="description">隐藏元素</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.id">id</a></b>(id, doc)
+										</div>
+										<div class="description">根据 id 获取元素</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.isShow">isShow</a></b>(el)
+										</div>
+										<div class="description">判断元素是否是显示状态</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.mini">mini</a></b>(query)
+										</div>
+										<div class="description">一个据说比jq还快的筛选器，可以满足日常99%的筛选需要</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.name">name</a></b>(name, doc)
+										</div>
+										<div class="description">根据 name 属性获取元素</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.node">node</a></b>(type, attr, win)
+										</div>
+										<div class="description">生成一个 DOM 节点Generates an HTML element, this is not appended to a document</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.recover">recover</a></b>(el)
+										</div>
+										<div class="description">还原元素原来的display属性</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.removeClass">removeClass</a></b>(el, className)
+										</div>
+										<div class="description">给元素移除 class</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.replaceClass">replaceClass</a></b>(el, oldClassName, newClassName)
+										</div>
+										<div class="description">替换元素 oldClassName 为 newClassName</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.setClass">setClass</a></b>(el, className)
+										</div>
+										<div class="description">设置元素的class属性</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.setClientXY">setClientXY</a></b>(el, x, y)
+										</div>
+										<div class="description">设置dom坐标</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.setCssText">setCssText</a></b>(el, cssText)
+										</div>
+										<div class="description">给元素设置cssText</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.setStyle">setStyle</a></b>(el, styleName, value)
+										</div>
+										<div class="description">设置元素的样式，css 属性需要用驼峰式写法，如：fontFamily</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.setTransform">setTransform</a></b>(target, value, style)
+										</div>
+										<div class="description">设置元素的transform属性</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.setXY">setXY</a></b>(el, x, y)
+										</div>
+										<div class="description">设置dom坐标</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.show">show</a></b>(el, displayStyle)
+										</div>
+										<div class="description">显示元素</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.tagName">tagName</a></b>(tagName, doc)
+										</div>
+										<div class="description">根据 tagName 获取元素</div>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="attributes">&lt;static&gt; &nbsp;</td>
+									<td class="nameDescription">
+										<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.toggleClass">toggleClass</a></b>(el, className)
+										</div>
+										<div class="description">对元素 class 的切换方法，即：如果元素用此class则移除此class，如果没有此class则添加此class</div>
+									</td>
+								</tr>
+							
+							</tbody>
+						</table>
+						
+						
+						
+					
+		<!-- ============================== events summary ======================== -->
+					
+
+		<!-- ============================== constructor details ==================== -->		
+					
+					<div class="details"><a name="constructor"> </a>
+						<div class="sectionTitle">
+							命名空间  详解
+						</div>
+						
+						<div class="detailTitle fixedFont">
+							<span class="methodType"></span>
+								<b>dom</b>
+						</div>
+						
+						
+						<dl class="description">
+							<dt class="heading">功能:</dt>
+							<dd>
+							dom 名字空间
+							
+							</dd>
+						</dl>
+						
+						
+						
+						
+							
+							
+							
+							
+							
+							
+							
+
+					</div>
+					
+
+		<!-- ============================== field details ========================== -->		
+					
+
+		<!-- ============================== method details ========================= -->		
+					
+						<div class="sectionTitle">
+							方法详解
+						</div>
+						
+							<a name=".addClass"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>addClass</b>(el, className)
+							
 							</div>
-							<div class="description">dom 名字空间</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								给元素添加 class
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>className</b>
+													
+												</dt>
+												<dd>class 名称</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
 
-<!-- ============================== properties summary ===================== -->
-			
+							<hr />
+						
+							<a name=".addCssText"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>addCssText</b>(el, cssText)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								给元素添加cssText
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>cssText</b>
+													
+												</dt>
+												<dd>css 属性</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
 
-<!-- ============================== methods summary ======================== -->
-			
-				
-				
-				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class dom.">
-					<caption>方法概要</caption>
-					<thead>
-						<tr>
-							<th scope="col">Method Attributes</th>
-							<th scope="col">Method Name and Description</th>
-						</tr>
-					</thead>
-					<tbody>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.addClass">addClass</a></b>(el, className)
-								</div>
-								<div class="description">给元素添加 class</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.addCssText">addCssText</a></b>(el, cssText)
-								</div>
-								<div class="description">给元素添加cssText</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.contains">contains</a></b>(parent, child, containSelf)
-								</div>
-								<div class="description">判断一个节点是否是某个父节点的子节点, 默认不包含parent === child的情况</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.createStyleNode">createStyleNode</a></b>(styleText, id)
-								</div>
-								<div class="description">创建 style 标签</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getAttributeByParent">getAttributeByParent</a></b>(element, startNode, topNode)
-								</div>
-								<div class="description">从起始元素查找某个属性，直到找到，或者到达顶层元素位置Returns the text content of the HTMLElement.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getClass">getClass</a></b>(el, className)
-								</div>
-								<div class="description">获取元素的class属性</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getClientHeight">getClientHeight</a></b>(el)
-								</div>
-								<div class="description">获取当前视窗的高度Returns the current height of the viewport.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getClientWidth">getClientWidth</a></b>(el)
-								</div>
-								<div class="description">获取元素的client宽度Returns the current width of the viewport.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getClientXY">getClientXY</a></b>(el)
-								</div>
-								<div class="description">获取对象坐标</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getCssText">getCssText</a></b>(el)
-								</div>
-								<div class="description">获取元素的cssText</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getDoc">getDoc</a></b>(element)
-								</div>
-								<div class="description">获取元素所属的根文档</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getDocumentElement">getDocumentElement</a></b>()
-								</div>
-								<div class="description">获取DocumentElement</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getHeight">getHeight</a></b>(el)
-								</div>
-								<div class="description">获取高度的简便方法</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getHref">getHref</a></b>(el)
-								</div>
-								<div class="description">取一个a标签的href的绝对路径</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getOffsetHeight">getOffsetHeight</a></b>(el)
-								</div>
-								<div class="description">获取当前视窗的高度Returns the current height of the viewport.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getOffsetWidth">getOffsetWidth</a></b>(el)
-								</div>
-								<div class="description">获取元素的client宽度Returns the current width of the viewport.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getPosX">getPosX</a></b>(el)
-								</div>
-								<div class="description">获取x坐标的简便方法</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getPosY">getPosY</a></b>(el)
-								</div>
-								<div class="description">获取y坐标的简便方法</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getRelativeXY">getRelativeXY</a></b>(el, relativeEl)
-								</div>
-								<div class="description">获取对象相对一个节点的坐标</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getScrollHeight">getScrollHeight</a></b>(element)
-								</div>
-								<div class="description">获取文档的 scroll 高度，即文档的实际高度Returns the height of the document.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getScrollLeft">getScrollLeft</a></b>(document)
-								</div>
-								<div class="description">获取当前文档的左边已卷动的宽度Returns the left scroll value of the document</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getScrollTop">getScrollTop</a></b>(document)
-								</div>
-								<div class="description">获取当前文档的上边已卷动的宽度Returns the top scroll value of the document</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getScrollWidth">getScrollWidth</a></b>(element)
-								</div>
-								<div class="description">获取文档的 scroll 宽度，即文档的实际宽度Returns the width of the document.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getSelectionText">getSelectionText</a></b>(win)
-								</div>
-								<div class="description">获取选择的文本</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getStyle">getStyle</a></b>(el, styleName)
-								</div>
-								<div class="description">获取元素的当前实际样式，css 属性需要用驼峰式写法，如：fontFamily</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getText">getText</a></b>(element)
-								</div>
-								<div class="description">获取元素中的文本内容Returns the text content of the HTMLElement.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getTextFieldSelection">getTextFieldSelection</a></b>(el)
-								</div>
-								<div class="description">FireFox 下获取 input 或者 textarea 中选中的文字</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getWidth">getWidth</a></b>(el)
-								</div>
-								<div class="description">获取宽度的简便方法</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.getXY">getXY</a></b>(el)
-								</div>
-								<div class="description">获取对象坐标</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.hasClass">hasClass</a></b>(el, className)
-								</div>
-								<div class="description">判断元素是否含有 class</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.hide">hide</a></b>(el)
-								</div>
-								<div class="description">隐藏元素</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.id">id</a></b>(id, doc)
-								</div>
-								<div class="description">根据 id 获取元素</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.isShow">isShow</a></b>(el)
-								</div>
-								<div class="description">判断元素是否是显示状态</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.mini">mini</a></b>(query)
-								</div>
-								<div class="description">一个据说比jq还快的筛选器，可以满足日常99%的筛选需要</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.name">name</a></b>(name, doc)
-								</div>
-								<div class="description">根据 name 属性获取元素</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.node">node</a></b>(type, attr, win)
-								</div>
-								<div class="description">生成一个 DOM 节点Generates an HTML element, this is not appended to a document</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.recover">recover</a></b>(el)
-								</div>
-								<div class="description">还原元素原来的display属性</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.removeClass">removeClass</a></b>(el, className)
-								</div>
-								<div class="description">给元素移除 class</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.replaceClass">replaceClass</a></b>(el, oldClassName, newClassName)
-								</div>
-								<div class="description">替换元素 oldClassName 为 newClassName</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.setClass">setClass</a></b>(el, className)
-								</div>
-								<div class="description">设置元素的class属性</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.setClientXY">setClientXY</a></b>(el, x, y)
-								</div>
-								<div class="description">设置dom坐标</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.setCssText">setCssText</a></b>(el, cssText)
-								</div>
-								<div class="description">给元素设置cssText</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.setStyle">setStyle</a></b>(el, styleName, value)
-								</div>
-								<div class="description">设置元素的样式，css 属性需要用驼峰式写法，如：fontFamily</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.setXY">setXY</a></b>(el, x, y)
-								</div>
-								<div class="description">设置dom坐标</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.show">show</a></b>(el, displayStyle)
-								</div>
-								<div class="description">显示元素</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.tagName">tagName</a></b>(tagName, doc)
-								</div>
-								<div class="description">根据 tagName 获取元素</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">dom.<b><a href="../symbols/dom.html#.toggleClass">toggleClass</a></b>(el, className)
-								</div>
-								<div class="description">对元素 class 的切换方法，即：如果元素用此class则移除此class，如果没有此class则添加此class</div>
-							</td>
-						</tr>
-					
-					</tbody>
-				</table>
-				
-				
-				
-			
-<!-- ============================== events summary ======================== -->
-			
+							<hr />
+						
+							<a name=".contains"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{Boolean}</span>
+							<span class="light">dom.</span><b>contains</b>(parent, child, containSelf)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								判断一个节点是否是某个父节点的子节点, 默认不包含parent === child的情况
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>parent</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>child</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Boolean}</span> <b>containSelf</b>
+													
+												</dt>
+												<dd>指示是否包括parent等于child的情况</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{Boolean}</span> 包含则返回true</dd>
+									
+									</dl>
+								
+								
+								
 
-<!-- ============================== constructor details ==================== -->		
-			
-			<div class="details"><a name="constructor"> </a>
-				<div class="sectionTitle">
-					命名空间  详解
+							<hr />
+						
+							<a name=".createStyleNode"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>createStyleNode</b>(样式内容，支持string和object, id)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								创建 style 标签
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<b>样式内容，支持string和object</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>id</b>
+													
+												</dt>
+												<dd>样式标签的 id</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getAttributeByParent"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{String}</span>
+							<span class="light">dom.</span><b>getAttributeByParent</b>(element, startNode, topNode)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								从起始元素查找某个属性，直到找到，或者到达顶层元素位置Returns the text content of the HTMLElement.
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>element</b>
+													
+												</dt>
+												<dd>The html element.</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<b>startNode</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<b>topNode</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{String}</span> The text content of the element (includes text of any descending elements).</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getClass"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>getClass</b>(el, className)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取元素的class属性
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>className</b>
+													
+												</dt>
+												<dd>class 名称</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getClientHeight"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{Number}</span>
+							<span class="light">dom.</span><b>getClientHeight</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取当前视窗的高度Returns the current height of the viewport.
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<b>el</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{Number}</span> The height of the viewable area of the page (excludes scrollbars).</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getClientWidth"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{Number}</span>
+							<span class="light">dom.</span><b>getClientWidth</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取元素的client宽度Returns the current width of the viewport.
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>要获取client宽度的元素</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{Number}</span> 宽度值.</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getClientXY"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>getClientXY</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取对象坐标
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd>Array [left,top]</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getCssText"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>getCssText</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取元素的cssText
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getDoc"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{HTMLElement}</span>
+							<span class="light">dom.</span><b>getDoc</b>(element)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取元素所属的根文档
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<b>element</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{HTMLElement}</span> document</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getDocumentElement"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{HTMLElement}</span>
+							<span class="light">dom.</span><b>getDocumentElement</b>()
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取DocumentElement
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{HTMLElement}</span> documentElement</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getHeight"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{String}</span>
+							<span class="light">dom.</span><b>getHeight</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取高度的简便方法
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{String}</span> </dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getHref"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{String}</span>
+							<span class="light">dom.</span><b>getHref</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								取一个a标签的href的绝对路径
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{String}</span> 返回一个完整的url</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getOffsetHeight"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{Number}</span>
+							<span class="light">dom.</span><b>getOffsetHeight</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取当前视窗的高度Returns the current height of the viewport.
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<b>el</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{Number}</span> The height of the viewable area of the page (excludes scrollbars).</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getOffsetWidth"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{Number}</span>
+							<span class="light">dom.</span><b>getOffsetWidth</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取元素的client宽度Returns the current width of the viewport.
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>要获取client宽度的元素</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{Number}</span> 宽度值.</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getPosX"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{String}</span>
+							<span class="light">dom.</span><b>getPosX</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取x坐标的简便方法
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{String}</span> </dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getPosY"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{String}</span>
+							<span class="light">dom.</span><b>getPosY</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取y坐标的简便方法
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{String}</span> </dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getRelativeXY"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>getRelativeXY</b>(el, relativeEl)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取对象相对一个节点的坐标
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>relativeEl</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd>Array [top,left]</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getScrollHeight"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{Number}</span>
+							<span class="light">dom.</span><b>getScrollHeight</b>(element)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取文档的 scroll 高度，即文档的实际高度Returns the height of the document.
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>element</b>
+													
+												</dt>
+												<dd>The html element.</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{Number}</span> The height of the actual document (which includes the body and its margin).</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getScrollLeft"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{Number}</span>
+							<span class="light">dom.</span><b>getScrollLeft</b>(document)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取当前文档的左边已卷动的宽度Returns the left scroll value of the document
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLDocument}</span> <b>document</b>
+													
+												</dt>
+												<dd>(optional) The document to get the scroll value of</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{Number}</span> The amount that the document is scrolled to the left</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getScrollTop"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{Number}</span>
+							<span class="light">dom.</span><b>getScrollTop</b>(document)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取当前文档的上边已卷动的宽度Returns the top scroll value of the document
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLDocument}</span> <b>document</b>
+													
+												</dt>
+												<dd>(optional) The document to get the scroll value of</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{Number}</span> The amount that the document is scrolled to the top</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getScrollWidth"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{Number}</span>
+							<span class="light">dom.</span><b>getScrollWidth</b>(element)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取文档的 scroll 宽度，即文档的实际宽度Returns the width of the document.
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>element</b>
+													
+												</dt>
+												<dd>The html element.</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{Number}</span> The width of the actual document (which includes the body and its margin).</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getSelectionText"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{String}</span>
+							<span class="light">dom.</span><b>getSelectionText</b>(win)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取选择的文本
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Window}</span> <b>win</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{String}</span> 返回选择的文本</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getStyle"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{String}</span>
+							<span class="light">dom.</span><b>getStyle</b>(el, styleName)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取元素的当前实际样式，css 属性需要用驼峰式写法，如：fontFamily
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>styleName</b>
+													
+												</dt>
+												<dd>css 属性名称</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{String}</span> 返回元素样式</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getText"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{String}</span>
+							<span class="light">dom.</span><b>getText</b>(element)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取元素中的文本内容Returns the text content of the HTMLElement.
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>element</b>
+													
+												</dt>
+												<dd>The html element.</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{String}</span> The text content of the element (includes text of any descending elements).</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getTextFieldSelection"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{String}</span>
+							<span class="light">dom.</span><b>getTextFieldSelection</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								FireFox 下获取 input 或者 textarea 中选中的文字
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{String}</span> 返回选择的文本</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getTransform"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>getTransform</b>(target, style)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取CSS3 transform属性的值，或具体的scale等的值
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{element}</span> <b>target</b>
+													
+												</dt>
+												<dd>要获取属性的元素</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{<a href="../symbols/string.html">string</a>}</span> <b>style</b>
+													
+												</dt>
+												<dd>要获取的属性，如果不指定则默认为transform</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getWidth"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{String}</span>
+							<span class="light">dom.</span><b>getWidth</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取宽度的简便方法
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{String}</span> </dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".getXY"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>getXY</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								获取对象坐标
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd>Array [top,left]</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".hasClass"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>hasClass</b>(el, className)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								判断元素是否含有 class
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>className</b>
+													
+												</dt>
+												<dd>class 名称</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".hide"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>hide</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								隐藏元素
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".id"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{Element}</span>
+							<span class="light">dom.</span><b>id</b>(id, doc)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								根据 id 获取元素
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+							<pre class="code"></pre>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>id</b>
+													
+												</dt>
+												<dd>元素的 id 名称</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>doc</b>
+													
+												</dt>
+												<dd>元素所属的文档对象，默认为当前文档</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{Element}</span> 返回元素</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".isShow"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>isShow</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								判断元素是否是显示状态
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".mini"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{Element}</span>
+							<span class="light">dom.</span><b>mini</b>(query)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								一个据说比jq还快的筛选器，可以满足日常99%的筛选需要
+								
+									<br />
+									<i>Defined in: </i> <a href="../symbols/src/src_jx.mini.js.html">jx.mini.js</a>.
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+							<pre class="code">//创建一个匿名package包：Jx().$package(function(J){ //这时上下文对象this指向全局window对象 var lists = J.dom.mini(".list");};</pre>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>query</b>
+													
+												</dt>
+												<dd>string 筛选器语法</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{Element}</span> 返回筛选出的dom元素</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".name"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{Element}</span>
+							<span class="light">dom.</span><b>name</b>(name, doc)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								根据 name 属性获取元素
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>name</b>
+													
+												</dt>
+												<dd>元素的 name 属性</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>doc</b>
+													
+												</dt>
+												<dd>元素所属的文档对象，默认为当前文档</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{Element}</span> 返回元素</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".node"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{HTMLElement}</span>
+							<span class="light">dom.</span><b>node</b>(type, attr, win)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								生成一个 DOM 节点Generates an HTML element, this is not appended to a document
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<b>type</b>
+													
+												</dt>
+												<dd>{string} the type of element</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<b>attr</b>
+													
+												</dt>
+												<dd>{string} the attributes</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<b>win</b>
+													
+												</dt>
+												<dd>{Window} optional window to create the element in</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{HTMLElement}</span> the generated node</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".recover"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>recover</b>(el)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								还原元素原来的display属性
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".removeClass"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>removeClass</b>(el, className)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								给元素移除 class
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>className</b>
+													
+												</dt>
+												<dd>class 名称</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".replaceClass"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>replaceClass</b>(el, oldClassName, newClassName)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								替换元素 oldClassName 为 newClassName
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>oldClassName</b>
+													
+												</dt>
+												<dd>被替换的 class 名称</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>newClassName</b>
+													
+												</dt>
+												<dd>要替换成的 class 名称</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".setClass"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>setClass</b>(el, className)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								设置元素的class属性
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>className</b>
+													
+												</dt>
+												<dd>class 名称</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".setClientXY"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>setClientXY</b>(el, x, y)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								设置dom坐标
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{<a href="../symbols/string.html">string</a>|<a href="../symbols/number.html">number</a>}</span> <b>x</b>
+													
+												</dt>
+												<dd>横坐标</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{<a href="../symbols/string.html">string</a>|<a href="../symbols/number.html">number</a>}</span> <b>y</b>
+													
+												</dt>
+												<dd>纵坐标</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".setCssText"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>setCssText</b>(el, cssText)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								给元素设置cssText
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>cssText</b>
+													
+												</dt>
+												<dd>css 属性</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".setStyle"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>setStyle</b>(el, styleName, value)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								设置元素的样式，css 属性需要用驼峰式写法，如：fontFamily
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>styleName</b>
+													
+												</dt>
+												<dd>css 属性名称</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>value</b>
+													
+												</dt>
+												<dd>css 属性值</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".setTransform"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>setTransform</b>(target, value, style)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								设置元素的transform属性
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{element}</span> <b>target</b>
+													
+												</dt>
+												<dd>要设置属性的元素</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{mixed}</span> <b>value</b>
+													
+												</dt>
+												<dd>属性值，类型视具体属性而定</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{<a href="../symbols/string.html">string</a>}</span> <b>style</b>
+													
+												</dt>
+												<dd>要设置的属性，如果不指定则默认为transform</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".setXY"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>setXY</b>(el, x, y)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								设置dom坐标
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
+													
+												</dt>
+												<dd></dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{<a href="../symbols/string.html">string</a>|<a href="../symbols/number.html">number</a>}</span> <b>x</b>
+													
+												</dt>
+												<dd>横坐标</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{<a href="../symbols/string.html">string</a>|<a href="../symbols/number.html">number</a>}</span> <b>y</b>
+													
+												</dt>
+												<dd>纵坐标</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".show"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>show</b>(el, displayStyle)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								显示元素
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>displayStyle</b>
+													
+												</dt>
+												<dd>强制指定以何种方式显示，如：block，inline，inline-block等等</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							<hr />
+						
+							<a name=".tagName"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							<span class="methodReturn">{Element}</span>
+							<span class="light">dom.</span><b>tagName</b>(tagName, doc)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								根据 tagName 获取元素
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>tagName</b>
+													
+												</dt>
+												<dd>元素的 tagName 标签名</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>doc</b>
+													
+												</dt>
+												<dd>元素所属的文档对象，默认为当前文档</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+									<dl class="detailList">
+									<dt class="heading">返回:</dt>
+									
+										<dd><span class="light fixedFont">{Element}</span> 返回元素</dd>
+									
+									</dl>
+								
+								
+								
+
+							<hr />
+						
+							<a name=".toggleClass"> </a>
+							<div class="detailTitle fixedFont">
+								<span class="methodType">&lt;static&gt; </span>
+							
+							
+							<span class="light">dom.</span><b>toggleClass</b>(el, className)
+							
+							</div>
+							<dl class="description">
+								<dt class="heading">功能:</dt>
+								<dd>
+								对元素 class 的切换方法，即：如果元素用此class则移除此class，如果没有此class则添加此class
+								
+								
+								</dd>
+							</dl>
+							
+							
+							
+								
+									<dl class="detailList">
+										<dt class="heading">参数:</dt>
+										<dd>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{Element}</span> <b>el</b>
+													
+												</dt>
+												<dd>元素</dd>
+											</dl>
+											
+											<dl class="paramsList">
+												<dt>
+													<span class="light fixedFont">{String}</span> <b>className</b>
+													
+												</dt>
+												<dd>class 名称</dd>
+											</dl>
+											
+										</dd>
+									</dl>
+								
+								
+								
+								
+								
+								
+								
+
+							
+						
+					
+					
+		<!-- ============================== event details ========================= -->		
+					
+					
+					<hr />
 				</div>
-				
-				<div class="detailTitle fixedFont">
-					<span class="methodType"></span>
-						<b>dom</b>
-				</div>
-				
-				
-				<dl class="description">
-					<dt class="heading">功能:</dt>
-					<dd>
-					dom 名字空间
-					
-					</dd>
-				</dl>
-				
-				
-				
-				
-					
-					
-					
-					
-					
-					
-					
-
-			</div>
-			
-
-<!-- ============================== field details ========================== -->		
-			
-
-<!-- ============================== method details ========================= -->		
-			
-				<div class="sectionTitle">
-					方法详解
-				</div>
-				
-					<a name=".addClass"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>addClass</b>(el, className)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						给元素添加 class
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>className</b>
-											
-										</dt>
-										<dd>class 名称</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".addCssText"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>addCssText</b>(el, cssText)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						给元素添加cssText
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>cssText</b>
-											
-										</dt>
-										<dd>css 属性</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".contains"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{Boolean}</span>
-					<span class="light">dom.</span><b>contains</b>(parent, child, containSelf)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						判断一个节点是否是某个父节点的子节点, 默认不包含parent === child的情况
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>parent</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>child</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Boolean}</span> <b>containSelf</b>
-											
-										</dt>
-										<dd>指示是否包括parent等于child的情况</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{Boolean}</span> 包含则返回true</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".createStyleNode"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>createStyleNode</b>(styleText, id)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						创建 style 标签
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>styleText</b>
-											
-										</dt>
-										<dd>样式语句</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>id</b>
-											
-										</dt>
-										<dd>样式标签的 id</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getAttributeByParent"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{String}</span>
-					<span class="light">dom.</span><b>getAttributeByParent</b>(element, startNode, topNode)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						从起始元素查找某个属性，直到找到，或者到达顶层元素位置Returns the text content of the HTMLElement.
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>element</b>
-											
-										</dt>
-										<dd>The html element.</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<b>startNode</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<b>topNode</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> The text content of the element (includes text of any descending elements).</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getClass"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>getClass</b>(el, className)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取元素的class属性
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>className</b>
-											
-										</dt>
-										<dd>class 名称</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getClientHeight"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{Number}</span>
-					<span class="light">dom.</span><b>getClientHeight</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取当前视窗的高度Returns the current height of the viewport.
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<b>el</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{Number}</span> The height of the viewable area of the page (excludes scrollbars).</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getClientWidth"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{Number}</span>
-					<span class="light">dom.</span><b>getClientWidth</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取元素的client宽度Returns the current width of the viewport.
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>要获取client宽度的元素</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{Number}</span> 宽度值.</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getClientXY"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{Array}</span>
-					<span class="light">dom.</span><b>getClientXY</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取对象坐标
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd>Array [left,top]</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getCssText"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>getCssText</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取元素的cssText
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getDoc"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{HTMLElement}</span>
-					<span class="light">dom.</span><b>getDoc</b>(element)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取元素所属的根文档
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<b>element</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{HTMLElement}</span> document</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getDocumentElement"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{HTMLElement}</span>
-					<span class="light">dom.</span><b>getDocumentElement</b>()
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取DocumentElement
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{HTMLElement}</span> documentElement</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getHeight"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{String}</span>
-					<span class="light">dom.</span><b>getHeight</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取高度的简便方法
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getHref"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{String}</span>
-					<span class="light">dom.</span><b>getHref</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						取一个a标签的href的绝对路径
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> 返回一个完整的url</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getOffsetHeight"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{Number}</span>
-					<span class="light">dom.</span><b>getOffsetHeight</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取当前视窗的高度Returns the current height of the viewport.
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<b>el</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{Number}</span> The height of the viewable area of the page (excludes scrollbars).</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getOffsetWidth"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{Number}</span>
-					<span class="light">dom.</span><b>getOffsetWidth</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取元素的client宽度Returns the current width of the viewport.
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>要获取client宽度的元素</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{Number}</span> 宽度值.</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getPosX"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{String}</span>
-					<span class="light">dom.</span><b>getPosX</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取x坐标的简便方法
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getPosY"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{String}</span>
-					<span class="light">dom.</span><b>getPosY</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取y坐标的简便方法
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getRelativeXY"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>getRelativeXY</b>(el, relativeEl)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取对象相对一个节点的坐标
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>relativeEl</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd>Array [top,left]</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getScrollHeight"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{Number}</span>
-					<span class="light">dom.</span><b>getScrollHeight</b>(element)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取文档的 scroll 高度，即文档的实际高度Returns the height of the document.
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>element</b>
-											
-										</dt>
-										<dd>The html element.</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{Number}</span> The height of the actual document (which includes the body and its margin).</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getScrollLeft"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{Number}</span>
-					<span class="light">dom.</span><b>getScrollLeft</b>(document)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取当前文档的左边已卷动的宽度Returns the left scroll value of the document
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLDocument}</span> <b>document</b>
-											
-										</dt>
-										<dd>(optional) The document to get the scroll value of</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{Number}</span> The amount that the document is scrolled to the left</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getScrollTop"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{Number}</span>
-					<span class="light">dom.</span><b>getScrollTop</b>(document)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取当前文档的上边已卷动的宽度Returns the top scroll value of the document
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLDocument}</span> <b>document</b>
-											
-										</dt>
-										<dd>(optional) The document to get the scroll value of</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{Number}</span> The amount that the document is scrolled to the top</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getScrollWidth"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{Number}</span>
-					<span class="light">dom.</span><b>getScrollWidth</b>(element)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取文档的 scroll 宽度，即文档的实际宽度Returns the width of the document.
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>element</b>
-											
-										</dt>
-										<dd>The html element.</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{Number}</span> The width of the actual document (which includes the body and its margin).</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getSelectionText"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{String}</span>
-					<span class="light">dom.</span><b>getSelectionText</b>(win)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取选择的文本
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Window}</span> <b>win</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> 返回选择的文本</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getStyle"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{String}</span>
-					<span class="light">dom.</span><b>getStyle</b>(el, styleName)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取元素的当前实际样式，css 属性需要用驼峰式写法，如：fontFamily
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>styleName</b>
-											
-										</dt>
-										<dd>css 属性名称</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> 返回元素样式</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getText"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{String}</span>
-					<span class="light">dom.</span><b>getText</b>(element)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取元素中的文本内容Returns the text content of the HTMLElement.
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>element</b>
-											
-										</dt>
-										<dd>The html element.</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> The text content of the element (includes text of any descending elements).</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getTextFieldSelection"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{String}</span>
-					<span class="light">dom.</span><b>getTextFieldSelection</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						FireFox 下获取 input 或者 textarea 中选中的文字
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> 返回选择的文本</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getWidth"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{String}</span>
-					<span class="light">dom.</span><b>getWidth</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取宽度的简便方法
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getXY"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>getXY</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						获取对象坐标
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd>Array [top,left]</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".hasClass"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>hasClass</b>(el, className)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						判断元素是否含有 class
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>className</b>
-											
-										</dt>
-										<dd>class 名称</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".hide"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>hide</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						隐藏元素
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".id"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{Element}</span>
-					<span class="light">dom.</span><b>id</b>(id, doc)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						根据 id 获取元素
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-					<pre class="code"></pre>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>id</b>
-											
-										</dt>
-										<dd>元素的 id 名称</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>doc</b>
-											
-										</dt>
-										<dd>元素所属的文档对象，默认为当前文档</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{Element}</span> 返回元素</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".isShow"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>isShow</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						判断元素是否是显示状态
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".mini"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{Element}</span>
-					<span class="light">dom.</span><b>mini</b>(query)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						一个据说比jq还快的筛选器，可以满足日常99%的筛选需要
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/src_jx.mini.js.html">jx.mini.js</a>.
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-					<pre class="code">//创建一个匿名package包：Jx().$package(function(J){ //这时上下文对象this指向全局window对象 var lists = J.dom.mini(".list");};</pre>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>query</b>
-											
-										</dt>
-										<dd>string 筛选器语法</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{Element}</span> 返回筛选出的dom元素</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".name"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{Element}</span>
-					<span class="light">dom.</span><b>name</b>(name, doc)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						根据 name 属性获取元素
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>name</b>
-											
-										</dt>
-										<dd>元素的 name 属性</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>doc</b>
-											
-										</dt>
-										<dd>元素所属的文档对象，默认为当前文档</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{Element}</span> 返回元素</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".node"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{HTMLElement}</span>
-					<span class="light">dom.</span><b>node</b>(type, attr, win)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						生成一个 DOM 节点Generates an HTML element, this is not appended to a document
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<b>type</b>
-											
-										</dt>
-										<dd>{string} the type of element</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<b>attr</b>
-											
-										</dt>
-										<dd>{string} the attributes</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<b>win</b>
-											
-										</dt>
-										<dd>{Window} optional window to create the element in</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{HTMLElement}</span> the generated node</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".recover"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>recover</b>(el)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						还原元素原来的display属性
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".removeClass"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>removeClass</b>(el, className)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						给元素移除 class
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>className</b>
-											
-										</dt>
-										<dd>class 名称</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".replaceClass"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>replaceClass</b>(el, oldClassName, newClassName)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						替换元素 oldClassName 为 newClassName
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>oldClassName</b>
-											
-										</dt>
-										<dd>被替换的 class 名称</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>newClassName</b>
-											
-										</dt>
-										<dd>要替换成的 class 名称</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".setClass"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>setClass</b>(el, className)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						设置元素的class属性
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>className</b>
-											
-										</dt>
-										<dd>class 名称</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".setClientXY"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>setClientXY</b>(el, x, y)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						设置dom坐标
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{<a href="../symbols/string.html">string</a>|<a href="../symbols/number.html">number</a>}</span> <b>x</b>
-											
-										</dt>
-										<dd>横坐标</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{<a href="../symbols/string.html">string</a>|<a href="../symbols/number.html">number</a>}</span> <b>y</b>
-											
-										</dt>
-										<dd>纵坐标</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".setCssText"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>setCssText</b>(el, cssText)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						给元素设置cssText
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>cssText</b>
-											
-										</dt>
-										<dd>css 属性</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".setStyle"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>setStyle</b>(el, styleName, value)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						设置元素的样式，css 属性需要用驼峰式写法，如：fontFamily
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>styleName</b>
-											
-										</dt>
-										<dd>css 属性名称</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>value</b>
-											
-										</dt>
-										<dd>css 属性值</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".setXY"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>setXY</b>(el, x, y)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						设置dom坐标
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
-											
-										</dt>
-										<dd></dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{<a href="../symbols/string.html">string</a>|<a href="../symbols/number.html">number</a>}</span> <b>x</b>
-											
-										</dt>
-										<dd>横坐标</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{<a href="../symbols/string.html">string</a>|<a href="../symbols/number.html">number</a>}</span> <b>y</b>
-											
-										</dt>
-										<dd>纵坐标</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".show"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>show</b>(el, displayStyle)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						显示元素
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>displayStyle</b>
-											
-										</dt>
-										<dd>强制指定以何种方式显示，如：block，inline，inline-block等等</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".tagName"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					<span class="methodReturn">{Element}</span>
-					<span class="light">dom.</span><b>tagName</b>(tagName, doc)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						根据 tagName 获取元素
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>tagName</b>
-											
-										</dt>
-										<dd>元素的 tagName 标签名</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>doc</b>
-											
-										</dt>
-										<dd>元素所属的文档对象，默认为当前文档</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">返回:</dt>
-							
-								<dd><span class="light fixedFont">{Element}</span> 返回元素</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".toggleClass"> </a>
-					<div class="detailTitle fixedFont">
-						<span class="methodType">&lt;static&gt; </span>
-					
-					
-					<span class="light">dom.</span><b>toggleClass</b>(el, className)
-					
-					</div>
-					<dl class="description">
-						<dt class="heading">功能:</dt>
-						<dd>
-						对元素 class 的切换方法，即：如果元素用此class则移除此class，如果没有此class则添加此class
-						
-						
-						</dd>
-					</dl>
-					
-					
-					
-						
-							<dl class="detailList">
-								<dt class="heading">参数:</dt>
-								<dd>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{Element}</span> <b>el</b>
-											
-										</dt>
-										<dd>元素</dd>
-									</dl>
-									
-									<dl class="paramsList">
-										<dt>
-											<span class="light fixedFont">{String}</span> <b>className</b>
-											
-										</dt>
-										<dd>class 名称</dd>
-									</dl>
-									
-								</dd>
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					
-				
-			
-			
-<!-- ============================== event details ========================= -->		
-			
-			
-			<hr />
-		</div>
-
+	</div>
 		
 <!-- ============================== footer ================================= -->
-		<div class="fineprint" style="clear:both">
-			&copy;1998-2012<br />
-			文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Mon May 21 2012 15:55:37 GMT+0800 (CST)
+		<div class="footer">
+			<div class="container">
+				&copy;1998-2012<br />
+				文档生成 by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.4.0 on Fri Jun 21 2013 14:53:56 GMT+0800 (CST)
+			</div>
 		</div>
 	</body>
 </html>
