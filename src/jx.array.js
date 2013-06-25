@@ -472,7 +472,7 @@ Jx().$package(function(J){
      */
     replace = function(arr, oldValue, newValue){
         var i;
-        for(i=0; i<arr.length; ij++){
+        for(i=0; i<arr.length; i++){
             if(arr[i] === oldValue){
                 arr[i] = newValue;
                 return true;
