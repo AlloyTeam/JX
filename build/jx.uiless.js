@@ -1711,7 +1711,7 @@ Jx().$package(function(J){
      */
     replace = function(arr, oldValue, newValue){
         var i;
-        for(i=0; i<arr.length; ij++){
+        for(i=0; i<arr.length; i++){
             if(arr[i] === oldValue){
                 arr[i] = newValue;
                 return true;
@@ -10539,7 +10539,7 @@ Jx().$package(function(J){
                     this._el.pause();
                 },
                 stop : function(){
-                    this._el.duration = Infinity;
+                    this._el.currentTime = Infinity;
                 },
 
                 getVolume : function(){
