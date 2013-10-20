@@ -581,6 +581,7 @@ Jx().$package(function(J){
      * 
      * @memberOf string
      * @return {String} 返回转换后的字符串
+     * @author rewrite by dmyang
      */
     hexToRgb = function(string){
         var hex = string.match(/^#?(\w{1,2})(\w{1,2})(\w{1,2})$/);
@@ -602,6 +603,7 @@ Jx().$package(function(J){
      * 
      * @memberOf string
      * @return {String} 返回转换后的字符串
+     * @author rewrite by dmyang
      */
     rgbToHex = function(string){
         var r = string.match(/\d{1,3}/g);
