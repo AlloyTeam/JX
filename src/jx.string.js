@@ -20,12 +20,10 @@
  * 
  */
 
-
 /**
  * 3.[Javascript core]: String 字符串处理
  */
 Jx().$package(function(J){
-    
     /**
      * string 名字空间
      * 
@@ -82,8 +80,7 @@ Jx().$package(function(J){
         vaildTencentUrl,
         vaildUrl,
         getCharWidth;
-        
-    
+
     /**
      * 将任意变量转换为字符串的方法
      * 
@@ -274,7 +271,6 @@ Jx().$package(function(J){
      */
     isURL.RE = /^(?:ht|f)tp(?:s)?\:\/\/(?:[\w\-\.]+)\.\w+/i;
 
-
     /**
      * 分解 URL 为一个对象，成员为：scheme, user, pass, host, port, path, query, fragment
      * 
@@ -299,7 +295,6 @@ Jx().$package(function(J){
 
         return ret;
     };
-
 
     /**
      * 将一个对象（成员为：scheme, user, pass, host, port, path, query, fragment）重新组成为一个字符串
@@ -568,8 +563,6 @@ Jx().$package(function(J){
                             .replace(/\r/g,"<br />");
     };
     
-    
-    
     /**
      * 将字符串转换成用于title的字符串
      * 
@@ -583,20 +576,25 @@ Jx().$package(function(J){
                             .replace(/\"/gi,"\'");
     };
 
-    
-    
-    
-    
-
     /**
      * 将颜色 Hex 写法转换成 RGB 写法
      * 
      * @memberOf string
      * @return {String} 返回转换后的字符串
      */
-    hexToRgb = function(string, array){
+    hexToRgb = function(string){
         var hex = string.match(/^#?(\w{1,2})(\w{1,2})(\w{1,2})$/);
-        return (hex) ? hex.slice(1).hexToRgb(array) : null;
+        var _convert = function(array) {
+            var length = array.length;
+            if (length !== 3) return null;
+            for(var i=0, value; i<length; i++) {
+                value = array[i];
+                if(value.length === 1) value += value;
+                array[i] = parseInt(value, 16);
+            }
+            return 'rgb(' + array + ')';
+        };
+        return (hex) ? _convert(hex.slice(1)) : null;
     };
 
     /**
@@ -605,9 +603,9 @@ Jx().$package(function(J){
      * @memberOf string
      * @return {String} 返回转换后的字符串
      */
-    rgbToHex = function(string, array){
-        var rgb = string.match(/\d{1,3}/g);
-        return (rgb) ? rgb.rgbToHex(array) : null;
+    rgbToHex = function(string){
+        var r = string.match(/\d{1,3}/g);
+        return (r) ? '#' + ((1 << 24) + ((r[0] << 0) << 16) + ((r[1] << 0) << 8) + (r[2] << 0)).toString(16).slice(1) : null;
     };
 
     /**
@@ -655,8 +653,6 @@ Jx().$package(function(J){
         }
         return result.join("&");
     };
-
-
 
     /**
      * 。。。。
@@ -754,15 +750,11 @@ Jx().$package(function(J){
         }
     };
     
-    
-    
-    
     /*
     JS安全API v1.1
     Created By Web Application Security Group of TSC
     UpDate: 2007-12-08
     */
-
     
     /**
      * html正文编码, 对需要出现在HTML正文里(除了HTML属性外)的不信任输入进行编码
@@ -823,9 +815,6 @@ Jx().$package(function(J){
         sStr = sStr.replace(/`/g,"&#96;");
         return sStr;
     };
-
-    
-    
     
     /**
      * 用做过滤直接放到HTML里的
@@ -863,8 +852,6 @@ Jx().$package(function(J){
             return "\\"+r; 
         }).replace(/%/g, "\\x25").replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\x01/g, "\\x01");
     };
-    
-    
     
     /**
      * 用做过滤直接放到<a href="javascript:XXXX">中的
@@ -979,7 +966,6 @@ Jx().$package(function(J){
         return url;
     };
     
-    
     /**
      * 获取字符实际宽度
      * @memberOf string
@@ -1066,7 +1052,6 @@ Jx().$package(function(J){
     $S.decodeHtmlSimple = decodeHtmlSimple;
     $S.decodeHtmlSimple2 = decodeHtmlSimple2;
     
-    
     /*
     html属性编码：对需要出现在HTML属性里的不信任输入进行编码
     注意:
@@ -1122,27 +1107,4 @@ Jx().$package(function(J){
     $S.vaildUrl = vaildUrl;
     
     $S.getCharWidth = getCharWidth;
-
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
 });
-
-
-
-
-
-
-
-
